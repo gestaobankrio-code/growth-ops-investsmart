@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787081842910-e3ee7c5649bdb",
+    "date": "2026-08-18T19:37:22.910Z",
+    "issueNumber": 3,
+    "action": "Excluir",
+    "recordId": "d3347fb0-854d-45f9-bf7a-88eb7263ea76",
+    "software": "HubSpot",
+    "ativo": "HubSpot",
+    "statusBefore": "A validar",
+    "statusAfter": "Excluído",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787080811406-12773243fcce2",
     "date": "2026-08-18T19:20:11.406Z",
     "issueNumber": 2,
