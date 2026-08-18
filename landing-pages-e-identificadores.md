@@ -1,3 +1,7 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Nenhuma landing page consolidada ainda.
+Atualizado automaticamente em 18/08/2026, 19:19:16.
+
+| Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
+|---|---|---|---|---|---|---|
+| Nenhuma landing page cadastrada | - | - | - | - | - | - |

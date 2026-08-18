@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "audit-1787080756116-0ad442c367603",
+    "date": "2026-08-18T19:19:16.116Z",
+    "issueNumber": 1,
+    "action": "Criar",
+    "recordId": "b825f66b-a4a7-48e1-afdf-b6a59161ad6c",
+    "software": "Make",
+    "ativo": "Make",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  }
+]
