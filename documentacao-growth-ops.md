@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 18/08/2026, 21:11:14.
+Atualização gerada automaticamente em 18/08/2026, 21:22:21.
 
 ## Resumo executivo
 
@@ -16,15 +16,15 @@ Atualização gerada automaticamente em 18/08/2026, 21:11:14.
 
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
-| Landing Page | Landing Page | Landing Page | Marketing | Validado | Crítico |
+| Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
 
 ## Pendências
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
-| Landing Page | Landing Page | Risco Crítico | A validar |
-| Landing Page | Landing Page | Quem recebe o código a validar | A validar |
+| Landing Page | Lovable | Risco Crítico | A validar |
+| Landing Page | Lovable | Quem recebe o código a validar | A validar |
 | Make | Make | Risco Crítico | A validar |
 | Make | Make | Quem recebe o código a validar | A validar |
 | Make | Make | Sem segundo administrador | A validar |

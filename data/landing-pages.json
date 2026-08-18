@@ -2,8 +2,8 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
-    "action": "Criar",
-    "software": "Landing Page",
+    "action": "Atualizar",
+    "software": "Lovable",
     "ativo": "Landing Page",
     "categoria": "Landing Page",
     "responsavel": "Marketing",
@@ -23,18 +23,16 @@
     "obs": "Acesso: gestaobankrio@gmail.com \nAutenticação pelo Gmail.",
     "next": "A validar",
     "extra": {
-      "campaignName": "",
-      "variation": "",
-      "identifier": "",
+      "projectName": "",
       "lovableUrl": "",
+      "deployUrl": "",
       "publicDomain": "",
+      "formFields": "",
       "webhookUrl": "",
-      "gtmId": "",
-      "pixelId": "",
-      "ga4Id": "",
-      "leadDestination": ""
+      "tracking": "",
+      "lpOwner": ""
     },
     "createdAt": "2026-08-18T21:11:14.649Z",
-    "updatedAt": "2026-08-18T21:11:14.649Z"
+    "updatedAt": "2026-08-18T21:22:21.578Z"
   }
 ]
