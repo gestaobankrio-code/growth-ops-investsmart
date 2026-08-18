@@ -1,8 +1,3 @@
-/* =========================================================
-   CORREÇÃO DEFINITIVA DA TABELA
-   Ajusta rolagem horizontal e impede corte da coluna Ações
-   ========================================================= */
-
 .table-card {
   width: 100%;
   overflow-x: auto !important;
