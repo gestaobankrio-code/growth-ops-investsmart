@@ -38,7 +38,7 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "caefec84-dcc9-4263-ac44-378e0191836a",
-    "action": "Validar",
+    "action": "Atualizar",
     "software": "Make",
     "ativo": "Make",
     "categoria": "Automação / Integração",
@@ -56,7 +56,7 @@
     "recoveryValidated": "Sim",
     "manualRisk": "Automático",
     "lastValidation": "18/08/2026",
-    "obs": "User: jorge.araujo@investsmart.com.br /// \nPass: Yield2025@is",
+    "obs": "User: jorge.araujo@investsmart.com.br",
     "next": "A validar",
     "extra": {
       "organization": "",
@@ -69,6 +69,6 @@
       "billingOwner": "Jorge Araujo"
     },
     "createdAt": "2026-08-18T20:45:32.844Z",
-    "updatedAt": "2026-08-18T20:52:20.432Z"
+    "updatedAt": "2026-08-18T21:28:53.050Z"
   }
 ]
