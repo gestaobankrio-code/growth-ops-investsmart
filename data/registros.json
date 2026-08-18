@@ -2,7 +2,7 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "caefec84-dcc9-4263-ac44-378e0191836a",
-    "action": "Atualizar",
+    "action": "Validar",
     "software": "Make",
     "ativo": "Make",
     "categoria": "Automação / Integração",
@@ -33,6 +33,6 @@
       "billingOwner": "Jorge Araujo"
     },
     "createdAt": "2026-08-18T20:45:32.844Z",
-    "updatedAt": "2026-08-18T20:49:50.185Z"
+    "updatedAt": "2026-08-18T20:52:20.432Z"
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787086340432-0306c47625482",
+    "date": "2026-08-18T20:52:20.432Z",
+    "issueNumber": 8,
+    "action": "Validar",
+    "recordId": "caefec84-dcc9-4263-ac44-378e0191836a",
+    "software": "Make",
+    "ativo": "Make",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787086190186-6d5f2e6953ed3",
     "date": "2026-08-18T20:49:50.186Z",
     "issueNumber": 7,
