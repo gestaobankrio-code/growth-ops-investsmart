@@ -1,5 +1,32 @@
 [
   {
+    "id": "d3347fb0-854d-45f9-bf7a-88eb7263ea76-risco-critico",
+    "recordId": "d3347fb0-854d-45f9-bf7a-88eb7263ea76",
+    "ativo": "HubSpot",
+    "software": "HubSpot",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d3347fb0-854d-45f9-bf7a-88eb7263ea76-quem-recebe-o-codigo-a-validar",
+    "recordId": "d3347fb0-854d-45f9-bf7a-88eb7263ea76",
+    "ativo": "HubSpot",
+    "software": "HubSpot",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d3347fb0-854d-45f9-bf7a-88eb7263ea76-recuperacao-de-acesso-nao-validada",
+    "recordId": "d3347fb0-854d-45f9-bf7a-88eb7263ea76",
+    "ativo": "HubSpot",
+    "software": "HubSpot",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
     "id": "b825f66b-a4a7-48e1-afdf-b6a59161ad6c-risco-critico",
     "recordId": "b825f66b-a4a7-48e1-afdf-b6a59161ad6c",
     "ativo": "Make",
