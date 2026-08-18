@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "schema": "growth-ops-record-v2",
+    "id": "caefec84-dcc9-4263-ac44-378e0191836a",
+    "action": "Validar",
+    "software": "Make",
+    "ativo": "Make",
+    "categoria": "Automação / Integração",
+    "responsavel": "Marketing",
+    "area": "Marketing",
+    "status": "Validado",
+    "url": "https://www.make.com",
+    "twofa": "A validar",
+    "twofaMethod": "A validar",
+    "twofaOwner": "A validar",
+    "twofaOwnerType": "A validar",
+    "twofaPhoneMasked": "",
+    "phoneType": "A validar",
+    "secondAdmin": "Não",
+    "recoveryValidated": "Sim",
+    "manualRisk": "Automático",
+    "lastValidation": "18/08/2026",
+    "obs": "User: jorge.araujo@investsmart.com.br\nPass: Yield2025@is",
+    "next": "A validar",
+    "extra": {
+      "organization": "",
+      "scenarioName": "",
+      "scenarioStatus": "",
+      "trigger": "",
+      "connections": "",
+      "sourceApp": "",
+      "destinationApp": "",
+      "billingOwner": "Jorge Araujo"
+    },
+    "createdAt": "2026-08-18T20:45:32.844Z",
+    "updatedAt": "2026-08-18T20:45:32.844Z"
+  }
+]

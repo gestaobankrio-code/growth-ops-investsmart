@@ -1,7 +1,9 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 18/08/2026, 19:38:31.
+Atualizado automaticamente em 18/08/2026, 20:45:32.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
-| Nenhuma pendência crítica | - | - | - | - |
+| Make | Make | Crítico | Risco Crítico | A validar |
+| Make | Make | Crítico | Quem recebe o código a validar | A validar |
+| Make | Make | Alto | Sem segundo administrador | A validar |
