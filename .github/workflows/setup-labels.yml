@@ -1,0 +1,19 @@
+name: Setup labels Growth Ops
+
+on:
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  setup-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: node scripts/setup-labels.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
