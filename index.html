@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Growth Ops InvestSmart</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <h1>Growth Ops InvestSmart</h1>
+        <p>Painel operacional para plataformas, licenças, acessos, tracking, landing pages, 2FA, pendências e documentação.</p>
+      </div>
+      <div class="top-actions">
+        <button class="secondary" type="button" onclick="openDrawer('novo')">Novo registro</button>
+        <button class="blue" type="button" onclick="openGitHubIssues()">Abrir GitHub Issues</button>
+        <button class="primary" type="button" onclick="loadOfficialData(true)">Atualizar painel</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h2>Painel executivo de Growth Ops</h2>
+          <p>
+            Fonte oficial: arquivos JSON no GitHub. O painel abre solicitações estruturadas no GitHub, e o GitHub Actions consolida alterações, arquivamentos, exclusões, inventário, pendências e exportações.
+          </p>
+          <div class="searchbox">
+            <input id="search" type="search" placeholder="Buscar por ativo, software, responsável, 2FA, telefone, GTM, pixel, domínio, webhook ou campanha">
+            <button class="primary" type="button" onclick="applySearch()">Buscar</button>
+            <button class="secondary" type="button" onclick="resetSearch()">Limpar</button>
+          </div>
+        </div>
+        <div class="status-panel">
+          <strong>Status geral</strong>
+          <span id="statusText">Carregando dados</span>
+          <p id="statusDescription">Aguardando leitura da base oficial do GitHub.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="card"><small>Registros ativos</small><strong id="total">0</strong></div>
+      <div class="card"><small>Validados</small><strong id="validated">0</strong></div>
+      <div class="card"><small>A validar</small><strong id="pending">0</strong></div>
+      <div class="card"><small>Risco alto/crítico</small><strong id="riskCount">0</strong></div>
+      <div class="card"><small>Sem 2FA</small><strong id="without2fa">0</strong></div>
+      <div class="card"><small>Código a validar</small><strong id="ownerPending">0</strong></div>
+    </section>
+
+    <section class="workspace">
+      <aside>
+        <h3>Filtros</h3>
+        <button class="filter active" type="button" onclick="filterBy('ativos', this)">Ativos</button>
+        <button class="filter" type="button" onclick="filterBy('A validar', this)">A validar</button>
+        <button class="filter" type="button" onclick="filterBy('Validado', this)">Validados</button>
+        <button class="filter" type="button" onclick="filterBy('Risco alto', this)">Risco alto/crítico</button>
+        <button class="filter" type="button" onclick="filterBy('Sem 2FA', this)">Sem 2FA</button>
+        <button class="filter" type="button" onclick="filterBy('Código a validar', this)">Código a validar</button>
+        <button class="filter" type="button" onclick="filterBy('Landing Page', this)">Landing pages</button>
+        <button class="filter" type="button" onclick="filterBy('Tracking', this)">Tracking</button>
+        <button class="filter" type="button" onclick="filterBy('Automação', this)">Automação</button>
+        <button class="filter" type="button" onclick="filterBy('CRM', this)">CRM</button>
+        <button class="filter" type="button" onclick="filterBy('Arquivado', this)">Arquivados</button>
+        <div class="security-summary">
+          <h3>Regra de segurança</h3>
+          <p>Registrar apenas telefone mascarado e quem recebe o código. Não registrar senha, token, código 2FA, recovery code, número completo ou dados de leads.</p>
+        </div>
+      </aside>
+
+      <div class="table-card">
+        <div class="table-head">
+          <div>
+            <h3>Registros operacionais</h3>
+            <p>Clique em qualquer linha para visualizar os detalhes completos do ativo.</p>
+          </div>
+          <div class="table-actions">
+            <button class="secondary mini" type="button" onclick="openDrawer('novo')">Criar</button>
+            <button class="secondary mini" type="button" onclick="downloadDocumentation()">Gerar documentação</button>
+            <button class="secondary mini" type="button" onclick="exportCsv('inventario')">Exportar Excel/CSV</button>
+            <button class="secondary mini" type="button" onclick="exportCsv('seguranca')">Exportar 2FA</button>
+            <button class="secondary mini" type="button" onclick="exportCsv('pendencias')">Exportar pendências</button>
+            <button class="secondary mini" type="button" onclick="exportJson()">Exportar JSON</button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Ativo</th>
+              <th>Software</th>
+              <th>Categoria</th>
+              <th>Responsável</th>
+              <th>Status</th>
+              <th>2FA</th>
+              <th>Quem recebe o código</th>
+              <th>Método</th>
+              <th>Risco</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="records"></tbody>
+        </table>
+        <div id="emptyState" class="empty-state hidden">
+          <strong>Nenhum registro encontrado.</strong>
+          <span>Use “Novo registro” para criar uma solicitação no GitHub.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="drawer" id="drawer">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div>
+          <h3 id="drawerTitle">Novo registro</h3>
+          <p>Os campos mudam automaticamente conforme o software/plataforma selecionado.</p>
+        </div>
+        <button class="secondary mini" type="button" onclick="closeDrawer()">Fechar</button>
+      </div>
+
+      <input type="hidden" id="editingId">
+
+      <div class="form-section">
+        <h4>1. Software e classificação</h4>
+        <p>Selecione primeiro o software. Os campos específicos serão exibidos abaixo.</p>
+        <div class="form-grid">
+          <div class="field"><label>Ação</label><select id="acao"><option>Criar</option><option>Atualizar</option><option>Validar</option><option>Reprovar</option><option>Arquivar</option><option>Excluir</option></select></div>
+          <div class="field"><label>Software / Plataforma</label><select id="software" onchange="onSoftwareChange()"></select></div>
+          <div class="field"><label>Nome do ativo</label><input id="nome" placeholder="Ex.: Make, GTM, Meta Pixel, Meu Novo Lar"></div>
+          <div class="field"><label>Categoria</label><input id="categoria" placeholder="Preenchido automaticamente, mas pode ser ajustado"></div>
+          <div class="field"><label>Responsável operacional</label><input id="responsavel" placeholder="Ex.: Marketing, Tecnologia, Jorge, Terceirizado"></div>
+          <div class="field"><label>Área gestora</label><input id="area" placeholder="Ex.: Marketing, Tecnologia, Processos"></div>
+          <div class="field"><label>Status</label><select id="status"><option>A validar</option><option>Validado</option><option>Incompleto</option><option>Ativo</option><option>Inativo</option><option>Reprovado</option><option>Arquivado</option></select></div>
+          <div class="field"><label>URL principal / acesso</label><input id="url" placeholder="URL principal do ativo"></div>
+        </div>
+      </div>
+
+      <div class="form-section" id="softwareSpecificSection">
+        <h4 id="specificTitle">2. Campos específicos</h4>
+        <p id="specificDescription">Campos dinâmicos conforme o software selecionado.</p>
+        <div class="form-grid" id="specificFields"></div>
+      </div>
+
+      <div class="form-section">
+        <h4>3. Segurança e recuperação de acesso</h4>
+        <p>Indique quem recebe o código de verificação. Não inserir número completo nem código recebido.</p>
+        <div class="form-grid">
+          <div class="field"><label>2FA ativo</label><select id="twofa"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Método de 2FA</label><select id="twofaMethod"><option>A validar</option><option>SMS</option><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Aplicativo autenticador</option><option>Chave de segurança</option><option>Outro</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Quem recebe o código</label><input id="twofaOwner" placeholder="Ex.: Jorge, Marketing, Tecnologia, Terceirizado, A validar"></div>
+          <div class="field"><label>Tipo de responsável pelo código</label><select id="twofaOwnerType"><option>A validar</option><option>Funcionário</option><option>Gestor</option><option>Marketing</option><option>Tecnologia</option><option>Terceirizado</option><option>Ex-colaborador</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Telefone vinculado, mascarado</label><input id="twofaPhoneMasked" placeholder="Ex.: (***) *****-1234"></div>
+          <div class="field"><label>Tipo do telefone</label><select id="phoneType"><option>A validar</option><option>Corporativo</option><option>Pessoal autorizado</option><option>Terceirizado</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Existe segundo administrador?</label><select id="secondAdmin"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Recuperação de acesso validada?</label><select id="recoveryValidated"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <h4>4. Governança e próxima ação</h4>
+        <div class="form-grid">
+          <div class="field"><label>Risco manual</label><select id="manualRisk"><option>Automático</option><option>Baixo</option><option>Médio</option><option>Alto</option><option>Crítico</option></select></div>
+          <div class="field"><label>Última validação</label><input id="lastValidation" placeholder="Ex.: 18/08/2026 ou A validar"></div>
+          <div class="field full"><label>Observações</label><textarea id="obs" placeholder="Descreva contexto, responsável, integração vinculada ou dependências."></textarea></div>
+          <div class="field full"><label>Próxima ação</label><textarea id="next" placeholder="Ex.: Identificar quem recebe o código, migrar SMS para autenticador, adicionar segundo administrador."></textarea></div>
+        </div>
+      </div>
+
+      <div class="security-note"><strong>Segurança:</strong> não inserir senhas, tokens, chaves de API, códigos 2FA, recovery codes, número completo de telefone, prints de código, dados pessoais de leads ou informações financeiras sensíveis.</div>
+      <div class="drawer-actions">
+        <button class="primary" type="button" onclick="saveToGitHub()">Salvar no GitHub</button>
+        <button class="success" type="button" onclick="requestStatusFromForm('Validado')">Validar no GitHub</button>
+        <button class="danger" type="button" onclick="requestStatusFromForm('Reprovado')">Reprovar no GitHub</button>
+        <button class="warning" type="button" onclick="requestStatusFromForm('Arquivado')">Arquivar no GitHub</button>
+        <button class="danger" type="button" onclick="requestStatusFromForm('Excluir')">Excluir no GitHub</button>
+        <button class="blue" type="button" onclick="downloadCurrentMarkdown()">Baixar Markdown</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-drawer" id="detailsDrawer">
+    <div class="details-panel">
+      <div class="details-header">
+        <div>
+          <h3 id="detailsTitle">Detalhes do registro</h3>
+          <p id="detailsSubtitle">Visualização completa do ativo operacional.</p>
+        </div>
+        <button class="secondary mini" type="button" onclick="closeDetails()">Fechar</button>
+      </div>
+      <div id="detailsContent"></div>
+      <div class="details-actions">
+        <button class="secondary" type="button" onclick="editFromDetails()">Editar</button>
+        <button class="success" type="button" onclick="statusFromDetails('Validado')">Validar no GitHub</button>
+        <button class="danger" type="button" onclick="statusFromDetails('Reprovado')">Reprovar no GitHub</button>
+        <button class="warning" type="button" onclick="statusFromDetails('Arquivado')">Arquivar no GitHub</button>
+        <button class="danger" type="button" onclick="statusFromDetails('Excluir')">Excluir no GitHub</button>
+        <button class="blue" type="button" onclick="downloadDetailsMarkdown()">Baixar Markdown</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <footer>Growth Ops InvestSmart • Painel sem logotipo • Fundo branco • GitHub Pages • Fonte oficial no GitHub</footer>
+  <script src="assets/app.js"></script>
+</body>
+</html>
