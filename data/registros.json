@@ -11,9 +11,9 @@
     "status": "Validado",
     "url": "https://www.make.com",
     "twofa": "Não aplicável",
-    "twofaMethod": "A validar",
+    "twofaMethod": "Não aplicável",
     "twofaOwner": "A validar",
-    "twofaOwnerType": "A validar",
+    "twofaOwnerType": "Não aplicável",
     "twofaPhoneMasked": "",
     "phoneType": "A validar",
     "secondAdmin": "Não",
@@ -33,6 +33,6 @@
       "billingOwner": "Jorge Araujo"
     },
     "createdAt": "2026-08-18T20:45:32.844Z",
-    "updatedAt": "2026-08-18T20:48:10.346Z"
+    "updatedAt": "2026-08-18T20:49:50.185Z"
   }
 ]
