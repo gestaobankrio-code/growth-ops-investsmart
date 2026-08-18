@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787087474657-d7e937b7936d5",
+    "date": "2026-08-18T21:11:14.657Z",
+    "issueNumber": 9,
+    "action": "Criar",
+    "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
+    "software": "Landing Page",
+    "ativo": "Landing Page",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787086340432-0306c47625482",
     "date": "2026-08-18T20:52:20.432Z",
     "issueNumber": 8,
