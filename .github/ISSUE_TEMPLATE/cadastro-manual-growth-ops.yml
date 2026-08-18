@@ -1,0 +1,38 @@
+name: "Cadastro manual Growth Ops"
+description: "Fallback manual para cadastrar, atualizar, validar, arquivar ou excluir registros Growth Ops. Preferencialmente use o painel."
+title: "[Growth Ops] "
+labels:
+  - growth-ops
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use este formulário apenas se o painel não estiver disponível.
+        Não inclua senhas, tokens, chaves de API, códigos 2FA, recovery codes, número completo de telefone ou dados pessoais de leads.
+  - type: dropdown
+    id: acao
+    attributes:
+      label: "Ação"
+      options:
+        - "Criar"
+        - "Atualizar"
+        - "Validar"
+        - "Reprovar"
+        - "Arquivar"
+        - "Excluir"
+    validations:
+      required: true
+  - type: input
+    id: ativo
+    attributes:
+      label: "Ativo / Plataforma"
+      placeholder: "Ex.: Make, GTM, Meta Ads, Landing Page"
+    validations:
+      required: true
+  - type: textarea
+    id: detalhes
+    attributes:
+      label: "Detalhes"
+      placeholder: "Descreva os campos relevantes. Para automação completa, use o painel para gerar a Issue estruturada."
+    validations:
+      required: true
