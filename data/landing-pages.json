@@ -20,7 +20,7 @@
     "recoveryValidated": "Não aplicável",
     "manualRisk": "Automático",
     "lastValidation": "A validar",
-    "obs": "Acesso: gestaobankrio@gmail.com \nAutenticação pelo Gmail.",
+    "obs": "Acesso: gestaobankrio@gmail.com /// \nAutenticação pelo Gmail.",
     "next": "A validar",
     "extra": {
       "projectName": "",
@@ -33,6 +33,6 @@
       "lpOwner": ""
     },
     "createdAt": "2026-08-18T21:11:14.649Z",
-    "updatedAt": "2026-08-18T21:22:21.578Z"
+    "updatedAt": "2026-08-18T21:28:28.555Z"
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787088508563-2c0596d3a3376",
+    "date": "2026-08-18T21:28:28.563Z",
+    "issueNumber": 11,
+    "action": "Atualizar",
+    "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
+    "software": "Lovable",
+    "ativo": "Landing Page",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787088141585-65c8c8d18ee33",
     "date": "2026-08-18T21:22:21.585Z",
     "issueNumber": 10,
