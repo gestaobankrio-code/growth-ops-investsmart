@@ -1,13 +1,20 @@
-/* Correção definitiva da tabela e coluna de ações */
+/* =========================================================
+   CORREÇÃO DEFINITIVA DA TABELA
+   Ajusta rolagem horizontal e impede corte da coluna Ações
+   ========================================================= */
+
 .table-card {
+  width: 100%;
   overflow-x: auto !important;
   overflow-y: visible !important;
+  position: relative;
 }
 
 .table-card table {
   width: 100%;
-  min-width: 1450px;
+  min-width: 1480px;
   border-collapse: collapse;
+  table-layout: auto;
 }
 
 .table-card th,
@@ -17,39 +24,98 @@
 
 .table-card th:last-child,
 .table-card td:last-child {
-  min-width: 150px;
-  width: 150px;
-  background: #ffffff;
+  min-width: 170px;
+  width: 170px;
+  max-width: 170px;
   position: sticky;
   right: 0;
-  z-index: 5;
+  z-index: 6;
+  background: #ffffff;
   box-shadow: -10px 0 18px rgba(17, 24, 39, 0.06);
 }
 
 .table-card th:last-child {
-  z-index: 8;
+  z-index: 9;
   background: #fafafa;
 }
 
-.table-card td:last-child .actions {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 8px;
-  min-width: 120px;
-}
-
-.table-card td:last-child .actions button {
-  width: 100%;
-  justify-content: center;
-}
-
-.table-card tbody tr td:last-child {
+.table-card td:last-child {
   padding-right: 18px;
+  padding-left: 14px;
+}
+
+.table-card td:last-child .actions {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  min-width: 130px;
+  width: 100%;
+}
+
+.table-card td:last-child .actions button,
+.table-card td:last-child .actions .button {
+  width: 100%;
+  min-width: 110px;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.table-card tbody tr:hover td:last-child {
+  background: #ffffff;
+}
+
+.table-card::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-card::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 999px;
+}
+
+.table-card::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.table-card::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (max-width: 1120px) {
+  .table-card table {
+    min-width: 1480px;
+  }
 }
 
 @media (max-width: 900px) {
+  .table-card {
+    overflow-x: auto !important;
+  }
+
   .table-card table {
-    min-width: 1450px;
+    min-width: 1480px;
+  }
+
+  .table-card th:last-child,
+  .table-card td:last-child {
+    min-width: 165px;
+    width: 165px;
+    max-width: 165px;
+  }
+}
+
+@media (max-width: 640px) {
+  .table-card th:last-child,
+  .table-card td:last-child {
+    position: sticky;
+    right: 0;
+  }
+
+  .table-card td:last-child .actions button,
+  .table-card td:last-child .actions .button {
+    width: 100%;
   }
 }
