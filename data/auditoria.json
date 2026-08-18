@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787081911316-636a998dc621a",
+    "date": "2026-08-18T19:38:31.317Z",
+    "issueNumber": 4,
+    "action": "Excluir",
+    "recordId": "b825f66b-a4a7-48e1-afdf-b6a59161ad6c",
+    "software": "Make",
+    "ativo": "Make",
+    "statusBefore": "A validar",
+    "statusAfter": "Excluído",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787081842910-e3ee7c5649bdb",
     "date": "2026-08-18T19:37:22.910Z",
     "issueNumber": 3,
