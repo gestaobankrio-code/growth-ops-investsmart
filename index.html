@@ -116,12 +116,25 @@
       min-width: 260px;
     }
 
-    .brand-symbol {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
+    .brand-logo-wrap {
+      width: 184px;
+      min-height: 46px;
+      padding: 8px 14px;
       border-radius: 14px;
+      background: var(--is-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-shadow: var(--shadow-purple);
+      flex: 0 0 auto;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 100%;
+      max-width: 156px;
+      height: auto;
+      object-fit: contain;
     }
 
     .brand-copy strong {
@@ -923,6 +936,20 @@
         padding-right: 18px;
       }
 
+      .brand {
+        width: 100%;
+      }
+
+      .brand-logo-wrap {
+        width: 160px;
+        min-height: 42px;
+        padding: 7px 12px;
+      }
+
+      .brand-logo {
+        max-width: 136px;
+      }
+
       .banner-grid {
         padding: 26px;
       }
@@ -962,18 +989,13 @@
   <header class="navbar">
     <div class="navbar-inner">
       <div class="brand" aria-label="InvestSmart Growth Ops">
-        <svg class="brand-symbol" viewBox="0 0 48 48" role="img" aria-label="Símbolo InvestSmart">
-          <defs>
-            <linearGradient id="investsmartGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#9966FF"></stop>
-              <stop offset="100%" stop-color="#4E008E"></stop>
-            </linearGradient>
-          </defs>
-          <rect width="48" height="48" rx="14" fill="url(#investsmartGradient)"></rect>
-          <path d="M15 31.5L22.5 14H28.8L21.3 31.5H15Z" fill="#FFFFFF"></path>
-          <path d="M26.3 31.5L33.8 14H39L31.5 31.5H26.3Z" fill="#EBFF70"></path>
-          <path d="M12 35H34.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
-        </svg>
+        <div class="brand-logo-wrap">
+          <img
+            class="brand-logo"
+            src="https://investsmart.com.br/wp-content/uploads/2023/08/InvestSmart-1.svg"
+            alt="InvestSmart"
+          >
+        </div>
 
         <div class="brand-copy">
           <strong>InvestSmart Growth Ops</strong>
