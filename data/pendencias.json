@@ -27,6 +27,15 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-recuperacao-de-acesso-nao-validada",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Landing Page",
