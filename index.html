@@ -9,32 +9,24 @@
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
 
     :root {
-      /* =========================================================
-         INVESTSMART DESIGN TOKENS
-         ========================================================= */
-
-      /* Paleta institucional principal */
       --is-black: #000000;
       --is-purple: #9966FF;
       --is-neon: #EBFF70;
       --is-silver: #F3F3F3;
       --is-white: #FFFFFF;
 
-      /* Gradientes oficiais */
       --gradient-gente: linear-gradient(45deg, #CAB0FD 0%, #9966FF 100%);
       --gradient-garra: linear-gradient(45deg, #000000 0%, #300057 100%);
       --gradient-leveza: linear-gradient(45deg, #F3F3F3 0%, #DBDADF 100%);
       --gradient-resultado: linear-gradient(45deg, #9966FF 0%, #4E008E 100%);
       --gradient-trader: linear-gradient(135deg, #EBFF70 0%, #000000 50%, #9966FF 100%);
 
-      /* Paleta de apoio */
       --is-blue: #4D67FF;
       --is-yellow: #FFD039;
       --is-pink: #EF6079;
       --is-red: #EB5E57;
       --is-private-purple: #12002E;
 
-      /* Neutros funcionais */
       --text-primary: #000000;
       --text-secondary: #4A4A4A;
       --text-muted: #6B6B6B;
@@ -42,7 +34,6 @@
       --border-strong: #CFC9DB;
       --surface-soft: #FAFAFA;
 
-      /* UI tokens */
       --radius-xs: 8px;
       --radius-sm: 12px;
       --radius-md: 18px;
@@ -77,7 +68,8 @@
 
     button,
     input,
-    select {
+    select,
+    textarea {
       font-family: inherit;
     }
 
@@ -85,10 +77,6 @@
       border: 0;
       cursor: pointer;
     }
-
-    /* =========================================================
-       HEADER / NAVBAR
-       ========================================================= */
 
     .navbar {
       background: var(--is-black);
@@ -112,27 +100,27 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 18px;
       min-width: 260px;
     }
 
     .brand-logo-wrap {
-      width: 184px;
-      min-height: 46px;
-      padding: 8px 14px;
-      border-radius: 14px;
-      background: var(--is-white);
+      width: 178px;
+      min-height: 44px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-purple);
+      justify-content: flex-start;
       flex: 0 0 auto;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      padding: 0;
     }
 
     .brand-logo {
       display: block;
       width: 100%;
-      max-width: 156px;
+      max-width: 178px;
       height: auto;
       object-fit: contain;
     }
@@ -234,16 +222,17 @@
       color: var(--is-white);
     }
 
+    .btn-red {
+      background: var(--is-red);
+      color: var(--is-white);
+    }
+
     .btn-mini {
       min-height: 34px;
       padding: 8px 12px;
       font-size: 13px;
       line-height: 17px;
     }
-
-    /* =========================================================
-       LAYOUT BASE
-       ========================================================= */
 
     .page {
       max-width: 1440px;
@@ -321,7 +310,8 @@
       transition: border-color 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .search-input:focus {
+    .search-input:focus,
+    .form-control:focus {
       border-color: var(--is-purple);
       box-shadow: 0 0 0 4px rgba(153, 102, 255, 0.18);
     }
@@ -393,10 +383,6 @@
       line-height: 22px;
       font-weight: 600;
     }
-
-    /* =========================================================
-       METRIC CARDS
-       ========================================================= */
 
     .metrics-grid {
       margin: 26px 0;
@@ -485,10 +471,6 @@
     .metric-dark strong {
       color: var(--is-neon);
     }
-
-    /* =========================================================
-       MAIN WORKSPACE
-       ========================================================= */
 
     .workspace {
       display: grid;
@@ -633,7 +615,7 @@
 
     table {
       width: 100%;
-      min-width: 1040px;
+      min-width: 1180px;
       border-collapse: collapse;
     }
 
@@ -688,7 +670,8 @@
       font-weight: 300;
     }
 
-    .status-badge {
+    .status-badge,
+    .risk-badge {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -702,7 +685,8 @@
       white-space: nowrap;
     }
 
-    .status-badge::before {
+    .status-badge::before,
+    .risk-badge::before {
       content: "";
       width: 7px;
       height: 7px;
@@ -710,23 +694,31 @@
       background: currentColor;
     }
 
-    .status-validado {
+    .status-validado,
+    .risk-baixo {
       background: rgba(77, 103, 255, 0.12);
       color: var(--is-blue);
     }
 
-    .status-a-validar {
+    .status-a-validar,
+    .risk-medio {
       background: rgba(255, 208, 57, 0.18);
       color: #8A6500;
     }
 
-    .status-reprovado {
+    .status-reprovado,
+    .risk-alto {
       background: rgba(239, 96, 121, 0.14);
       color: var(--is-pink);
     }
 
-    .status-incompleto {
-      background: rgba(235, 94, 87, 0.14);
+    .status-arquivado {
+      background: rgba(0, 0, 0, 0.08);
+      color: #333333;
+    }
+
+    .risk-critico {
+      background: rgba(235, 94, 87, 0.16);
       color: var(--is-red);
     }
 
@@ -737,11 +729,8 @@
       flex-wrap: wrap;
     }
 
-    /* =========================================================
-       MODAL
-       ========================================================= */
-
-    .modal-backdrop {
+    .modal-backdrop,
+    .details-backdrop {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.54);
@@ -752,17 +741,22 @@
       z-index: 100;
     }
 
-    .modal-backdrop.open {
+    .modal-backdrop.open,
+    .details-backdrop.open {
       display: flex;
     }
 
-    .modal {
-      width: min(680px, 100%);
+    .modal,
+    .details-panel {
+      width: min(920px, 100%);
+      max-height: 92vh;
       background: var(--is-white);
       border-radius: var(--radius-lg);
       box-shadow: 0 28px 80px rgba(0, 0, 0, 0.30);
       overflow: hidden;
       animation: modalIn 0.22s ease both;
+      display: flex;
+      flex-direction: column;
     }
 
     @keyframes modalIn {
@@ -777,7 +771,8 @@
       }
     }
 
-    .modal-header {
+    .modal-header,
+    .details-header {
       background: var(--gradient-garra);
       color: var(--is-white);
       padding: 24px;
@@ -785,9 +780,11 @@
       justify-content: space-between;
       gap: 18px;
       align-items: flex-start;
+      flex: 0 0 auto;
     }
 
-    .modal-header h2 {
+    .modal-header h2,
+    .details-header h2 {
       margin: 0;
       font-size: 24px;
       line-height: 28px;
@@ -795,7 +792,8 @@
       letter-spacing: -0.02em;
     }
 
-    .modal-header p {
+    .modal-header p,
+    .details-header p {
       margin: 6px 0 0;
       color: rgba(255, 255, 255, 0.70);
       font-size: 14px;
@@ -812,13 +810,42 @@
       font-size: 18px;
       line-height: 22px;
       font-weight: 600;
+      flex: 0 0 auto;
     }
 
-    .modal-body {
+    .modal-body,
+    .details-body {
       padding: 24px;
+      overflow-y: auto;
     }
 
-    .form-grid {
+    .form-section,
+    .detail-section {
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-bottom: 18px;
+      background: var(--is-white);
+    }
+
+    .form-section h3,
+    .detail-section h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+
+    .form-section p {
+      margin: -4px 0 16px;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+
+    .form-grid,
+    .detail-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -842,7 +869,7 @@
 
     .form-control {
       width: 100%;
-      height: 44px;
+      min-height: 44px;
       border-radius: 14px;
       border: 1px solid var(--border-strong);
       background: var(--is-white);
@@ -855,22 +882,54 @@
       transition: border-color 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .form-control:focus {
-      border-color: var(--is-purple);
-      box-shadow: 0 0 0 4px rgba(153, 102, 255, 0.18);
+    textarea.form-control {
+      min-height: 104px;
+      padding: 12px 13px;
+      resize: vertical;
     }
 
-    .modal-footer {
+    .modal-footer,
+    .details-footer {
       padding: 0 24px 24px;
       display: flex;
       justify-content: flex-end;
       gap: 10px;
       flex-wrap: wrap;
+      flex: 0 0 auto;
     }
 
-    /* =========================================================
-       FOOTER
-       ========================================================= */
+    .detail-item {
+      background: var(--surface-soft);
+      border: 1px solid var(--border-soft);
+      border-radius: 14px;
+      padding: 13px;
+    }
+
+    .detail-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .detail-item small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .detail-item strong,
+    .detail-item span {
+      display: block;
+      color: var(--text-primary);
+      font-size: 15px;
+      line-height: 19px;
+      font-weight: 400;
+      overflow-wrap: anywhere;
+      white-space: pre-line;
+    }
 
     .footer {
       margin-top: 34px;
@@ -910,10 +969,6 @@
       color: var(--is-neon);
     }
 
-    /* =========================================================
-       RESPONSIVIDADE
-       ========================================================= */
-
     @media (max-width: 1180px) {
       .metrics-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -938,16 +993,16 @@
 
       .brand {
         width: 100%;
+        align-items: flex-start;
+        flex-direction: column;
       }
 
       .brand-logo-wrap {
-        width: 160px;
-        min-height: 42px;
-        padding: 7px 12px;
+        width: 168px;
       }
 
       .brand-logo {
-        max-width: 136px;
+        max-width: 168px;
       }
 
       .banner-grid {
@@ -963,14 +1018,16 @@
         grid-template-columns: 1fr;
       }
 
-      .form-grid {
+      .form-grid,
+      .detail-grid {
         grid-template-columns: 1fr;
       }
 
       .nav-actions,
       .table-actions,
       .row-actions,
-      .modal-footer {
+      .modal-footer,
+      .details-footer {
         width: 100%;
       }
 
@@ -1005,7 +1062,7 @@
 
       <div class="nav-actions">
         <button class="btn btn-outline" type="button" onclick="openGitHubIssues()">GitHub Issues</button>
-        <button class="btn btn-primary" type="button" onclick="openModal()">+ Novo Registro</button>
+        <button class="btn btn-primary" type="button" onclick="openRecordModal()">+ Novo Registro</button>
         <button class="btn btn-neon" type="button" onclick="refreshPanel()">Atualizar Painel</button>
       </div>
     </div>
@@ -1018,11 +1075,11 @@
           <h1>Painel Executivo de <span>Growth Ops</span></h1>
           <p>
             Central de governança para acompanhar ativos digitais, plataformas, campanhas,
-            responsáveis, homologações e pendências operacionais da frente de Growth Marketing.
+            responsáveis, homologações, acessos, segurança, tracking e pendências operacionais.
           </p>
 
           <div class="search-area">
-            <input id="searchInput" class="search-input" type="search" placeholder="Buscar por ativo, software, responsável, categoria ou status">
+            <input id="searchInput" class="search-input" type="search" placeholder="Buscar por ativo, software, responsável, URL, GTM, pixel, webhook, 2FA ou observações">
             <button class="btn btn-primary" type="button" onclick="applySearch()">Buscar</button>
             <button class="btn btn-soft" type="button" onclick="clearSearch()">Limpar</button>
           </div>
@@ -1079,7 +1136,7 @@
       <div class="metric-card">
         <small>Softwares Integrados</small>
         <strong id="metricSoftware">0</strong>
-        <p>HubSpot, RD, Meta, GA4</p>
+        <p>Plataformas únicas cadastradas</p>
       </div>
 
       <div class="metric-card metric-dark">
@@ -1094,20 +1151,24 @@
         <h2>Filtros</h2>
 
         <div class="filter-list">
-          <button class="filter-button active" type="button" data-filter="Todos" onclick="setFilter('Todos', this)">
+          <button class="filter-button active" type="button" onclick="setFilter('Todos', this)">
             Todos <span class="filter-count" id="countAll">0</span>
           </button>
 
-          <button class="filter-button" type="button" data-filter="Validado" onclick="setFilter('Validado', this)">
+          <button class="filter-button" type="button" onclick="setFilter('Validado', this)">
             Validados <span class="filter-count" id="countValidated">0</span>
           </button>
 
-          <button class="filter-button" type="button" data-filter="A Validar" onclick="setFilter('A Validar', this)">
+          <button class="filter-button" type="button" onclick="setFilter('A validar', this)">
             A Validar <span class="filter-count" id="countPending">0</span>
           </button>
 
-          <button class="filter-button" type="button" data-filter="Reprovado" onclick="setFilter('Reprovado', this)">
+          <button class="filter-button" type="button" onclick="setFilter('Reprovado', this)">
             Reprovados <span class="filter-count" id="countRejected">0</span>
+          </button>
+
+          <button class="filter-button" type="button" onclick="setFilter('Risco alto', this)">
+            Risco alto <span class="filter-count" id="countRisk">0</span>
           </button>
         </div>
 
@@ -1115,7 +1176,7 @@
           <h3>Regra de Governança</h3>
           <p>
             Não registrar senhas, tokens, chaves de API, códigos 2FA, recovery codes,
-            número completo de telefone ou dados pessoais de leads.
+            número completo de telefone, prints de código ou dados pessoais de leads.
           </p>
         </div>
       </aside>
@@ -1124,12 +1185,12 @@
         <div class="table-header">
           <div>
             <h2>Tabela de Gestão de Ativos</h2>
-            <p>Controle operacional de ativos, softwares, responsáveis e status de homologação.</p>
+            <p>Controle operacional de ativos, softwares, responsáveis, segurança e homologação.</p>
           </div>
 
           <div class="table-actions">
             <button class="btn btn-soft btn-mini" type="button" onclick="exportCsv()">Exportar CSV</button>
-            <button class="btn btn-primary btn-mini" type="button" onclick="openModal()">Cadastrar ativo</button>
+            <button class="btn btn-primary btn-mini" type="button" onclick="openRecordModal()">Cadastrar ativo</button>
           </div>
         </div>
 
@@ -1142,6 +1203,7 @@
                 <th>Categoria</th>
                 <th>Responsável</th>
                 <th>Status</th>
+                <th>Risco</th>
                 <th>Ações de Homologação</th>
               </tr>
             </thead>
@@ -1157,7 +1219,7 @@
       <nav class="footer-links" aria-label="Links institucionais">
         <a href="https://investsmart.com.br" target="_blank" rel="noopener">InvestSmart</a>
         <a href="https://github.com/gestaobankrio-code/growth-ops-investsmart/issues" target="_blank" rel="noopener">GitHub Issues</a>
-        <a href="#" onclick="openModal(); return false;">Novo registro</a>
+        <a href="#" onclick="openRecordModal(); return false;">Novo registro</a>
       </nav>
     </footer>
   </main>
@@ -1167,115 +1229,680 @@
       <div class="modal-header">
         <div>
           <h2 id="modalTitle">Novo Registro</h2>
-          <p>Cadastre um ativo para acompanhamento operacional no painel Growth Ops.</p>
+          <p>Cadastre ou atualize um ativo operacional no painel Growth Ops.</p>
         </div>
 
-        <button class="modal-close" type="button" onclick="closeModal()" aria-label="Fechar modal">×</button>
+        <button class="modal-close" type="button" onclick="closeRecordModal()" aria-label="Fechar modal">×</button>
       </div>
 
       <div class="modal-body">
         <form id="recordForm">
-          <div class="form-grid">
-            <div class="field full">
-              <label for="assetName">Nome do Ativo</label>
-              <input id="assetName" class="form-control" type="text" placeholder="Ex.: Página de Obrigado Universal" required>
-            </div>
+          <input type="hidden" id="editingId">
 
-            <div class="field">
-              <label for="assetSoftware">Software</label>
-              <select id="assetSoftware" class="form-control" required>
-                <option value="">Selecione</option>
-                <option>RD Station</option>
-                <option>HubSpot</option>
-                <option>Meta Ads</option>
-                <option>Google Ads</option>
-                <option>GA4</option>
-                <option>GTM</option>
-                <option>Lovable</option>
-                <option>Vercel</option>
-                <option>Make</option>
-                <option>n8n</option>
-                <option>Outro</option>
-              </select>
-            </div>
+          <div class="form-section">
+            <h3>1. Identificação do ativo</h3>
+            <p>Dados principais para localização, consulta e classificação operacional.</p>
 
-            <div class="field">
-              <label for="assetCategory">Categoria</label>
-              <input id="assetCategory" class="form-control" type="text" placeholder="Ex.: Landing Page">
-            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="assetAction">Ação</label>
+                <select id="assetAction" class="form-control">
+                  <option>Criar</option>
+                  <option>Atualizar</option>
+                  <option>Validar</option>
+                  <option>Reprovar</option>
+                  <option>Arquivar</option>
+                  <option>Excluir</option>
+                </select>
+              </div>
 
-            <div class="field">
-              <label for="assetOwner">Responsável</label>
-              <input id="assetOwner" class="form-control" type="text" placeholder="Ex.: Marketing">
-            </div>
+              <div class="field">
+                <label for="assetSoftware">Software / Plataforma</label>
+                <select id="assetSoftware" class="form-control" onchange="onSoftwareChange()"></select>
+              </div>
 
-            <div class="field">
-              <label for="assetStatus">Status</label>
-              <select id="assetStatus" class="form-control">
-                <option>Validado</option>
-                <option selected>A Validar</option>
-                <option>Reprovado</option>
-              </select>
+              <div class="field">
+                <label for="assetName">Nome do ativo</label>
+                <input id="assetName" class="form-control" type="text" placeholder="Ex.: Página de Obrigado Universal" required>
+              </div>
+
+              <div class="field">
+                <label for="assetCategory">Categoria</label>
+                <input id="assetCategory" class="form-control" type="text" placeholder="Ex.: Landing Page">
+              </div>
+
+              <div class="field">
+                <label for="assetOwner">Responsável operacional</label>
+                <input id="assetOwner" class="form-control" type="text" placeholder="Ex.: Marketing, Tecnologia, Terceirizado">
+              </div>
+
+              <div class="field">
+                <label for="assetArea">Área gestora</label>
+                <input id="assetArea" class="form-control" type="text" placeholder="Ex.: Marketing, Tecnologia, Processos">
+              </div>
+
+              <div class="field">
+                <label for="assetStatus">Status</label>
+                <select id="assetStatus" class="form-control">
+                  <option>A validar</option>
+                  <option>Validado</option>
+                  <option>Incompleto</option>
+                  <option>Ativo</option>
+                  <option>Inativo</option>
+                  <option>Reprovado</option>
+                  <option>Arquivado</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="assetUrl">URL principal / acesso</label>
+                <input id="assetUrl" class="form-control" type="url" placeholder="https://...">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3 id="specificTitle">2. Campos específicos</h3>
+            <p id="specificDescription">Campos dinâmicos conforme o software selecionado.</p>
+            <div class="form-grid" id="specificFields"></div>
+          </div>
+
+          <div class="form-section">
+            <h3>3. Segurança e recuperação de acesso</h3>
+            <p>Controle de custódia do 2FA sem registrar códigos, senhas ou números completos.</p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="twofa">2FA ativo</label>
+                <select id="twofa" class="form-control">
+                  <option>A validar</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="twofaMethod">Método de 2FA</label>
+                <select id="twofaMethod" class="form-control">
+                  <option>A validar</option>
+                  <option>SMS</option>
+                  <option>WhatsApp</option>
+                  <option>Ligação</option>
+                  <option>E-mail</option>
+                  <option>Aplicativo autenticador</option>
+                  <option>Chave de segurança</option>
+                  <option>Outro</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="twofaOwner">Responsável pela custódia 2FA</label>
+                <input id="twofaOwner" class="form-control" type="text" placeholder="Ex.: Jorge, Marketing, Tecnologia">
+              </div>
+
+              <div class="field">
+                <label for="twofaOwnerType">Tipo de responsável pela custódia 2FA</label>
+                <select id="twofaOwnerType" class="form-control">
+                  <option>A validar</option>
+                  <option>Funcionário</option>
+                  <option>Gestor</option>
+                  <option>Marketing</option>
+                  <option>Tecnologia</option>
+                  <option>Terceirizado</option>
+                  <option>Ex-colaborador</option>
+                  <option>Desconhecido</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="twofaPhoneMasked">Telefone vinculado, mascarado</label>
+                <input id="twofaPhoneMasked" class="form-control" type="text" placeholder="Ex.: (***) *****-1234">
+              </div>
+
+              <div class="field">
+                <label for="phoneType">Tipo do telefone</label>
+                <select id="phoneType" class="form-control">
+                  <option>A validar</option>
+                  <option>Corporativo</option>
+                  <option>Pessoal autorizado</option>
+                  <option>Terceirizado</option>
+                  <option>Desconhecido</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="secondAdmin">Existe segundo administrador?</label>
+                <select id="secondAdmin" class="form-control">
+                  <option>A validar</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="recoveryValidated">Recuperação de acesso validada?</label>
+                <select id="recoveryValidated" class="form-control">
+                  <option>A validar</option>
+                  <option>Sim</option>
+                  <option>Não</option>
+                  <option>Não aplicável</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>4. Governança e próxima ação</h3>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="manualRisk">Risco manual</label>
+                <select id="manualRisk" class="form-control">
+                  <option>Automático</option>
+                  <option>Baixo</option>
+                  <option>Médio</option>
+                  <option>Alto</option>
+                  <option>Crítico</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="lastValidation">Última validação</label>
+                <input id="lastValidation" class="form-control" type="text" placeholder="Ex.: 20/08/2026">
+              </div>
+
+              <div class="field full">
+                <label for="observations">Observações</label>
+                <textarea id="observations" class="form-control" placeholder="Descreva contexto, integração vinculada, dependências, histórico ou pontos de atenção."></textarea>
+              </div>
+
+              <div class="field full">
+                <label for="nextAction">Próxima ação</label>
+                <textarea id="nextAction" class="form-control" placeholder="Ex.: Identificar responsável pela custódia 2FA, validar tracking, revisar permissões."></textarea>
+              </div>
             </div>
           </div>
         </form>
       </div>
 
       <div class="modal-footer">
-        <button class="btn btn-soft" type="button" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn-soft" type="button" onclick="closeRecordModal()">Cancelar</button>
         <button class="btn btn-neon" type="button" onclick="saveRecord()">Salvar Registro</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="details-backdrop" id="detailsModal">
+    <div class="details-panel" role="dialog" aria-modal="true" aria-labelledby="detailsTitle">
+      <div class="details-header">
+        <div>
+          <h2 id="detailsTitle">Detalhes do registro</h2>
+          <p id="detailsSubtitle">Consulta completa do ativo operacional.</p>
+        </div>
+
+        <button class="modal-close" type="button" onclick="closeDetails()" aria-label="Fechar detalhes">×</button>
+      </div>
+
+      <div class="details-body" id="detailsBody"></div>
+
+      <div class="details-footer">
+        <button class="btn btn-soft" type="button" onclick="editCurrentDetails()">Editar</button>
+        <button class="btn btn-blue" type="button" onclick="setCurrentDetailsStatus('Validado')">Validar</button>
+        <button class="btn btn-pink" type="button" onclick="setCurrentDetailsStatus('Reprovado')">Reprovar</button>
+        <button class="btn btn-soft" type="button" onclick="closeDetails()">Fechar</button>
       </div>
     </div>
   </div>
 
   <script>
     const githubIssuesUrl = 'https://github.com/gestaobankrio-code/growth-ops-investsmart/issues';
+    const storageKey = 'investsmart-growth-ops-records-v1';
+
+    const softwareProfiles = {
+      'Make': {
+        category: 'Automação / Integração',
+        url: 'https://www.make.com',
+        description: 'Cenários, conexões, billing, origem e destino dos dados.',
+        fields: [
+          ['organization', 'Organização / Team', 'A validar'],
+          ['scenarioName', 'Nome do cenário', 'A validar'],
+          ['scenarioStatus', 'Status do cenário', 'Ativo / Pausado / A validar'],
+          ['trigger', 'Gatilho', 'Webhook / Schedule / Manual'],
+          ['connections', 'Conexões utilizadas', 'A validar'],
+          ['sourceApp', 'Aplicativo de origem', 'A validar'],
+          ['destinationApp', 'Aplicativo de destino', 'A validar'],
+          ['billingOwner', 'Responsável pelo billing', 'A validar']
+        ]
+      },
+
+      'Google Ads': {
+        category: 'Mídia paga',
+        url: 'https://ads.google.com',
+        description: 'Campanhas, conversões, billing, tags e permissões.',
+        fields: [
+          ['customerId', 'Customer ID', '000-000-0000'],
+          ['mcc', 'MCC vinculada?', 'Sim / Não / A validar'],
+          ['billing', 'Billing / cobrança', 'A validar'],
+          ['mainConversion', 'Conversão principal', 'Lead / WhatsApp / Form submit'],
+          ['linkedGtm', 'GTM vinculado', 'A validar'],
+          ['linkedGa4', 'GA4 vinculado', 'A validar'],
+          ['mediaOwner', 'Responsável de mídia', 'A validar'],
+          ['campaignStatus', 'Status das campanhas', 'Ativas / Pausadas / A validar']
+        ]
+      },
+
+      'Meta Ads': {
+        category: 'Mídia paga',
+        url: 'https://business.facebook.com',
+        description: 'Business Manager, contas de anúncio, páginas, pixels e permissões.',
+        fields: [
+          ['businessManagerId', 'Business Manager ID', 'A validar'],
+          ['adAccountId', 'Conta de anúncio ID', 'act_...'],
+          ['page', 'Página vinculada', 'A validar'],
+          ['instagram', 'Instagram vinculado', 'A validar'],
+          ['pixelId', 'Meta Pixel ID', 'A validar'],
+          ['domainVerified', 'Domínio verificado?', 'Sim / Não / A validar'],
+          ['events', 'Eventos configurados', 'Lead, PageView'],
+          ['bmOwner', 'Responsável pelo BM', 'A validar']
+        ]
+      },
+
+      'Google Tag Manager': {
+        category: 'Tracking',
+        url: 'https://tagmanager.google.com',
+        description: 'Containers, workspaces, permissões de publicação e tags.',
+        fields: [
+          ['gtmId', 'GTM ID', 'GTM-XXXXXXX'],
+          ['containerName', 'Nome do container', 'A validar'],
+          ['workspace', 'Workspace principal', 'Default Workspace'],
+          ['publishPermission', 'Quem pode publicar?', 'A validar'],
+          ['criticalTags', 'Tags críticas', 'GA4, Meta Pixel, Google Ads'],
+          ['environment', 'Ambiente', 'Web / Server-side'],
+          ['lastPublish', 'Última publicação', 'A validar'],
+          ['technicalOwner', 'Responsável técnico', 'A validar']
+        ]
+      },
+
+      'Google Analytics / GA4': {
+        category: 'Analytics',
+        url: 'https://analytics.google.com',
+        description: 'Propriedades GA4, eventos, conversões e acessos.',
+        fields: [
+          ['propertyId', 'Property ID', 'A validar'],
+          ['measurementId', 'Measurement ID', 'G-XXXXXXXXXX'],
+          ['streamUrl', 'Stream URL', 'A validar'],
+          ['events', 'Eventos principais', 'page_view, generate_lead'],
+          ['conversions', 'Conversões marcadas', 'A validar'],
+          ['googleAdsLink', 'Vínculo Google Ads?', 'Sim / Não / A validar'],
+          ['retention', 'Retenção de dados', 'A validar'],
+          ['analyticsOwner', 'Responsável Analytics', 'A validar']
+        ]
+      },
+
+      'Meta Pixel': {
+        category: 'Tracking',
+        url: 'https://business.facebook.com/events_manager2',
+        description: 'Pixel, eventos, domínio verificado e integração com Meta Ads.',
+        fields: [
+          ['pixelId', 'Meta Pixel ID', 'A validar'],
+          ['datasetId', 'Dataset ID', 'A validar'],
+          ['domain', 'Domínio instalado', 'A validar'],
+          ['events', 'Eventos ativos', 'PageView, Lead'],
+          ['capi', 'Conversions API ativa?', 'Sim / Não / A validar'],
+          ['dedup', 'Deduplicação configurada?', 'Sim / Não / A validar'],
+          ['installSource', 'Origem da instalação', 'GTM / Código / A validar'],
+          ['pixelOwner', 'Responsável pelo pixel', 'A validar']
+        ]
+      },
+
+      'RD STATION': {
+        category: 'Automação de marketing / CRM',
+        url: 'https://app.rdstation.com.br',
+        description: 'Conta RD Station, formulários, landing pages, automações, conversões, integrações e destino dos leads.',
+        fields: [
+          ['accountName', 'Nome da conta RD Station', 'A validar'],
+          ['loginEmail', 'Usuário / login / e-mail de acesso', 'A validar'],
+          ['plan', 'Plano contratado', 'A validar'],
+          ['mainDomain', 'Domínio principal', 'A validar'],
+          ['landingPages', 'Landing pages vinculadas', 'A validar'],
+          ['forms', 'Formulários ativos', 'A validar'],
+          ['conversionEvents', 'Eventos de conversão', 'Lead, Form Submit, Conversão RD'],
+          ['automationFlows', 'Fluxos de automação ativos', 'A validar'],
+          ['integrations', 'Integrações ativas', 'Webhook / HubSpot / Bitrix / Sheets / n8n'],
+          ['leadDestination', 'Destino dos leads', 'Bitrix / HubSpot / RD CRM / Sheets / A validar'],
+          ['tracking', 'Tracking instalado', 'GTM / GA4 / Meta Pixel / A validar'],
+          ['rdOwner', 'Responsável pela conta RD', 'Marketing / Terceirizado / A validar']
+        ]
+      },
+
+      'HubSpot': {
+        category: 'CRM / Formulários',
+        url: 'https://app.hubspot.com',
+        description: 'Portal, formulários, propriedades e integrações.',
+        fields: [
+          ['portalId', 'Portal ID', 'A validar'],
+          ['formId', 'Form ID principal', 'A validar'],
+          ['properties', 'Propriedades críticas', 'firstname, email, phone, origem'],
+          ['integrationSource', 'Origem da integração', 'Lovable / n8n / Make'],
+          ['leadDestination', 'Destino do lead', 'HubSpot / Bitrix / Sheets'],
+          ['operator', 'Profissional responsável', 'Terceirizado / A validar'],
+          ['plan', 'Plano HubSpot', 'Free / Starter / Pro'],
+          ['sla', 'SLA de atualização', 'A validar']
+        ]
+      },
+
+      'Bitrix': {
+        category: 'CRM',
+        url: 'A validar',
+        description: 'CRM oficial, distribuição de leads, origem, regras e SLA.',
+        fields: [
+          ['portal', 'Portal Bitrix', 'A validar'],
+          ['pipeline', 'Pipeline/Funil', 'A validar'],
+          ['leadSource', 'Origem do lead', 'A validar'],
+          ['distributionRule', 'Regra de distribuição', 'A validar'],
+          ['sla', 'SLA de atendimento', 'A validar'],
+          ['requiredFields', 'Campos obrigatórios', 'Nome, telefone, e-mail, origem'],
+          ['admin', 'Administrador Bitrix', 'A validar'],
+          ['marketingAccess', 'Marketing possui gerência?', 'Não / Parcial / A validar']
+        ]
+      },
+
+      'n8n': {
+        category: 'Automação / Integração',
+        url: 'https://n8n.investsmart.com.br',
+        description: 'Workflows, webhooks, origem, destino e responsável técnico.',
+        fields: [
+          ['workflowName', 'Nome do workflow', 'A validar'],
+          ['webhookUrl', 'Webhook URL', 'Registrar com cuidado'],
+          ['triggerType', 'Tipo de gatilho', 'Webhook / Schedule / Manual'],
+          ['source', 'Origem dos dados', 'Lovable / API / A validar'],
+          ['destination', 'Destino dos dados', 'Bitrix / HubSpot / Sheets'],
+          ['workflowStatus', 'Status do workflow', 'Ativo / Inativo / A validar'],
+          ['technicalOwner', 'Responsável técnico', 'Tecnologia / Processos'],
+          ['lastTest', 'Último teste', 'A validar']
+        ]
+      },
+
+      'Lovable': {
+        category: 'Landing pages',
+        url: 'https://lovable.dev',
+        description: 'Projetos, deploys, formulários, domínio e webhook.',
+        fields: [
+          ['projectName', 'Nome do projeto Lovable', 'A validar'],
+          ['lovableUrl', 'URL Lovable', 'https://...lovable.app'],
+          ['deployUrl', 'URL de deploy', 'A validar'],
+          ['publicDomain', 'Domínio público', 'A validar'],
+          ['formFields', 'Campos do formulário', 'Nome, e-mail, telefone'],
+          ['webhookUrl', 'Webhook vinculado', 'A validar'],
+          ['tracking', 'Tracking instalado', 'GTM / GA4 / Pixel'],
+          ['lpOwner', 'Responsável pela LP', 'Marketing']
+        ]
+      },
+
+      'Vercel': {
+        category: 'Deploy / Infraestrutura',
+        url: 'https://vercel.com',
+        description: 'Projetos, domínios, ambientes, variáveis e deploys.',
+        fields: [
+          ['projectName', 'Nome do projeto Vercel', 'A validar'],
+          ['productionUrl', 'URL de produção', 'A validar'],
+          ['customDomain', 'Domínio customizado', 'A validar'],
+          ['team', 'Team / Workspace', 'A validar'],
+          ['linkedRepo', 'Repositório vinculado', 'A validar'],
+          ['envVars', 'Variáveis de ambiente', 'Não registrar valores sensíveis'],
+          ['deployStatus', 'Status do deploy', 'Ativo / Erro / A validar'],
+          ['deployOwner', 'Responsável pelo deploy', 'Tecnologia / A validar']
+        ]
+      },
+
+      'Landing Page': {
+        category: 'Landing Page',
+        url: 'A validar',
+        description: 'Campanha, identificador, domínio, URL, webhook, tracking e destino do lead.',
+        fields: [
+          ['campaignName', 'Campanha / Projeto', 'Ex.: Meu Novo Lar'],
+          ['variation', 'Variação', 'Orgânico / Marketing / Samyr'],
+          ['identifier', 'Identificador', 'UC_XXXXX'],
+          ['lovableUrl', 'URL Lovable / Deploy', 'A validar'],
+          ['publicDomain', 'Domínio público', 'A validar'],
+          ['webhookUrl', 'Webhook n8n / Make', 'A validar'],
+          ['gtmId', 'GTM ID', 'A validar'],
+          ['pixelId', 'Meta Pixel ID', 'A validar'],
+          ['ga4Id', 'GA4 Measurement ID', 'A validar'],
+          ['leadDestination', 'Destino do lead', 'Bitrix / HubSpot / Sheets']
+        ]
+      },
+
+      'ManyChat': {
+        category: 'Automação social',
+        url: 'https://app.manychat.com',
+        description: 'Fluxos, canais, gatilhos, tags e captura de leads.',
+        fields: [
+          ['workspace', 'Workspace', 'A validar'],
+          ['channel', 'Canal', 'Instagram / WhatsApp / Messenger'],
+          ['keyword', 'Palavra-chave gatilho', 'Ex.: Planeja'],
+          ['flowName', 'Nome do fluxo', 'A validar'],
+          ['tags', 'Tags aplicadas', 'A validar'],
+          ['collectedFields', 'Campos coletados', 'Nome, e-mail, telefone'],
+          ['leadDestination', 'Destino do lead', 'Sheets / n8n / Bitrix'],
+          ['flowStatus', 'Status do fluxo', 'Ativo / Pausado / A validar']
+        ]
+      },
+
+      'Google Sheets': {
+        category: 'Planilhas',
+        url: 'https://sheets.google.com',
+        description: 'Planilhas, abas, proprietários, permissões e destino de leads.',
+        fields: [
+          ['spreadsheetName', 'Nome da planilha', 'A validar'],
+          ['spreadsheetUrl', 'URL da planilha', 'A validar'],
+          ['tabs', 'Abas utilizadas', 'A validar'],
+          ['owner', 'Proprietário', 'A validar'],
+          ['permissions', 'Permissões', 'Leitor / Editor / Owner'],
+          ['dataReceived', 'Dados recebidos', 'Leads / Tracking'],
+          ['integration', 'Integração vinculada', 'n8n / Make / Manual'],
+          ['sharingRisk', 'Risco de compartilhamento', 'Baixo / Médio / Alto']
+        ]
+      },
+
+      'Dropbox': {
+        category: 'Armazenamento',
+        url: 'https://www.dropbox.com',
+        description: 'Pastas, permissões, compartilhamentos e responsáveis.',
+        fields: [
+          ['folderPath', 'Pasta principal', 'A validar'],
+          ['owner', 'Proprietário', 'A validar'],
+          ['sharedWith', 'Compartilhado com', 'A validar'],
+          ['contentType', 'Tipo de conteúdo', 'Criativos / Docs / Relatórios'],
+          ['permission', 'Permissão', 'Visualizar / Editar / Admin'],
+          ['publicLink', 'Possui link público?', 'Sim / Não / A validar'],
+          ['backupPolicy', 'Política de backup', 'A validar'],
+          ['folderOwner', 'Responsável pela pasta', 'A validar']
+        ]
+      },
+
+      'Canva': {
+        category: 'Criativos',
+        url: 'https://www.canva.com',
+        description: 'Equipe, pastas, brand kit, templates e permissões.',
+        fields: [
+          ['teamName', 'Equipe Canva', 'A validar'],
+          ['brandKit', 'Brand Kit configurado?', 'Sim / Não / A validar'],
+          ['folders', 'Pastas principais', 'A validar'],
+          ['templates', 'Templates principais', 'A validar'],
+          ['users', 'Usuários com acesso', 'A validar'],
+          ['permission', 'Permissão', 'Admin / Designer / Visualizador'],
+          ['criticalAssets', 'Materiais críticos', 'Apresentações, criativos'],
+          ['designOwner', 'Responsável pelos criativos', 'A validar']
+        ]
+      },
+
+      'Looker Studio': {
+        category: 'Relatórios',
+        url: 'https://lookerstudio.google.com',
+        description: 'Dashboards, fontes de dados, proprietários e atualização.',
+        fields: [
+          ['reportName', 'Nome do relatório', 'A validar'],
+          ['reportUrl', 'URL do relatório', 'A validar'],
+          ['dataSources', 'Fontes de dados', 'GA4, Sheets, Ads, Meta'],
+          ['owner', 'Proprietário', 'A validar'],
+          ['sharing', 'Compartilhamento', 'Privado / Link / Domínio'],
+          ['refreshStatus', 'Atualização dos dados', 'OK / Erro / A validar'],
+          ['kpis', 'KPIs principais', 'Leads, CPL, Conversão'],
+          ['biOwner', 'Responsável pelo dashboard', 'A validar']
+        ]
+      },
+
+      'Domínios / DNS': {
+        category: 'Infraestrutura',
+        url: 'A validar',
+        description: 'Domínios, DNS, provedor, vencimento, registros e responsável técnico.',
+        fields: [
+          ['domain', 'Domínio', 'exemplo.com.br'],
+          ['subdomain', 'Subdomínio', 'lp.exemplo.com.br'],
+          ['registrar', 'Registrador', 'Registro.br / Cloudflare / Outro'],
+          ['dnsProvider', 'Provedor DNS', 'Cloudflare / Registro.br'],
+          ['renewalDate', 'Data de renovação', 'A validar'],
+          ['dnsRecords', 'Registros DNS críticos', 'A, CNAME, TXT, MX'],
+          ['technicalOwner', 'Responsável técnico', 'Tecnologia / A validar'],
+          ['riskNotes', 'Risco ou observação', 'A validar']
+        ]
+      },
+
+      'Outro': {
+        category: 'Outro',
+        url: 'A validar',
+        description: 'Cadastro genérico para ativos sem modelo específico.',
+        fields: [
+          ['assetType', 'Tipo do ativo', 'A validar'],
+          ['purpose', 'Finalidade', 'A validar'],
+          ['referenceUrl', 'URL / referência', 'A validar'],
+          ['mainOwner', 'Responsável principal', 'A validar'],
+          ['sourceSystem', 'Sistema de origem', 'A validar'],
+          ['destinationSystem', 'Sistema de destino', 'A validar'],
+          ['dependencies', 'Dependências', 'A validar'],
+          ['technicalNote', 'Observação técnica', 'A validar']
+        ]
+      }
+    };
 
     let activeFilter = 'Todos';
     let searchTerm = '';
+    let currentDetailsId = null;
+    let records = [];
 
-    let records = [
-      {
-        id: cryptoRandomId(),
-        ativo: 'Página de Obrigado Universal InvestSmart',
-        software: 'RD Station',
-        categoria: 'Landing Page / Página de Obrigado',
-        responsavel: 'Philipe Coutinho',
-        status: 'Validado'
-      },
-      {
-        id: cryptoRandomId(),
-        ativo: 'Make',
-        software: 'Make',
-        categoria: 'Automação / Integração',
-        responsavel: 'Marketing',
-        status: 'Validado'
-      },
-      {
-        id: cryptoRandomId(),
-        ativo: 'Landing Page',
-        software: 'Lovable',
-        categoria: 'Landing Page',
-        responsavel: 'Marketing',
-        status: 'A Validar'
-      },
-      {
-        id: cryptoRandomId(),
-        ativo: 'Meta Pixel',
-        software: 'Meta Ads',
-        categoria: 'Tracking',
-        responsavel: 'Marketing',
-        status: 'A Validar'
-      },
-      {
-        id: cryptoRandomId(),
-        ativo: 'GA4',
-        software: 'GA4',
-        categoria: 'Analytics',
-        responsavel: 'Marketing',
-        status: 'Reprovado'
-      }
-    ];
+    function defaultRecords() {
+      return [
+        {
+          id: cryptoRandomId(),
+          action: 'Atualizar',
+          software: 'RD STATION',
+          ativo: 'Página de Obrigado Universal InvestSmart',
+          categoria: 'Landing Page / Página de Obrigado',
+          responsavel: 'Philipe Coutinho',
+          area: 'Marketing',
+          status: 'Validado',
+          url: 'https://materiais.investsmartxp.com.br/obrigado-is',
+          twofa: 'Não aplicável',
+          twofaMethod: 'Não aplicável',
+          twofaOwner: 'A validar',
+          twofaOwnerType: 'Não aplicável',
+          twofaPhoneMasked: '',
+          phoneType: 'Não aplicável',
+          secondAdmin: 'Não aplicável',
+          recoveryValidated: 'Não aplicável',
+          manualRisk: 'Baixo',
+          lastValidation: '20/08/2026',
+          obs: 'Página de Obrigado universal da InvestSmart publicada no RD Station.\n\nHTML/CSS/JS inseridos diretamente no RD Station.\nPixel Meta configurado no campo Javascript em HEAD.',
+          next: 'Manter validação periódica de responsividade, CTA, carregamento do pixel e rastreamento de cliques.',
+          extra: {
+            accountName: '',
+            loginEmail: '',
+            plan: '',
+            mainDomain: '',
+            landingPages: 'Página de Obrigado Universal',
+            forms: '',
+            conversionEvents: 'Lead / Conversão RD',
+            automationFlows: '',
+            integrations: 'RD Station / Meta Pixel',
+            leadDestination: 'A validar',
+            tracking: 'Meta Pixel',
+            rdOwner: 'Marketing'
+          }
+        },
+        {
+          id: cryptoRandomId(),
+          action: 'Atualizar',
+          software: 'Make',
+          ativo: 'Make',
+          categoria: 'Automação / Integração',
+          responsavel: 'Marketing',
+          area: 'Marketing',
+          status: 'Validado',
+          url: 'https://www.make.com',
+          twofa: 'Não aplicável',
+          twofaMethod: 'Não aplicável',
+          twofaOwner: 'A validar',
+          twofaOwnerType: 'Não aplicável',
+          twofaPhoneMasked: '',
+          phoneType: 'Não aplicável',
+          secondAdmin: 'Não',
+          recoveryValidated: 'Sim',
+          manualRisk: 'Automático',
+          lastValidation: '18/08/2026',
+          obs: 'Usuário/login operacional registrado apenas como referência interna. Não registrar senha ou token.',
+          next: 'Validar cenários ativos, billing e integrações conectadas.',
+          extra: {
+            organization: '',
+            scenarioName: '',
+            scenarioStatus: '',
+            trigger: '',
+            connections: '',
+            sourceApp: '',
+            destinationApp: '',
+            billingOwner: 'Jorge Araujo'
+          }
+        },
+        {
+          id: cryptoRandomId(),
+          action: 'Atualizar',
+          software: 'Lovable',
+          ativo: 'Landing Page',
+          categoria: 'Landing Page',
+          responsavel: 'Marketing',
+          area: 'Marketing',
+          status: 'A validar',
+          url: 'https://lovable.dev',
+          twofa: 'Não aplicável',
+          twofaMethod: 'Não aplicável',
+          twofaOwner: 'A validar',
+          twofaOwnerType: 'Não aplicável',
+          twofaPhoneMasked: '',
+          phoneType: 'Não aplicável',
+          secondAdmin: 'A validar',
+          recoveryValidated: 'Não aplicável',
+          manualRisk: 'Automático',
+          lastValidation: 'A validar',
+          obs: 'Acesso autenticado por conta Google. Validar projetos ativos e domínios vinculados.',
+          next: 'Mapear todos os projetos Lovable e seus respectivos webhooks.',
+          extra: {
+            projectName: '',
+            lovableUrl: '',
+            deployUrl: '',
+            publicDomain: '',
+            formFields: '',
+            webhookUrl: '',
+            tracking: '',
+            lpOwner: 'Marketing'
+          }
+        }
+      ];
+    }
 
     function cryptoRandomId() {
       if (window.crypto && crypto.randomUUID) {
@@ -1293,28 +1920,116 @@
         .trim();
     }
 
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function loadRecords() {
+      try {
+        const stored = localStorage.getItem(storageKey);
+        records = stored ? JSON.parse(stored) : defaultRecords();
+      } catch (error) {
+        records = defaultRecords();
+      }
+
+      persistRecords();
+    }
+
+    function persistRecords() {
+      localStorage.setItem(storageKey, JSON.stringify(records));
+    }
+
+    function labelsFor(software) {
+      const labels = {};
+      const profile = softwareProfiles[software] || softwareProfiles.Outro;
+
+      profile.fields.forEach(([key, label]) => {
+        labels[key] = label;
+      });
+
+      return labels;
+    }
+
+    function calculatedRisk(record) {
+      if (record.manualRisk && record.manualRisk !== 'Automático') return record.manualRisk;
+
+      if (record.twofa === 'Não aplicável') {
+        if (record.status === 'Reprovado') return 'Alto';
+        return 'Baixo';
+      }
+
+      if (record.twofaOwnerType === 'Ex-colaborador' || record.twofaOwnerType === 'Desconhecido') return 'Crítico';
+      if (record.twofaOwner === 'A validar' || !record.twofaOwner) return 'Crítico';
+      if (record.twofa === 'Não' || record.twofa === 'A validar') return 'Alto';
+      if (record.twofaMethod === 'SMS' && record.phoneType === 'Terceirizado') return 'Crítico';
+      if (record.twofaMethod === 'SMS' && record.phoneType === 'Pessoal autorizado' && record.secondAdmin !== 'Sim') return 'Alto';
+      if (record.secondAdmin === 'Não') return 'Alto';
+      if (record.recoveryValidated === 'Não' || record.recoveryValidated === 'A validar') return 'Médio';
+
+      return 'Baixo';
+    }
+
     function statusClass(status) {
       const normalized = normalizeText(status);
 
-      if (normalized === 'validado') return 'status-validado';
-      if (normalized === 'a validar') return 'status-a-validar';
+      if (normalized === 'validado' || normalized === 'ativo') return 'status-validado';
+      if (normalized === 'a validar' || normalized === 'incompleto') return 'status-a-validar';
       if (normalized === 'reprovado') return 'status-reprovado';
+      if (normalized === 'arquivado') return 'status-arquivado';
 
-      return 'status-incompleto';
+      return 'status-a-validar';
+    }
+
+    function riskClass(risk) {
+      const normalized = normalizeText(risk);
+
+      if (normalized === 'baixo') return 'risk-baixo';
+      if (normalized === 'medio' || normalized === 'médio') return 'risk-medio';
+      if (normalized === 'alto') return 'risk-alto';
+      if (normalized === 'critico' || normalized === 'crítico') return 'risk-critico';
+
+      return 'risk-medio';
     }
 
     function filteredRecords() {
       const normalizedSearch = normalizeText(searchTerm);
 
       return records.filter(record => {
-        const matchesFilter = activeFilter === 'Todos' || record.status === activeFilter;
+        const risk = calculatedRisk(record);
+
+        const matchesFilter =
+          activeFilter === 'Todos' ||
+          record.status === activeFilter ||
+          (activeFilter === 'Risco alto' && ['Alto', 'Crítico'].includes(risk));
 
         const searchable = normalizeText([
-          record.ativo,
+          record.action,
           record.software,
+          record.ativo,
           record.categoria,
           record.responsavel,
-          record.status
+          record.area,
+          record.status,
+          record.url,
+          record.twofa,
+          record.twofaMethod,
+          record.twofaOwner,
+          record.twofaOwnerType,
+          record.twofaPhoneMasked,
+          record.phoneType,
+          record.secondAdmin,
+          record.recoveryValidated,
+          record.manualRisk,
+          record.lastValidation,
+          record.obs,
+          record.next,
+          risk,
+          JSON.stringify(record.extra || {})
         ].join(' '));
 
         const matchesSearch = !normalizedSearch || searchable.includes(normalizedSearch);
@@ -1330,7 +2045,7 @@
       if (!list.length) {
         tbody.innerHTML = `
           <tr>
-            <td colspan="6">
+            <td colspan="7">
               <strong>Nenhum registro encontrado.</strong>
               <br>
               Ajuste a busca, altere os filtros ou cadastre um novo ativo.
@@ -1341,28 +2056,33 @@
         return;
       }
 
-      tbody.innerHTML = list.map(record => `
-        <tr>
-          <td>
-            <div class="asset-title">
-              <strong>${escapeHtml(record.ativo)}</strong>
-              <span>ID operacional: ${record.id.slice(0, 8)}</span>
-            </div>
-          </td>
-          <td>${escapeHtml(record.software)}</td>
-          <td>${escapeHtml(record.categoria)}</td>
-          <td>${escapeHtml(record.responsavel)}</td>
-          <td><span class="status-badge ${statusClass(record.status)}">${escapeHtml(record.status)}</span></td>
-          <td>
-            <div class="row-actions">
-              <button class="btn btn-blue btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Validado')">Validar</button>
-              <button class="btn btn-pink btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Reprovado')">Reprovar</button>
-              <button class="btn btn-soft btn-mini" type="button" onclick="showDetails('${record.id}')">Detalhes</button>
-              <button class="btn btn-soft btn-mini" type="button" onclick="editRecord('${record.id}')">Editar</button>
-            </div>
-          </td>
-        </tr>
-      `).join('');
+      tbody.innerHTML = list.map(record => {
+        const risk = calculatedRisk(record);
+
+        return `
+          <tr>
+            <td>
+              <div class="asset-title">
+                <strong>${escapeHtml(record.ativo)}</strong>
+                <span>${escapeHtml(record.url || 'URL não informada')}</span>
+              </div>
+            </td>
+            <td>${escapeHtml(record.software)}</td>
+            <td>${escapeHtml(record.categoria)}</td>
+            <td>${escapeHtml(record.responsavel)}</td>
+            <td><span class="status-badge ${statusClass(record.status)}">${escapeHtml(record.status)}</span></td>
+            <td><span class="risk-badge ${riskClass(risk)}">${escapeHtml(risk)}</span></td>
+            <td>
+              <div class="row-actions">
+                <button class="btn btn-blue btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Validado')">Validar</button>
+                <button class="btn btn-pink btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Reprovado')">Reprovar</button>
+                <button class="btn btn-soft btn-mini" type="button" onclick="openDetails('${record.id}')">Detalhes</button>
+                <button class="btn btn-soft btn-mini" type="button" onclick="openRecordModal('${record.id}')">Editar</button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
 
       updateMetrics();
     }
@@ -1370,8 +2090,9 @@
     function updateMetrics() {
       const total = records.length;
       const validated = records.filter(record => record.status === 'Validado').length;
-      const pending = records.filter(record => record.status === 'A Validar').length;
+      const pending = records.filter(record => record.status === 'A validar').length;
       const rejected = records.filter(record => record.status === 'Reprovado').length;
+      const riskCount = records.filter(record => ['Alto', 'Crítico'].includes(calculatedRisk(record))).length;
       const softwares = new Set(records.map(record => record.software)).size;
       const efficiency = total ? Math.round((validated / total) * 100) : 0;
 
@@ -1386,14 +2107,340 @@
       document.getElementById('countValidated').textContent = validated;
       document.getElementById('countPending').textContent = pending;
       document.getElementById('countRejected').textContent = rejected;
+      document.getElementById('countRisk').textContent = riskCount;
 
       const generalStatus = document.getElementById('generalStatus');
-      generalStatus.textContent = pending > 0 || rejected > 0 ? 'Atenção Operacional' : 'Governança Estável';
+      generalStatus.textContent = pending > 0 || rejected > 0 || riskCount > 0 ? 'Atenção Operacional' : 'Governança Estável';
 
       document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('pt-BR', {
         hour: '2-digit',
         minute: '2-digit'
       });
+    }
+
+    function initSoftwareSelect() {
+      const select = document.getElementById('assetSoftware');
+
+      select.innerHTML = Object.keys(softwareProfiles)
+        .map(software => `<option value="${escapeHtml(software)}">${escapeHtml(software)}</option>`)
+        .join('');
+    }
+
+    function onSoftwareChange(existingExtra = null, keepManualValues = false) {
+      const software = document.getElementById('assetSoftware').value;
+      const profile = softwareProfiles[software] || softwareProfiles.Outro;
+
+      document.getElementById('specificTitle').textContent = `2. Campos específicos de ${software}`;
+      document.getElementById('specificDescription').textContent = profile.description;
+
+      if (!keepManualValues) {
+        const category = document.getElementById('assetCategory');
+        const url = document.getElementById('assetUrl');
+        const name = document.getElementById('assetName');
+
+        if (!category.value) category.value = profile.category;
+        if (!url.value) url.value = profile.url;
+        if (!name.value) name.value = software;
+      }
+
+      renderSpecificFields(software, existingExtra);
+    }
+
+    function renderSpecificFields(software, existingExtra = null) {
+      const profile = softwareProfiles[software] || softwareProfiles.Outro;
+
+      document.getElementById('specificFields').innerHTML = profile.fields.map(([key, label, placeholder]) => {
+        const value = existingExtra && existingExtra[key] ? existingExtra[key] : '';
+
+        return `
+          <div class="field">
+            <label>${escapeHtml(label)}</label>
+            <input
+              class="form-control"
+              data-extra-key="${escapeHtml(key)}"
+              data-extra-label="${escapeHtml(label)}"
+              value="${escapeHtml(value)}"
+              placeholder="${escapeHtml(placeholder)}"
+            >
+          </div>
+        `;
+      }).join('');
+    }
+
+    function collectExtraValues() {
+      const extra = {};
+
+      document.querySelectorAll('[data-extra-key]').forEach(field => {
+        extra[field.dataset.extraKey] = field.value.trim();
+      });
+
+      return extra;
+    }
+
+    function clearForm() {
+      document.getElementById('editingId').value = '';
+      document.getElementById('assetAction').value = 'Criar';
+      document.getElementById('assetSoftware').value = 'Make';
+      document.getElementById('assetName').value = '';
+      document.getElementById('assetCategory').value = '';
+      document.getElementById('assetOwner').value = '';
+      document.getElementById('assetArea').value = '';
+      document.getElementById('assetStatus').value = 'A validar';
+      document.getElementById('assetUrl').value = '';
+
+      document.getElementById('twofa').value = 'A validar';
+      document.getElementById('twofaMethod').value = 'A validar';
+      document.getElementById('twofaOwner').value = '';
+      document.getElementById('twofaOwnerType').value = 'A validar';
+      document.getElementById('twofaPhoneMasked').value = '';
+      document.getElementById('phoneType').value = 'A validar';
+      document.getElementById('secondAdmin').value = 'A validar';
+      document.getElementById('recoveryValidated').value = 'A validar';
+
+      document.getElementById('manualRisk').value = 'Automático';
+      document.getElementById('lastValidation').value = '';
+      document.getElementById('observations').value = '';
+      document.getElementById('nextAction').value = '';
+
+      onSoftwareChange(null, false);
+    }
+
+    function setForm(record) {
+      document.getElementById('editingId').value = record.id;
+      document.getElementById('assetAction').value = record.action || 'Atualizar';
+      document.getElementById('assetSoftware').value = record.software || 'Outro';
+      document.getElementById('assetName').value = record.ativo || '';
+      document.getElementById('assetCategory').value = record.categoria || '';
+      document.getElementById('assetOwner').value = record.responsavel || '';
+      document.getElementById('assetArea').value = record.area || '';
+      document.getElementById('assetStatus').value = record.status || 'A validar';
+      document.getElementById('assetUrl').value = record.url || '';
+
+      document.getElementById('twofa').value = record.twofa || 'A validar';
+      document.getElementById('twofaMethod').value = record.twofaMethod || 'A validar';
+      document.getElementById('twofaOwner').value = record.twofaOwner || '';
+      document.getElementById('twofaOwnerType').value = record.twofaOwnerType || 'A validar';
+      document.getElementById('twofaPhoneMasked').value = record.twofaPhoneMasked || '';
+      document.getElementById('phoneType').value = record.phoneType || 'A validar';
+      document.getElementById('secondAdmin').value = record.secondAdmin || 'A validar';
+      document.getElementById('recoveryValidated').value = record.recoveryValidated || 'A validar';
+
+      document.getElementById('manualRisk').value = record.manualRisk || 'Automático';
+      document.getElementById('lastValidation').value = record.lastValidation || '';
+      document.getElementById('observations').value = record.obs || '';
+      document.getElementById('nextAction').value = record.next || '';
+
+      onSoftwareChange(record.extra || {}, true);
+    }
+
+    function getFormRecord() {
+      const software = document.getElementById('assetSoftware').value;
+      const profile = softwareProfiles[software] || softwareProfiles.Outro;
+
+      return {
+        id: document.getElementById('editingId').value || cryptoRandomId(),
+        action: document.getElementById('assetAction').value,
+        software,
+        ativo: document.getElementById('assetName').value.trim() || software,
+        categoria: document.getElementById('assetCategory').value.trim() || profile.category,
+        responsavel: document.getElementById('assetOwner').value.trim() || 'A validar',
+        area: document.getElementById('assetArea').value.trim() || 'A validar',
+        status: document.getElementById('assetStatus').value,
+        url: document.getElementById('assetUrl').value.trim() || profile.url,
+
+        twofa: document.getElementById('twofa').value,
+        twofaMethod: document.getElementById('twofaMethod').value,
+        twofaOwner: document.getElementById('twofaOwner').value.trim() || 'A validar',
+        twofaOwnerType: document.getElementById('twofaOwnerType').value,
+        twofaPhoneMasked: document.getElementById('twofaPhoneMasked').value.trim(),
+        phoneType: document.getElementById('phoneType').value,
+        secondAdmin: document.getElementById('secondAdmin').value,
+        recoveryValidated: document.getElementById('recoveryValidated').value,
+
+        manualRisk: document.getElementById('manualRisk').value,
+        lastValidation: document.getElementById('lastValidation').value.trim() || 'A validar',
+        obs: document.getElementById('observations').value.trim(),
+        next: document.getElementById('nextAction').value.trim() || 'A validar',
+        extra: collectExtraValues()
+      };
+    }
+
+    function containsSensitiveContent(record) {
+      const content = JSON.stringify(record).toLowerCase();
+
+      const blocked = [
+        'senha:',
+        'password:',
+        'token:',
+        'secret:',
+        'api key:',
+        'apikey:',
+        'recovery code',
+        'código 2fa',
+        'codigo 2fa'
+      ];
+
+      return blocked.some(term => content.includes(term));
+    }
+
+    function saveRecord() {
+      const record = getFormRecord();
+
+      if (!record.ativo || !record.software) {
+        alert('Preencha pelo menos Nome do Ativo e Software.');
+        return;
+      }
+
+      if (containsSensitiveContent(record)) {
+        alert('Bloqueado: remova senha, token, código 2FA, recovery code ou dado sensível.');
+        return;
+      }
+
+      const exists = records.some(item => item.id === record.id);
+
+      if (exists) {
+        records = records.map(item => item.id === record.id ? record : item);
+      } else {
+        records.unshift(record);
+      }
+
+      persistRecords();
+      closeRecordModal();
+      renderTable();
+    }
+
+    function openRecordModal(id = null) {
+      if (id) {
+        const record = records.find(item => item.id === id);
+        if (!record) return;
+        setForm(record);
+        document.getElementById('modalTitle').textContent = 'Editar Registro';
+      } else {
+        clearForm();
+        document.getElementById('modalTitle').textContent = 'Novo Registro';
+      }
+
+      document.getElementById('recordModal').classList.add('open');
+      document.getElementById('assetName').focus();
+    }
+
+    function closeRecordModal() {
+      document.getElementById('recordModal').classList.remove('open');
+    }
+
+    function openDetails(id) {
+      const record = records.find(item => item.id === id);
+      if (!record) return;
+
+      currentDetailsId = id;
+
+      const risk = calculatedRisk(record);
+      const labels = labelsFor(record.software);
+
+      const extraHtml = Object.entries(record.extra || {}).map(([key, value]) => {
+        return detailItem(labels[key] || key, value || 'A validar');
+      }).join('');
+
+      document.getElementById('detailsTitle').textContent = record.ativo;
+      document.getElementById('detailsSubtitle').textContent = `${record.software} • ${record.categoria} • ${record.status}`;
+
+      document.getElementById('detailsBody').innerHTML = `
+        <div class="detail-section">
+          <h3>Dados principais</h3>
+          <div class="detail-grid">
+            ${detailItem('Ação', record.action || 'A validar')}
+            ${detailItem('Software / Plataforma', record.software)}
+            ${detailItem('Ativo', record.ativo)}
+            ${detailItem('Categoria', record.categoria)}
+            ${detailItem('Responsável operacional', record.responsavel)}
+            ${detailItem('Área gestora', record.area)}
+            ${detailItem('Status', record.status)}
+            ${detailItem('URL principal / acesso', record.url || 'A validar', true)}
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Campos específicos de ${escapeHtml(record.software)}</h3>
+          <div class="detail-grid">
+            ${extraHtml || detailItem('Informações específicas', 'Nenhum campo específico preenchido.', true)}
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Segurança e recuperação de acesso</h3>
+          <div class="detail-grid">
+            ${detailItem('2FA ativo', record.twofa)}
+            ${detailItem('Método de 2FA', record.twofaMethod)}
+            ${detailItem('Responsável pela custódia 2FA', record.twofaOwner)}
+            ${detailItem('Tipo de responsável pela custódia 2FA', record.twofaOwnerType)}
+            ${detailItem('Telefone vinculado, mascarado', record.twofaPhoneMasked || 'Não informado')}
+            ${detailItem('Tipo do telefone', record.phoneType)}
+            ${detailItem('Segundo administrador', record.secondAdmin)}
+            ${detailItem('Recuperação validada', record.recoveryValidated)}
+          </div>
+        </div>
+
+        <div class="detail-section">
+          <h3>Governança</h3>
+          <div class="detail-grid">
+            ${detailItem('Risco calculado', risk)}
+            ${detailItem('Risco manual', record.manualRisk || 'Automático')}
+            ${detailItem('Última validação', record.lastValidation || 'A validar')}
+            ${detailItem('Observações', record.obs || 'Sem observações', true)}
+            ${detailItem('Próxima ação', record.next || 'A validar', true)}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('detailsModal').classList.add('open');
+    }
+
+    function detailItem(label, value, full = false) {
+      return `
+        <div class="detail-item ${full ? 'full' : ''}">
+          <small>${escapeHtml(label)}</small>
+          <strong>${escapeHtml(value || 'A validar')}</strong>
+        </div>
+      `;
+    }
+
+    function closeDetails() {
+      document.getElementById('detailsModal').classList.remove('open');
+    }
+
+    function editCurrentDetails() {
+      if (!currentDetailsId) return;
+
+      closeDetails();
+      openRecordModal(currentDetailsId);
+    }
+
+    function setCurrentDetailsStatus(status) {
+      if (!currentDetailsId) return;
+
+      setRecordStatus(currentDetailsId, status);
+      openDetails(currentDetailsId);
+    }
+
+    function setRecordStatus(id, status) {
+      records = records.map(record => {
+        if (record.id !== id) return record;
+
+        const updated = {
+          ...record,
+          status,
+          action: status === 'Validado' ? 'Validar' : status === 'Reprovado' ? 'Reprovar' : 'Atualizar'
+        };
+
+        if (status === 'Validado') {
+          updated.lastValidation = new Date().toLocaleDateString('pt-BR');
+        }
+
+        return updated;
+      });
+
+      persistRecords();
+      renderTable();
     }
 
     function setFilter(filter, element) {
@@ -1404,7 +2451,6 @@
       });
 
       element.classList.add('active');
-
       renderTable();
     }
 
@@ -1420,119 +2466,38 @@
     }
 
     function refreshPanel() {
-      updateMetrics();
       renderTable();
-    }
-
-    function setRecordStatus(id, status) {
-      records = records.map(record => {
-        if (record.id !== id) return record;
-        return { ...record, status };
-      });
-
-      renderTable();
-    }
-
-    function openModal(record = null) {
-      const modal = document.getElementById('recordModal');
-      const form = document.getElementById('recordForm');
-
-      form.dataset.editingId = record ? record.id : '';
-
-      document.getElementById('modalTitle').textContent = record ? 'Editar Registro' : 'Novo Registro';
-      document.getElementById('assetName').value = record ? record.ativo : '';
-      document.getElementById('assetSoftware').value = record ? record.software : '';
-      document.getElementById('assetCategory').value = record ? record.categoria : '';
-      document.getElementById('assetOwner').value = record ? record.responsavel : '';
-      document.getElementById('assetStatus').value = record ? record.status : 'A Validar';
-
-      modal.classList.add('open');
-      document.getElementById('assetName').focus();
-    }
-
-    function closeModal() {
-      document.getElementById('recordModal').classList.remove('open');
-    }
-
-    function saveRecord() {
-      const form = document.getElementById('recordForm');
-
-      const ativo = document.getElementById('assetName').value.trim();
-      const software = document.getElementById('assetSoftware').value.trim();
-      const categoria = document.getElementById('assetCategory').value.trim() || 'A Validar';
-      const responsavel = document.getElementById('assetOwner').value.trim() || 'A Validar';
-      const status = document.getElementById('assetStatus').value;
-
-      if (!ativo || !software) {
-        alert('Preencha pelo menos Nome do Ativo e Software.');
-        return;
-      }
-
-      const editingId = form.dataset.editingId;
-
-      if (editingId) {
-        records = records.map(record => {
-          if (record.id !== editingId) return record;
-
-          return {
-            ...record,
-            ativo,
-            software,
-            categoria,
-            responsavel,
-            status
-          };
-        });
-      } else {
-        records.unshift({
-          id: cryptoRandomId(),
-          ativo,
-          software,
-          categoria,
-          responsavel,
-          status
-        });
-      }
-
-      closeModal();
-      renderTable();
-    }
-
-    function editRecord(id) {
-      const record = records.find(item => item.id === id);
-
-      if (!record) return;
-
-      openModal(record);
-    }
-
-    function showDetails(id) {
-      const record = records.find(item => item.id === id);
-
-      if (!record) return;
-
-      alert(
-        `Ativo: ${record.ativo}\n` +
-        `Software: ${record.software}\n` +
-        `Categoria: ${record.categoria}\n` +
-        `Responsável: ${record.responsavel}\n` +
-        `Status: ${record.status}`
-      );
     }
 
     function exportCsv() {
-      const header = ['Ativo', 'Software', 'Categoria', 'Responsável', 'Status'];
-      const rows = records.map(record => [
-        record.ativo,
-        record.software,
-        record.categoria,
-        record.responsavel,
-        record.status
-      ]);
+      const rows = records.map(record => ({
+        ativo: record.ativo,
+        software: record.software,
+        categoria: record.categoria,
+        responsavel: record.responsavel,
+        area: record.area,
+        status: record.status,
+        risco: calculatedRisk(record),
+        url: record.url,
+        twofa: record.twofa,
+        metodo_2fa: record.twofaMethod,
+        custodia_2fa: record.twofaOwner,
+        tipo_custodia_2fa: record.twofaOwnerType,
+        telefone_mascarado: record.twofaPhoneMasked,
+        segundo_admin: record.secondAdmin,
+        recuperacao_validada: record.recoveryValidated,
+        ultima_validacao: record.lastValidation,
+        observacoes: record.obs,
+        proxima_acao: record.next
+      }));
+
+      if (!rows.length) return;
+
+      const headers = Object.keys(rows[0]);
 
       const csv = '\ufeff' + [
-        header.join(';'),
-        ...rows.map(row => row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(';'))
+        headers.join(';'),
+        ...rows.map(row => headers.map(header => `"${String(row[header] ?? '').replaceAll('"', '""')}"`).join(';'))
       ].join('\n');
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
@@ -1550,15 +2515,6 @@
       window.open(githubIssuesUrl, '_blank', 'noopener');
     }
 
-    function escapeHtml(value) {
-      return String(value ?? '')
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-    }
-
     document.getElementById('searchInput').addEventListener('input', event => {
       searchTerm = event.target.value;
       renderTable();
@@ -1566,16 +2522,26 @@
 
     document.getElementById('recordModal').addEventListener('click', event => {
       if (event.target.id === 'recordModal') {
-        closeModal();
+        closeRecordModal();
+      }
+    });
+
+    document.getElementById('detailsModal').addEventListener('click', event => {
+      if (event.target.id === 'detailsModal') {
+        closeDetails();
       }
     });
 
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
-        closeModal();
+        closeRecordModal();
+        closeDetails();
       }
     });
 
+    initSoftwareSelect();
+    loadRecords();
+    renderSpecificFields('Make');
     renderTable();
   </script>
 </body>
