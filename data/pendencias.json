@@ -72,6 +72,15 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "6a25e3c3-7f13-4167-9002-9e4d8cca0564-quem-recebe-o-codigo-a-validar",
+    "recordId": "6a25e3c3-7f13-4167-9002-9e4d8cca0564",
+    "ativo": "Meta Pixel - Smart Carreiras",
+    "software": "Meta Pixel",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.\n\nConfirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.\n\nAvaliar implementação futura via GTM e GA4 para melhorar governança de tracking.\n\nApós validação do evento de conversão, atualizar o status do registro para Validado."
+  },
+  {
     "id": "a1660299-a05e-4049-bdb8-9855897234d1-risco-alto",
     "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
     "ativo": "Claude",

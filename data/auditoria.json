@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787253297914-bc6a820b1d1c9",
+    "date": "2026-08-20T19:14:57.914Z",
+    "issueNumber": 27,
+    "action": "Criar",
+    "recordId": "6a25e3c3-7f13-4167-9002-9e4d8cca0564",
+    "software": "Meta Pixel",
+    "ativo": "Meta Pixel - Smart Carreiras",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787252827223-b34076334f1f7",
     "date": "2026-08-20T19:07:07.223Z",
     "issueNumber": 26,

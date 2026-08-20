@@ -1,6 +1,6 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 19:07:07.
+Atualizado automaticamente em 20/08/2026, 19:14:57.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|
@@ -8,5 +8,6 @@ Atualizado automaticamente em 20/08/2026, 19:07:07.
 | Landing Page | Lovable | Landing Page | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |
 | Smart Carreiras | Lovable | Landing Page / Aquisição | Marketing | Marketing / Growth | Validado | Não aplicável | A validar | Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Make | Make | Automação / Integração | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |
+| Meta Pixel - Smart Carreiras | Meta Pixel | Tracking / Mensuração | Marketing | Marketing / Growth | Validado | Não aplicável | A validar | Baixo | Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.  Confirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.  Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.  Após validação do evento de conversão, atualizar o status do registro para Validado. |
 | Claude | Outro | IA | Marketing | Marketing | Validado | Sim | Eduardo Alves | Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Marketing | Validado | Não aplicável | A validar | Baixo | A validar |

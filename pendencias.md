@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 19:07:07.
+Atualizado automaticamente em 20/08/2026, 19:14:57.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
@@ -12,6 +12,7 @@ Atualizado automaticamente em 20/08/2026, 19:07:07.
 | Make | Make | Crítico | Risco Crítico | A validar |
 | Make | Make | Crítico | Quem recebe o código a validar | A validar |
 | Make | Make | Alto | Sem segundo administrador | A validar |
+| Meta Pixel - Smart Carreiras | Meta Pixel | Crítico | Quem recebe o código a validar | Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.  Confirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.  Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.  Após validação do evento de conversão, atualizar o status do registro para Validado. |
 | Claude | Outro | Alto | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Médio | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Página de obrigado universal investSmart | RD STATION | Crítico | Quem recebe o código a validar | A validar |
