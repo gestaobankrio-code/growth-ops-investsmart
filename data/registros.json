@@ -88,7 +88,7 @@
     "twofaOwnerType": "Não aplicável",
     "twofaPhoneMasked": "",
     "phoneType": "Não aplicável",
-    "secondAdmin": "Não aplicável",
+    "secondAdmin": "A validar",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "Baixo",
     "lastValidation": "20/08/2026",
@@ -109,6 +109,6 @@
       "rdOwner": ""
     },
     "createdAt": "2026-08-20T13:13:46.080Z",
-    "updatedAt": "2026-08-20T13:46:35.229Z"
+    "updatedAt": "2026-08-20T13:47:58.985Z"
   }
 ]
