@@ -1,15 +1,15 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 19:14:57.
+Atualização gerada automaticamente em 20/08/2026, 19:36:36.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 7 |
-| Validados | 7 |
+| Registros ativos | 8 |
+| Validados | 8 |
 | A validar | 0 |
-| Risco alto/crítico | 5 |
+| Risco alto/crítico | 6 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -17,6 +17,7 @@ Atualização gerada automaticamente em 20/08/2026, 19:14:57.
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
+| Convite Smart Carreiras - Samyr | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Smart Carreiras | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
@@ -29,6 +30,9 @@ Atualização gerada automaticamente em 20/08/2026, 19:14:57.
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
+| Convite Smart Carreiras - Samyr | Lovable | Risco Crítico | A validar |
+| Convite Smart Carreiras - Samyr | Lovable | Quem recebe o código a validar | A validar |
+| Convite Smart Carreiras - Samyr | Lovable | Recuperação de acesso não validada | A validar |
 | Landing Page | Lovable | Risco Crítico | A validar |
 | Landing Page | Lovable | Quem recebe o código a validar | A validar |
 | Smart Carreiras | Lovable | Risco Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |

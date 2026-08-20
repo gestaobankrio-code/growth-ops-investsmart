@@ -9,6 +9,33 @@
     "proximaAcao": "Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.\n\nConfirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.\n\nRemover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
   },
   {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-quem-recebe-o-codigo-a-validar",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-recuperacao-de-acesso-nao-validada",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Landing Page",
