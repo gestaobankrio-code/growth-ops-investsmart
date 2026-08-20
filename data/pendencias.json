@@ -45,33 +45,6 @@
     "proximaAcao": "A validar"
   },
   {
-    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-risco-critico",
-    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-quem-recebe-o-codigo-a-validar",
-    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-recuperacao-de-acesso-nao-validada",
-    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
-    "proximaAcao": "A validar"
-  },
-  {
     "id": "a1660299-a05e-4049-bdb8-9855897234d1-risco-alto",
     "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
     "ativo": "Claude",

@@ -1,7 +1,6 @@
 ﻿"ativo";"software";"categoria";"responsavel";"area";"status";"url";"twofa";"metodo_2fa";"quem_recebe_codigo";"risco";"proxima_acao"
 "Landing Page";"Lovable";"Landing Page";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Make";"Make";"Automação / Integração";"Marketing";"Marketing";"Validado";"https://www.make.com";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
-"Make";"Make";"Automação / Integração";"A validar";"A validar";"Reprovado";"https://www.make.com";"A validar";"A validar";"A validar";"Crítico";"A validar"
 "Claude";"Outro";"IA";"Marketing";"Marketing";"Validado";"https://claude.ai/";"Sim";"SMS";"Eduardo Alves";"Alto";"Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.
 
 Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.
