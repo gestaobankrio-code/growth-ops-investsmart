@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 17:46:22.
+Atualização gerada automaticamente em 20/08/2026, 17:47:34.
 
 ## Resumo executivo
 
@@ -8,7 +8,7 @@ Atualização gerada automaticamente em 20/08/2026, 17:46:22.
 |---|---:|
 | Registros ativos | 4 |
 | Validados | 3 |
-| A validar | 1 |
+| A validar | 0 |
 | Risco alto/crítico | 3 |
 | Sem 2FA | 0 |
 
@@ -18,7 +18,7 @@ Atualização gerada automaticamente em 20/08/2026, 17:46:22.
 |---|---|---|---|---|---|
 | Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
-| Make | Make | Automação / Integração | A validar | A validar | Crítico |
+| Make | Make | Automação / Integração | A validar | Reprovado | Crítico |
 | Página de Obrigado Universal InvestSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |
 
 ## Pendências

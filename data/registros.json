@@ -74,13 +74,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "616d8b84-fe6a-4f75-a65e-98836bea9616",
-    "action": "Criar",
+    "action": "Reprovar",
     "software": "Make",
     "ativo": "Make",
     "categoria": "Automação / Integração",
     "responsavel": "A validar",
     "area": "A validar",
-    "status": "A validar",
+    "status": "Reprovado",
     "url": "https://www.make.com",
     "twofa": "A validar",
     "twofaMethod": "A validar",
@@ -105,7 +105,7 @@
       "billingOwner": ""
     },
     "createdAt": "2026-08-20T17:46:22.441Z",
-    "updatedAt": "2026-08-20T17:46:22.441Z"
+    "updatedAt": "2026-08-20T17:47:34.513Z"
   },
   {
     "schema": "growth-ops-record-v2",

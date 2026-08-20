@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787248054520-63f1906c4be8e",
+    "date": "2026-08-20T17:47:34.520Z",
+    "issueNumber": 19,
+    "action": "Reprovar",
+    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
+    "software": "Make",
+    "ativo": "Make",
+    "statusBefore": "A validar",
+    "statusAfter": "Reprovado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787247982446-504b5fbbf31fc",
     "date": "2026-08-20T17:46:22.446Z",
     "issueNumber": 18,
