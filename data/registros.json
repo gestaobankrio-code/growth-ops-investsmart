@@ -148,7 +148,7 @@
     "id": "971f78e2-57b4-46fe-927e-3916b95bcef7",
     "action": "Atualizar",
     "software": "RD STATION",
-    "ativo": "Página de Obrigado Universal InvestSmart",
+    "ativo": "Página de obrigado universal investSmart",
     "categoria": "Landing Page / Página de Obrigado",
     "responsavel": "Philipe Coutinho",
     "area": "Marketing",
@@ -181,6 +181,6 @@
       "rdOwner": ""
     },
     "createdAt": "2026-08-20T13:13:46.080Z",
-    "updatedAt": "2026-08-20T13:49:19.244Z"
+    "updatedAt": "2026-08-20T18:30:35.905Z"
   }
 ]

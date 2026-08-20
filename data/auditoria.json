@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787250635913-9f9124ba98d48",
+    "date": "2026-08-20T18:30:35.913Z",
+    "issueNumber": 25,
+    "action": "Atualizar",
+    "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
+    "software": "RD STATION",
+    "ativo": "Página de obrigado universal investSmart",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787250586867-5e838e423e221",
     "date": "2026-08-20T18:29:46.867Z",
     "issueNumber": 24,
