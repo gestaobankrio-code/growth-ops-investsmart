@@ -1,13 +1,13 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 18/08/2026, 21:28:53.
+Atualização gerada automaticamente em 20/08/2026, 13:13:46.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 2 |
-| Validados | 2 |
+| Registros ativos | 3 |
+| Validados | 3 |
 | A validar | 0 |
 | Risco alto/crítico | 2 |
 | Sem 2FA | 0 |
@@ -16,6 +16,7 @@ Atualização gerada automaticamente em 18/08/2026, 21:28:53.
 
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
+| Landing Page | Landing Page | Landing Page | Philipe Coutinho | Validado | Baixo |
 | Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
 
@@ -23,6 +24,7 @@ Atualização gerada automaticamente em 18/08/2026, 21:28:53.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
+| Landing Page | Landing Page | Quem recebe o código a validar | A validar |
 | Landing Page | Lovable | Risco Crítico | A validar |
 | Landing Page | Lovable | Quem recebe o código a validar | A validar |
 | Make | Make | Risco Crítico | A validar |

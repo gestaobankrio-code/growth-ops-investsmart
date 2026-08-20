@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787231626086-97b6fab32ab5f",
+    "date": "2026-08-20T13:13:46.086Z",
+    "issueNumber": 13,
+    "action": "Criar",
+    "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
+    "software": "Landing Page",
+    "ativo": "Landing Page",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787088533058-bf4871eba88be",
     "date": "2026-08-18T21:28:53.058Z",
     "issueNumber": 12,
