@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 18:26:04.
+Atualização gerada automaticamente em 20/08/2026, 18:29:46.
 
 ## Resumo executivo
 
@@ -9,14 +9,14 @@ Atualização gerada automaticamente em 20/08/2026, 18:26:04.
 | Registros ativos | 5 |
 | Validados | 5 |
 | A validar | 0 |
-| Risco alto/crítico | 3 |
+| Risco alto/crítico | 4 |
 | Sem 2FA | 0 |
 
 ## Inventário
 
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Médio |
+| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
 | Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
 | Claude | Outro | IA | Marketing | Validado | Alto |
@@ -26,7 +26,7 @@ Atualização gerada automaticamente em 20/08/2026, 18:26:04.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Recuperação de acesso não validada | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
+| Dropbox InvestSmart | Dropbox | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | Landing Page | Lovable | Risco Crítico | A validar |
 | Landing Page | Lovable | Quem recebe o código a validar | A validar |
 | Make | Make | Risco Crítico | A validar |

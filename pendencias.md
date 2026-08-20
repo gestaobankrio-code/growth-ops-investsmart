@@ -1,10 +1,10 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 18:26:04.
+Atualizado automaticamente em 20/08/2026, 18:29:46.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Médio | Recuperação de acesso não validada | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
+| Dropbox InvestSmart | Dropbox | Alto | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | Landing Page | Lovable | Crítico | Risco Crítico | A validar |
 | Landing Page | Lovable | Crítico | Quem recebe o código a validar | A validar |
 | Make | Make | Crítico | Risco Crítico | A validar |

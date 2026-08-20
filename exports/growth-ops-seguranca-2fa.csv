@@ -1,5 +1,5 @@
 ﻿"ativo";"software";"twofa";"metodo_2fa";"quem_recebe_codigo";"tipo_responsavel";"telefone_mascarado";"tipo_telefone";"segundo_admin";"recuperacao_validada";"risco"
-"Dropbox InvestSmart";"Dropbox";"Sim";"E-mail";"Bruno Aguiar";"Marketing";"";"A validar";"A validar";"A validar";"Médio"
+"Dropbox InvestSmart";"Dropbox";"Sim";"E-mail";"Bruno Aguiar";"Marketing";"";"Não aplicável";"Sim";"Sim";"Alto"
 "Landing Page";"Lovable";"Não aplicável";"Não aplicável";"A validar";"Não aplicável";"";"Não aplicável";"A validar";"Não aplicável";"Crítico"
 "Make";"Make";"Não aplicável";"Não aplicável";"A validar";"Não aplicável";"";"A validar";"Não";"Sim";"Crítico"
 "Claude";"Outro";"Sim";"SMS";"Eduardo Alves";"Marketing";"";"Não aplicável";"A validar";"A validar";"Alto"

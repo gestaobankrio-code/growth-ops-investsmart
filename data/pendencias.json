@@ -1,11 +1,11 @@
 [
   {
-    "id": "6be2c47d-4f66-4ebb-9c17-3de7149c0f9f-recuperacao-de-acesso-nao-validada",
+    "id": "6be2c47d-4f66-4ebb-9c17-3de7149c0f9f-risco-alto",
     "recordId": "6be2c47d-4f66-4ebb-9c17-3de7149c0f9f",
     "ativo": "Dropbox InvestSmart",
     "software": "Dropbox",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
     "proximaAcao": "Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.\n\nConfirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.\n\nRemover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
   },
   {
