@@ -1,7 +1,7 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 20:25:40.
+Atualizado automaticamente em 20/08/2026, 20:34:55.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
-| Landing Page |  | https://lovable.dev/ |  |  |  | Validado |
+| Nenhuma landing page cadastrada | - | - | - | - | - | - |

@@ -110,10 +110,10 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
-    "action": "Atualizar",
+    "action": "Validar",
     "software": "Lovable",
-    "ativo": "Landing Page",
-    "categoria": "Landing Page",
+    "ativo": "Lovable",
+    "categoria": "Licença / Plataforma de Desenvolvimento",
     "responsavel": "Marketing",
     "area": "Marketing",
     "status": "Validado",
@@ -127,7 +127,7 @@
     "secondAdmin": "A validar",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "Automático",
-    "lastValidation": "A validar",
+    "lastValidation": "20/08/2026",
     "obs": "Acesso: gestaobankrio@gmail.com /// \nAutenticação pelo Gmail.",
     "next": "A validar",
     "extra": {
@@ -141,7 +141,7 @@
       "lpOwner": ""
     },
     "createdAt": "2026-08-18T21:11:14.649Z",
-    "updatedAt": "2026-08-18T21:28:28.555Z"
+    "updatedAt": "2026-08-20T20:34:55.988Z"
   },
   {
     "schema": "growth-ops-record-v2",

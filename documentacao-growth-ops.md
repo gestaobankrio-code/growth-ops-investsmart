@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 20:25:40.
+Atualização gerada automaticamente em 20/08/2026, 20:34:55.
 
 ## Resumo executivo
 
@@ -19,7 +19,7 @@ Atualização gerada automaticamente em 20/08/2026, 20:25:40.
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
 | Convite Smart Carreiras - Samyr | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Indique um Bancário e Ganhe até 5 Mil | Lovable | Landing Page / Aquisição | Marketing | A validar | Baixo |
-| Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
+| Lovable | Lovable | Licença / Plataforma de Desenvolvimento | Marketing | Validado | Crítico |
 | Smart Carreiras | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Tracking / Mensuração | Marketing | Validado | Baixo |
@@ -34,8 +34,8 @@ Atualização gerada automaticamente em 20/08/2026, 20:25:40.
 | Convite Smart Carreiras - Samyr | Lovable | Risco Crítico | A validar |
 | Convite Smart Carreiras - Samyr | Lovable | Quem recebe o código a validar | A validar |
 | Indique um Bancário e Ganhe até 5 Mil | Lovable | Quem recebe o código a validar | Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.  Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.  Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops. |
-| Landing Page | Lovable | Risco Crítico | A validar |
-| Landing Page | Lovable | Quem recebe o código a validar | A validar |
+| Lovable | Lovable | Risco Crítico | A validar |
+| Lovable | Lovable | Quem recebe o código a validar | A validar |
 | Smart Carreiras | Lovable | Risco Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Smart Carreiras | Lovable | Quem recebe o código a validar | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Make | Make | Risco Crítico | A validar |

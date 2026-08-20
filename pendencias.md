@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 20:25:40.
+Atualizado automaticamente em 20/08/2026, 20:34:55.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
@@ -8,8 +8,8 @@ Atualizado automaticamente em 20/08/2026, 20:25:40.
 | Convite Smart Carreiras - Samyr | Lovable | Crítico | Risco Crítico | A validar |
 | Convite Smart Carreiras - Samyr | Lovable | Crítico | Quem recebe o código a validar | A validar |
 | Indique um Bancário e Ganhe até 5 Mil | Lovable | Crítico | Quem recebe o código a validar | Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.  Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.  Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops. |
-| Landing Page | Lovable | Crítico | Risco Crítico | A validar |
-| Landing Page | Lovable | Crítico | Quem recebe o código a validar | A validar |
+| Lovable | Lovable | Crítico | Risco Crítico | A validar |
+| Lovable | Lovable | Crítico | Quem recebe o código a validar | A validar |
 | Smart Carreiras | Lovable | Crítico | Risco Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Smart Carreiras | Lovable | Crítico | Quem recebe o código a validar | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Make | Make | Crítico | Risco Crítico | A validar |

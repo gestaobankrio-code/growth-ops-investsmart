@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787258095989-a77d9d842cf4a",
+    "date": "2026-08-20T20:34:55.989Z",
+    "issueNumber": 35,
+    "action": "Validar",
+    "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
+    "software": "Lovable",
+    "ativo": "Lovable",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787257540484-dbd7f3b271a98",
     "date": "2026-08-20T20:25:40.484Z",
     "issueNumber": 34,
