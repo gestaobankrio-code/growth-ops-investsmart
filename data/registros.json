@@ -2,10 +2,10 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "971f78e2-57b4-46fe-927e-3916b95bcef7",
-    "action": "Criar",
+    "action": "Atualizar",
     "software": "Landing Page",
-    "ativo": "Landing Page",
-    "categoria": "Landing Page",
+    "ativo": "Página de Obrigado Universal InvestSmart",
+    "categoria": "Landing Page / Página de Obrigado",
     "responsavel": "Philipe Coutinho",
     "area": "Marketing",
     "status": "Validado",
@@ -23,7 +23,7 @@
     "obs": "Página de Obrigado universal da InvestSmart, publicada no RD Station em: https://materiais.investsmartxp.com.br/obrigado-is\n\nUtilizada como destino pós-conversão para formulários, campanhas e páginas digitais da InvestSmart que precisem de uma confirmação institucional de cadastro.\n\nA página confirma o recebimento das informações do lead, apresenta CTA para o site institucional da InvestSmart e possui estrutura preparada para mensuração de acesso, UTMs e eventos de tracking.\n\nHTML/CSS/JS inseridos diretamente no RD Station. Pixel Meta configurado no campo Javascript em HEAD. Manter validação periódica de responsividade, funcionamento do CTA, carregamento do pixel e rastreamento de cliques.",
     "next": "A validar",
     "extra": {
-      "campaignName": "Página de Obrigado",
+      "campaignName": "",
       "variation": "",
       "identifier": "",
       "lovableUrl": "",
@@ -35,7 +35,7 @@
       "leadDestination": ""
     },
     "createdAt": "2026-08-20T13:13:46.080Z",
-    "updatedAt": "2026-08-20T13:13:46.080Z"
+    "updatedAt": "2026-08-20T13:18:53.615Z"
   },
   {
     "schema": "growth-ops-record-v2",

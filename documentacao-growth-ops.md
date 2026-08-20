@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 13:13:46.
+Atualização gerada automaticamente em 20/08/2026, 13:18:53.
 
 ## Resumo executivo
 
@@ -16,7 +16,7 @@ Atualização gerada automaticamente em 20/08/2026, 13:13:46.
 
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
-| Landing Page | Landing Page | Landing Page | Philipe Coutinho | Validado | Baixo |
+| Página de Obrigado Universal InvestSmart | Landing Page | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |
 | Landing Page | Lovable | Landing Page | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
 
@@ -24,7 +24,7 @@ Atualização gerada automaticamente em 20/08/2026, 13:13:46.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
-| Landing Page | Landing Page | Quem recebe o código a validar | A validar |
+| Página de Obrigado Universal InvestSmart | Landing Page | Quem recebe o código a validar | A validar |
 | Landing Page | Lovable | Risco Crítico | A validar |
 | Landing Page | Lovable | Quem recebe o código a validar | A validar |
 | Make | Make | Risco Crítico | A validar |
