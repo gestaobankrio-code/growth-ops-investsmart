@@ -879,7 +879,7 @@ function openDetails(id) {
     <div class="detail-section">
       <h4>Campos específicos de ${esc(item.software || 'software')}</h4>
       <div class="detail-grid">
-        ${extra || detailItem('Informações específicas', 'Nenhum campo específico preenchido.', false, true)}
+        ${extra || detailMultiline('Informações específicas', 'Nenhum campo específico preenchido.', true)}
       </div>
     </div>
 
@@ -903,8 +903,8 @@ function openDetails(id) {
       <div class="detail-grid">
         ${detailItem('Última validação', item.lastValidation || 'A validar')}
         ${detailItem('Risco manual', item.manualRisk || 'Automático')}
-        ${detailItem('Observações', item.obs || 'Sem observações', false, true)}
-        ${detailItem('Próxima ação', item.next || 'A validar', false, true)}
+        ${detailMultiline('Observações', item.obs || 'Sem observações', true)}
+        ${detailMultiline('Próxima ação', item.next || 'A validar', true)}
       </div>
     </div>
   `;
