@@ -1,13 +1,12 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 19:36:36.
+Atualizado automaticamente em 20/08/2026, 19:40:26.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Alto | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | Convite Smart Carreiras - Samyr | Lovable | Crítico | Risco Crítico | A validar |
 | Convite Smart Carreiras - Samyr | Lovable | Crítico | Quem recebe o código a validar | A validar |
-| Convite Smart Carreiras - Samyr | Lovable | Médio | Recuperação de acesso não validada | A validar |
 | Landing Page | Lovable | Crítico | Risco Crítico | A validar |
 | Landing Page | Lovable | Crítico | Quem recebe o código a validar | A validar |
 | Smart Carreiras | Lovable | Crítico | Risco Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |

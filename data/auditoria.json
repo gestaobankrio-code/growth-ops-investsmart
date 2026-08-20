@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787254826703-28e1fc8e66f61",
+    "date": "2026-08-20T19:40:26.703Z",
+    "issueNumber": 29,
+    "action": "Atualizar",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "software": "Lovable",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787254596689-3814f29c2be7",
     "date": "2026-08-20T19:36:36.689Z",
     "issueNumber": 28,
