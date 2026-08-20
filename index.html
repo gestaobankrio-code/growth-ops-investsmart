@@ -3,211 +3,1558 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Growth Ops InvestSmart</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <title>InvestSmart Growth Ops</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      /* =========================================================
+         INVESTSMART DESIGN TOKENS
+         ========================================================= */
+
+      /* Paleta institucional principal */
+      --is-black: #000000;
+      --is-purple: #9966FF;
+      --is-neon: #EBFF70;
+      --is-silver: #F3F3F3;
+      --is-white: #FFFFFF;
+
+      /* Gradientes oficiais */
+      --gradient-gente: linear-gradient(45deg, #CAB0FD 0%, #9966FF 100%);
+      --gradient-garra: linear-gradient(45deg, #000000 0%, #300057 100%);
+      --gradient-leveza: linear-gradient(45deg, #F3F3F3 0%, #DBDADF 100%);
+      --gradient-resultado: linear-gradient(45deg, #9966FF 0%, #4E008E 100%);
+      --gradient-trader: linear-gradient(135deg, #EBFF70 0%, #000000 50%, #9966FF 100%);
+
+      /* Paleta de apoio */
+      --is-blue: #4D67FF;
+      --is-yellow: #FFD039;
+      --is-pink: #EF6079;
+      --is-red: #EB5E57;
+      --is-private-purple: #12002E;
+
+      /* Neutros funcionais */
+      --text-primary: #000000;
+      --text-secondary: #4A4A4A;
+      --text-muted: #6B6B6B;
+      --border-soft: #E4E1EA;
+      --border-strong: #CFC9DB;
+      --surface-soft: #FAFAFA;
+
+      /* UI tokens */
+      --radius-xs: 8px;
+      --radius-sm: 12px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+
+      --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.07);
+      --shadow-card: 0 20px 54px rgba(0, 0, 0, 0.10);
+      --shadow-purple: 0 18px 44px rgba(153, 102, 255, 0.24);
+      --shadow-neon: 0 18px 44px rgba(235, 255, 112, 0.26);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Barlow', Arial, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--text-primary);
+      background:
+        radial-gradient(circle at top left, rgba(153, 102, 255, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(235, 255, 112, 0.16), transparent 30%),
+        var(--is-silver);
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HEADER / NAVBAR
+       ========================================================= */
+
+    .navbar {
+      background: var(--is-black);
+      border-bottom: 2px solid var(--is-purple);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .navbar-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 260px;
+    }
+
+    .brand-symbol {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-purple);
+    }
+
+    .brand-copy strong {
+      display: block;
+      color: var(--is-white);
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      min-height: 42px;
+      border-radius: 999px;
+      padding: 11px 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--is-white);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--is-neon);
+      color: var(--is-neon);
+    }
+
+    .btn-primary {
+      background: var(--is-purple);
+      color: var(--is-white);
+      box-shadow: var(--shadow-purple);
+    }
+
+    .btn-primary:hover {
+      background: #8755F1;
+    }
+
+    .btn-neon {
+      background: var(--is-neon);
+      color: var(--is-black);
+      box-shadow: var(--shadow-neon);
+    }
+
+    .btn-neon:hover {
+      background: #E3FA4F;
+    }
+
+    .btn-soft {
+      background: var(--is-white);
+      color: var(--is-black);
+      border: 1px solid var(--border-soft);
+    }
+
+    .btn-soft:hover {
+      border-color: var(--is-purple);
+      color: var(--is-purple);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-blue {
+      background: var(--is-blue);
+      color: var(--is-white);
+    }
+
+    .btn-pink {
+      background: var(--is-pink);
+      color: var(--is-white);
+    }
+
+    .btn-mini {
+      min-height: 34px;
+      padding: 8px 12px;
+      font-size: 13px;
+      line-height: 17px;
+    }
+
+    /* =========================================================
+       LAYOUT BASE
+       ========================================================= */
+
+    .page {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px;
+    }
+
+    .executive-banner {
+      background: var(--is-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .executive-banner::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 6px;
+      background: var(--gradient-gente);
+    }
+
+    .banner-grid {
+      display: grid;
+      grid-template-columns: 1.55fr 0.65fr;
+      gap: 24px;
+      padding: 34px;
+      align-items: stretch;
+    }
+
+    .banner-copy h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      line-height: 46px;
+      font-weight: 300;
+      letter-spacing: -0.04em;
+    }
+
+    .banner-copy h1 span {
+      font-weight: 500;
+      color: var(--is-purple);
+    }
+
+    .banner-copy p {
+      margin: 0;
+      max-width: 820px;
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 21px;
+      font-weight: 300;
+    }
+
+    .search-area {
+      margin-top: 26px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 280px;
+      height: 46px;
+      border-radius: 999px;
+      border: 1px solid var(--border-strong);
+      background: var(--is-white);
+      color: var(--text-primary);
+      padding: 0 17px;
+      font-size: 15px;
+      line-height: 19px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--is-purple);
+      box-shadow: 0 0 0 4px rgba(153, 102, 255, 0.18);
+    }
+
+    .status-card {
+      background: var(--gradient-garra);
+      color: var(--is-white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+    }
+
+    .status-card small {
+      display: block;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-card strong {
+      font-size: 28px;
+      line-height: 32px;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+
+    .sla {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .sla-item {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .sla-item span {
+      display: block;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 300;
+    }
+
+    .sla-item b {
+      display: block;
+      margin-top: 4px;
+      color: var(--is-neon);
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       METRIC CARDS
+       ========================================================= */
+
+    .metrics-grid {
+      margin: 26px 0;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .metric-card {
+      background: var(--is-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 19px;
+      box-shadow: var(--shadow-soft);
+      min-height: 128px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::after {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: -34px;
+      width: 88px;
+      height: 88px;
+      border-radius: 999px;
+      background: rgba(153, 102, 255, 0.10);
+    }
+
+    .metric-card small {
+      display: block;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .metric-card strong {
+      display: block;
+      font-size: 34px;
+      line-height: 38px;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    .metric-card p {
+      margin: 8px 0 0;
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 17px;
+      font-weight: 300;
+    }
+
+    .metric-purple strong {
+      color: var(--is-purple);
+    }
+
+    .metric-blue strong {
+      color: var(--is-blue);
+    }
+
+    .metric-yellow strong {
+      color: var(--is-yellow);
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+    }
+
+    .metric-pink strong {
+      color: var(--is-pink);
+    }
+
+    .metric-dark {
+      background: var(--gradient-garra);
+      color: var(--is-white);
+      border-color: transparent;
+    }
+
+    .metric-dark small,
+    .metric-dark p {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .metric-dark strong {
+      color: var(--is-neon);
+    }
+
+    /* =========================================================
+       MAIN WORKSPACE
+       ========================================================= */
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 286px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 96px;
+      background: var(--is-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 14px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 500;
+    }
+
+    .filter-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .filter-button {
+      min-height: 42px;
+      border-radius: 14px;
+      background: var(--is-white);
+      border: 1px solid var(--border-soft);
+      color: var(--text-primary);
+      padding: 10px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+    }
+
+    .filter-button:hover {
+      border-color: var(--is-purple);
+      color: var(--is-purple);
+    }
+
+    .filter-button.active {
+      background: var(--is-purple);
+      border-color: var(--is-purple);
+      color: var(--is-white);
+    }
+
+    .filter-count {
+      min-width: 28px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.07);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .filter-button.active .filter-count {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .governance-card {
+      margin-top: 18px;
+      background: var(--gradient-leveza);
+      border: 1px solid var(--is-purple);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .governance-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    .governance-card p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+
+    .table-card {
+      background: var(--is-white);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .table-header {
+      padding: 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .table-header h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .table-header p {
+      margin: 5px 0 0;
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+
+    .table-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .table-scroll {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 1040px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-soft);
+      vertical-align: middle;
+    }
+
+    th {
+      background: #FAF9FD;
+      color: var(--text-muted);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    td {
+      font-size: 15px;
+      line-height: 19px;
+      font-weight: 300;
+      color: var(--text-primary);
+    }
+
+    tbody tr {
+      transition: background 0.18s ease;
+    }
+
+    tbody tr:hover {
+      background: rgba(153, 102, 255, 0.05);
+    }
+
+    .asset-title {
+      display: grid;
+      gap: 4px;
+    }
+
+    .asset-title strong {
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 500;
+    }
+
+    .asset-title span {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 17px;
+      font-weight: 300;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 30px;
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      line-height: 17px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .status-badge::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .status-validado {
+      background: rgba(77, 103, 255, 0.12);
+      color: var(--is-blue);
+    }
+
+    .status-a-validar {
+      background: rgba(255, 208, 57, 0.18);
+      color: #8A6500;
+    }
+
+    .status-reprovado {
+      background: rgba(239, 96, 121, 0.14);
+      color: var(--is-pink);
+    }
+
+    .status-incompleto {
+      background: rgba(235, 94, 87, 0.14);
+      color: var(--is-red);
+    }
+
+    .row-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       MODAL
+       ========================================================= */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.54);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      z-index: 100;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal {
+      width: min(680px, 100%);
+      background: var(--is-white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.30);
+      overflow: hidden;
+      animation: modalIn 0.22s ease both;
+    }
+
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-header {
+      background: var(--gradient-garra);
+      color: var(--is-white);
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .modal-header p {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.70);
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+    }
+
+    .modal-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      color: var(--is-white);
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      color: var(--text-secondary);
+      font-size: 13px;
+      line-height: 17px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border-strong);
+      background: var(--is-white);
+      color: var(--text-primary);
+      padding: 0 13px;
+      font-size: 15px;
+      line-height: 19px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--is-purple);
+      box-shadow: 0 0 0 4px rgba(153, 102, 255, 0.18);
+    }
+
+    .modal-footer {
+      padding: 0 24px 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .footer {
+      margin-top: 34px;
+      background: var(--is-black);
+      color: var(--is-white);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      padding: 24px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer strong {
+      font-size: 15px;
+      line-height: 19px;
+      font-weight: 500;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+      transition: color 0.18s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--is-neon);
+    }
+
+    /* =========================================================
+       RESPONSIVIDADE
+       ========================================================= */
+
+    @media (max-width: 1180px) {
+      .metrics-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .banner-grid,
+      .workspace {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .navbar-inner,
+      .page {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .banner-grid {
+        padding: 26px;
+      }
+
+      .banner-copy h1 {
+        font-size: 32px;
+        line-height: 36px;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-actions,
+      .table-actions,
+      .row-actions,
+      .modal-footer {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .footer {
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <div class="topbar">
-      <div class="brand">
-        <h1>Growth Ops InvestSmart</h1>
-        <p>Painel operacional para plataformas, licenças, acessos, tracking, landing pages, 2FA, pendências e documentação.</p>
+  <header class="navbar">
+    <div class="navbar-inner">
+      <div class="brand" aria-label="InvestSmart Growth Ops">
+        <svg class="brand-symbol" viewBox="0 0 48 48" role="img" aria-label="Símbolo InvestSmart">
+          <defs>
+            <linearGradient id="investsmartGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#9966FF"></stop>
+              <stop offset="100%" stop-color="#4E008E"></stop>
+            </linearGradient>
+          </defs>
+          <rect width="48" height="48" rx="14" fill="url(#investsmartGradient)"></rect>
+          <path d="M15 31.5L22.5 14H28.8L21.3 31.5H15Z" fill="#FFFFFF"></path>
+          <path d="M26.3 31.5L33.8 14H39L31.5 31.5H26.3Z" fill="#EBFF70"></path>
+          <path d="M12 35H34.5" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+
+        <div class="brand-copy">
+          <strong>InvestSmart Growth Ops</strong>
+          <span>Governança de plataformas, acessos e ativos digitais</span>
+        </div>
       </div>
-      <div class="top-actions">
-        <button class="secondary" type="button" onclick="openDrawer('novo')">Novo registro</button>
-        <button class="blue" type="button" onclick="openGitHubIssues()">Abrir GitHub Issues</button>
-        <button class="primary" type="button" onclick="loadOfficialData(true)">Atualizar painel</button>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" type="button" onclick="openGitHubIssues()">GitHub Issues</button>
+        <button class="btn btn-primary" type="button" onclick="openModal()">+ Novo Registro</button>
+        <button class="btn btn-neon" type="button" onclick="refreshPanel()">Atualizar Painel</button>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-grid">
-        <div>
-          <h2>Painel executivo de Growth Ops</h2>
+  <main class="page">
+    <section class="executive-banner">
+      <div class="banner-grid">
+        <div class="banner-copy">
+          <h1>Painel Executivo de <span>Growth Ops</span></h1>
           <p>
-            Fonte oficial: arquivos JSON no GitHub. O painel abre solicitações estruturadas no GitHub, e o GitHub Actions consolida alterações, arquivamentos, exclusões, inventário, pendências e exportações.
+            Central de governança para acompanhar ativos digitais, plataformas, campanhas,
+            responsáveis, homologações e pendências operacionais da frente de Growth Marketing.
           </p>
-          <div class="searchbox">
-            <input id="search" type="search" placeholder="Buscar por ativo, software, responsável, 2FA, telefone, GTM, pixel, domínio, webhook ou campanha">
-            <button class="primary" type="button" onclick="applySearch()">Buscar</button>
-            <button class="secondary" type="button" onclick="resetSearch()">Limpar</button>
+
+          <div class="search-area">
+            <input id="searchInput" class="search-input" type="search" placeholder="Buscar por ativo, software, responsável, categoria ou status">
+            <button class="btn btn-primary" type="button" onclick="applySearch()">Buscar</button>
+            <button class="btn btn-soft" type="button" onclick="clearSearch()">Limpar</button>
           </div>
         </div>
-        <div class="status-panel">
-          <strong>Status geral</strong>
-          <span id="statusText">Carregando dados</span>
-          <p id="statusDescription">Aguardando leitura da base oficial do GitHub.</p>
-        </div>
+
+        <aside class="status-card">
+          <div>
+            <small>Status geral</small>
+            <div class="status-row">
+              <strong id="generalStatus">Atenção Operacional</strong>
+              <span class="status-badge status-a-validar">Atenção</span>
+            </div>
+          </div>
+
+          <div class="sla">
+            <div class="sla-item">
+              <span>SLA de revisão</span>
+              <b>48h</b>
+            </div>
+            <div class="sla-item">
+              <span>Atualização</span>
+              <b id="lastUpdate">Agora</b>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="cards">
-      <div class="card"><small>Registros ativos</small><strong id="total">0</strong></div>
-      <div class="card"><small>Validados</small><strong id="validated">0</strong></div>
-      <div class="card"><small>A validar</small><strong id="pending">0</strong></div>
-      <div class="card"><small>Risco alto/crítico</small><strong id="riskCount">0</strong></div>
-      <div class="card"><small>Sem 2FA</small><strong id="without2fa">0</strong></div>
-      <div class="card"><small>Custódia 2FA pendente</small><strong id="ownerPending">0</strong></div>
+    <section class="metrics-grid" aria-label="Indicadores executivos">
+      <div class="metric-card metric-purple">
+        <small>Registros Ativos</small>
+        <strong id="metricActive">0</strong>
+        <p>Total monitorado no painel</p>
+      </div>
+
+      <div class="metric-card metric-blue">
+        <small>Validados</small>
+        <strong id="metricValidated">0</strong>
+        <p>Homologados operacionalmente</p>
+      </div>
+
+      <div class="metric-card metric-yellow">
+        <small>A Validar</small>
+        <strong id="metricPending">0</strong>
+        <p>Dependem de conferência</p>
+      </div>
+
+      <div class="metric-card metric-pink">
+        <small>Reprovados</small>
+        <strong id="metricRejected">0</strong>
+        <p>Exigem correção ou descarte</p>
+      </div>
+
+      <div class="metric-card">
+        <small>Softwares Integrados</small>
+        <strong id="metricSoftware">0</strong>
+        <p>HubSpot, RD, Meta, GA4</p>
+      </div>
+
+      <div class="metric-card metric-dark">
+        <small>Eficiência Operacional</small>
+        <strong id="metricEfficiency">0%</strong>
+        <p>Validados sobre total ativo</p>
+      </div>
     </section>
 
     <section class="workspace">
-      <aside>
-        <h3>Filtros</h3>
-        <button class="filter active" type="button" onclick="filterBy('ativos', this)">Ativos</button>
-        <button class="filter" type="button" onclick="filterBy('A validar', this)">A validar</button>
-        <button class="filter" type="button" onclick="filterBy('Validado', this)">Validados</button>
-        <button class="filter" type="button" onclick="filterBy('Risco alto', this)">Risco alto/crítico</button>
-        <button class="filter" type="button" onclick="filterBy('Sem 2FA', this)">Sem 2FA</button>
-        <button class="filter" type="button" onclick="filterBy('Landing Page', this)">Landing pages</button>
-        <button class="filter" type="button" onclick="filterBy('Tracking', this)">Tracking</button>
-        <button class="filter" type="button" onclick="filterBy('Automação', this)">Automação</button>
-        <button class="filter" type="button" onclick="filterBy('CRM', this)">CRM</button>
-        <button class="filter" type="button" onclick="filterBy('Arquivado', this)">Arquivados</button>
-        <div class="security-summary">
-          <h3>Regra de segurança</h3>
-          <p>Registrar apenas telefone mascarado e responsável pela custódia 2FA. Não registrar senha, token, código 2FA, recovery code, número completo ou dados de leads.</p>
+      <aside class="sidebar">
+        <h2>Filtros</h2>
+
+        <div class="filter-list">
+          <button class="filter-button active" type="button" data-filter="Todos" onclick="setFilter('Todos', this)">
+            Todos <span class="filter-count" id="countAll">0</span>
+          </button>
+
+          <button class="filter-button" type="button" data-filter="Validado" onclick="setFilter('Validado', this)">
+            Validados <span class="filter-count" id="countValidated">0</span>
+          </button>
+
+          <button class="filter-button" type="button" data-filter="A Validar" onclick="setFilter('A Validar', this)">
+            A Validar <span class="filter-count" id="countPending">0</span>
+          </button>
+
+          <button class="filter-button" type="button" data-filter="Reprovado" onclick="setFilter('Reprovado', this)">
+            Reprovados <span class="filter-count" id="countRejected">0</span>
+          </button>
+        </div>
+
+        <div class="governance-card">
+          <h3>Regra de Governança</h3>
+          <p>
+            Não registrar senhas, tokens, chaves de API, códigos 2FA, recovery codes,
+            número completo de telefone ou dados pessoais de leads.
+          </p>
         </div>
       </aside>
 
-      <div class="table-card">
-        <div class="table-head">
+      <section class="table-card">
+        <div class="table-header">
           <div>
-            <h3>Registros operacionais</h3>
-            <p>Clique em qualquer linha para visualizar os detalhes completos do ativo.</p>
+            <h2>Tabela de Gestão de Ativos</h2>
+            <p>Controle operacional de ativos, softwares, responsáveis e status de homologação.</p>
           </div>
+
           <div class="table-actions">
-            <button class="secondary mini" type="button" onclick="openDrawer('novo')">Criar</button>
-            <button class="secondary mini" type="button" onclick="downloadDocumentation()">Gerar documentação</button>
-            <button class="secondary mini" type="button" onclick="exportCsv('inventario')">Exportar Excel/CSV</button>
-            <button class="secondary mini" type="button" onclick="exportCsv('pendencias')">Exportar pendências</button>
-            <button class="secondary mini" type="button" onclick="exportJson()">Exportar JSON</button>
+            <button class="btn btn-soft btn-mini" type="button" onclick="exportCsv()">Exportar CSV</button>
+            <button class="btn btn-primary btn-mini" type="button" onclick="openModal()">Cadastrar ativo</button>
           </div>
         </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Ativo</th>
-              <th>Software</th>
-              <th>Categoria</th>
-              <th>Responsável</th>
-              <th>Status</th>
-              <th>2FA</th>
-              <th>Custódia 2FA</th>
-              <th>Método</th>
-              <th>Risco</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody id="records"></tbody>
-        </table>
-        <div id="emptyState" class="empty-state hidden">
-          <strong>Nenhum registro encontrado.</strong>
-          <span>Use “Novo registro” para criar uma solicitação no GitHub.</span>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Ativo / Campanha</th>
+                <th>Software</th>
+                <th>Categoria</th>
+                <th>Responsável</th>
+                <th>Status</th>
+                <th>Ações de Homologação</th>
+              </tr>
+            </thead>
+            <tbody id="recordsTable"></tbody>
+          </table>
         </div>
-      </div>
+      </section>
     </section>
+
+    <footer class="footer">
+      <strong>InvestSmart Growth Ops • Versão 1.0</strong>
+
+      <nav class="footer-links" aria-label="Links institucionais">
+        <a href="https://investsmart.com.br" target="_blank" rel="noopener">InvestSmart</a>
+        <a href="https://github.com/gestaobankrio-code/growth-ops-investsmart/issues" target="_blank" rel="noopener">GitHub Issues</a>
+        <a href="#" onclick="openModal(); return false;">Novo registro</a>
+      </nav>
+    </footer>
   </main>
 
-  <div class="drawer" id="drawer">
-    <div class="drawer-panel">
-      <div class="form-logo">
-        <img src="https://investsmart.com.br/wp-content/uploads/2023/08/InvestSmart-1.svg" alt="InvestSmart">
-      </div>
-
-      <div class="drawer-header">
+  <div class="modal-backdrop" id="recordModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
         <div>
-          <h3 id="drawerTitle">Novo registro</h3>
-          <p>Os campos mudam automaticamente conforme o software/plataforma selecionado.</p>
+          <h2 id="modalTitle">Novo Registro</h2>
+          <p>Cadastre um ativo para acompanhamento operacional no painel Growth Ops.</p>
         </div>
-        <button class="secondary mini" type="button" onclick="closeDrawer()">Fechar</button>
+
+        <button class="modal-close" type="button" onclick="closeModal()" aria-label="Fechar modal">×</button>
       </div>
 
-      <input type="hidden" id="editingId">
+      <div class="modal-body">
+        <form id="recordForm">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="assetName">Nome do Ativo</label>
+              <input id="assetName" class="form-control" type="text" placeholder="Ex.: Página de Obrigado Universal" required>
+            </div>
 
-      <div class="form-section">
-        <h4>1. Software e classificação</h4>
-        <p>Selecione primeiro o software. Os campos específicos serão exibidos abaixo.</p>
-        <div class="form-grid">
-          <div class="field"><label>Ação</label><select id="acao"><option>Criar</option><option>Atualizar</option><option>Validar</option><option>Reprovar</option><option>Arquivar</option><option>Excluir</option></select></div>
-          <div class="field"><label>Software / Plataforma</label><select id="software" onchange="onSoftwareChange()"></select></div>
-          <div class="field"><label>Nome do ativo</label><input id="nome" placeholder="Ex.: Make, GTM, Meta Pixel, Meu Novo Lar"></div>
-          <div class="field"><label>Categoria</label><input id="categoria" placeholder="Preenchido automaticamente, mas pode ser ajustado"></div>
-          <div class="field"><label>Responsável operacional</label><input id="responsavel" placeholder="Ex.: Marketing, Tecnologia, Jorge, Terceirizado"></div>
-          <div class="field"><label>Área gestora</label><input id="area" placeholder="Ex.: Marketing, Tecnologia, Processos"></div>
-          <div class="field"><label>Status</label><select id="status"><option>A validar</option><option>Validado</option><option>Incompleto</option><option>Ativo</option><option>Inativo</option><option>Reprovado</option><option>Arquivado</option></select></div>
-          <div class="field"><label>URL principal / acesso</label><input id="url" placeholder="URL principal do ativo"></div>
-        </div>
+            <div class="field">
+              <label for="assetSoftware">Software</label>
+              <select id="assetSoftware" class="form-control" required>
+                <option value="">Selecione</option>
+                <option>RD Station</option>
+                <option>HubSpot</option>
+                <option>Meta Ads</option>
+                <option>Google Ads</option>
+                <option>GA4</option>
+                <option>GTM</option>
+                <option>Lovable</option>
+                <option>Vercel</option>
+                <option>Make</option>
+                <option>n8n</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="assetCategory">Categoria</label>
+              <input id="assetCategory" class="form-control" type="text" placeholder="Ex.: Landing Page">
+            </div>
+
+            <div class="field">
+              <label for="assetOwner">Responsável</label>
+              <input id="assetOwner" class="form-control" type="text" placeholder="Ex.: Marketing">
+            </div>
+
+            <div class="field">
+              <label for="assetStatus">Status</label>
+              <select id="assetStatus" class="form-control">
+                <option>Validado</option>
+                <option selected>A Validar</option>
+                <option>Reprovado</option>
+              </select>
+            </div>
+          </div>
+        </form>
       </div>
 
-      <div class="form-section" id="softwareSpecificSection">
-        <h4 id="specificTitle">2. Campos específicos</h4>
-        <p id="specificDescription">Campos dinâmicos conforme o software selecionado.</p>
-        <div class="form-grid" id="specificFields"></div>
-      </div>
-
-      <div class="form-section">
-        <h4>3. Segurança e recuperação de acesso</h4>
-        <p>Indique quem possui a custódia do 2FA. Não inserir número completo nem código recebido.</p>
-        <div class="form-grid">
-          <div class="field"><label>2FA ativo</label><select id="twofa"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Método de 2FA</label><select id="twofaMethod"><option>A validar</option><option>SMS</option><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Aplicativo autenticador</option><option>Chave de segurança</option><option>Outro</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Responsável pela custódia 2FA</label><input id="twofaOwner" placeholder="Ex.: Jorge, Marketing, Tecnologia, Terceirizado, A validar"></div>
-          <div class="field"><label>Tipo de responsável pela custódia 2FA</label><select id="twofaOwnerType"><option>A validar</option><option>Funcionário</option><option>Gestor</option><option>Marketing</option><option>Tecnologia</option><option>Terceirizado</option><option>Ex-colaborador</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Telefone vinculado, mascarado</label><input id="twofaPhoneMasked" placeholder="Ex.: (***) *****-1234"></div>
-          <div class="field"><label>Tipo do telefone</label><select id="phoneType"><option>A validar</option><option>Corporativo</option><option>Pessoal autorizado</option><option>Terceirizado</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Existe segundo administrador?</label><select id="secondAdmin"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Recuperação de acesso validada?</label><select id="recoveryValidated"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
-        </div>
-      </div>
-
-      <div class="form-section">
-        <h4>4. Governança e próxima ação</h4>
-        <div class="form-grid">
-          <div class="field"><label>Risco manual</label><select id="manualRisk"><option>Automático</option><option>Baixo</option><option>Médio</option><option>Alto</option><option>Crítico</option></select></div>
-          <div class="field"><label>Última validação</label><input id="lastValidation" placeholder="Ex.: 18/08/2026 ou A validar"></div>
-          <div class="field full"><label>Observações</label><textarea id="obs" placeholder="Descreva contexto, responsável, integração vinculada ou dependências."></textarea></div>
-          <div class="field full"><label>Próxima ação</label><textarea id="next" placeholder="Ex.: Identificar responsável pela custódia 2FA, migrar SMS para autenticador, adicionar segundo administrador."></textarea></div>
-        </div>
-      </div>
-
-      <div class="security-note"><strong>Segurança:</strong> não inserir senhas, tokens, chaves de API, códigos 2FA, recovery codes, número completo de telefone, prints de código, dados pessoais de leads ou informações financeiras sensíveis.</div>
-      <div class="drawer-actions">
-        <button class="primary" type="button" onclick="saveToGitHub()">Salvar no GitHub</button>
-        <button class="success" type="button" onclick="requestStatusFromForm('Validado')">Validar no GitHub</button>
-        <button class="danger" type="button" onclick="requestStatusFromForm('Reprovado')">Reprovar no GitHub</button>
-        <button class="warning" type="button" onclick="requestStatusFromForm('Arquivado')">Arquivar no GitHub</button>
-        <button class="danger" type="button" onclick="requestStatusFromForm('Excluir')">Excluir no GitHub</button>
-        <button class="blue" type="button" onclick="downloadCurrentMarkdown()">Baixar Markdown</button>
+      <div class="modal-footer">
+        <button class="btn btn-soft" type="button" onclick="closeModal()">Cancelar</button>
+        <button class="btn btn-neon" type="button" onclick="saveRecord()">Salvar Registro</button>
       </div>
     </div>
   </div>
 
-  <div class="details-drawer" id="detailsDrawer">
-    <div class="details-panel">
-      <div class="details-header">
-        <div>
-          <h3 id="detailsTitle">Detalhes do registro</h3>
-          <p id="detailsSubtitle">Visualização completa do ativo operacional.</p>
-        </div>
-        <button class="secondary mini" type="button" onclick="closeDetails()">Fechar</button>
-      </div>
-      <div id="detailsContent"></div>
-      <div class="details-actions">
-        <button class="secondary" type="button" onclick="editFromDetails()">Editar</button>
-        <button class="success" type="button" onclick="statusFromDetails('Validado')">Validar no GitHub</button>
-        <button class="danger" type="button" onclick="statusFromDetails('Reprovado')">Reprovar no GitHub</button>
-        <button class="warning" type="button" onclick="statusFromDetails('Arquivado')">Arquivar no GitHub</button>
-        <button class="danger" type="button" onclick="statusFromDetails('Excluir')">Excluir no GitHub</button>
-        <button class="blue" type="button" onclick="downloadDetailsMarkdown()">Baixar Markdown</button>
-      </div>
-    </div>
-  </div>
+  <script>
+    const githubIssuesUrl = 'https://github.com/gestaobankrio-code/growth-ops-investsmart/issues';
 
-  <div class="toast" id="toast"></div>
+    let activeFilter = 'Todos';
+    let searchTerm = '';
 
-  <footer>Growth Ops InvestSmart • GitHub Pages • Fonte oficial no GitHub • Versão 1.0</footer>
-  <script src="assets/app.js"></script>
+    let records = [
+      {
+        id: cryptoRandomId(),
+        ativo: 'Página de Obrigado Universal InvestSmart',
+        software: 'RD Station',
+        categoria: 'Landing Page / Página de Obrigado',
+        responsavel: 'Philipe Coutinho',
+        status: 'Validado'
+      },
+      {
+        id: cryptoRandomId(),
+        ativo: 'Make',
+        software: 'Make',
+        categoria: 'Automação / Integração',
+        responsavel: 'Marketing',
+        status: 'Validado'
+      },
+      {
+        id: cryptoRandomId(),
+        ativo: 'Landing Page',
+        software: 'Lovable',
+        categoria: 'Landing Page',
+        responsavel: 'Marketing',
+        status: 'A Validar'
+      },
+      {
+        id: cryptoRandomId(),
+        ativo: 'Meta Pixel',
+        software: 'Meta Ads',
+        categoria: 'Tracking',
+        responsavel: 'Marketing',
+        status: 'A Validar'
+      },
+      {
+        id: cryptoRandomId(),
+        ativo: 'GA4',
+        software: 'GA4',
+        categoria: 'Analytics',
+        responsavel: 'Marketing',
+        status: 'Reprovado'
+      }
+    ];
+
+    function cryptoRandomId() {
+      if (window.crypto && crypto.randomUUID) {
+        return crypto.randomUUID();
+      }
+
+      return 'id-' + Date.now() + '-' + Math.random().toString(16).slice(2);
+    }
+
+    function normalizeText(value) {
+      return String(value || '')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .trim();
+    }
+
+    function statusClass(status) {
+      const normalized = normalizeText(status);
+
+      if (normalized === 'validado') return 'status-validado';
+      if (normalized === 'a validar') return 'status-a-validar';
+      if (normalized === 'reprovado') return 'status-reprovado';
+
+      return 'status-incompleto';
+    }
+
+    function filteredRecords() {
+      const normalizedSearch = normalizeText(searchTerm);
+
+      return records.filter(record => {
+        const matchesFilter = activeFilter === 'Todos' || record.status === activeFilter;
+
+        const searchable = normalizeText([
+          record.ativo,
+          record.software,
+          record.categoria,
+          record.responsavel,
+          record.status
+        ].join(' '));
+
+        const matchesSearch = !normalizedSearch || searchable.includes(normalizedSearch);
+
+        return matchesFilter && matchesSearch;
+      });
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('recordsTable');
+      const list = filteredRecords();
+
+      if (!list.length) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6">
+              <strong>Nenhum registro encontrado.</strong>
+              <br>
+              Ajuste a busca, altere os filtros ou cadastre um novo ativo.
+            </td>
+          </tr>
+        `;
+        updateMetrics();
+        return;
+      }
+
+      tbody.innerHTML = list.map(record => `
+        <tr>
+          <td>
+            <div class="asset-title">
+              <strong>${escapeHtml(record.ativo)}</strong>
+              <span>ID operacional: ${record.id.slice(0, 8)}</span>
+            </div>
+          </td>
+          <td>${escapeHtml(record.software)}</td>
+          <td>${escapeHtml(record.categoria)}</td>
+          <td>${escapeHtml(record.responsavel)}</td>
+          <td><span class="status-badge ${statusClass(record.status)}">${escapeHtml(record.status)}</span></td>
+          <td>
+            <div class="row-actions">
+              <button class="btn btn-blue btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Validado')">Validar</button>
+              <button class="btn btn-pink btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Reprovado')">Reprovar</button>
+              <button class="btn btn-soft btn-mini" type="button" onclick="showDetails('${record.id}')">Detalhes</button>
+              <button class="btn btn-soft btn-mini" type="button" onclick="editRecord('${record.id}')">Editar</button>
+            </div>
+          </td>
+        </tr>
+      `).join('');
+
+      updateMetrics();
+    }
+
+    function updateMetrics() {
+      const total = records.length;
+      const validated = records.filter(record => record.status === 'Validado').length;
+      const pending = records.filter(record => record.status === 'A Validar').length;
+      const rejected = records.filter(record => record.status === 'Reprovado').length;
+      const softwares = new Set(records.map(record => record.software)).size;
+      const efficiency = total ? Math.round((validated / total) * 100) : 0;
+
+      document.getElementById('metricActive').textContent = total;
+      document.getElementById('metricValidated').textContent = validated;
+      document.getElementById('metricPending').textContent = pending;
+      document.getElementById('metricRejected').textContent = rejected;
+      document.getElementById('metricSoftware').textContent = softwares;
+      document.getElementById('metricEfficiency').textContent = efficiency + '%';
+
+      document.getElementById('countAll').textContent = total;
+      document.getElementById('countValidated').textContent = validated;
+      document.getElementById('countPending').textContent = pending;
+      document.getElementById('countRejected').textContent = rejected;
+
+      const generalStatus = document.getElementById('generalStatus');
+      generalStatus.textContent = pending > 0 || rejected > 0 ? 'Atenção Operacional' : 'Governança Estável';
+
+      document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+    }
+
+    function setFilter(filter, element) {
+      activeFilter = filter;
+
+      document.querySelectorAll('.filter-button').forEach(button => {
+        button.classList.remove('active');
+      });
+
+      element.classList.add('active');
+
+      renderTable();
+    }
+
+    function applySearch() {
+      searchTerm = document.getElementById('searchInput').value;
+      renderTable();
+    }
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      searchTerm = '';
+      renderTable();
+    }
+
+    function refreshPanel() {
+      updateMetrics();
+      renderTable();
+    }
+
+    function setRecordStatus(id, status) {
+      records = records.map(record => {
+        if (record.id !== id) return record;
+        return { ...record, status };
+      });
+
+      renderTable();
+    }
+
+    function openModal(record = null) {
+      const modal = document.getElementById('recordModal');
+      const form = document.getElementById('recordForm');
+
+      form.dataset.editingId = record ? record.id : '';
+
+      document.getElementById('modalTitle').textContent = record ? 'Editar Registro' : 'Novo Registro';
+      document.getElementById('assetName').value = record ? record.ativo : '';
+      document.getElementById('assetSoftware').value = record ? record.software : '';
+      document.getElementById('assetCategory').value = record ? record.categoria : '';
+      document.getElementById('assetOwner').value = record ? record.responsavel : '';
+      document.getElementById('assetStatus').value = record ? record.status : 'A Validar';
+
+      modal.classList.add('open');
+      document.getElementById('assetName').focus();
+    }
+
+    function closeModal() {
+      document.getElementById('recordModal').classList.remove('open');
+    }
+
+    function saveRecord() {
+      const form = document.getElementById('recordForm');
+
+      const ativo = document.getElementById('assetName').value.trim();
+      const software = document.getElementById('assetSoftware').value.trim();
+      const categoria = document.getElementById('assetCategory').value.trim() || 'A Validar';
+      const responsavel = document.getElementById('assetOwner').value.trim() || 'A Validar';
+      const status = document.getElementById('assetStatus').value;
+
+      if (!ativo || !software) {
+        alert('Preencha pelo menos Nome do Ativo e Software.');
+        return;
+      }
+
+      const editingId = form.dataset.editingId;
+
+      if (editingId) {
+        records = records.map(record => {
+          if (record.id !== editingId) return record;
+
+          return {
+            ...record,
+            ativo,
+            software,
+            categoria,
+            responsavel,
+            status
+          };
+        });
+      } else {
+        records.unshift({
+          id: cryptoRandomId(),
+          ativo,
+          software,
+          categoria,
+          responsavel,
+          status
+        });
+      }
+
+      closeModal();
+      renderTable();
+    }
+
+    function editRecord(id) {
+      const record = records.find(item => item.id === id);
+
+      if (!record) return;
+
+      openModal(record);
+    }
+
+    function showDetails(id) {
+      const record = records.find(item => item.id === id);
+
+      if (!record) return;
+
+      alert(
+        `Ativo: ${record.ativo}\n` +
+        `Software: ${record.software}\n` +
+        `Categoria: ${record.categoria}\n` +
+        `Responsável: ${record.responsavel}\n` +
+        `Status: ${record.status}`
+      );
+    }
+
+    function exportCsv() {
+      const header = ['Ativo', 'Software', 'Categoria', 'Responsável', 'Status'];
+      const rows = records.map(record => [
+        record.ativo,
+        record.software,
+        record.categoria,
+        record.responsavel,
+        record.status
+      ]);
+
+      const csv = '\ufeff' + [
+        header.join(';'),
+        ...rows.map(row => row.map(value => `"${String(value).replaceAll('"', '""')}"`).join(';'))
+      ].join('\n');
+
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+
+      a.href = url;
+      a.download = 'investsmart-growth-ops.csv';
+      a.click();
+
+      URL.revokeObjectURL(url);
+    }
+
+    function openGitHubIssues() {
+      window.open(githubIssuesUrl, '_blank', 'noopener');
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    document.getElementById('searchInput').addEventListener('input', event => {
+      searchTerm = event.target.value;
+      renderTable();
+    });
+
+    document.getElementById('recordModal').addEventListener('click', event => {
+      if (event.target.id === 'recordModal') {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    renderTable();
+  </script>
 </body>
 </html>
