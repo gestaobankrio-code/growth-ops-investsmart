@@ -49,7 +49,7 @@
       <div class="card"><small>A validar</small><strong id="pending">0</strong></div>
       <div class="card"><small>Risco alto/crítico</small><strong id="riskCount">0</strong></div>
       <div class="card"><small>Sem 2FA</small><strong id="without2fa">0</strong></div>
-      <div class="card"><small>Código a validar</small><strong id="ownerPending">0</strong></div>
+      <div class="card"><small>Custódia 2FA pendente</small><strong id="ownerPending">0</strong></div>
     </section>
 
     <section class="workspace">
@@ -67,7 +67,7 @@
         <button class="filter" type="button" onclick="filterBy('Arquivado', this)">Arquivados</button>
         <div class="security-summary">
           <h3>Regra de segurança</h3>
-          <p>Registrar apenas telefone mascarado e quem recebe o código. Não registrar senha, token, código 2FA, recovery code, número completo ou dados de leads.</p>
+          <p>Registrar apenas telefone mascarado e responsável pela custódia 2FA. Não registrar senha, token, código 2FA, recovery code, número completo ou dados de leads.</p>
         </div>
       </aside>
 
@@ -81,7 +81,6 @@
             <button class="secondary mini" type="button" onclick="openDrawer('novo')">Criar</button>
             <button class="secondary mini" type="button" onclick="downloadDocumentation()">Gerar documentação</button>
             <button class="secondary mini" type="button" onclick="exportCsv('inventario')">Exportar Excel/CSV</button>
-            <button class="secondary mini" type="button" onclick="exportCsv('seguranca')">Exportar 2FA</button>
             <button class="secondary mini" type="button" onclick="exportCsv('pendencias')">Exportar pendências</button>
             <button class="secondary mini" type="button" onclick="exportJson()">Exportar JSON</button>
           </div>
@@ -95,7 +94,7 @@
               <th>Responsável</th>
               <th>Status</th>
               <th>2FA</th>
-              <th>Quem recebe o código</th>
+              <th>Custódia 2FA</th>
               <th>Método</th>
               <th>Risco</th>
               <th>Ações</th>
@@ -146,12 +145,12 @@
 
       <div class="form-section">
         <h4>3. Segurança e recuperação de acesso</h4>
-        <p>Indique quem recebe o código de verificação. Não inserir número completo nem código recebido.</p>
+        <p>Indique quem possui a custódia do 2FA. Não inserir número completo nem código recebido.</p>
         <div class="form-grid">
           <div class="field"><label>2FA ativo</label><select id="twofa"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
           <div class="field"><label>Método de 2FA</label><select id="twofaMethod"><option>A validar</option><option>SMS</option><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Aplicativo autenticador</option><option>Chave de segurança</option><option>Outro</option><option>Não aplicável</option></select></div>
-          <div class="field"><label>Quem recebe o código</label><input id="twofaOwner" placeholder="Ex.: Jorge, Marketing, Tecnologia, Terceirizado, A validar"></div>
-          <div class="field"><label>Tipo de responsável pelo código</label><select id="twofaOwnerType"><option>A validar</option><option>Funcionário</option><option>Gestor</option><option>Marketing</option><option>Tecnologia</option><option>Terceirizado</option><option>Ex-colaborador</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
+          <div class="field"><label>Responsável pela custódia 2FA</label><input id="twofaOwner" placeholder="Ex.: Jorge, Marketing, Tecnologia, Terceirizado, A validar"></div>
+          <div class="field"><label>Tipo de responsável pela custódia 2FA</label><select id="twofaOwnerType"><option>A validar</option><option>Funcionário</option><option>Gestor</option><option>Marketing</option><option>Tecnologia</option><option>Terceirizado</option><option>Ex-colaborador</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
           <div class="field"><label>Telefone vinculado, mascarado</label><input id="twofaPhoneMasked" placeholder="Ex.: (***) *****-1234"></div>
           <div class="field"><label>Tipo do telefone</label><select id="phoneType"><option>A validar</option><option>Corporativo</option><option>Pessoal autorizado</option><option>Terceirizado</option><option>Desconhecido</option><option>Não aplicável</option></select></div>
           <div class="field"><label>Existe segundo administrador?</label><select id="secondAdmin"><option>A validar</option><option>Sim</option><option>Não</option><option>Não aplicável</option></select></div>
@@ -165,7 +164,7 @@
           <div class="field"><label>Risco manual</label><select id="manualRisk"><option>Automático</option><option>Baixo</option><option>Médio</option><option>Alto</option><option>Crítico</option></select></div>
           <div class="field"><label>Última validação</label><input id="lastValidation" placeholder="Ex.: 18/08/2026 ou A validar"></div>
           <div class="field full"><label>Observações</label><textarea id="obs" placeholder="Descreva contexto, responsável, integração vinculada ou dependências."></textarea></div>
-          <div class="field full"><label>Próxima ação</label><textarea id="next" placeholder="Ex.: Identificar quem recebe o código, migrar SMS para autenticador, adicionar segundo administrador."></textarea></div>
+          <div class="field full"><label>Próxima ação</label><textarea id="next" placeholder="Ex.: Identificar responsável pela custódia 2FA, migrar SMS para autenticador, adicionar segundo administrador."></textarea></div>
         </div>
       </div>
 
