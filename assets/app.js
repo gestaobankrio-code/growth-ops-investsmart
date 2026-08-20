@@ -99,6 +99,26 @@ const softwareProfiles = {
     ]
   },
 
+  'RD STATION': {
+    category: 'Automação de marketing / CRM',
+    url: 'https://app.rdstation.com.br',
+    description: 'Conta RD Station, formulários, landing pages, automações, conversões, integrações e destino dos leads.',
+    fields: [
+      ['accountName', 'Nome da conta RD Station', 'A validar'],
+      ['loginEmail', 'Usuário / login / e-mail de acesso', 'A validar'],
+      ['plan', 'Plano contratado', 'A validar'],
+      ['mainDomain', 'Domínio principal', 'A validar'],
+      ['landingPages', 'Landing pages vinculadas', 'A validar'],
+      ['forms', 'Formulários ativos', 'A validar'],
+      ['conversionEvents', 'Eventos de conversão', 'Lead, Form Submit, Conversão RD'],
+      ['automationFlows', 'Fluxos de automação ativos', 'A validar'],
+      ['integrations', 'Integrações ativas', 'Webhook / HubSpot / Bitrix / Sheets / n8n'],
+      ['leadDestination', 'Destino dos leads', 'Bitrix / HubSpot / RD CRM / Sheets / A validar'],
+      ['tracking', 'Tracking instalado', 'GTM / GA4 / Meta Pixel / A validar'],
+      ['rdOwner', 'Responsável pela conta RD', 'Marketing / Terceirizado / A validar']
+    ]
+  },
+
   'HubSpot': {
     category: 'CRM / Formulários',
     url: 'https://app.hubspot.com',
@@ -507,8 +527,8 @@ function filtered() {
     if (currentFilter === 'Sem 2FA') return item.twofa === 'Não' && !archived;
     if (currentFilter === 'Landing Page') return (item.software === 'Landing Page' || item.categoria === 'Landing Page') && !archived;
     if (currentFilter === 'Tracking') return (['Google Tag Manager', 'Google Analytics / GA4', 'Meta Pixel'].includes(item.software) || item.categoria === 'Tracking') && !archived;
-    if (currentFilter === 'Automação') return (['Make', 'n8n', 'ManyChat'].includes(item.software) || String(item.categoria || '').includes('Automação')) && !archived;
-    if (currentFilter === 'CRM') return (['Bitrix', 'HubSpot'].includes(item.software) || String(item.categoria || '').includes('CRM')) && !archived;
+    if (currentFilter === 'Automação') return (['Make', 'n8n', 'ManyChat', 'RD STATION'].includes(item.software) || String(item.categoria || '').includes('Automação')) && !archived;
+    if (currentFilter === 'CRM') return (['Bitrix', 'HubSpot', 'RD STATION'].includes(item.software) || String(item.categoria || '').includes('CRM')) && !archived;
     if (currentFilter === 'Arquivado') return archived;
 
     return !archived;
@@ -570,8 +590,8 @@ function updateCards() {
     : 'Governança estável';
 
   document.getElementById('statusDescription').textContent = (risks > 0 || ownerPending > 0)
-    ? `${risks} registro(s) em risco alto/crítico e ${ownerPending} com responsável pelo código a validar.`
-    : 'Não há pendências críticas de 2FA ou responsável pelo código.';
+    ? `${risks} registro(s) em risco alto/crítico e ${ownerPending} com custódia 2FA pendente.`
+    : 'Não há pendências críticas de 2FA ou custódia de acesso.';
 }
 
 function filterBy(filter, element) {
@@ -794,8 +814,8 @@ ${extra || '- Sem campos específicos preenchidos.'}
 ### Segurança e recuperação de acesso
 - 2FA ativo: ${item.twofa}
 - Método de 2FA: ${item.twofaMethod}
-- Quem recebe o código: ${item.twofaOwner}
-- Tipo de responsável pelo código: ${item.twofaOwnerType}
+- Responsável pela custódia 2FA: ${item.twofaOwner}
+- Tipo de responsável pela custódia 2FA: ${item.twofaOwnerType}
 - Telefone mascarado: ${item.twofaPhoneMasked || 'Não informado'}
 - Tipo do telefone: ${item.phoneType}
 - Existe segundo administrador: ${item.secondAdmin}
@@ -868,8 +888,8 @@ function openDetails(id) {
       <div class="detail-grid">
         ${detailItem('2FA ativo', badge(item.twofa), true)}
         ${detailItem('Método de 2FA', badge(item.twofaMethod), true)}
-        ${detailItem('Quem recebe o código', item.twofaOwner || 'A validar')}
-        ${detailItem('Tipo de responsável pelo código', item.twofaOwnerType || 'A validar')}
+        ${detailItem('Responsável pela custódia 2FA', item.twofaOwner || 'A validar')}
+        ${detailItem('Tipo de responsável pela custódia 2FA', item.twofaOwnerType || 'A validar')}
         ${detailItem('Telefone vinculado', item.twofaPhoneMasked || 'Telefone não informado')}
         ${detailItem('Tipo do telefone', item.phoneType || 'A validar')}
         ${detailItem('Segundo administrador', badge(item.secondAdmin), true)}
@@ -921,8 +941,8 @@ function pendingItems() {
 
     if (['Alto', 'Crítico'].includes(itemRisk)) items.push({ ...item, pendingReason: `Risco ${itemRisk}` });
     if (item.twofa === 'Não') items.push({ ...item, pendingReason: '2FA desativado' });
-    if (item.twofaOwner === 'A validar' || !norm(item.twofaOwner)) items.push({ ...item, pendingReason: 'Quem recebe o código a validar' });
-    if (item.twofaOwnerType === 'Desconhecido') items.push({ ...item, pendingReason: 'Responsável pelo código desconhecido' });
+    if (item.twofaOwner === 'A validar' || !norm(item.twofaOwner)) items.push({ ...item, pendingReason: 'Custódia 2FA pendente' });
+    if (item.twofaOwnerType === 'Desconhecido') items.push({ ...item, pendingReason: 'Custódia 2FA desconhecida' });
     if (item.secondAdmin === 'Não') items.push({ ...item, pendingReason: 'Sem segundo administrador' });
     if (['Não', 'A validar'].includes(item.recoveryValidated)) items.push({ ...item, pendingReason: 'Recuperação de acesso não validada' });
   });
@@ -945,8 +965,8 @@ function exportCsv(type) {
       software: item.software,
       twofa: item.twofa,
       metodo_2fa: item.twofaMethod,
-      quem_recebe_codigo: item.twofaOwner,
-      tipo_responsavel: item.twofaOwnerType,
+      custodia_2fa: item.twofaOwner,
+      tipo_custodia_2fa: item.twofaOwnerType,
       telefone_mascarado: item.twofaPhoneMasked,
       tipo_telefone: item.phoneType,
       segundo_admin: item.secondAdmin,
@@ -974,7 +994,7 @@ function exportCsv(type) {
       url: item.url,
       twofa: item.twofa,
       metodo_2fa: item.twofaMethod,
-      quem_recebe_codigo: item.twofaOwner,
+      custodia_2fa: item.twofaOwner,
       risco: risk(item),
       proxima_acao: item.next
     }));
@@ -1037,7 +1057,7 @@ Atualização gerada pelo painel em ${new Date().toLocaleString('pt-BR')}.
 | A validar | ${active.filter(item => item.status === 'A validar').length} |
 | Risco alto/crítico | ${active.filter(item => ['Alto', 'Crítico'].includes(risk(item))).length} |
 | Sem 2FA | ${active.filter(item => item.twofa === 'Não').length} |
-| Código a validar | ${active.filter(item => item.twofaOwner === 'A validar' || !norm(item.twofaOwner)).length} |
+| Custódia 2FA pendente | ${active.filter(item => item.twofaOwner === 'A validar' || !norm(item.twofaOwner)).length} |
 
 ## Inventário
 
@@ -1047,7 +1067,7 @@ ${active.map(item => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.cat
 
 ## Segurança e 2FA
 
-| Ativo | 2FA | Método | Quem recebe o código | Telefone | Segundo admin | Recuperação | Risco |
+| Ativo | 2FA | Método | Custódia 2FA | Telefone | Segundo admin | Recuperação | Risco |
 |---|---|---|---|---|---|---|---|
 ${active.map(item => `| ${md(item.ativo)} | ${md(item.twofa)} | ${md(item.twofaMethod)} | ${md(item.twofaOwner)} | ${md(item.twofaPhoneMasked || 'Não informado')} | ${md(item.secondAdmin)} | ${md(item.recoveryValidated)} | ${md(risk(item))} |`).join('\n')}
 
@@ -1082,7 +1102,7 @@ ${extra || '- Nenhum campo específico preenchido.'}
 ### Segurança
 - 2FA: ${item.twofa}
 - Método: ${item.twofaMethod}
-- Quem recebe o código: ${item.twofaOwner}
+- Custódia 2FA: ${item.twofaOwner}
 - Telefone: ${item.twofaPhoneMasked || 'Não informado'}
 - Segundo admin: ${item.secondAdmin}
 - Recuperação: ${item.recoveryValidated}
