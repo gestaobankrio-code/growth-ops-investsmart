@@ -1471,6 +1471,7 @@
 
   <script>
     const githubIssuesUrl = 'https://github.com/gestaobankrio-code/growth-ops-investsmart/issues';
+    const githubNewIssueUrl = 'https://github.com/gestaobankrio-code/growth-ops-investsmart/issues/new';
     const storageKey = 'investsmart-growth-ops-records-v1';
     const officialDataPath = 'data/registros.json';
 
@@ -2334,6 +2335,49 @@
       return blocked.some(term => content.includes(term));
     }
 
+    function buildGitHubIssueTitle(record) {
+      const action = record.action || 'Atualizar';
+      const software = record.software || 'Software';
+      const ativo = record.ativo || 'Ativo';
+
+      return `[Growth Ops] ${action} - ${software} - ${ativo}`;
+    }
+
+    function buildGitHubIssueBody(record) {
+      const normalizedRecord = {
+        ...record,
+        schema: record.schema || 'growth-ops-record-v2',
+        updatedAt: new Date().toISOString()
+      };
+
+      return [
+        '## Solicitação Growth Ops',
+        '',
+        `Ação: **${normalizedRecord.action || 'Atualizar'}**`,
+        `Ativo: **${normalizedRecord.ativo || 'A validar'}**`,
+        `Software: **${normalizedRecord.software || 'A validar'}**`,
+        '',
+        '> Solicitação gerada automaticamente pelo painel. Não edite o bloco oculto abaixo.',
+        '',
+        '<!-- GROWTH_OPS_JSON',
+        JSON.stringify(normalizedRecord, null, 2),
+        'GROWTH_OPS_JSON -->'
+      ].join('\n');
+    }
+
+    function openGitHubIssueForRecord(record) {
+      const params = new URLSearchParams({
+        title: buildGitHubIssueTitle(record),
+        body: buildGitHubIssueBody(record)
+      });
+
+      window.open(`${githubNewIssueUrl}?${params.toString()}`, '_blank', 'noopener');
+    }
+
+    function showGitHubSaveNotice() {
+      alert('O registro foi atualizado no dashboard. Para salvar oficialmente no GitHub, confirme a Issue que foi aberta. Depois que o GitHub Actions processar a solicitação, clique em Atualizar Painel.');
+    }
+
     function saveRecord() {
       const record = getFormRecord();
 
@@ -2358,6 +2402,8 @@
       persistRecords();
       closeRecordModal();
       renderTable();
+      openGitHubIssueForRecord(record);
+      showGitHubSaveNotice();
     }
 
     function openRecordModal(id = null) {
@@ -2475,6 +2521,8 @@
     }
 
     function setRecordStatus(id, status) {
+      let updatedRecord = null;
+
       records = records.map(record => {
         if (record.id !== id) return record;
 
@@ -2489,11 +2537,17 @@
           updated.lastValidation = new Date().toLocaleDateString('pt-BR');
         }
 
+        updatedRecord = updated;
         return updated;
       });
 
       persistRecords();
       renderTable();
+
+      if (updatedRecord) {
+        openGitHubIssueForRecord(updatedRecord);
+        showGitHubSaveNotice();
+      }
     }
 
     function deleteRecord(id) {
@@ -2510,6 +2564,12 @@
 
       if (!confirmed) return;
 
+      const deleteRequest = {
+        ...record,
+        action: 'Excluir',
+        updatedAt: new Date().toISOString()
+      };
+
       records = records.filter(item => item.id !== id);
       persistRecords();
 
@@ -2519,6 +2579,8 @@
       }
 
       renderTable();
+      openGitHubIssueForRecord(deleteRequest);
+      showGitHubSaveNotice();
     }
 
     function deleteCurrentDetails() {
