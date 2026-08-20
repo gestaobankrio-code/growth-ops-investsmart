@@ -27,6 +27,24 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "63aae663-7671-4dc1-9460-f5549d9acd77-risco-critico",
+    "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
+    "ativo": "Smart Carreiras",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.\n\nConfirmar se será implementado GTM e GA4 para governança de tracking.\n\nValidar propriedades do formulário no HubSpot, especialmente pl__custodia.\n\nApós validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
+  },
+  {
+    "id": "63aae663-7671-4dc1-9460-f5549d9acd77-quem-recebe-o-codigo-a-validar",
+    "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
+    "ativo": "Smart Carreiras",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.\n\nConfirmar se será implementado GTM e GA4 para governança de tracking.\n\nValidar propriedades do formulário no HubSpot, especialmente pl__custodia.\n\nApós validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
+  },
+  {
     "id": "caefec84-dcc9-4263-ac44-378e0191836a-risco-critico",
     "recordId": "caefec84-dcc9-4263-ac44-378e0191836a",
     "ativo": "Make",

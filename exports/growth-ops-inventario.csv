@@ -5,6 +5,15 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "Landing Page";"Lovable";"Landing Page";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
+"Smart Carreiras";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
+
+Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
+
+Confirmar se será implementado GTM e GA4 para governança de tracking.
+
+Validar propriedades do formulário no HubSpot, especialmente pl__custodia.
+
+Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
 "Make";"Make";"Automação / Integração";"Marketing";"Marketing";"Validado";"https://www.make.com";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Claude";"Outro";"IA";"Marketing";"Marketing";"Validado";"https://claude.ai/";"Sim";"SMS";"Eduardo Alves";"Alto";"Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.
 

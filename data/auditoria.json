@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787252827223-b34076334f1f7",
+    "date": "2026-08-20T19:07:07.223Z",
+    "issueNumber": 26,
+    "action": "Validar",
+    "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
+    "software": "Lovable",
+    "ativo": "Smart Carreiras",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787250635913-9f9124ba98d48",
     "date": "2026-08-20T18:30:35.913Z",
     "issueNumber": 25,
