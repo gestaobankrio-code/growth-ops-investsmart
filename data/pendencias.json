@@ -72,6 +72,24 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "a1660299-a05e-4049-bdb8-9855897234d1-risco-alto",
+    "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
+    "ativo": "Claude",
+    "software": "Outro",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
+  },
+  {
+    "id": "a1660299-a05e-4049-bdb8-9855897234d1-recuperacao-de-acesso-nao-validada",
+    "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
+    "ativo": "Claude",
+    "software": "Outro",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
+  },
+  {
     "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
     "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
     "ativo": "Página de Obrigado Universal InvestSmart",

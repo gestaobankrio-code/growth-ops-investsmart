@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787248470433-2c267cb736c02",
+    "date": "2026-08-20T17:54:30.433Z",
+    "issueNumber": 21,
+    "action": "Validar",
+    "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
+    "software": "Outro",
+    "ativo": "Claude",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787248054520-63f1906c4be8e",
     "date": "2026-08-20T17:47:34.520Z",
     "issueNumber": 19,
