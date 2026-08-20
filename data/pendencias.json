@@ -1,14 +1,5 @@
 [
   {
-    "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
-    "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
-    "ativo": "Página de Obrigado Universal InvestSmart",
-    "software": "Landing Page",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "A validar"
-  },
-  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Landing Page",
@@ -51,6 +42,15 @@
     "software": "Make",
     "risco": "Alto",
     "pendencia": "Sem segundo administrador",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
+    "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
+    "ativo": "Página de Obrigado Universal InvestSmart",
+    "software": "RD STATION",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
   }
 ]
