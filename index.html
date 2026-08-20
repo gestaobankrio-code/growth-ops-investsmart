@@ -1463,6 +1463,7 @@
         <button class="btn btn-soft" type="button" onclick="editCurrentDetails()">Editar</button>
         <button class="btn btn-blue" type="button" onclick="setCurrentDetailsStatus('Validado')">Validar</button>
         <button class="btn btn-pink" type="button" onclick="setCurrentDetailsStatus('Reprovado')">Reprovar</button>
+        <button id="detailsDeleteButton" class="btn btn-red" type="button" onclick="deleteCurrentDetails()" style="display: none;">Excluir</button>
         <button class="btn btn-soft" type="button" onclick="closeDetails()">Fechar</button>
       </div>
     </div>
@@ -2087,6 +2088,7 @@
                 <button class="btn btn-pink btn-mini" type="button" onclick="setRecordStatus('${record.id}', 'Reprovado')">Reprovar</button>
                 <button class="btn btn-soft btn-mini" type="button" onclick="openDetails('${record.id}')">Detalhes</button>
                 <button class="btn btn-soft btn-mini" type="button" onclick="openRecordModal('${record.id}')">Editar</button>
+                ${record.status === 'Reprovado' ? `<button class="btn btn-red btn-mini" type="button" onclick="deleteRecord('${record.id}')">Excluir</button>` : ''}
               </div>
             </td>
           </tr>
@@ -2401,6 +2403,7 @@
         </div>
       `;
 
+      document.getElementById('detailsDeleteButton').style.display = record.status === 'Reprovado' ? 'inline-flex' : 'none';
       document.getElementById('detailsModal').classList.add('open');
     }
 
@@ -2450,6 +2453,36 @@
 
       persistRecords();
       renderTable();
+    }
+
+    function deleteRecord(id) {
+      const record = records.find(item => item.id === id);
+
+      if (!record) return;
+
+      if (record.status !== 'Reprovado') {
+        alert('A exclusão só fica disponível para itens reprovados.');
+        return;
+      }
+
+      const confirmed = confirm(`Confirmar exclusão do item reprovado: ${record.ativo}?`);
+
+      if (!confirmed) return;
+
+      records = records.filter(item => item.id !== id);
+      persistRecords();
+
+      if (currentDetailsId === id) {
+        currentDetailsId = null;
+        closeDetails();
+      }
+
+      renderTable();
+    }
+
+    function deleteCurrentDetails() {
+      if (!currentDetailsId) return;
+      deleteRecord(currentDetailsId);
     }
 
     function setFilter(filter, element) {
