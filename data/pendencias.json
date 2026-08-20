@@ -45,6 +45,33 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-risco-critico",
+    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-quem-recebe-o-codigo-a-validar",
+    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "616d8b84-fe6a-4f75-a65e-98836bea9616-recuperacao-de-acesso-nao-validada",
+    "recordId": "616d8b84-fe6a-4f75-a65e-98836bea9616",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
     "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
     "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
     "ativo": "Página de Obrigado Universal InvestSmart",
