@@ -4,6 +4,19 @@
 Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.
 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
+"Abertura de Filial";"Lovable";"Landing Page / Aquisição / Expansão";"Marketing";"Marketing / Growth";"Incompleto";"https://aberturadefilial.investsmart.com.br";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
+
+Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.
+
+Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.
+
+Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.
+
+Configurar evento de conversão no submit real do formulário.
+
+Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.
+
+Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
 "Convite Smart Carreiras - Samyr";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://convite.smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"A validar";"Aguardando validação jurídica do domínio";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
 

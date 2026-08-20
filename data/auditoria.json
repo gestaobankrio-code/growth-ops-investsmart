@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787260448336-c790ccdc0635e",
+    "date": "2026-08-20T21:14:08.336Z",
+    "issueNumber": 36,
+    "action": "Atualizar",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "software": "Lovable",
+    "ativo": "Abertura de Filial",
+    "statusBefore": null,
+    "statusAfter": "Incompleto",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787258095989-a77d9d842cf4a",
     "date": "2026-08-20T20:34:55.989Z",
     "issueNumber": 35,

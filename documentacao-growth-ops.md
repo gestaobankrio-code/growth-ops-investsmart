@@ -1,12 +1,12 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 20/08/2026, 20:34:55.
+Atualização gerada automaticamente em 20/08/2026, 21:14:08.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 9 |
+| Registros ativos | 10 |
 | Validados | 8 |
 | A validar | 1 |
 | Risco alto/crítico | 6 |
@@ -17,6 +17,7 @@ Atualização gerada automaticamente em 20/08/2026, 20:34:55.
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
+| Abertura de Filial | Lovable | Landing Page / Aquisição / Expansão | Marketing | Incompleto | Baixo |
 | Convite Smart Carreiras - Samyr | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Indique um Bancário e Ganhe até 5 Mil | Lovable | Landing Page / Aquisição | Marketing | A validar | Baixo |
 | Lovable | Lovable | Licença / Plataforma de Desenvolvimento | Marketing | Validado | Crítico |
@@ -31,6 +32,8 @@ Atualização gerada automaticamente em 20/08/2026, 20:34:55.
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
+| Abertura de Filial | Lovable | Quem recebe o código a validar | Definir com o time o destino oficial dos leads da landing page Abertura de Filial.  Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.  Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.  Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.  Configurar evento de conversão no submit real do formulário.  Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.  Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado. |
+| Abertura de Filial | Lovable | Recuperação de acesso não validada | Definir com o time o destino oficial dos leads da landing page Abertura de Filial.  Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.  Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.  Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.  Configurar evento de conversão no submit real do formulário.  Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.  Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado. |
 | Convite Smart Carreiras - Samyr | Lovable | Risco Crítico | A validar |
 | Convite Smart Carreiras - Samyr | Lovable | Quem recebe o código a validar | A validar |
 | Indique um Bancário e Ganhe até 5 Mil | Lovable | Quem recebe o código a validar | Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.  Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.  Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops. |

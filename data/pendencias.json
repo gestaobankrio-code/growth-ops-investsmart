@@ -9,6 +9,24 @@
     "proximaAcao": "Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.\n\nConfirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.\n\nRemover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
   },
   {
+    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "ativo": "Abertura de Filial",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+  },
+  {
+    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-recuperacao-de-acesso-nao-validada",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "ativo": "Abertura de Filial",
+    "software": "Lovable",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+  },
+  {
     "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
     "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
     "ativo": "Convite Smart Carreiras - Samyr",
