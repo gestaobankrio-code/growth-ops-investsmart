@@ -6,6 +6,11 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Risco Crítico";"A validar"
 "Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
+"Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Crítico";"Quem recebe o código a validar";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
+
+Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.
+
+Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
 "Landing Page";"Lovable";"Crítico";"Risco Crítico";"A validar"
 "Landing Page";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
 "Smart Carreiras";"Lovable";"Crítico";"Risco Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.

@@ -1,11 +1,12 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 20/08/2026, 19:48:42.
+Atualizado automaticamente em 20/08/2026, 20:25:40.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Financeiro | Validado | Sim | Bruno Aguiar | Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | Convite Smart Carreiras - Samyr | Lovable | Landing Page / Aquisição | Marketing | Marketing / Growth | Validado | Não aplicável | A validar | Crítico | A validar |
+| Indique um Bancário e Ganhe até 5 Mil | Lovable | Landing Page / Aquisição | Marketing | Marketing / Growth | A validar | Não aplicável | A validar | Baixo | Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.  Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.  Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops. |
 | Landing Page | Lovable | Landing Page | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |
 | Smart Carreiras | Lovable | Landing Page / Aquisição | Marketing | Marketing / Growth | Validado | Não aplicável | A validar | Crítico | Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.  Confirmar se será implementado GTM e GA4 para governança de tracking.  Validar propriedades do formulário no HubSpot, especialmente pl__custodia.  Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado. |
 | Make | Make | Automação / Integração | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |

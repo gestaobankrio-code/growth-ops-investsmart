@@ -27,6 +27,15 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "d3df7aeb-c583-478e-882e-d79c855c2ce9-quem-recebe-o-codigo-a-validar",
+    "recordId": "d3df7aeb-c583-478e-882e-d79c855c2ce9",
+    "ativo": "Indique um Bancário e Ganhe até 5 Mil",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.\n\nAuditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.\n\nApós validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
+  },
+  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Landing Page",

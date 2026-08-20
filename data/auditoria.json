@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787257540484-dbd7f3b271a98",
+    "date": "2026-08-20T20:25:40.484Z",
+    "issueNumber": 34,
+    "action": "Atualizar",
+    "recordId": "d3df7aeb-c583-478e-882e-d79c855c2ce9",
+    "software": "Lovable",
+    "ativo": "Indique um Bancário e Ganhe até 5 Mil",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787255322496-abcc165aaf78b",
     "date": "2026-08-20T19:48:42.496Z",
     "issueNumber": 33,
