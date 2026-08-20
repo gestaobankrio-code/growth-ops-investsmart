@@ -1472,6 +1472,7 @@
   <script>
     const githubIssuesUrl = 'https://github.com/gestaobankrio-code/growth-ops-investsmart/issues';
     const storageKey = 'investsmart-growth-ops-records-v1';
+    const officialDataPath = 'data/registros.json';
 
     const softwareProfiles = {
       'Make': {
@@ -1939,15 +1940,48 @@
         .replaceAll("'", '&#039;');
     }
 
-    function loadRecords() {
+    async function loadRecords(showMessage = false) {
       try {
-        const stored = localStorage.getItem(storageKey);
-        records = stored ? JSON.parse(stored) : defaultRecords();
-      } catch (error) {
-        records = defaultRecords();
-      }
+        const response = await fetch(`${officialDataPath}?v=${Date.now()}`, {
+          cache: 'no-store'
+        });
 
-      persistRecords();
+        if (!response.ok) {
+          throw new Error('Arquivo oficial não encontrado');
+        }
+
+        const data = await response.json();
+
+        if (!Array.isArray(data)) {
+          throw new Error('Formato inválido em data/registros.json');
+        }
+
+        records = data;
+        persistRecords();
+        renderTable();
+
+        if (showMessage) {
+          alert('Painel atualizado.');
+        }
+
+        return;
+      } catch (error) {
+        console.warn('Não foi possível carregar a base oficial. Usando cache local ou dados iniciais.', error);
+
+        try {
+          const stored = localStorage.getItem(storageKey);
+          records = stored ? JSON.parse(stored) : defaultRecords();
+        } catch (storageError) {
+          records = defaultRecords();
+        }
+
+        persistRecords();
+        renderTable();
+
+        if (showMessage) {
+          alert('Painel atualizado com os dados disponíveis localmente.');
+        }
+      }
     }
 
     function persistRecords() {
@@ -2247,9 +2281,13 @@
     function getFormRecord() {
       const software = document.getElementById('assetSoftware').value;
       const profile = softwareProfiles[software] || softwareProfiles.Outro;
+      const editingId = document.getElementById('editingId').value;
+      const existingRecord = editingId ? records.find(item => item.id === editingId) : null;
+      const now = new Date().toISOString();
 
       return {
-        id: document.getElementById('editingId').value || cryptoRandomId(),
+        schema: 'growth-ops-record-v2',
+        id: editingId || cryptoRandomId(),
         action: document.getElementById('assetAction').value,
         software,
         ativo: document.getElementById('assetName').value.trim() || software,
@@ -2272,7 +2310,9 @@
         lastValidation: document.getElementById('lastValidation').value.trim() || 'A validar',
         obs: document.getElementById('observations').value.trim(),
         next: document.getElementById('nextAction').value.trim() || 'A validar',
-        extra: collectExtraValues()
+        extra: collectExtraValues(),
+        createdAt: existingRecord?.createdAt || now,
+        updatedAt: now
       };
     }
 
@@ -2441,7 +2481,8 @@
         const updated = {
           ...record,
           status,
-          action: status === 'Validado' ? 'Validar' : status === 'Reprovado' ? 'Reprovar' : 'Atualizar'
+          action: status === 'Validado' ? 'Validar' : status === 'Reprovado' ? 'Reprovar' : 'Atualizar',
+          updatedAt: new Date().toISOString()
         };
 
         if (status === 'Validado') {
@@ -2507,10 +2548,8 @@
       renderTable();
     }
 
-    function refreshPanel() {
-      loadRecords();
-      renderTable();
-      alert('Painel atualizado.');
+    async function refreshPanel() {
+      await loadRecords(true);
     }
 
     function exportCsv() {
@@ -2584,9 +2623,8 @@
     });
 
     initSoftwareSelect();
-    loadRecords();
     renderSpecificFields('Make');
-    renderTable();
+    loadRecords(false);
   </script>
 </body>
 </html>
