@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787250364226-403011d09fafe",
+    "date": "2026-08-20T18:26:04.226Z",
+    "issueNumber": 23,
+    "action": "Validar",
+    "recordId": "6be2c47d-4f66-4ebb-9c17-3de7149c0f9f",
+    "software": "Dropbox",
+    "ativo": "Dropbox InvestSmart",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787248534650-89326171d9054",
     "date": "2026-08-20T17:55:34.650Z",
     "issueNumber": 22,

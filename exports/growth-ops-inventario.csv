@@ -1,4 +1,9 @@
 ﻿"ativo";"software";"categoria";"responsavel";"area";"status";"url";"twofa";"metodo_2fa";"quem_recebe_codigo";"risco";"proxima_acao"
+"Dropbox InvestSmart";"Dropbox";"Armazenamento";"Bruno Aguiar";"Financeiro";"Validado";"https://www.dropbox.com";"Sim";"E-mail";"Bruno Aguiar";"Médio";"Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.
+
+Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.
+
+Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "Landing Page";"Lovable";"Landing Page";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Make";"Make";"Automação / Integração";"Marketing";"Marketing";"Validado";"https://www.make.com";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Claude";"Outro";"IA";"Marketing";"Marketing";"Validado";"https://claude.ai/";"Sim";"SMS";"Eduardo Alves";"Alto";"Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.
