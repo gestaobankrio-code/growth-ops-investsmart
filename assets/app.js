@@ -916,6 +916,11 @@ function detailItem(label, value, raw = false, full = false) {
   return `<div class="detail-item ${full ? 'full' : ''}"><small>${esc(label)}</small>${raw ? `<span>${value}</span>` : `<strong>${esc(value || 'A validar')}</strong>`}</div>`;
 }
 
+function detailMultiline(label, value, full = true) {
+  const safe = esc(value || 'Sem informação').replace(/\n/g, '<br>');
+  return `<div class="detail-item ${full ? 'full' : ''}"><small>${esc(label)}</small><strong class="multiline-text">${safe}</strong></div>`;
+}
+
 function closeDetails() {
   document.getElementById('detailsDrawer').classList.remove('open');
 }
