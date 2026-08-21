@@ -18,7 +18,7 @@
     "phoneType": "Não aplicável",
     "secondAdmin": "Sim",
     "recoveryValidated": "Sim",
-    "manualRisk": "Alto",
+    "manualRisk": "Baixo",
     "lastValidation": "21/08/2026",
     "obs": "Conta Dropbox sob responsabilidade de Angelo, área Financeira.\n\nUsuário operacional utilizado: designers@investsmart.com.br.\n\nO código de verificação é enviado para o e-mail designers@investsmart.com.br.\n\nBruno Aguiar é o responsável por tratar qualquer demanda operacional relacionada ao Dropbox, incluindo acesso, permissões, recuperação, organização de pastas e suporte interno.",
     "next": "Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.\n\nConfirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.\n\nRemover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial.",
@@ -33,7 +33,7 @@
       "folderOwner": ""
     },
     "createdAt": "2026-08-20T18:26:04.225Z",
-    "updatedAt": "2026-08-21T18:34:13.150Z"
+    "updatedAt": "2026-08-21T18:34:47.202Z"
   },
   {
     "schema": "growth-ops-record-v2",

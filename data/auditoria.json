@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787337287202-f7695f7457dc5",
+    "date": "2026-08-21T18:34:47.202Z",
+    "issueNumber": 41,
+    "action": "Validar",
+    "recordId": "6be2c47d-4f66-4ebb-9c17-3de7149c0f9f",
+    "software": "Dropbox",
+    "ativo": "Dropbox InvestSmart",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787337253150-85d2d4a70932d",
     "date": "2026-08-21T18:34:13.150Z",
     "issueNumber": 40,

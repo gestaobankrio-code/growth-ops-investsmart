@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 21/08/2026, 18:34:13.
+Atualização gerada automaticamente em 21/08/2026, 18:34:47.
 
 ## Resumo executivo
 
@@ -9,14 +9,14 @@ Atualização gerada automaticamente em 21/08/2026, 18:34:13.
 | Registros ativos | 21 |
 | Validados | 19 |
 | A validar | 1 |
-| Risco alto/crítico | 10 |
+| Risco alto/crítico | 9 |
 | Sem 2FA | 0 |
 
 ## Inventário
 
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
+| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Médio |
@@ -42,7 +42,6 @@ Atualização gerada automaticamente em 21/08/2026, 18:34:13.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Risco Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | Planeja Brasil - Orgânico | Landing Page | Risco Alto | Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo. |
 | Planeja Brasil - Tráfego Pago | Landing Page | Risco Alto | Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo. |
 | Abertura de Filial | Lovable | Quem recebe o código a validar | Definir com o time o destino oficial dos leads da landing page Abertura de Filial.  Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.  Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.  Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.  Configurar evento de conversão no submit real do formulário.  Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.  Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado. |
