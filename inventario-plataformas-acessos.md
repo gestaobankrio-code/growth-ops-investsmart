@@ -1,10 +1,10 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 21/08/2026, 18:27:49.
+Atualizado automaticamente em 21/08/2026, 18:34:13.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|
-| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Financeiro | Validado | Sim | Bruno Aguiar | Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
+| Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Marketing | Validado | Sim | Bruno Aguiar | Alto | Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.  Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.  Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial. |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Validar dentro do container GTM se GA4, Google Ads e eventos de conversão estão configurados corretamente para as páginas do Planeja Brasil. |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Alto | Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo. |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Registrar separadamente o source UC_UI1PIS, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_UI1PIS e confirmar destino final do fluxo. |
