@@ -16,8 +16,9 @@ const event = JSON.parse(fs.readFileSync(eventPath, 'utf8'));
 const issue = event.issue || {};
 const body = issue.body || '';
 
-const record = parseRecord(body);
-if (!record) {
+const payload = parseRecord(body);
+
+if (!payload) {
   console.log('Issue sem bloco GROWTH_OPS_JSON. Nada a processar.');
   process.exit(0);
 }
@@ -29,49 +30,86 @@ main().catch(async (error) => {
 });
 
 async function main() {
-  validateRecord(record);
+  const recordsToProcess = Array.isArray(payload) ? payload : [payload];
+
+  if (!recordsToProcess.length) {
+    throw new Error('O bloco GROWTH_OPS_JSON está vazio.');
+  }
+
+  for (const item of recordsToProcess) {
+    validateRecord(item);
+  }
+
+  validateBatch(recordsToProcess);
 
   const recordsPath = 'data/registros.json';
   const auditPath = 'data/auditoria.json';
 
-  const records = readJson(recordsPath, []);
+  const originalRecords = readJson(recordsPath, []);
+  let nextRecords = Array.isArray(originalRecords) ? [...originalRecords] : [];
+
   const audit = readJson(auditPath, []);
+  const processed = [];
 
-  const before = records.find((item) => item.id === record.id) || null;
-  const action = normalizeAction(record.action);
+  for (const item of recordsToProcess) {
+    const action = normalizeAction(item.action);
+    const before = nextRecords.find((record) => record.id === item.id) || null;
 
-  let nextRecords = applyAction(records, record, action);
+    nextRecords = applyAction(nextRecords, item, action);
+
+    const after = nextRecords.find((record) => record.id === item.id) || null;
+
+    const auditEntry = {
+      id: `audit-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      date: new Date().toISOString(),
+      issueNumber: issue.number || null,
+      action,
+      recordId: item.id,
+      software: item.software,
+      ativo: item.ativo,
+      statusBefore: before ? before.status : null,
+      statusAfter: action === 'Excluir' ? 'Excluído' : (after ? after.status : null),
+      actor: issue.user ? issue.user.login : 'github-actions',
+      source: Array.isArray(payload) ? 'github-issue-batch' : 'github-issue'
+    };
+
+    const alreadyAudited = audit.some((auditItem) =>
+      auditItem.issueNumber === auditEntry.issueNumber &&
+      auditItem.action === auditEntry.action &&
+      auditItem.recordId === auditEntry.recordId
+    );
+
+    if (!alreadyAudited) audit.unshift(auditEntry);
+
+    processed.push({
+      id: item.id,
+      action,
+      software: item.software,
+      ativo: item.ativo
+    });
+  }
+
   nextRecords = sortRecords(nextRecords);
 
-  const auditEntry = {
-    id: `audit-${Date.now()}-${Math.random().toString(16).slice(2)}`,
-    date: new Date().toISOString(),
-    issueNumber: issue.number || null,
-    action,
-    recordId: record.id,
-    software: record.software,
-    ativo: record.ativo,
-    statusBefore: before ? before.status : null,
-    statusAfter: action === 'Excluir' ? 'Excluído' : (record.status || null),
-    actor: issue.user ? issue.user.login : 'github-actions',
-    source: 'github-issue'
-  };
-
-  const alreadyAudited = audit.some((item) => item.issueNumber === auditEntry.issueNumber && item.action === auditEntry.action && item.recordId === auditEntry.recordId);
-  if (!alreadyAudited) audit.unshift(auditEntry);
-
   const pendencias = buildPendencias(nextRecords);
-  const landingPages = nextRecords.filter((item) => item.software === 'Landing Page' || item.categoria === 'Landing Page');
+  const landingPages = nextRecords.filter((item) =>
+    item.software === 'Landing Page' ||
+    item.categoria === 'Landing Page' ||
+    String(item.categoria || '').startsWith('Landing Page /')
+  );
 
   writeJson(recordsPath, nextRecords);
   writeJson(auditPath, audit);
   writeJson('data/pendencias.json', pendencias);
   writeJson('data/landing-pages.json', landingPages);
 
+  fs.mkdirSync('exports', { recursive: true });
+
   fs.writeFileSync('inventario-plataformas-acessos.md', generateInventario(nextRecords), 'utf8');
   fs.writeFileSync('landing-pages-e-identificadores.md', generateLandingPages(landingPages), 'utf8');
   fs.writeFileSync('pendencias.md', generatePendencias(pendencias), 'utf8');
   fs.writeFileSync('documentacao-growth-ops.md', generateDocumentacao(nextRecords, pendencias), 'utf8');
+
   fs.writeFileSync('exports/growth-ops-inventario.csv', toCsv(nextRecords.map((item) => ({
     ativo: item.ativo,
     software: item.software,
@@ -86,6 +124,7 @@ async function main() {
     risco: risk(item),
     proxima_acao: item.next
   }))), 'utf8');
+
   fs.writeFileSync('exports/growth-ops-seguranca-2fa.csv', toCsv(nextRecords.map((item) => ({
     ativo: item.ativo,
     software: item.software,
@@ -99,6 +138,7 @@ async function main() {
     recuperacao_validada: item.recoveryValidated,
     risco: risk(item)
   }))), 'utf8');
+
   fs.writeFileSync('exports/growth-ops-pendencias.csv', toCsv(pendencias.map((item) => ({
     ativo: item.ativo,
     software: item.software,
@@ -107,7 +147,14 @@ async function main() {
     proxima_acao: item.proximaAcao
   }))), 'utf8');
 
-  await comment(`✅ Solicitação Growth Ops processada.\n\n- Ação: **${action}**\n- Ativo: **${record.ativo}**\n- Software: **${record.software}**\n\nOs arquivos JSON, documentação, pendências e exportações foram atualizados no repositório.`);
+  if (processed.length === 1) {
+    const item = processed[0];
+
+    await comment(`✅ Solicitação Growth Ops processada.\n\n- Ação: **${item.action}**\n- Ativo: **${item.ativo}**\n- Software: **${item.software}**\n\nOs arquivos JSON, documentação, pendências e exportações foram atualizados no repositório.`);
+  } else {
+    await comment(`✅ Importação em lote Growth Ops processada.\n\n- Total de registros processados: **${processed.length}**\n\n${processed.map((item) => `- **${item.action}** — ${item.ativo} (${item.software})`).join('\n')}\n\nOs arquivos JSON, documentação, pendências e exportações foram atualizados no repositório.`);
+  }
+
   await closeIssue();
 }
 
@@ -119,18 +166,59 @@ function parseRecord(text) {
 
 function validateRecord(item) {
   const required = ['id', 'action', 'software', 'ativo'];
-  for (const key of required) {
-    if (!item[key]) throw new Error(`Campo obrigatório ausente: ${key}`);
+
+  if (!item || typeof item !== 'object' || Array.isArray(item)) {
+    throw new Error('Cada item do GROWTH_OPS_JSON precisa ser um objeto.');
   }
+
+  for (const key of required) {
+    if (!item[key]) {
+      throw new Error(`Campo obrigatório ausente: ${key}`);
+    }
+  }
+
   const serialized = JSON.stringify(item).toLowerCase();
-  const blocked = ['senha:', 'password:', 'token:', 'secret:', 'api key:', 'apikey:', 'recovery code', 'código 2fa', 'codigo 2fa'];
+
+  const blocked = [
+    'senha:',
+    'password:',
+    'token:',
+    'secret:',
+    'api key:',
+    'apikey:',
+    'recovery code',
+    'código 2fa',
+    'codigo 2fa'
+  ];
+
   const found = blocked.find((term) => serialized.includes(term));
-  if (found) throw new Error(`Conteúdo sensível detectado: ${found}`);
+
+  if (found) {
+    throw new Error(`Conteúdo sensível detectado: ${found}`);
+  }
+}
+
+function validateBatch(items) {
+  const ids = new Set();
+
+  for (const item of items) {
+    const id = String(item.id);
+
+    if (ids.has(id)) {
+      throw new Error(`ID duplicado no lote: "${id}". Corrija antes de importar.`);
+    }
+
+    ids.add(id);
+  }
 }
 
 function normalizeAction(action) {
   const value = String(action || 'Atualizar').trim();
-  if (['Criar', 'Atualizar', 'Validar', 'Reprovar', 'Arquivar', 'Excluir'].includes(value)) return value;
+
+  if (['Criar', 'Atualizar', 'Validar', 'Reprovar', 'Arquivar', 'Excluir'].includes(value)) {
+    return value;
+  }
+
   return 'Atualizar';
 }
 
@@ -143,16 +231,36 @@ function applyAction(records, item, action) {
     return list.filter((record) => record.id !== item.id);
   }
 
+  if (action === 'Criar' && index >= 0) {
+    throw new Error(`Já existe um registro com o id "${item.id}". Para alterar esse ativo, use action: "Atualizar". Nenhum dado foi gravado.`);
+  }
+
   if (action === 'Validar') {
     cleanItem.status = 'Validado';
     cleanItem.lastValidation = new Date().toLocaleDateString('pt-BR');
   }
 
-  if (action === 'Reprovar') cleanItem.status = 'Reprovado';
-  if (action === 'Arquivar') cleanItem.status = 'Arquivado';
+  if (action === 'Reprovar') {
+    cleanItem.status = 'Reprovado';
+  }
 
-  if (index >= 0) list[index] = { ...list[index], ...cleanItem, updatedAt: new Date().toISOString() };
-  else list.push({ ...cleanItem, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() });
+  if (action === 'Arquivar') {
+    cleanItem.status = 'Arquivado';
+  }
+
+  if (index >= 0) {
+    list[index] = {
+      ...list[index],
+      ...cleanItem,
+      updatedAt: new Date().toISOString()
+    };
+  } else {
+    list.push({
+      ...cleanItem,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    });
+  }
 
   return list;
 }
@@ -190,7 +298,10 @@ function safe(value) {
 }
 
 function sortRecords(records) {
-  return [...records].sort((a, b) => String(a.software || '').localeCompare(String(b.software || ''), 'pt-BR') || String(a.ativo || '').localeCompare(String(b.ativo || ''), 'pt-BR'));
+  return [...records].sort((a, b) =>
+    String(a.software || '').localeCompare(String(b.software || ''), 'pt-BR') ||
+    String(a.ativo || '').localeCompare(String(b.ativo || ''), 'pt-BR')
+  );
 }
 
 function risk(item) {
@@ -212,15 +323,35 @@ function isArchived(item) {
 
 function buildPendencias(records) {
   const pendencias = [];
+
   for (const item of records.filter((record) => !isArchived(record))) {
     const itemRisk = risk(item);
-    if (['Alto', 'Crítico'].includes(itemRisk)) pendencias.push(makePendencia(item, `Risco ${itemRisk}`, itemRisk));
-    if (item.twofa === 'Não') pendencias.push(makePendencia(item, '2FA desativado', 'Alto'));
-    if (item.twofaOwner === 'A validar' || !item.twofaOwner) pendencias.push(makePendencia(item, 'Quem recebe o código a validar', 'Crítico'));
-    if (item.twofaOwnerType === 'Desconhecido') pendencias.push(makePendencia(item, 'Responsável pelo código desconhecido', 'Crítico'));
-    if (item.secondAdmin === 'Não') pendencias.push(makePendencia(item, 'Sem segundo administrador', 'Alto'));
-    if (['Não', 'A validar'].includes(item.recoveryValidated)) pendencias.push(makePendencia(item, 'Recuperação de acesso não validada', 'Médio'));
+
+    if (['Alto', 'Crítico'].includes(itemRisk)) {
+      pendencias.push(makePendencia(item, `Risco ${itemRisk}`, itemRisk));
+    }
+
+    if (item.twofa === 'Não') {
+      pendencias.push(makePendencia(item, '2FA desativado', 'Alto'));
+    }
+
+    if (item.twofaOwner === 'A validar' || !item.twofaOwner) {
+      pendencias.push(makePendencia(item, 'Quem recebe o código a validar', 'Crítico'));
+    }
+
+    if (item.twofaOwnerType === 'Desconhecido') {
+      pendencias.push(makePendencia(item, 'Responsável pelo código desconhecido', 'Crítico'));
+    }
+
+    if (item.secondAdmin === 'Não') {
+      pendencias.push(makePendencia(item, 'Sem segundo administrador', 'Alto'));
+    }
+
+    if (['Não', 'A validar'].includes(item.recoveryValidated)) {
+      pendencias.push(makePendencia(item, 'Recuperação de acesso não validada', 'Médio'));
+    }
   }
+
   return pendencias;
 }
 
@@ -255,7 +386,12 @@ function md(value) {
 }
 
 function slug(value) {
-  return String(value || 'item').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return String(value || 'item')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 function active(records) {
@@ -264,6 +400,7 @@ function active(records) {
 
 function generateInventario(records) {
   const items = active(records);
+
   return [
     '# Inventário de Plataformas e Acessos — Growth Ops InvestSmart',
     '',
@@ -271,7 +408,9 @@ function generateInventario(records) {
     '',
     '| Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |',
     '|---|---|---|---|---|---|---|---|---|---|',
-    ...(items.length ? items.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.categoria)} | ${md(item.responsavel)} | ${md(item.area)} | ${md(item.status)} | ${md(item.twofa)} | ${md(item.twofaOwner)} | ${md(risk(item))} | ${md(item.next)} |`) : ['| Nenhum registro ativo | - | - | - | - | - | - | - | - | - |'])
+    ...(items.length
+      ? items.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.categoria)} | ${md(item.responsavel)} | ${md(item.area)} | ${md(item.status)} | ${md(item.twofa)} | ${md(item.twofaOwner)} | ${md(risk(item))} | ${md(item.next)} |`)
+      : ['| Nenhum registro ativo | - | - | - | - | - | - | - | - | - |'])
   ].join('\n') + '\n';
 }
 
@@ -283,7 +422,9 @@ function generateLandingPages(records) {
     '',
     '| Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |',
     '|---|---|---|---|---|---|---|',
-    ...(records.length ? records.map((item) => `| ${md(item.ativo)} | ${md(item.extra?.identifier)} | ${md(item.extra?.publicDomain || item.url)} | ${md(item.extra?.lovableUrl || item.extra?.deployUrl)} | ${md(item.extra?.webhookUrl)} | ${md(item.extra?.leadDestination)} | ${md(item.status)} |`) : ['| Nenhuma landing page cadastrada | - | - | - | - | - | - |'])
+    ...(records.length
+      ? records.map((item) => `| ${md(item.ativo)} | ${md(item.extra?.identifier)} | ${md(item.extra?.publicDomain || item.url)} | ${md(item.extra?.lovableUrl || item.extra?.deployUrl)} | ${md(item.extra?.webhookUrl)} | ${md(item.extra?.leadDestination)} | ${md(item.status)} |`)
+      : ['| Nenhuma landing page cadastrada | - | - | - | - | - | - |'])
   ].join('\n') + '\n';
 }
 
@@ -295,18 +436,48 @@ function generatePendencias(pendencias) {
     '',
     '| Ativo | Software | Risco | Pendência | Próxima ação |',
     '|---|---|---|---|---|',
-    ...(pendencias.length ? pendencias.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.risco)} | ${md(item.pendencia)} | ${md(item.proximaAcao)} |`) : ['| Nenhuma pendência crítica | - | - | - | - |'])
+    ...(pendencias.length
+      ? pendencias.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.risco)} | ${md(item.pendencia)} | ${md(item.proximaAcao)} |`)
+      : ['| Nenhuma pendência crítica | - | - | - | - |'])
   ].join('\n') + '\n';
 }
 
 function generateDocumentacao(records, pendencias) {
   const items = active(records);
-  return `# Documentação Growth Ops InvestSmart\n\nAtualização gerada automaticamente em ${new Date().toLocaleString('pt-BR')}.\n\n## Resumo executivo\n\n| Indicador | Total |\n|---|---:|\n| Registros ativos | ${items.length} |\n| Validados | ${items.filter((item) => item.status === 'Validado').length} |\n| A validar | ${items.filter((item) => item.status === 'A validar').length} |\n| Risco alto/crítico | ${items.filter((item) => ['Alto', 'Crítico'].includes(risk(item))).length} |\n| Sem 2FA | ${items.filter((item) => item.twofa === 'Não').length} |\n\n## Inventário\n\n| Ativo | Software | Categoria | Responsável | Status | Risco |\n|---|---|---|---|---|---|\n${items.length ? items.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.categoria)} | ${md(item.responsavel)} | ${md(item.status)} | ${md(risk(item))} |`).join('\n') : '| Nenhum registro ativo | - | - | - | - | - |'}\n\n## Pendências\n\n| Ativo | Software | Pendência | Próxima ação |\n|---|---|---|---|\n${pendencias.length ? pendencias.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.pendencia)} | ${md(item.proximaAcao)} |`).join('\n') : '| Nenhuma pendência crítica | - | - | - |'}\n`;
+
+  return `# Documentação Growth Ops InvestSmart
+
+Atualização gerada automaticamente em ${new Date().toLocaleString('pt-BR')}.
+
+## Resumo executivo
+
+| Indicador | Total |
+|---|---:|
+| Registros ativos | ${items.length} |
+| Validados | ${items.filter((item) => item.status === 'Validado').length} |
+| A validar | ${items.filter((item) => item.status === 'A validar').length} |
+| Risco alto/crítico | ${items.filter((item) => ['Alto', 'Crítico'].includes(risk(item))).length} |
+| Sem 2FA | ${items.filter((item) => item.twofa === 'Não').length} |
+
+## Inventário
+
+| Ativo | Software | Categoria | Responsável | Status | Risco |
+|---|---|---|---|---|---|
+${items.length ? items.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.categoria)} | ${md(item.responsavel)} | ${md(item.status)} | ${md(risk(item))} |`).join('\n') : '| Nenhum registro ativo | - | - | - | - | - |'}
+
+## Pendências
+
+| Ativo | Software | Pendência | Próxima ação |
+|---|---|---|---|
+${pendencias.length ? pendencias.map((item) => `| ${md(item.ativo)} | ${md(item.software)} | ${md(item.pendencia)} | ${md(item.proximaAcao)} |`).join('\n') : '| Nenhuma pendência crítica | - | - | - |'}
+`;
 }
 
 function toCsv(rows) {
   if (!rows.length) return '';
+
   const headers = Object.keys(rows[0]);
+
   return '\ufeff' + [
     headers.map(csvEscape).join(';'),
     ...rows.map((row) => headers.map((header) => csvEscape(row[header])).join(';'))
@@ -319,18 +490,28 @@ function csvEscape(value) {
 
 async function comment(message) {
   if (!token || !repo || !issue.number) return;
+
   await fetch(`https://api.github.com/repos/${repo}/issues/${issue.number}/comments`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({ body: message })
   });
 }
 
 async function closeIssue() {
   if (!token || !repo || !issue.number) return;
+
   await fetch(`https://api.github.com/repos/${repo}/issues/${issue.number}`, {
     method: 'PATCH',
-    headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json', 'Content-Type': 'application/json' },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({ state: 'closed' })
   });
 }
