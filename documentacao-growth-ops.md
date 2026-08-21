@@ -1,15 +1,15 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 21/08/2026, 15:19:07.
+Atualização gerada automaticamente em 21/08/2026, 18:27:49.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 13 |
-| Validados | 11 |
+| Registros ativos | 21 |
+| Validados | 19 |
 | A validar | 1 |
-| Risco alto/crítico | 8 |
+| Risco alto/crítico | 10 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -17,6 +17,7 @@ Atualização gerada automaticamente em 21/08/2026, 15:19:07.
 | Ativo | Software | Categoria | Responsável | Status | Risco |
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Alto |
+| GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Médio |
 | Planeja Brasil - Tráfego Pago | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
@@ -26,9 +27,16 @@ Atualização gerada automaticamente em 21/08/2026, 15:19:07.
 | Lovable | Lovable | Licença / Plataforma de Desenvolvimento | Marketing | Validado | Crítico |
 | Smart Carreiras | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
+| Meta Pixel - Planeja Brasil | Meta Pixel | Tracking / Meta Pixel | Marketing | Validado | Médio |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Tracking / Mensuração | Marketing | Validado | Baixo |
+| Webhook n8n - Planeja Brasil - Orgânico | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
+| Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
+| Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |
+| Source - Planeja Brasil - Orgânico | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
+| Source - Planeja Brasil - Samyr | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
+| Source - Planeja Brasil - Tráfego Pago | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
 
 ## Pendências
 
@@ -50,6 +58,8 @@ Atualização gerada automaticamente em 21/08/2026, 15:19:07.
 | Make | Make | Quem recebe o código a validar | A validar |
 | Make | Make | Sem segundo administrador | A validar |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Quem recebe o código a validar | Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.  Confirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.  Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.  Após validação do evento de conversão, atualizar o status do registro para Validado. |
+| Webhook n8n - Planeja Brasil - Orgânico | n8n | Risco Alto | Validar no n8n se os leads com source UC_QZ91TG estão chegando corretamente e confirmar o destino final do fluxo. Avaliar fallback, retry e proteção anti-spam. |
+| Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Página de obrigado universal investSmart | RD STATION | Quem recebe o código a validar | A validar |

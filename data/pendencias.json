@@ -144,6 +144,24 @@
     "proximaAcao": "Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.\n\nConfirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.\n\nAvaliar implementação futura via GTM e GA4 para melhorar governança de tracking.\n\nApós validação do evento de conversão, atualizar o status do registro para Validado."
   },
   {
+    "id": "webhook-n8n-planeja-brasil-organico-risco-alto",
+    "recordId": "webhook-n8n-planeja-brasil-organico",
+    "ativo": "Webhook n8n - Planeja Brasil - Orgânico",
+    "software": "n8n",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar no n8n se os leads com source UC_QZ91TG estão chegando corretamente e confirmar o destino final do fluxo. Avaliar fallback, retry e proteção anti-spam."
+  },
+  {
+    "id": "webhook-n8n-planeja-brasil-trafego-pago-risco-alto",
+    "recordId": "webhook-n8n-planeja-brasil-trafego-pago",
+    "ativo": "Webhook n8n - Planeja Brasil - Tráfego Pago",
+    "software": "n8n",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha."
+  },
+  {
     "id": "a1660299-a05e-4049-bdb8-9855897234d1-risco-alto",
     "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
     "ativo": "Claude",

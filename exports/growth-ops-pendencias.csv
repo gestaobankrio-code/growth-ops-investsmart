@@ -71,6 +71,8 @@ Confirmar se o evento PageView está ativo e testar o disparo do evento Lead ap�
 Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.
 
 Após validação do evento de conversão, atualizar o status do registro para Validado."
+"Webhook n8n - Planeja Brasil - Orgânico";"n8n";"Alto";"Risco Alto";"Validar no n8n se os leads com source UC_QZ91TG estão chegando corretamente e confirmar o destino final do fluxo. Avaliar fallback, retry e proteção anti-spam."
+"Webhook n8n - Planeja Brasil - Tráfego Pago";"n8n";"Alto";"Risco Alto";"Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha."
 "Claude";"Outro";"Alto";"Risco Alto";"Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.
 
 Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.
