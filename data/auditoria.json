@@ -1,5 +1,44 @@
 [
   {
+    "id": "audit-1787325547218-4a68e737027fb",
+    "date": "2026-08-21T15:19:07.218Z",
+    "issueNumber": 38,
+    "action": "Criar",
+    "recordId": "lp-planeja-brasil-organico",
+    "software": "Landing Page",
+    "ativo": "Planeja Brasil - Orgânico",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
+    "id": "audit-1787325547218-0c36d7e180118",
+    "date": "2026-08-21T15:19:07.218Z",
+    "issueNumber": 38,
+    "action": "Criar",
+    "recordId": "lp-planeja-brasil-samyr",
+    "software": "Landing Page",
+    "ativo": "Planeja Brasil - Samyr",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
+    "id": "audit-1787325547218-dddf67fb592d5",
+    "date": "2026-08-21T15:19:07.218Z",
+    "issueNumber": 38,
+    "action": "Criar",
+    "recordId": "lp-planeja-brasil-trafego-pago",
+    "software": "Landing Page",
+    "ativo": "Planeja Brasil - Tráfego Pago",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787260750199-dc97ec576740f",
     "date": "2026-08-20T21:19:10.199Z",
     "issueNumber": 37,

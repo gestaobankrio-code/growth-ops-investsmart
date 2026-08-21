@@ -9,6 +9,24 @@
     "proximaAcao": "Validar com Bruno Aguiar e Angelo a governança atual da conta Dropbox.\n\nConfirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se existe segundo administrador e revisar o método de recuperação da conta.\n\nRemover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
   },
   {
+    "id": "lp-planeja-brasil-organico-risco-alto",
+    "recordId": "lp-planeja-brasil-organico",
+    "ativo": "Planeja Brasil - Orgânico",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo."
+  },
+  {
+    "id": "lp-planeja-brasil-trafego-pago-risco-alto",
+    "recordId": "lp-planeja-brasil-trafego-pago",
+    "ativo": "Planeja Brasil - Tráfego Pago",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
+  },
+  {
     "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
     "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
     "ativo": "Abertura de Filial",
