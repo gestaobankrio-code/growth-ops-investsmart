@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787341107725-8300fd0727113",
+    "date": "2026-08-21T19:38:27.725Z",
+    "issueNumber": 49,
+    "action": "Validar",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "software": "Lovable",
+    "ativo": "Convite Smart Carreiras - Samyr",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787337287202-f7695f7457dc5",
     "date": "2026-08-21T18:34:47.202Z",
     "issueNumber": 41,
