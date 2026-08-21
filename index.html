@@ -900,6 +900,9 @@
       min-height: 104px;
       padding: 12px 13px;
       resize: vertical;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .modal-footer,
@@ -942,7 +945,8 @@
       line-height: 19px;
       font-weight: 400;
       overflow-wrap: anywhere;
-      white-space: pre-line;
+      word-break: break-word;
+      white-space: pre-wrap;
     }
 
     .footer {
@@ -1936,109 +1940,6 @@
         .trim();
     }
 
-    function flattenSearchValues(value) {
-      if (value === null || value === undefined) return [];
-
-      if (Array.isArray(value)) {
-        return value.flatMap(item => flattenSearchValues(item));
-      }
-
-      if (typeof value === 'object') {
-        return Object.values(value).flatMap(item => flattenSearchValues(item));
-      }
-
-      return [String(value)];
-    }
-
-    function tokenizeSearch(value) {
-      return normalizeText(value)
-        .replace(/[^\w./:_-]+/g, ' ')
-        .split(/\s+/)
-        .map((item) => item.trim())
-        .filter(Boolean);
-    }
-
-    function recordSearchContent(record) {
-      const risk = calculatedRisk(record);
-      const extraValues = flattenSearchValues(record.extra || {});
-
-      const primaryFields = [
-        record.action,
-        record.software,
-        record.ativo,
-        record.categoria,
-        record.responsavel,
-        record.area,
-        record.status,
-        record.url,
-        record.twofa,
-        record.twofaMethod,
-        record.twofaOwner,
-        record.twofaOwnerType,
-        record.twofaPhoneMasked,
-        record.phoneType,
-        record.secondAdmin,
-        record.recoveryValidated,
-        record.manualRisk,
-        record.lastValidation,
-        risk,
-        ...extraValues
-      ];
-
-      const secondaryFields = [
-        record.obs,
-        record.next
-      ];
-
-      const primaryText = normalizeText(primaryFields.filter(Boolean).join(' '));
-      const secondaryText = normalizeText(secondaryFields.filter(Boolean).join(' '));
-      const fullText = normalizeText([primaryText, secondaryText].filter(Boolean).join(' '));
-
-      return {
-        primaryText,
-        secondaryText,
-        fullText,
-        primaryTokens: tokenizeSearch(primaryText),
-        fullTokens: tokenizeSearch(fullText)
-      };
-    }
-
-    function matchesSearchTerm(record, rawSearch) {
-      const originalSearch = String(rawSearch || '').trim();
-      const normalizedSearch = normalizeText(originalSearch);
-
-      if (!normalizedSearch) return true;
-
-      const content = recordSearchContent(record);
-      const quoted = originalSearch.match(/^"(.+)"$/);
-      const searchPhrase = quoted ? normalizeText(quoted[1]) : normalizedSearch;
-      const searchTokens = tokenizeSearch(searchPhrase);
-
-      if (!searchTokens.length) return true;
-
-      if (quoted) {
-        return content.fullText.includes(searchPhrase);
-      }
-
-      if (searchTokens.length === 1) {
-        const token = searchTokens[0];
-
-        return (
-          content.primaryTokens.includes(token) ||
-          content.primaryText.includes(token)
-        );
-      }
-
-      if (content.primaryText.includes(searchPhrase)) {
-        return true;
-      }
-
-      return searchTokens.every((token) =>
-        content.primaryTokens.includes(token) ||
-        content.primaryText.includes(token)
-      );
-    }
-
     function escapeHtml(value) {
       return String(value ?? '')
         .replaceAll('&', '&amp;')
@@ -2149,6 +2050,8 @@
     }
 
     function filteredRecords() {
+      const normalizedSearch = normalizeText(searchTerm);
+
       return records.filter(record => {
         const risk = calculatedRisk(record);
 
@@ -2157,7 +2060,32 @@
           record.status === activeFilter ||
           (activeFilter === 'Risco alto' && ['Alto', 'Crítico'].includes(risk));
 
-        const matchesSearch = matchesSearchTerm(record, searchTerm);
+        const searchable = normalizeText([
+          record.action,
+          record.software,
+          record.ativo,
+          record.categoria,
+          record.responsavel,
+          record.area,
+          record.status,
+          record.url,
+          record.twofa,
+          record.twofaMethod,
+          record.twofaOwner,
+          record.twofaOwnerType,
+          record.twofaPhoneMasked,
+          record.phoneType,
+          record.secondAdmin,
+          record.recoveryValidated,
+          record.manualRisk,
+          record.lastValidation,
+          record.obs,
+          record.next,
+          risk,
+          JSON.stringify(record.extra || {})
+        ].join(' '));
+
+        const matchesSearch = !normalizedSearch || searchable.includes(normalizedSearch);
 
         return matchesFilter && matchesSearch;
       });
