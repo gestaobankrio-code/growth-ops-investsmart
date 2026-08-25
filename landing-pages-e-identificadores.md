@@ -1,12 +1,12 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 25/08/2026, 19:22:32.
+Atualizado automaticamente em 25/08/2026, 19:23:21.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
 | Abertura de Filial |  | https://aberturadefilial.investsmart.com.br |  |  | https://docs.google.com/spreadsheets/d/1vMstBYc2SiYzBMzBVsUsGo2A-DKrEA265McyUraZdLQ/edit?usp=sharing | Incompleto |
 | Abra sua Filial |  | https://aberturadefilial02.lovable.app/ | https://aberturadefilial02.lovable.app/ |  | Google Sheets informado operacionalmente | A validar |
-| Best Franquias |  | https://bestfranquia.lovable.app | https://bestfranquia.lovable.app |  | Google Sheets informado operacionalmente | A validar |
+| Best Franquias |  | https://bestfranquia.lovable.app |  |  | https://docs.google.com/spreadsheets/d/1r719ZwMvR0e8i85lcqf0ZL1I3djelvaCyAyjCaj9_-4/edit?usp=sharing | Validado |
 | Indique e Ganhe até R$ 5 mil |  | https://indiqueeganhe5mil.lovable.app/ |  |  | https://docs.google.com/spreadsheets/d/1UKsv-C_UiSbQXjb-RzDmLAqyVohzU-PPd8MEohjmeco/edit | A validar |
 | Live ao Vivo / Melhor Profissão |  | https://melhorprofissao.lovable.app |  |  | https://docs.google.com/spreadsheets/d/1EEq_8jSVmuW9rke0-_Q6sepvPavraoAf-UOGfku9n_w/edit?usp=sharing | Validado |
 | Maracanã Glow Experience |  | https://maracana-glow-experience.lovable.app/ |  |  | https://docs.google.com/spreadsheets/d/18RT3H-tnXDqdL6Wrg3YN4mB7lyJn3Z1LWKFKnHovm2I/edit?usp=sharing | Validado |

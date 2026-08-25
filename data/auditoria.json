@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787685801768-26e4e4bc27c9a",
+    "date": "2026-08-25T19:23:21.768Z",
+    "issueNumber": 69,
+    "action": "Atualizar",
+    "recordId": "lp-best-franquias",
+    "software": "Landing Page",
+    "ativo": "Best Franquias",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787685752569-0a2d91aa60a65",
     "date": "2026-08-25T19:22:32.569Z",
     "issueNumber": 68,

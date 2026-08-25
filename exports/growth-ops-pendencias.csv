@@ -51,21 +51,17 @@ Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando
 Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-"Best Franquias";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Best Franquias e confirmar se o cadastro aparece na planilha Google Sheets informada.
+"Best Franquias";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
 
-Validar qual camada faz o envio para a planilha: n8n, Google Apps Script, webhook, worker, backend, conector externo ou outro fluxo.
+Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.
 
-Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, WhatsApp, cidade, estado, perfil profissional, modelo de interesse, mensagem, SOURCE_ID 203, campanha, pageUrl, UTMs e data de envio.
-
-Confirmar se o n8n também encaminha os leads para Bitrix, especialmente para crm_dynamic_items_1166, ou se o Google Sheets será o destino principal/final.
-
-Validar se Jorge e/ou Samyr possuem visibilidade desses leads por acesso à planilha ou outro canal.
+Validar se Jorge e/ou Samyr possuem visibilidade desses leads.
 
 Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.
 
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
-Após teste confirmado, atualizar status para Validado e revisar o risco operacional."
+Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
 "Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
