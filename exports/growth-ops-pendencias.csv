@@ -10,6 +10,23 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
+"Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
+
+Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.
+
+Após implementação, realizar teste real de lead e confirmar se o cadastro aparece tanto no Bitrix24 quanto na planilha Google Sheets.
+
+Confirmar quais campos serão gravados na planilha: data/hora, nome, WhatsApp, e-mail, campanha, palavra-chave Torcedor, origem/source, pageUrl, UTMs, status no Bitrix, responsável e observações.
+
+Confirmar se Jorge e/ou Samyr possuem acesso ou recebem notificação dos leads no Bitrix24 e na planilha.
+
+Configurar ou validar captura de UTMs e origem dentro do Bitrix24.
+
+Implementar ou validar evento Lead do Meta Pixel após confirmação real de envio do formulário Bitrix.
+
+Criar fallback visual caso o embed Bitrix24 não carregue.
+
+Após teste confirmado, atualizar o status da integração Google Sheets para Validado."
 "Patrocínio Smart Summit - Samyr";"Landing Page";"Alto";"Risco Alto";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
 
 Confirmar se o lead chega na planilha Google Sheets informada.

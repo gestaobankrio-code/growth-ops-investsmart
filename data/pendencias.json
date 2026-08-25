@@ -9,6 +9,15 @@
     "proximaAcao": "Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.\n\nConfirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.\n\nValidar se Jorge e/ou Samyr possuem visibilidade desses leads.\n\nConfirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.\n\nCom Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.\n\nCom Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
   },
   {
+    "id": "lp-maracana-glow-experience-risco-alto",
+    "recordId": "lp-maracana-glow-experience",
+    "ativo": "Maracanã Glow Experience",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.\n\nValidar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.\n\nApós implementação, realizar teste real de lead e confirmar se o cadastro aparece tanto no Bitrix24 quanto na planilha Google Sheets.\n\nConfirmar quais campos serão gravados na planilha: data/hora, nome, WhatsApp, e-mail, campanha, palavra-chave Torcedor, origem/source, pageUrl, UTMs, status no Bitrix, responsável e observações.\n\nConfirmar se Jorge e/ou Samyr possuem acesso ou recebem notificação dos leads no Bitrix24 e na planilha.\n\nConfigurar ou validar captura de UTMs e origem dentro do Bitrix24.\n\nImplementar ou validar evento Lead do Meta Pixel após confirmação real de envio do formulário Bitrix.\n\nCriar fallback visual caso o embed Bitrix24 não carregue.\n\nApós teste confirmado, atualizar o status da integração Google Sheets para Validado."
+  },
+  {
     "id": "lp-patrocinio-smart-summit-samyr-risco-alto",
     "recordId": "lp-patrocinio-smart-summit-samyr",
     "ativo": "Patrocínio Smart Summit - Samyr",
