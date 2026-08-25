@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 25/08/2026, 17:52:34.
+Atualização gerada automaticamente em 25/08/2026, 17:56:59.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 26 |
-| Validados | 21 |
-| A validar | 4 |
+| Validados | 22 |
+| A validar | 3 |
 | Risco alto/crítico | 14 |
 | Sem 2FA | 0 |
 
@@ -19,7 +19,7 @@ Atualização gerada automaticamente em 25/08/2026, 17:52:34.
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
 | Best Franquias | Landing Page | Landing Page / Franquias | Marketing | Validado | Alto |
-| Maracanã Glow Experience | Landing Page | Landing Page / Maracanã | Marketing | A validar | Alto |
+| Maracanã Glow Experience | Landing Page | Landing Page / Maracanã | Marketing | Validado | Alto |
 | Meu Novo Lar - Samyr | Landing Page | Landing Page / Meu Novo Lar | Marketing | Validado | Médio |
 | Patrocínio Smart Summit - Samyr | Landing Page | Landing Page / Smart Summit | Marketing | A validar | Alto |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |

@@ -158,13 +158,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "lp-maracana-glow-experience",
-    "action": "Atualizar",
+    "action": "Validar",
     "software": "Landing Page",
     "ativo": "Maracanã Glow Experience",
     "categoria": "Landing Page / Maracanã",
     "responsavel": "Marketing",
     "area": "Marketing / Growth",
-    "status": "A validar",
+    "status": "Validado",
     "url": "https://maracana-glow-experience.lovable.app/",
     "twofa": "Não aplicável",
     "twofaMethod": "Não aplicável",
@@ -191,7 +191,7 @@
       "leadDestination": "https://docs.google.com/spreadsheets/d/18RT3H-tnXDqdL6Wrg3YN4mB7lyJn3Z1LWKFKnHovm2I/edit?usp=sharing"
     },
     "createdAt": "2026-08-25T17:50:28.605Z",
-    "updatedAt": "2026-08-25T17:52:34.614Z"
+    "updatedAt": "2026-08-25T17:56:59.164Z"
   },
   {
     "schema": "growth-ops-record-v2",

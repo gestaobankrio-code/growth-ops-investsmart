@@ -16,7 +16,7 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
-"Maracanã Glow Experience";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"A validar";"https://maracana-glow-experience.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
+"Maracanã Glow Experience";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"Validado";"https://maracana-glow-experience.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.
 
