@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 25/08/2026, 19:23:21.
+Atualização gerada automaticamente em 25/08/2026, 20:11:27.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 29 |
-| Validados | 23 |
-| A validar | 5 |
+| Validados | 22 |
+| A validar | 6 |
 | Risco alto/crítico | 17 |
 | Sem 2FA | 0 |
 
@@ -26,7 +26,7 @@ Atualização gerada automaticamente em 25/08/2026, 19:23:21.
 | Maracanã Glow Experience | Landing Page | Landing Page / Maracanã | Marketing | Validado | Alto |
 | Meu Novo Lar - Samyr | Landing Page | Landing Page / Meu Novo Lar | Marketing | Validado | Médio |
 | Patrocínio Smart Summit - Samyr | Landing Page | Landing Page / Smart Summit | Marketing | A validar | Alto |
-| Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
+| Planeja Brasil | Landing Page | Landing Page / Planeja Brasil | Marketing | A validar | Alto |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Tráfego Pago | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Profissão de Elite - Cidades do Brasil | Landing Page | Landing Page / Smart Carreiras | Marketing | A validar | Alto |
@@ -59,7 +59,7 @@ Atualização gerada automaticamente em 25/08/2026, 19:23:21.
 | Live ao Vivo / Melhor Profissão | Landing Page | Risco Alto | Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.  Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.  Definir responsável operacional e SLA de atendimento dos leads.  Avaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.  Implementar retry ou alerta de falha caso a gravação na planilha não ocorra.  Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.  Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.  Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer. |
 | Maracanã Glow Experience | Landing Page | Risco Alto | Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.  Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.  Após implementação, realizar teste real de lead e confirmar se o cadastro aparece tanto no Bitrix24 quanto na planilha Google Sheets.  Confirmar quais campos serão gravados na planilha: data/hora, nome, WhatsApp, e-mail, campanha, palavra-chave Torcedor, origem/source, pageUrl, UTMs, status no Bitrix, responsável e observações.  Confirmar se Jorge e/ou Samyr possuem acesso ou recebem notificação dos leads no Bitrix24 e na planilha.  Configurar ou validar captura de UTMs e origem dentro do Bitrix24.  Implementar ou validar evento Lead do Meta Pixel após confirmação real de envio do formulário Bitrix.  Criar fallback visual caso o embed Bitrix24 não carregue.  Após teste confirmado, atualizar o status da integração Google Sheets para Validado. |
 | Patrocínio Smart Summit - Samyr | Landing Page | Risco Alto | Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.  Confirmar se o lead chega na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script ou outro conector.  Confirmar quais campos estão sendo gravados na planilha e se incluem nome, WhatsApp, e-mail, source, palavra-chave, pageUrl, UTMs e data de envio.  Definir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.  Após confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional. |
-| Planeja Brasil - Orgânico | Landing Page | Risco Alto | Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo. |
+| Planeja Brasil | Landing Page | Risco Alto | Realizar teste real de lead na LP Planeja Brasil e confirmar se o cadastro aparece na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: n8n, Google Apps Script, webhook, worker, backend, conector externo ou outro fluxo.  Confirmar quais campos estão sendo gravados na planilha: nome, telefone, e-mail, respostas do formulário, identificador UC_QZ91TG, campanha, pageUrl, UTMs e data de envio.  Confirmar se Jorge e/ou Samyr possuem visibilidade desses leads por acesso à planilha ou outro canal operacional.  Validar se o n8n continua ativo no fluxo e se ele apenas grava no Google Sheets ou também encaminha para outro destino.  Com Marketing, confirmar tracking de conversão, captura de UTMs e evento de Lead no GTM/Meta Pixel.  Após teste confirmado, atualizar status para Validado e revisar o risco operacional. |
 | Planeja Brasil - Samyr | Landing Page | Risco Alto | Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.  Confirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.  Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.  Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads. |
 | Planeja Brasil - Tráfego Pago | Landing Page | Risco Alto | Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo. |
 | Profissão de Elite - Cidades do Brasil | Landing Page | Risco Alto | Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.  Confirmar quais campos estão sendo gravados na planilha.  Validar se source Carreiras, pageUrl, UTMs e data de envio estão sendo registrados.  Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.  Confirmar se existe evento de conversão no Meta Pixel após o envio real.  Após teste confirmado, atualizar o status para Validado e revisar o risco operacional. |

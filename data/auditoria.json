@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787688687901-1b16f4b4aa6f2",
+    "date": "2026-08-25T20:11:27.901Z",
+    "issueNumber": 70,
+    "action": "Atualizar",
+    "recordId": "lp-planeja-brasil-organico",
+    "software": "Landing Page",
+    "ativo": "Planeja Brasil",
+    "statusBefore": "Validado",
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787685801768-26e4e4bc27c9a",
     "date": "2026-08-25T19:23:21.768Z",
     "issueNumber": 69,

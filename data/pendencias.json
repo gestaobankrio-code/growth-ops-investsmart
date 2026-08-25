@@ -83,11 +83,11 @@
   {
     "id": "lp-planeja-brasil-organico-risco-alto",
     "recordId": "lp-planeja-brasil-organico",
-    "ativo": "Planeja Brasil - Orgânico",
+    "ativo": "Planeja Brasil",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
-    "proximaAcao": "Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo."
+    "proximaAcao": "Realizar teste real de lead na LP Planeja Brasil e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: n8n, Google Apps Script, webhook, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, telefone, e-mail, respostas do formulário, identificador UC_QZ91TG, campanha, pageUrl, UTMs e data de envio.\n\nConfirmar se Jorge e/ou Samyr possuem visibilidade desses leads por acesso à planilha ou outro canal operacional.\n\nValidar se o n8n continua ativo no fluxo e se ele apenas grava no Google Sheets ou também encaminha para outro destino.\n\nCom Marketing, confirmar tracking de conversão, captura de UTMs e evento de Lead no GTM/Meta Pixel.\n\nApós teste confirmado, atualizar status para Validado e revisar o risco operacional."
   },
   {
     "id": "lp-planeja-brasil-samyr-risco-alto",
