@@ -1,6 +1,6 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 25/08/2026, 22:15:20.
+Atualizado automaticamente em 25/08/2026, 22:17:28.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|

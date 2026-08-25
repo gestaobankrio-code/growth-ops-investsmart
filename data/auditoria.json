@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787696248546-77ca12a14a1ab",
+    "date": "2026-08-25T22:17:28.546Z",
+    "issueNumber": 75,
+    "action": "Atualizar",
+    "recordId": "lp-maracana-fluminense-samyr",
+    "software": "Landing Page",
+    "ativo": "LP do Fluminense - Samyr",
+    "statusBefore": "A validar",
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787696120470-1c47d76a689ba",
     "date": "2026-08-25T22:15:20.470Z",
     "issueNumber": 74,

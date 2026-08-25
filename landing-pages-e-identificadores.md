@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 25/08/2026, 22:15:20.
+Atualizado automaticamente em 25/08/2026, 22:17:28.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@ Atualizado automaticamente em 25/08/2026, 22:15:20.
 | Indique e Ganhe até R$ 5 mil |  | https://indiqueeganhe5mil.lovable.app/ |  |  | https://docs.google.com/spreadsheets/d/1UKsv-C_UiSbQXjb-RzDmLAqyVohzU-PPd8MEohjmeco/edit | A validar |
 | Live ao Vivo / Melhor Profissão |  | https://melhorprofissao.lovable.app |  |  | https://docs.google.com/spreadsheets/d/1EEq_8jSVmuW9rke0-_Q6sepvPavraoAf-UOGfku9n_w/edit?usp=sharing | Validado |
 | LP do Flamengo - Samyr |  | https://maracana-flamengo.lovable.app |  |  | https://docs.google.com/spreadsheets/d/1wlC7Q2tshmv63R4JkqPt9_AgEFbiGv2g2-JK7lP7O2A/edit | A validar |
-| LP do Fluminense - Samyr |  | https://maracana-fluminense.lovable.app | https://maracana-fluminense.lovable.app |  | Google Sheets informado operacionalmente | A validar |
+| LP do Fluminense - Samyr |  | https://maracana-fluminense.lovable.app |  |  | https://docs.google.com/spreadsheets/d/1TmWHBaYudaiC3wqaHC3aLuhDP82dmzg-yMr-EHcA0AE/edit | A validar |
 | Maracanã Glow Experience |  | https://maracana-glow-experience.lovable.app/ |  |  | https://docs.google.com/spreadsheets/d/18RT3H-tnXDqdL6Wrg3YN4mB7lyJn3Z1LWKFKnHovm2I/edit?usp=sharing | Validado |
 | Meu Novo Lar - Samyr |  | https://planejamentomeunovolar.besmart.com.br/ |  |  | https://docs.google.com/spreadsheets/d/10jQEdcXmfdP4HUXVEbbl7698qRXQJQwqnxlQNdtn21E/edit?usp=sharing | Validado |
 | Patrocínio Smart Summit - Samyr |  | https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev |  |  | https://docs.google.com/spreadsheets/d/1LYKufCayNdb0Zdj2heydx_Xuv_Tl3NcaZky37uuYQJw/edit?usp=sharing | A validar |
