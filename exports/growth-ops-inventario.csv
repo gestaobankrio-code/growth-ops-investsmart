@@ -6,7 +6,13 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "GTM - Planeja Brasil";"Google Tag Manager";"Tracking / Google Tag Manager";"Marketing";"Marketing / Growth";"Validado";"https://tagmanager.google.com";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar dentro do container GTM se GA4, Google Ads e eventos de conversão estão configurados corretamente para as páginas do Planeja Brasil."
 "Planeja Brasil - Orgânico";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro.investsmart.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo."
-"Planeja Brasil - Samyr";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://seu-planejamento-financeiro.investsmart.com.br";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Registrar separadamente o source UC_UI1PIS, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_UI1PIS e confirmar destino final do fluxo."
+"Planeja Brasil - Samyr";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://seu-planejamento-financeiro.investsmart.com.br";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.
+
+Confirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.
+
+Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.
+
+Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads."
 "Planeja Brasil - Tráfego Pago";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro01.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
 "Abertura de Filial";"Lovable";"Landing Page / Aquisição / Expansão";"Marketing";"Marketing / Growth";"Incompleto";"https://aberturadefilial.investsmart.com.br";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
 

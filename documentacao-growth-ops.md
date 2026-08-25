@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 21/08/2026, 19:38:27.
+Atualização gerada automaticamente em 25/08/2026, 14:03:03.
 
 ## Resumo executivo
 
@@ -9,7 +9,7 @@ Atualização gerada automaticamente em 21/08/2026, 19:38:27.
 | Registros ativos | 21 |
 | Validados | 19 |
 | A validar | 1 |
-| Risco alto/crítico | 9 |
+| Risco alto/crítico | 10 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -19,7 +19,7 @@ Atualização gerada automaticamente em 21/08/2026, 19:38:27.
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
-| Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Médio |
+| Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Tráfego Pago | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Abertura de Filial | Lovable | Landing Page / Aquisição / Expansão | Marketing | Incompleto | Baixo |
 | Convite Smart Carreiras - Samyr | Lovable | Landing Page / Aquisição | Marketing | Validado | Crítico |
@@ -43,6 +43,7 @@ Atualização gerada automaticamente em 21/08/2026, 19:38:27.
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
 | Planeja Brasil - Orgânico | Landing Page | Risco Alto | Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo. |
+| Planeja Brasil - Samyr | Landing Page | Risco Alto | Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.  Confirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.  Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.  Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads. |
 | Planeja Brasil - Tráfego Pago | Landing Page | Risco Alto | Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo. |
 | Abertura de Filial | Lovable | Quem recebe o código a validar | Definir com o time o destino oficial dos leads da landing page Abertura de Filial.  Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.  Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.  Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.  Configurar evento de conversão no submit real do formulário.  Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.  Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado. |
 | Abertura de Filial | Lovable | Recuperação de acesso não validada | Definir com o time o destino oficial dos leads da landing page Abertura de Filial.  Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.  Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.  Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.  Configurar evento de conversão no submit real do formulário.  Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.  Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado. |

@@ -9,6 +9,15 @@
     "proximaAcao": "Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo."
   },
   {
+    "id": "lp-planeja-brasil-samyr-risco-alto",
+    "recordId": "lp-planeja-brasil-samyr",
+    "ativo": "Planeja Brasil - Samyr",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.\n\nConfirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.\n\nMapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.\n\nAvaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads."
+  },
+  {
     "id": "lp-planeja-brasil-trafego-pago-risco-alto",
     "recordId": "lp-planeja-brasil-trafego-pago",
     "ativo": "Planeja Brasil - Tráfego Pago",

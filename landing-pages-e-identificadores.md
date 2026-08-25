@@ -1,11 +1,11 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 21/08/2026, 19:38:27.
+Atualizado automaticamente em 25/08/2026, 14:03:03.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
 | Planeja Brasil - Orgânico | UC_QZ91TG | https://planejamento-financeiro.investsmart.com.br/ | https://id-preview--835c39dc-d444-4caf-af2e-42c65cb5ebaa.lovable.app | Registrar em ativo próprio | Fluxo n8n InvestSmart | Validado |
-| Planeja Brasil - Samyr | UC_UI1PIS | https://seu-planejamento-financeiro.investsmart.com.br | https://id-preview--bb8b9299-f6c0-449f-b58e-fe3189e749e0.lovable.app | Registrar em ativo próprio | Fluxo n8n InvestSmart | Validado |
+| Planeja Brasil - Samyr | UC_UI1PIS | https://seu-planejamento-financeiro.investsmart.com.br | https://id-preview--bb8b9299-f6c0-449f-b58e-fe3189e749e0.lovable.app |  | Webhook n8n | Validado |
 | Planeja Brasil - Tráfego Pago | 201 | https://planejamento-financeiro01.lovable.app | https://id-preview--02443493-1a69-4550-82a9-4acb562d302d.lovable.app | Registrar em ativo próprio | Fluxo n8n InvestSmart | Validado |
 | Abertura de Filial |  | https://aberturadefilial.investsmart.com.br | https://aberturadefilial02.lovable.app |  |  | Incompleto |
 | Convite Smart Carreiras - Samyr |  | https://convite.smartcarreiras.com.br/ | https://smart-carreiras-samyr.lovable.app | Endpoint HubSpot Forms API v3: https://api.hsforms.com/submissions/v3/integration/submit/21347715/b713217b-****-****-****-************ |  | Validado |

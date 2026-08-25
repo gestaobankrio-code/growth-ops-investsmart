@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787666583530-781ab924cbacc",
+    "date": "2026-08-25T14:03:03.530Z",
+    "issueNumber": 51,
+    "action": "Atualizar",
+    "recordId": "lp-planeja-brasil-samyr",
+    "software": "Landing Page",
+    "ativo": "Planeja Brasil - Samyr",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787341107725-8300fd0727113",
     "date": "2026-08-21T19:38:27.725Z",
     "issueNumber": 49,
