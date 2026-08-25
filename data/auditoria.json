@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787668210612-49ac8611f988b",
+    "date": "2026-08-25T14:30:10.612Z",
+    "issueNumber": 53,
+    "action": "Atualizar",
+    "recordId": "lp-meu-novo-lar-samyr",
+    "software": "Landing Page",
+    "ativo": "Meu Novo Lar - Samyr",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787668023516-3e2509f99594a",
     "date": "2026-08-25T14:27:03.516Z",
     "issueNumber": 52,
