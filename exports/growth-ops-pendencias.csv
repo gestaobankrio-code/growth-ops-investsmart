@@ -62,6 +62,19 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
+"Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
+
+Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
+
+Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.
+
+Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.
+
+Validar o SLA prometido de 48h úteis na página.
+
+Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
+
+Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
 "Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.

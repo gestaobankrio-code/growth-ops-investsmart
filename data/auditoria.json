@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787683797768-4b50976284aec",
+    "date": "2026-08-25T18:49:57.768Z",
+    "issueNumber": 64,
+    "action": "Atualizar",
+    "recordId": "lp-indique-ganhe-5mil",
+    "software": "Landing Page",
+    "ativo": "Indique e Ganhe até R$ 5 mil",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787682081232-abcdeaa7182c8",
     "date": "2026-08-25T18:21:21.232Z",
     "issueNumber": 63,
