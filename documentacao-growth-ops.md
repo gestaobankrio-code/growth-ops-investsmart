@@ -1,13 +1,13 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 25/08/2026, 14:03:03.
+Atualização gerada automaticamente em 25/08/2026, 14:27:03.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 21 |
-| Validados | 19 |
+| Registros ativos | 22 |
+| Validados | 20 |
 | A validar | 1 |
 | Risco alto/crítico | 10 |
 | Sem 2FA | 0 |
@@ -18,6 +18,7 @@ Atualização gerada automaticamente em 25/08/2026, 14:03:03.
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
+| Meu Novo Lar - Samyr | Landing Page | Landing Page / Meu Novo Lar | Marketing | Validado | Médio |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Tráfego Pago | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
