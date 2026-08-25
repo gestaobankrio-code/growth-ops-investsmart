@@ -5,6 +5,17 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "GTM - Planeja Brasil";"Google Tag Manager";"Tracking / Google Tag Manager";"Marketing";"Marketing / Growth";"Validado";"https://tagmanager.google.com";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar dentro do container GTM se GA4, Google Ads e eventos de conversão estão configurados corretamente para as páginas do Planeja Brasil."
+"Best Franquias";"Landing Page";"Landing Page / Franquias";"Marketing";"Marketing / Growth";"Validado";"https://bestfranquia.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
+
+Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.
+
+Validar se Jorge e/ou Samyr possuem visibilidade desses leads.
+
+Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.
+
+Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
+
+Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
 "Meu Novo Lar - Samyr";"Landing Page";"Landing Page / Meu Novo Lar";"Marketing";"Marketing / Growth";"Validado";"https://meu-novo-lar-samyr.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar com Tecnologia e Processos quem monitora a aba Samyr da planilha leads_meu_novo_lar.
 
 Confirmar se os registros com status_n8n = ERRO são acompanhados manualmente e qual é o SLA de correção.

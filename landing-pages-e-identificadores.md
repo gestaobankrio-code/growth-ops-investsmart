@@ -1,9 +1,10 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 25/08/2026, 14:30:10.
+Atualizado automaticamente em 25/08/2026, 14:56:44.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
+| Best Franquias |  | https://bestfranquia.lovable.app | https://bestfranquia.lovable.app |  | Webhook n8n | Validado |
 | Meu Novo Lar - Samyr |  | https://planejamentomeunovolar.besmart.com.br/ |  |  | https://docs.google.com/spreadsheets/d/10jQEdcXmfdP4HUXVEbbl7698qRXQJQwqnxlQNdtn21E/edit?usp=sharing | Validado |
 | Planeja Brasil - Orgânico | UC_QZ91TG | https://planejamento-financeiro.investsmart.com.br/ | https://id-preview--835c39dc-d444-4caf-af2e-42c65cb5ebaa.lovable.app | Registrar em ativo próprio | Fluxo n8n InvestSmart | Validado |
 | Planeja Brasil - Samyr | UC_UI1PIS | https://seu-planejamento-financeiro.investsmart.com.br | https://id-preview--bb8b9299-f6c0-449f-b58e-fe3189e749e0.lovable.app |  | Webhook n8n | Validado |

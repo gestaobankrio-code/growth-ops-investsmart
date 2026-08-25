@@ -1,15 +1,15 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 25/08/2026, 14:30:10.
+Atualização gerada automaticamente em 25/08/2026, 14:56:44.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 22 |
-| Validados | 20 |
+| Registros ativos | 23 |
+| Validados | 21 |
 | A validar | 1 |
-| Risco alto/crítico | 10 |
+| Risco alto/crítico | 11 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -18,6 +18,7 @@ Atualização gerada automaticamente em 25/08/2026, 14:30:10.
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
+| Best Franquias | Landing Page | Landing Page / Franquias | Marketing | Validado | Alto |
 | Meu Novo Lar - Samyr | Landing Page | Landing Page / Meu Novo Lar | Marketing | Validado | Médio |
 | Planeja Brasil - Orgânico | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
 | Planeja Brasil - Samyr | Landing Page | Landing Page / Planeja Brasil | Marketing | Validado | Alto |
@@ -43,6 +44,7 @@ Atualização gerada automaticamente em 25/08/2026, 14:30:10.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
+| Best Franquias | Landing Page | Risco Alto | Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.  Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.  Validar se Jorge e/ou Samyr possuem visibilidade desses leads.  Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.  Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.  Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead. |
 | Planeja Brasil - Orgânico | Landing Page | Risco Alto | Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo. |
 | Planeja Brasil - Samyr | Landing Page | Risco Alto | Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.  Confirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.  Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.  Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads. |
 | Planeja Brasil - Tráfego Pago | Landing Page | Risco Alto | Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo. |
