@@ -83,6 +83,19 @@ Confirmar quem acompanha a planilha e qual é o SLA de atendimento.
 Validar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.
 
 Após teste confirmado, atualizar o status para Validado."
+"LP do Fluminense - Samyr";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"A validar";"https://maracana-fluminense.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP do Fluminense e confirmar se o cadastro aparece no Google Sheets informado.
+
+Validar quais campos estão sendo gravados na planilha.
+
+Confirmar se existe source/campanha da LP no payload.
+
+Confirmar se UTMs e pageUrl são capturadas.
+
+Confirmar quem acompanha a planilha e qual é o SLA de atendimento.
+
+Validar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.
+
+Após teste confirmado, atualizar o status para Validado."
 "Maracanã Glow Experience";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"Validado";"https://maracana-glow-experience.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.

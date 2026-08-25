@@ -72,6 +72,15 @@
     "proximaAcao": "Realizar teste real de lead na LP do Flamengo e confirmar se o cadastro aparece no Google Sheets informado.\n\nValidar quais campos estão sendo gravados na planilha.\n\nConfirmar se existe source/campanha da LP no payload.\n\nConfirmar se UTMs e pageUrl são capturadas.\n\nConfirmar quem acompanha a planilha e qual é o SLA de atendimento.\n\nValidar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.\n\nApós teste confirmado, atualizar o status para Validado."
   },
   {
+    "id": "lp-maracana-fluminense-samyr-risco-alto",
+    "recordId": "lp-maracana-fluminense-samyr",
+    "ativo": "LP do Fluminense - Samyr",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar teste real de lead na LP do Fluminense e confirmar se o cadastro aparece no Google Sheets informado.\n\nValidar quais campos estão sendo gravados na planilha.\n\nConfirmar se existe source/campanha da LP no payload.\n\nConfirmar se UTMs e pageUrl são capturadas.\n\nConfirmar quem acompanha a planilha e qual é o SLA de atendimento.\n\nValidar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.\n\nApós teste confirmado, atualizar o status para Validado."
+  },
+  {
     "id": "lp-maracana-glow-experience-risco-alto",
     "recordId": "lp-maracana-glow-experience",
     "ativo": "Maracanã Glow Experience",
