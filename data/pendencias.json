@@ -9,6 +9,15 @@
     "proximaAcao": "Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.\n\nConfirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.\n\nValidar se Jorge e/ou Samyr possuem visibilidade desses leads.\n\nConfirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.\n\nCom Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.\n\nCom Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
   },
   {
+    "id": "lp-patrocinio-smart-summit-samyr-risco-alto",
+    "recordId": "lp-patrocinio-smart-summit-samyr",
+    "ativo": "Patrocínio Smart Summit - Samyr",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.\n\nConfirmar se o lead chega na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha e se incluem nome, WhatsApp, e-mail, source, palavra-chave, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.\n\nApós confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional."
+  },
+  {
     "id": "lp-planeja-brasil-organico-risco-alto",
     "recordId": "lp-planeja-brasil-organico",
     "ativo": "Planeja Brasil - Orgânico",

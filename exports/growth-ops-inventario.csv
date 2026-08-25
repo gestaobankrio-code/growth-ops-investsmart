@@ -25,6 +25,17 @@ Confirmar se o n8n encaminha os leads para Bitrix, e-mail, outro CRM ou apenas m
 Validar se Jorge possui visibilidade do fluxo e se Samyr acessa ou recebe os leads da aba Samyr.
 
 Avaliar criação de retry automático para o webhook n8n, backup/fila independente da planilha e implantação de tracking de conversão."
+"Patrocínio Smart Summit - Samyr";"Landing Page";"Landing Page / Smart Summit";"Marketing";"Marketing / Growth";"A validar";"https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
+
+Confirmar se o lead chega na planilha Google Sheets informada.
+
+Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script ou outro conector.
+
+Confirmar quais campos estão sendo gravados na planilha e se incluem nome, WhatsApp, e-mail, source, palavra-chave, pageUrl, UTMs e data de envio.
+
+Definir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.
+
+Após confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional."
 "Planeja Brasil - Orgânico";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro.investsmart.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Registrar separadamente o source UC_QZ91TG, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source UC_QZ91TG e confirmar destino final do fluxo."
 "Planeja Brasil - Samyr";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://seu-planejamento-financeiro.investsmart.com.br";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.
 

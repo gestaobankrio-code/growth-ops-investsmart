@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787671029072-1d502c2e11563",
+    "date": "2026-08-25T15:17:09.072Z",
+    "issueNumber": 55,
+    "action": "Atualizar",
+    "recordId": "lp-patrocinio-smart-summit-samyr",
+    "software": "Landing Page",
+    "ativo": "Patrocínio Smart Summit - Samyr",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787669804475-d7d148a9a43e9",
     "date": "2026-08-25T14:56:44.475Z",
     "issueNumber": 54,
