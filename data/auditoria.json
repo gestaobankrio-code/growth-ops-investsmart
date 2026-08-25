@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787680354614-1739af40c6e1d",
+    "date": "2026-08-25T17:52:34.614Z",
+    "issueNumber": 60,
+    "action": "Atualizar",
+    "recordId": "lp-maracana-glow-experience",
+    "software": "Landing Page",
+    "ativo": "Maracanã Glow Experience",
+    "statusBefore": "A validar",
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1787680228605-829961cb9082e",
     "date": "2026-08-25T17:50:28.605Z",
     "issueNumber": 59,
