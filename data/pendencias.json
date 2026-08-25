@@ -63,6 +63,15 @@
     "proximaAcao": "Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.\n\nConfirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.\n\nDefinir responsável operacional e SLA de atendimento dos leads.\n\nAvaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.\n\nImplementar retry ou alerta de falha caso a gravação na planilha não ocorra.\n\nCom Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.\n\nInstrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.\n\nAvaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
   },
   {
+    "id": "lp-maracana-flamengo-samyr-risco-alto",
+    "recordId": "lp-maracana-flamengo-samyr",
+    "ativo": "LP do Flamengo - Samyr",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar teste real de lead na LP do Flamengo e confirmar se o cadastro aparece no Google Sheets informado.\n\nValidar quais campos estão sendo gravados na planilha.\n\nConfirmar se existe source/campanha da LP no payload.\n\nConfirmar se UTMs e pageUrl são capturadas.\n\nConfirmar quem acompanha a planilha e qual é o SLA de atendimento.\n\nValidar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.\n\nApós teste confirmado, atualizar o status para Validado."
+  },
+  {
     "id": "lp-maracana-glow-experience-risco-alto",
     "recordId": "lp-maracana-glow-experience",
     "ativo": "Maracanã Glow Experience",

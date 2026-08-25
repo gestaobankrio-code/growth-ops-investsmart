@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787695922177-52da91beb7905",
+    "date": "2026-08-25T22:12:02.177Z",
+    "issueNumber": 72,
+    "action": "Atualizar",
+    "recordId": "lp-maracana-flamengo-samyr",
+    "software": "Landing Page",
+    "ativo": "LP do Flamengo - Samyr",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787688802025-7251a37edd1f7",
     "date": "2026-08-25T20:13:22.025Z",
     "issueNumber": 71,
