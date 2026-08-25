@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787684492265-af5132d2177e",
+    "date": "2026-08-25T19:01:32.265Z",
+    "issueNumber": 66,
+    "action": "Atualizar",
+    "recordId": "lp-live-ao-vivo-melhor-profissao",
+    "software": "Landing Page",
+    "ativo": "Live ao Vivo / Melhor Profissão",
+    "statusBefore": null,
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787684029289-b5232dc1ba565",
     "date": "2026-08-25T18:53:49.289Z",
     "issueNumber": 65,

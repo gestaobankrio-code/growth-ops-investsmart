@@ -75,6 +75,21 @@ Validar o SLA prometido de 48h úteis na página.
 Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+"Live ao Vivo / Melhor Profissão";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
+
+Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
+
+Definir responsável operacional e SLA de atendimento dos leads.
+
+Avaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.
+
+Implementar retry ou alerta de falha caso a gravação na planilha não ocorra.
+
+Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.
+
+Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.
+
+Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
 "Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.

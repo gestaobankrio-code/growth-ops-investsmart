@@ -54,6 +54,15 @@
     "proximaAcao": "Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
   },
   {
+    "id": "lp-live-ao-vivo-melhor-profissao-risco-alto",
+    "recordId": "lp-live-ao-vivo-melhor-profissao",
+    "ativo": "Live ao Vivo / Melhor Profissão",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.\n\nConfirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.\n\nDefinir responsável operacional e SLA de atendimento dos leads.\n\nAvaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.\n\nImplementar retry ou alerta de falha caso a gravação na planilha não ocorra.\n\nCom Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.\n\nInstrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.\n\nAvaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
+  },
+  {
     "id": "lp-maracana-glow-experience-risco-alto",
     "recordId": "lp-maracana-glow-experience",
     "ativo": "Maracanã Glow Experience",
