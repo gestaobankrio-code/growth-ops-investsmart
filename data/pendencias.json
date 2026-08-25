@@ -45,6 +45,15 @@
     "proximaAcao": "Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
   },
   {
+    "id": "lp-profissao-elite-cidades-brasil-risco-alto",
+    "recordId": "lp-profissao-elite-cidades-brasil",
+    "ativo": "Profissão de Elite - Cidades do Brasil",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha.\n\nValidar se source Carreiras, pageUrl, UTMs e data de envio estão sendo registrados.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nConfirmar se existe evento de conversão no Meta Pixel após o envio real.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+  },
+  {
     "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
     "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
     "ativo": "Abertura de Filial",

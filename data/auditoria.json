@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787672396174-07a537b0924e5",
+    "date": "2026-08-25T15:39:56.174Z",
+    "issueNumber": 57,
+    "action": "Atualizar",
+    "recordId": "lp-profissao-elite-cidades-brasil",
+    "software": "Landing Page",
+    "ativo": "Profissão de Elite - Cidades do Brasil",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787671205544-1f4017b89c9f2",
     "date": "2026-08-25T15:20:05.544Z",
     "issueNumber": 56,
