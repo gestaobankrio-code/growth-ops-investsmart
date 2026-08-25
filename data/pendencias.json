@@ -1,5 +1,32 @@
 [
   {
+    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "ativo": "Abertura de Filial",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+  },
+  {
+    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-sem-segundo-administrador",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "ativo": "Abertura de Filial",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Sem segundo administrador",
+    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+  },
+  {
+    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-recuperacao-de-acesso-nao-validada",
+    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
+    "ativo": "Abertura de Filial",
+    "software": "Landing Page",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+  },
+  {
     "id": "lp-abertura-de-filial-risco-alto",
     "recordId": "lp-abertura-de-filial",
     "ativo": "Abra sua Filial",
@@ -70,24 +97,6 @@
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha.\n\nValidar se source Carreiras, pageUrl, UTMs e data de envio estão sendo registrados.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nConfirmar se existe evento de conversão no Meta Pixel após o envio real.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-  },
-  {
-    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
-    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "Abertura de Filial",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-  },
-  {
-    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-recuperacao-de-acesso-nao-validada",
-    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "Abertura de Filial",
-    "software": "Lovable",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
-    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
   },
   {
     "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
