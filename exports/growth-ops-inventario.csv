@@ -5,6 +5,19 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "GTM - Planeja Brasil";"Google Tag Manager";"Tracking / Google Tag Manager";"Marketing";"Marketing / Growth";"Validado";"https://tagmanager.google.com";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar dentro do container GTM se GA4, Google Ads e eventos de conversão estão configurados corretamente para as páginas do Planeja Brasil."
+"Abra sua Filial";"Landing Page";"Landing Page / Abertura de Filial";"Marketing";"Marketing / Growth";"A validar";"https://aberturadefilial02.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.
+
+Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
+
+Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, profissão/função, tempo de profissão, empresa/instituição, PL/custódia, source Futuro, campanha, pageUrl, UTMs e data de envio.
+
+Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.
+
+Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando evento de conversão somente após envio real validado.
+
+Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.
+
+Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
 "Best Franquias";"Landing Page";"Landing Page / Franquias";"Marketing";"Marketing / Growth";"Validado";"https://bestfranquia.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
 
 Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.

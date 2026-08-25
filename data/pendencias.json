@@ -1,5 +1,14 @@
 [
   {
+    "id": "lp-abertura-de-filial-risco-alto",
+    "recordId": "lp-abertura-de-filial",
+    "ativo": "Abra sua Filial",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, profissão/função, tempo de profissão, empresa/instituição, PL/custódia, source Futuro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nInstalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando evento de conversão somente após envio real validado.\n\nConfirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+  },
+  {
     "id": "lp-best-franquias-risco-alto",
     "recordId": "lp-best-franquias",
     "ativo": "Best Franquias",

@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1787681977701-4356516eb0138",
+    "date": "2026-08-25T18:19:37.701Z",
+    "issueNumber": 62,
+    "action": "Atualizar",
+    "recordId": "lp-abertura-de-filial",
+    "software": "Landing Page",
+    "ativo": "Abra sua Filial",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1787680619164-cf78a592f44eb",
     "date": "2026-08-25T17:56:59.164Z",
     "issueNumber": 61,

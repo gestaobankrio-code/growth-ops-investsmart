@@ -1,15 +1,15 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 25/08/2026, 17:56:59.
+Atualização gerada automaticamente em 25/08/2026, 18:19:37.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 26 |
+| Registros ativos | 27 |
 | Validados | 22 |
-| A validar | 3 |
-| Risco alto/crítico | 14 |
+| A validar | 4 |
+| Risco alto/crítico | 15 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -18,6 +18,7 @@ Atualização gerada automaticamente em 25/08/2026, 17:56:59.
 |---|---|---|---|---|---|
 | Dropbox InvestSmart | Dropbox | Armazenamento | Bruno Aguiar | Validado | Baixo |
 | GTM - Planeja Brasil | Google Tag Manager | Tracking / Google Tag Manager | Marketing | Validado | Médio |
+| Abra sua Filial | Landing Page | Landing Page / Abertura de Filial | Marketing | A validar | Alto |
 | Best Franquias | Landing Page | Landing Page / Franquias | Marketing | Validado | Alto |
 | Maracanã Glow Experience | Landing Page | Landing Page / Maracanã | Marketing | Validado | Alto |
 | Meu Novo Lar - Samyr | Landing Page | Landing Page / Meu Novo Lar | Marketing | Validado | Médio |
@@ -47,6 +48,7 @@ Atualização gerada automaticamente em 25/08/2026, 17:56:59.
 
 | Ativo | Software | Pendência | Próxima ação |
 |---|---|---|---|
+| Abra sua Filial | Landing Page | Risco Alto | Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.  Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, profissão/função, tempo de profissão, empresa/instituição, PL/custódia, source Futuro, campanha, pageUrl, UTMs e data de envio.  Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.  Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando evento de conversão somente após envio real validado.  Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.  Após teste confirmado, atualizar o status para Validado e revisar o risco operacional. |
 | Best Franquias | Landing Page | Risco Alto | Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.  Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.  Validar se Jorge e/ou Samyr possuem visibilidade desses leads.  Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.  Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.  Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead. |
 | Maracanã Glow Experience | Landing Page | Risco Alto | Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.  Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.  Após implementação, realizar teste real de lead e confirmar se o cadastro aparece tanto no Bitrix24 quanto na planilha Google Sheets.  Confirmar quais campos serão gravados na planilha: data/hora, nome, WhatsApp, e-mail, campanha, palavra-chave Torcedor, origem/source, pageUrl, UTMs, status no Bitrix, responsável e observações.  Confirmar se Jorge e/ou Samyr possuem acesso ou recebem notificação dos leads no Bitrix24 e na planilha.  Configurar ou validar captura de UTMs e origem dentro do Bitrix24.  Implementar ou validar evento Lead do Meta Pixel após confirmação real de envio do formulário Bitrix.  Criar fallback visual caso o embed Bitrix24 não carregue.  Após teste confirmado, atualizar o status da integração Google Sheets para Validado. |
 | Patrocínio Smart Summit - Samyr | Landing Page | Risco Alto | Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.  Confirmar se o lead chega na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script ou outro conector.  Confirmar quais campos estão sendo gravados na planilha e se incluem nome, WhatsApp, e-mail, source, palavra-chave, pageUrl, UTMs e data de envio.  Definir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.  Após confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional. |

@@ -1,9 +1,10 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 25/08/2026, 17:56:59.
+Atualizado automaticamente em 25/08/2026, 18:19:37.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
+| Abra sua Filial |  | https://aberturadefilial02.lovable.app/ | https://aberturadefilial02.lovable.app/ |  | Google Sheets informado operacionalmente | A validar |
 | Best Franquias |  | https://bestfranquia.lovable.app | https://bestfranquia.lovable.app |  | Webhook n8n | Validado |
 | Maracanã Glow Experience |  | https://maracana-glow-experience.lovable.app/ |  |  | https://docs.google.com/spreadsheets/d/18RT3H-tnXDqdL6Wrg3YN4mB7lyJn3Z1LWKFKnHovm2I/edit?usp=sharing | Validado |
 | Meu Novo Lar - Samyr |  | https://planejamentomeunovolar.besmart.com.br/ |  |  | https://docs.google.com/spreadsheets/d/10jQEdcXmfdP4HUXVEbbl7698qRXQJQwqnxlQNdtn21E/edit?usp=sharing | Validado |
