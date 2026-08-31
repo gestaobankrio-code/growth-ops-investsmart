@@ -107,19 +107,25 @@ Validar se os campos do formulário chegam completos na planilha.
 Validar tracking e evento de conversão, caso aplicável.
 
 Após teste confirmado, atualizar status para Validado."
-"LP do Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP do Fluminense e confirmar se o cadastro aparece no Google Sheets informado.
+"LP do Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.
 
-Validar quais campos estão sendo gravados na planilha.
+Confirmar se a página ficou com apenas um CTA principal.
 
-Confirmar se existe source/campanha da LP no payload.
+Confirmar se a imagem de fundo foi adicionada na primeira dobra.
 
-Confirmar se UTMs e pageUrl são capturadas.
+Confirmar se o contador regressivo para 09/09 às 17h foi implementado.
 
-Confirmar quem acompanha a planilha e qual é o SLA de atendimento.
+Confirmar se o regulamento foi publicado corretamente.
 
-Validar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.
+Validar se o CTA principal direciona para o formulário.
 
-Após teste confirmado, atualizar o status para Validado."
+Realizar teste real de lead e confirmar entrada no Google Sheets.
+
+Validar se os campos do formulário chegam completos na planilha.
+
+Validar tracking e evento de conversão, caso aplicável.
+
+Após teste confirmado, atualizar status para Validado."
 "Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.
