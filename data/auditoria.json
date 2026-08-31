@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1788181211682-1349b8b6855f9",
+    "date": "2026-08-31T13:00:11.682Z",
+    "issueNumber": 78,
+    "action": "Atualizar",
+    "recordId": "rd-pagina-obrigado-pixel-samyr",
+    "software": "RD Station",
+    "ativo": "Página de Obrigado RD Station - Pixel Meta Samyr",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue-batch"
+  },
+  {
     "id": "audit-1788181194854-6bec48c2be709",
     "date": "2026-08-31T12:59:54.854Z",
     "issueNumber": 77,
