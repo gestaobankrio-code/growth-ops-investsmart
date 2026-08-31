@@ -70,19 +70,23 @@ Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse
 Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.
 
 Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
-"LP do Flamengo - Samyr";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"A validar";"https://maracana-flamengo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP do Flamengo e confirmar se o cadastro aparece no Google Sheets informado.
+"LP do Flamengo - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"A validar";"https://maracana-flamengo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.
 
-Validar quais campos estão sendo gravados na planilha.
+Confirmar se a imagem de fundo foi adicionada na primeira dobra.
 
-Confirmar se existe source/campanha da LP no payload.
+Confirmar se o contador regressivo para 16/09 às 17h foi implementado.
 
-Confirmar se UTMs e pageUrl são capturadas.
+Confirmar se o regulamento preenchido foi publicado corretamente.
 
-Confirmar quem acompanha a planilha e qual é o SLA de atendimento.
+Validar se o CTA principal direciona para o formulário.
 
-Validar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.
+Realizar teste real de lead e confirmar entrada no Google Sheets.
 
-Após teste confirmado, atualizar o status para Validado."
+Validar se os campos do formulário chegam completos na planilha.
+
+Validar tracking e evento de conversão, caso aplicável.
+
+Após teste confirmado, atualizar status para Validado."
 "LP do Fluminense - Samyr";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"A validar";"https://maracana-fluminense.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP do Fluminense e confirmar se o cadastro aparece no Google Sheets informado.
 
 Validar quais campos estão sendo gravados na planilha.

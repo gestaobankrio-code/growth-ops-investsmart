@@ -69,7 +69,7 @@
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
-    "proximaAcao": "Realizar teste real de lead na LP do Flamengo e confirmar se o cadastro aparece no Google Sheets informado.\n\nValidar quais campos estão sendo gravados na planilha.\n\nConfirmar se existe source/campanha da LP no payload.\n\nConfirmar se UTMs e pageUrl são capturadas.\n\nConfirmar quem acompanha a planilha e qual é o SLA de atendimento.\n\nValidar tracking de conversão, como GTM, GA4, Meta Pixel ou evento Lead.\n\nApós teste confirmado, atualizar o status para Validado."
+    "proximaAcao": "Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.\n\nConfirmar se a imagem de fundo foi adicionada na primeira dobra.\n\nConfirmar se o contador regressivo para 16/09 às 17h foi implementado.\n\nConfirmar se o regulamento preenchido foi publicado corretamente.\n\nValidar se o CTA principal direciona para o formulário.\n\nRealizar teste real de lead e confirmar entrada no Google Sheets.\n\nValidar se os campos do formulário chegam completos na planilha.\n\nValidar tracking e evento de conversão, caso aplicável.\n\nApós teste confirmado, atualizar status para Validado."
   },
   {
     "id": "lp-maracana-fluminense-samyr-risco-alto",
