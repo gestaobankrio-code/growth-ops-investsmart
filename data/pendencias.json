@@ -2,7 +2,7 @@
   {
     "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
     "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "Abertura de Filial",
+    "ativo": "LP - Abertura de Filial",
     "software": "Landing Page",
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
@@ -11,7 +11,7 @@
   {
     "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-sem-segundo-administrador",
     "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "Abertura de Filial",
+    "ativo": "LP - Abertura de Filial",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Sem segundo administrador",
@@ -20,7 +20,7 @@
   {
     "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-recuperacao-de-acesso-nao-validada",
     "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "Abertura de Filial",
+    "ativo": "LP - Abertura de Filial",
     "software": "Landing Page",
     "risco": "Médio",
     "pendencia": "Recuperação de acesso não validada",
@@ -29,7 +29,7 @@
   {
     "id": "lp-abertura-de-filial-risco-alto",
     "recordId": "lp-abertura-de-filial",
-    "ativo": "Abra sua Filial",
+    "ativo": "LP - Abra sua Filial",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -38,34 +38,16 @@
   {
     "id": "lp-best-franquias-risco-alto",
     "recordId": "lp-best-franquias",
-    "ativo": "Best Franquias",
+    "ativo": "LP - Best Franquias",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.\n\nConfirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.\n\nValidar se Jorge e/ou Samyr possuem visibilidade desses leads.\n\nConfirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.\n\nCom Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.\n\nCom Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
   },
   {
-    "id": "lp-indique-ganhe-5mil-risco-alto",
-    "recordId": "lp-indique-ganhe-5mil",
-    "ativo": "Indique e Ganhe até R$ 5 mil",
-    "software": "Landing Page",
-    "risco": "Alto",
-    "pendencia": "Risco Alto",
-    "proximaAcao": "Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-  },
-  {
-    "id": "lp-live-ao-vivo-melhor-profissao-risco-alto",
-    "recordId": "lp-live-ao-vivo-melhor-profissao",
-    "ativo": "Live ao Vivo / Melhor Profissão",
-    "software": "Landing Page",
-    "risco": "Alto",
-    "pendencia": "Risco Alto",
-    "proximaAcao": "Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.\n\nConfirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.\n\nDefinir responsável operacional e SLA de atendimento dos leads.\n\nAvaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.\n\nImplementar retry ou alerta de falha caso a gravação na planilha não ocorra.\n\nCom Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.\n\nInstrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.\n\nAvaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
-  },
-  {
     "id": "lp-maracana-flamengo-samyr-risco-alto",
     "recordId": "lp-maracana-flamengo-samyr",
-    "ativo": "LP do Flamengo - Samyr",
+    "ativo": "LP - Flamengo - Samyr",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -74,16 +56,34 @@
   {
     "id": "lp-maracana-fluminense-samyr-risco-alto",
     "recordId": "lp-maracana-fluminense-samyr",
-    "ativo": "LP do Fluminense - Samyr",
+    "ativo": "LP - Fluminense - Samyr",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.\n\nConfirmar se a página ficou com apenas um CTA principal.\n\nConfirmar se a imagem de fundo foi adicionada na primeira dobra.\n\nConfirmar se o contador regressivo para 09/09 às 17h foi implementado.\n\nConfirmar se o regulamento foi publicado corretamente.\n\nValidar se o CTA principal direciona para o formulário.\n\nRealizar teste real de lead e confirmar entrada no Google Sheets.\n\nValidar se os campos do formulário chegam completos na planilha.\n\nValidar tracking e evento de conversão, caso aplicável.\n\nApós teste confirmado, atualizar status para Validado."
   },
   {
+    "id": "lp-indique-ganhe-5mil-risco-alto",
+    "recordId": "lp-indique-ganhe-5mil",
+    "ativo": "LP - Indique e Ganhe até R$ 5 mil",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+  },
+  {
+    "id": "lp-live-ao-vivo-melhor-profissao-risco-alto",
+    "recordId": "lp-live-ao-vivo-melhor-profissao",
+    "ativo": "LP - Live ao Vivo / Melhor Profissão",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.\n\nConfirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.\n\nDefinir responsável operacional e SLA de atendimento dos leads.\n\nAvaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.\n\nImplementar retry ou alerta de falha caso a gravação na planilha não ocorra.\n\nCom Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.\n\nInstrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.\n\nAvaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
+  },
+  {
     "id": "lp-maracana-glow-experience-risco-alto",
     "recordId": "lp-maracana-glow-experience",
-    "ativo": "Maracanã Glow Experience",
+    "ativo": "LP - Maracanã Glow Experience",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -92,7 +92,7 @@
   {
     "id": "lp-patrocinio-smart-summit-samyr-risco-alto",
     "recordId": "lp-patrocinio-smart-summit-samyr",
-    "ativo": "Patrocínio Smart Summit - Samyr",
+    "ativo": "LP - Patrocínio Smart Summit - Samyr",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -101,7 +101,7 @@
   {
     "id": "lp-planeja-brasil-organico-risco-alto",
     "recordId": "lp-planeja-brasil-organico",
-    "ativo": "Planeja Brasil",
+    "ativo": "LP - Planeja Brasil - Orgânico",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -110,7 +110,7 @@
   {
     "id": "lp-planeja-brasil-samyr-risco-alto",
     "recordId": "lp-planeja-brasil-samyr",
-    "ativo": "Planeja Brasil - Samyr",
+    "ativo": "LP - Planeja Brasil - Samyr",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -119,7 +119,7 @@
   {
     "id": "lp-planeja-brasil-trafego-pago-risco-alto",
     "recordId": "lp-planeja-brasil-trafego-pago",
-    "ativo": "Planeja Brasil - Tráfego Pago",
+    "ativo": "LP - Planeja Brasil - Tráfego Pago",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
@@ -128,38 +128,11 @@
   {
     "id": "lp-profissao-elite-cidades-brasil-risco-alto",
     "recordId": "lp-profissao-elite-cidades-brasil",
-    "ativo": "Profissão de Elite - Cidades do Brasil",
+    "ativo": "LP - Profissão de Elite - Cidades do Brasil",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha.\n\nValidar se source Carreiras, pageUrl, UTMs e data de envio estão sendo registrados.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nConfirmar se existe evento de conversão no Meta Pixel após o envio real.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-  },
-  {
-    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
-    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
-    "ativo": "Convite Smart Carreiras - Samyr",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-quem-recebe-o-codigo-a-validar",
-    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
-    "ativo": "Convite Smart Carreiras - Samyr",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "d3df7aeb-c583-478e-882e-d79c855c2ce9-quem-recebe-o-codigo-a-validar",
-    "recordId": "d3df7aeb-c583-478e-882e-d79c855c2ce9",
-    "ativo": "Indique um Bancário e Ganhe até 5 Mil",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.\n\nAuditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.\n\nApós validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
   },
   {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
@@ -180,9 +153,36 @@
     "proximaAcao": "A validar"
   },
   {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "LP - Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-quem-recebe-o-codigo-a-validar",
+    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
+    "ativo": "LP - Convite Smart Carreiras - Samyr",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "d3df7aeb-c583-478e-882e-d79c855c2ce9-quem-recebe-o-codigo-a-validar",
+    "recordId": "d3df7aeb-c583-478e-882e-d79c855c2ce9",
+    "ativo": "LP - Indique um Bancário e Ganhe até 5 Mil",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.\n\nAuditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.\n\nApós validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
+  },
+  {
     "id": "63aae663-7671-4dc1-9460-f5549d9acd77-risco-critico",
     "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
-    "ativo": "Smart Carreiras",
+    "ativo": "LP - Smart Carreiras",
     "software": "Lovable",
     "risco": "Crítico",
     "pendencia": "Risco Crítico",
@@ -191,7 +191,7 @@
   {
     "id": "63aae663-7671-4dc1-9460-f5549d9acd77-quem-recebe-o-codigo-a-validar",
     "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
-    "ativo": "Smart Carreiras",
+    "ativo": "LP - Smart Carreiras",
     "software": "Lovable",
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",

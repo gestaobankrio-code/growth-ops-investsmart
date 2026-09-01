@@ -1,5 +1,5 @@
 ﻿"ativo";"software";"risco";"pendencia";"proxima_acao"
-"Abertura de Filial";"Landing Page";"Crítico";"Quem recebe o código a validar";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
+"LP - Abertura de Filial";"Landing Page";"Crítico";"Quem recebe o código a validar";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
 
 Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.
 
@@ -12,7 +12,7 @@ Configurar evento de conversão no submit real do formulário.
 Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.
 
 Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-"Abertura de Filial";"Landing Page";"Alto";"Sem segundo administrador";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
+"LP - Abertura de Filial";"Landing Page";"Alto";"Sem segundo administrador";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
 
 Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.
 
@@ -25,7 +25,7 @@ Configurar evento de conversão no submit real do formulário.
 Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.
 
 Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-"Abertura de Filial";"Landing Page";"Médio";"Recuperação de acesso não validada";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
+"LP - Abertura de Filial";"Landing Page";"Médio";"Recuperação de acesso não validada";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
 
 Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.
 
@@ -38,7 +38,7 @@ Configurar evento de conversão no submit real do formulário.
 Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.
 
 Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-"Abra sua Filial";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.
+"LP - Abra sua Filial";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
 
@@ -51,7 +51,7 @@ Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando
 Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-"Best Franquias";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
+"LP - Best Franquias";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
 
 Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.
 
@@ -62,35 +62,7 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
-"Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
-
-Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
-
-Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.
-
-Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.
-
-Validar o SLA prometido de 48h úteis na página.
-
-Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
-
-Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-"Live ao Vivo / Melhor Profissão";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
-
-Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
-
-Definir responsável operacional e SLA de atendimento dos leads.
-
-Avaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.
-
-Implementar retry ou alerta de falha caso a gravação na planilha não ocorra.
-
-Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.
-
-Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.
-
-Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
-"LP do Flamengo - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.
+"LP - Flamengo - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.
 
 Confirmar se a imagem de fundo foi adicionada na primeira dobra.
 
@@ -107,7 +79,7 @@ Validar se os campos do formulário chegam completos na planilha.
 Validar tracking e evento de conversão, caso aplicável.
 
 Após teste confirmado, atualizar status para Validado."
-"LP do Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.
+"LP - Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.
 
 Confirmar se a página ficou com apenas um CTA principal.
 
@@ -126,7 +98,35 @@ Validar se os campos do formulário chegam completos na planilha.
 Validar tracking e evento de conversão, caso aplicável.
 
 Após teste confirmado, atualizar status para Validado."
-"Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
+"LP - Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
+
+Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
+
+Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.
+
+Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.
+
+Validar o SLA prometido de 48h úteis na página.
+
+Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
+
+Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+"LP - Live ao Vivo / Melhor Profissão";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
+
+Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
+
+Definir responsável operacional e SLA de atendimento dos leads.
+
+Avaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.
+
+Implementar retry ou alerta de falha caso a gravação na planilha não ocorra.
+
+Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.
+
+Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.
+
+Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
+"LP - Maracanã Glow Experience";"Landing Page";"Alto";"Risco Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.
 
@@ -143,7 +143,7 @@ Implementar ou validar evento Lead do Meta Pixel após confirmação real de env
 Criar fallback visual caso o embed Bitrix24 não carregue.
 
 Após teste confirmado, atualizar o status da integração Google Sheets para Validado."
-"Patrocínio Smart Summit - Samyr";"Landing Page";"Alto";"Risco Alto";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
+"LP - Patrocínio Smart Summit - Samyr";"Landing Page";"Alto";"Risco Alto";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
 
 Confirmar se o lead chega na planilha Google Sheets informada.
 
@@ -154,7 +154,7 @@ Confirmar quais campos estão sendo gravados na planilha e se incluem nome, What
 Definir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.
 
 Após confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional."
-"Planeja Brasil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Planeja Brasil e confirmar se o cadastro aparece na planilha Google Sheets informada.
+"LP - Planeja Brasil - Orgânico";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Planeja Brasil e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: n8n, Google Apps Script, webhook, worker, backend, conector externo ou outro fluxo.
 
@@ -167,15 +167,15 @@ Validar se o n8n continua ativo no fluxo e se ele apenas grava no Google Sheets 
 Com Marketing, confirmar tracking de conversão, captura de UTMs e evento de Lead no GTM/Meta Pixel.
 
 Após teste confirmado, atualizar status para Validado e revisar o risco operacional."
-"Planeja Brasil - Samyr";"Landing Page";"Alto";"Risco Alto";"Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.
+"LP - Planeja Brasil - Samyr";"Landing Page";"Alto";"Risco Alto";"Validar com Bruno/Marketing o fluxo n8n vinculado ao source UC_UI1PIS.
 
 Confirmar se, após receber o lead, o n8n grava os dados em Google Sheets, Bitrix, HubSpot, RD Station, e-mail ou outro destino operacional.
 
 Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos leads e eventuais etapas comerciais.
 
 Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads."
-"Planeja Brasil - Tráfego Pago";"Landing Page";"Alto";"Risco Alto";"Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
-"Profissão de Elite - Cidades do Brasil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.
+"LP - Planeja Brasil - Tráfego Pago";"Landing Page";"Alto";"Risco Alto";"Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
+"LP - Profissão de Elite - Cidades do Brasil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.
 
@@ -188,16 +188,16 @@ Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge
 Confirmar se existe evento de conversão no Meta Pixel após o envio real.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-"Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Risco Crítico";"A validar"
-"Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
-"Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Crítico";"Quem recebe o código a validar";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
+"Lovable";"Lovable";"Crítico";"Risco Crítico";"A validar"
+"Lovable";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
+"LP - Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Risco Crítico";"A validar"
+"LP - Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
+"LP - Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Crítico";"Quem recebe o código a validar";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
 
 Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.
 
 Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
-"Lovable";"Lovable";"Crítico";"Risco Crítico";"A validar"
-"Lovable";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
-"Smart Carreiras";"Lovable";"Crítico";"Risco Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
+"LP - Smart Carreiras";"Lovable";"Crítico";"Risco Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
 
@@ -206,7 +206,7 @@ Confirmar se será implementado GTM e GA4 para governança de tracking.
 Validar propriedades do formulário no HubSpot, especialmente pl__custodia.
 
 Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
-"Smart Carreiras";"Lovable";"Crítico";"Quem recebe o código a validar";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
+"LP - Smart Carreiras";"Lovable";"Crítico";"Quem recebe o código a validar";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
 

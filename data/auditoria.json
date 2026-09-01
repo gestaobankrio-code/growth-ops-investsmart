@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1788281966390-9c620ce2579ba",
+    "date": "2026-09-01T16:59:26.390Z",
+    "issueNumber": 79,
+    "action": "Validar",
+    "recordId": "lp-planeja-brasil-organico",
+    "software": "Landing Page",
+    "ativo": "LP - Planeja Brasil - Orgânico",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1788181211682-1349b8b6855f9",
     "date": "2026-08-31T13:00:11.682Z",
     "issueNumber": 78,
