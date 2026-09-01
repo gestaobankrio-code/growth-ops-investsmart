@@ -628,10 +628,17 @@
     .table-scroll {
       width: 100%;
       max-width: 100%;
-      overflow-x: auto;
-      overflow-y: hidden;
+      max-height: 65vh;
+      overflow: auto;
       scrollbar-width: thin;
       scrollbar-color: var(--border-strong) transparent;
+    }
+
+    .table-scroll thead th {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: #FAF9FD;
     }
 
     table {
@@ -1014,6 +1021,7 @@
     }
 
     .table-scroll::-webkit-scrollbar {
+      width: 8px;
       height: 8px;
     }
 
@@ -2141,29 +2149,25 @@
         return recordsByFilter;
       }
 
-      const exactMatches = recordsByFilter.filter(record => {
-        return searchCoreValues(record).some(value => value === normalizedSearch);
-      });
+      const exactMatches = recordsByFilter.filter(record =>
+        searchCoreValues(record).some(value => value === normalizedSearch)
+      );
 
       if (exactMatches.length) {
         return exactMatches;
       }
 
-      const coreMatches = recordsByFilter.filter(record => {
-        return searchCoreValues(record).some(value =>
-          value.includes(normalizedSearch)
-        );
-      });
+      const coreMatches = recordsByFilter.filter(record =>
+        searchCoreValues(record).some(value => value.includes(normalizedSearch))
+      );
 
       if (coreMatches.length) {
         return coreMatches;
       }
 
-      return recordsByFilter.filter(record => {
-        return searchStructuredValues(record).some(value =>
-          value.includes(normalizedSearch)
-        );
-      });
+      return recordsByFilter.filter(record =>
+        searchStructuredValues(record).some(value => value.includes(normalizedSearch))
+      );
     }
 
     function renderTable() {
