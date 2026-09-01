@@ -55,10 +55,13 @@
 
     html {
       scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
     }
 
     body {
       margin: 0;
+      overflow-x: hidden;
       font-family: 'Barlow', Arial, sans-serif;
       font-weight: 300;
       font-size: 16px;
@@ -624,7 +627,11 @@
 
     .table-scroll {
       width: 100%;
+      max-width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border-strong) transparent;
     }
 
     table {
@@ -985,6 +992,34 @@
 
     .footer-links a:hover {
       color: var(--is-neon);
+    }
+
+    /* Manutenção de navegação: barras de rolagem mais discretas */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-strong);
+      border-radius: 999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B7AFC7;
+    }
+
+    .table-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .modal-body::-webkit-scrollbar,
+    .details-body::-webkit-scrollbar {
+      width: 8px;
     }
 
     @media (max-width: 1180px) {
@@ -2049,45 +2084,85 @@
       return 'risk-medio';
     }
 
+    function searchCoreValues(record) {
+      return [
+        record.software,
+        record.ativo,
+        record.categoria,
+        record.url
+      ]
+        .filter(Boolean)
+        .map(value => normalizeText(value));
+    }
+
+    function searchStructuredValues(record) {
+      const extraValues = Object.values(record.extra || {});
+
+      return [
+        record.action,
+        record.software,
+        record.ativo,
+        record.categoria,
+        record.responsavel,
+        record.area,
+        record.status,
+        record.url,
+        record.twofa,
+        record.twofaMethod,
+        record.twofaOwner,
+        record.twofaOwnerType,
+        record.twofaPhoneMasked,
+        record.phoneType,
+        record.secondAdmin,
+        record.recoveryValidated,
+        record.manualRisk,
+        record.lastValidation,
+        calculatedRisk(record),
+        ...extraValues
+      ]
+        .filter(value => value !== null && value !== undefined && value !== '')
+        .map(value => normalizeText(value));
+    }
+
     function filteredRecords() {
       const normalizedSearch = normalizeText(searchTerm);
 
-      return records.filter(record => {
+      const recordsByFilter = records.filter(record => {
         const risk = calculatedRisk(record);
 
-        const matchesFilter =
+        return (
           activeFilter === 'Todos' ||
           record.status === activeFilter ||
-          (activeFilter === 'Risco alto' && ['Alto', 'Crítico'].includes(risk));
+          (activeFilter === 'Risco alto' && ['Alto', 'Crítico'].includes(risk))
+        );
+      });
 
-        const searchable = normalizeText([
-          record.action,
-          record.software,
-          record.ativo,
-          record.categoria,
-          record.responsavel,
-          record.area,
-          record.status,
-          record.url,
-          record.twofa,
-          record.twofaMethod,
-          record.twofaOwner,
-          record.twofaOwnerType,
-          record.twofaPhoneMasked,
-          record.phoneType,
-          record.secondAdmin,
-          record.recoveryValidated,
-          record.manualRisk,
-          record.lastValidation,
-          record.obs,
-          record.next,
-          risk,
-          JSON.stringify(record.extra || {})
-        ].join(' '));
+      if (!normalizedSearch) {
+        return recordsByFilter;
+      }
 
-        const matchesSearch = !normalizedSearch || searchable.includes(normalizedSearch);
+      const exactMatches = recordsByFilter.filter(record => {
+        return searchCoreValues(record).some(value => value === normalizedSearch);
+      });
 
-        return matchesFilter && matchesSearch;
+      if (exactMatches.length) {
+        return exactMatches;
+      }
+
+      const coreMatches = recordsByFilter.filter(record => {
+        return searchCoreValues(record).some(value =>
+          value.includes(normalizedSearch)
+        );
+      });
+
+      if (coreMatches.length) {
+        return coreMatches;
+      }
+
+      return recordsByFilter.filter(record => {
+        return searchStructuredValues(record).some(value =>
+          value.includes(normalizedSearch)
+        );
       });
     }
 
