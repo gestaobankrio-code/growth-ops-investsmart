@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1788281995583-d88328288f66d",
+    "date": "2026-09-01T16:59:55.583Z",
+    "issueNumber": 80,
+    "action": "Validar",
+    "recordId": "rd-pagina-obrigado-pixel-samyr",
+    "software": "RD Station",
+    "ativo": "Página de Obrigado RD Station - Pixel Meta Samyr",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1788281966390-9c620ce2579ba",
     "date": "2026-09-01T16:59:26.390Z",
     "issueNumber": 79,

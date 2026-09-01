@@ -1138,13 +1138,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "rd-pagina-obrigado-pixel-samyr",
-    "action": "Atualizar",
+    "action": "Validar",
     "software": "RD Station",
     "ativo": "Página de Obrigado RD Station - Pixel Meta Samyr",
     "categoria": "Tracking / Página de Obrigado / RD Station",
     "responsavel": "Marketing",
     "area": "Marketing / Growth",
-    "status": "A validar",
+    "status": "Validado",
     "url": "A validar",
     "twofa": "Não aplicável",
     "twofaMethod": "Não aplicável",
@@ -1155,7 +1155,7 @@
     "secondAdmin": "Não aplicável",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "Médio",
-    "lastValidation": "31/08/2026",
+    "lastValidation": "01/09/2026",
     "obs": "Cadastro da página de obrigado criada na RD Station para confirmação de cadastro e disparo de eventos de conversão.\n\nA página de obrigado será utilizada como destino após o envio real do lead nas landing pages aplicáveis.\n\nObjetivo: centralizar a confirmação do cadastro e disparar os eventos PageView e Lead nos Pixels Meta definidos.\n\nPixel Meta InvestSmart identificado: 328736425190714.\n\nPixel Meta utilizado como Pixel do Samyr: 1949159712442429.\n\nImplementação recomendada: carregar o fbevents.js apenas uma vez, inicializar os dois Pixels e disparar PageView e Lead na página de obrigado.\n\nPonto de atenção: o evento Lead não deve disparar no clique do botão. O evento Lead deve ser acionado apenas quando o lead for enviado com sucesso e o usuário for direcionado à página de obrigado.\n\nStatus definido como A validar até confirmação no Meta Pixel Helper e no Gerenciador de Eventos da Meta.",
     "next": "Confirmar a URL final da página de obrigado na RD Station.\n\nValidar se os dois Pixels foram instalados corretamente.\n\nConfirmar se o Pixel 1949159712442429 será documentado oficialmente como Pixel do Samyr.\n\nTestar a página com Meta Pixel Helper.\n\nConfirmar se PageView e Lead disparam nos dois Pixels.\n\nVerificar se não há duplicidade de script.\n\nDocumentar quais landing pages redirecionam para esta página de obrigado.\n\nApós validação, atualizar status para Validado.",
     "extra": {
@@ -1176,7 +1176,7 @@
       "validationDate": "31/08/2026"
     },
     "createdAt": "2026-08-31T13:00:11.682Z",
-    "updatedAt": "2026-08-31T13:00:11.682Z"
+    "updatedAt": "2026-09-01T16:59:55.583Z"
   },
   {
     "schema": "growth-ops-record-v2",

@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 01/09/2026, 16:59:26.
+Atualização gerada automaticamente em 01/09/2026, 16:59:55.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 32 |
-| Validados | 23 |
-| A validar | 8 |
+| Validados | 24 |
+| A validar | 7 |
 | Risco alto/crítico | 19 |
 | Sem 2FA | 0 |
 
@@ -43,7 +43,7 @@ Atualização gerada automaticamente em 01/09/2026, 16:59:26.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
-| Página de Obrigado RD Station - Pixel Meta Samyr | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | A validar | Médio |
+| Página de Obrigado RD Station - Pixel Meta Samyr | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Validado | Médio |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |
 | Source - Planeja Brasil - Orgânico | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
 | Source - Planeja Brasil - Samyr | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
