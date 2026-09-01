@@ -619,6 +619,17 @@
       font-weight: 300;
     }
 
+    .table-result-summary {
+      margin-top: 8px !important;
+      color: var(--text-secondary) !important;
+      font-weight: 500 !important;
+    }
+
+    .table-result-summary .result-count {
+      color: var(--is-purple);
+      font-weight: 600;
+    }
+
     .table-actions {
       display: flex;
       gap: 10px;
@@ -1246,6 +1257,9 @@
           <div>
             <h2>Tabela de Gestão de Ativos</h2>
             <p>Controle operacional de ativos, softwares, responsáveis, segurança e homologação.</p>
+            <p id="tableResultSummary" class="table-result-summary" aria-live="polite">
+              <span class="result-count">0</span> registros cadastrados
+            </p>
           </div>
 
           <div class="table-actions">
@@ -2170,9 +2184,36 @@
       );
     }
 
+    function updateTableResultSummary(list) {
+      const summary = document.getElementById('tableResultSummary');
+      if (!summary) return;
+
+      const count = list.length;
+      const recordWord = count === 1 ? 'registro' : 'registros';
+      const normalizedSearch = String(searchTerm || '').trim();
+
+      let suffix = '';
+
+      if (normalizedSearch) {
+        suffix = ` ${recordWord} encontrado${count === 1 ? '' : 's'} para “${normalizedSearch}”`;
+      } else if (activeFilter !== 'Todos') {
+        suffix = ` ${recordWord} no filtro “${activeFilter}”`;
+      } else {
+        suffix = ` ${recordWord} cadastrado${count === 1 ? '' : 's'}`;
+      }
+
+      if (normalizedSearch && activeFilter !== 'Todos') {
+        suffix += ` • Filtro: ${activeFilter}`;
+      }
+
+      summary.innerHTML = `<span class="result-count">${count}</span>${escapeHtml(suffix)}`;
+    }
+
     function renderTable() {
       const tbody = document.getElementById('recordsTable');
       const list = filteredRecords();
+
+      updateTableResultSummary(list);
 
       if (!list.length) {
         tbody.innerHTML = `
