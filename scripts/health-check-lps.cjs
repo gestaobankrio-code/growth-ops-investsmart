@@ -15,8 +15,23 @@ function normalize(value) {
 }
 
 function isLandingPage(record) {
-  return normalize(record.ativo).startsWith('lp -') ||
-    normalize(record.categoria).includes('landing page');
+  const ativo = normalize(record.ativo);
+  const categoria = normalize(record.categoria);
+  const url = normalize(record.url);
+
+  const isLp =
+    ativo.startsWith('lp -') ||
+    categoria.includes('landing page');
+
+  const isThankYouPage =
+    ativo.includes('pagina de obrigado') ||
+    ativo.includes('thank you') ||
+    categoria.includes('pagina de obrigado') ||
+    categoria.includes('thank you') ||
+    /\/obrigado(?:[-/?#]|$)/i.test(url) ||
+    /\/thank-you(?:[-/?#]|$)/i.test(url);
+
+  return isLp && !isThankYouPage;
 }
 
 function documentedDestination(record) {
