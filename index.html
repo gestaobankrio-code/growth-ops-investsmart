@@ -3032,10 +3032,23 @@
     }
 
     function isLandingPageRecord(record) {
-      return (
-        normalizeText(record.ativo).startsWith('lp -') ||
-        normalizeText(record.categoria).includes('landing page')
-      );
+      const ativo = normalizeText(record.ativo);
+      const categoria = normalizeText(record.categoria);
+      const url = normalizeText(record.url);
+
+      const isLp =
+        ativo.startsWith('lp -') ||
+        categoria.includes('landing page');
+
+      const isThankYouPage =
+        ativo.includes('pagina de obrigado') ||
+        ativo.includes('thank you') ||
+        categoria.includes('pagina de obrigado') ||
+        categoria.includes('thank you') ||
+        /\/obrigado(?:[-/?#]|$)/i.test(url) ||
+        /\/thank-you(?:[-/?#]|$)/i.test(url);
+
+      return isLp && !isThankYouPage;
     }
 
     function landingPageRecords() {
