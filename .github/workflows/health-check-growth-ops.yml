@@ -1,0 +1,56 @@
+name: Growth Ops - Health Check LPs
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '15 11 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+
+  health-check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Node
+        uses: actions/setup-node@v4
+
+        with:
+          node-version: '20'
+
+      - name: Instalar Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Executar Health Check
+        run: |
+          node scripts/health-check-lps.cjs
+
+      - name: Registrar resultado
+        run: |
+
+          if git diff --quiet -- data/health-check.json; then
+            echo "Nenhuma alteração no Health Check."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+
+          git config user.email \
+          "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/health-check.json
+
+          git commit \
+          -m "Atualiza Health Check das Landing Pages"
+
+          git push
