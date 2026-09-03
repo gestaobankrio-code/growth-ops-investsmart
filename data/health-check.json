@@ -1,0 +1,7 @@
+{
+  "schema": "growth-ops-health-check-v1",
+  "generatedAt": null,
+  "mode": "not-run",
+  "conversionTestPolicy": "Não submete formulários de produção automaticamente.",
+  "items": []
+}
