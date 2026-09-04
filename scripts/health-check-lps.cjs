@@ -61,53 +61,36 @@ async function detectForm(page) {
 
     const html = document.documentElement.innerHTML.toLowerCase();
 
-    // Bitrix24
     if (
       document.querySelector('[data-b24-form]') ||
       scripts.some(src => src.includes('bitrix24')) ||
       iframes.some(src => src.includes('bitrix24')) ||
       html.includes('data-b24-form')
     ) {
-      return {
-        detected: true,
-        provider: 'Bitrix24'
-      };
+      return { detected: true, provider: 'Bitrix24' };
     }
 
-    // HubSpot
     if (
       scripts.some(src => src.includes('hubspot')) ||
       iframes.some(src => src.includes('hubspot')) ||
       html.includes('hsforms') ||
       html.includes('hubspot')
     ) {
-      return {
-        detected: true,
-        provider: 'HubSpot'
-      };
+      return { detected: true, provider: 'HubSpot' };
     }
 
-    // RD Station
     if (
       scripts.some(src => src.includes('rdstation')) ||
       iframes.some(src => src.includes('rdstation')) ||
       html.includes('rdstation')
     ) {
-      return {
-        detected: true,
-        provider: 'RD Station'
-      };
+      return { detected: true, provider: 'RD Station' };
     }
 
-    // Formulário tradicional
     if (document.querySelector('form')) {
-      return {
-        detected: true,
-        provider: 'Formulário HTML/React'
-      };
+      return { detected: true, provider: 'Formulário HTML/React' };
     }
 
-    // Formulários renderizados sem tag <form>
     const fields = document.querySelectorAll(
       'input[type="email"], ' +
       'input[type="tel"], ' +
@@ -118,16 +101,10 @@ async function detectForm(page) {
     );
 
     if (fields.length >= 2) {
-      return {
-        detected: true,
-        provider: 'Formulário renderizado'
-      };
+      return { detected: true, provider: 'Formulário renderizado' };
     }
 
-    return {
-      detected: false,
-      provider: 'Não detectado'
-    };
+    return { detected: false, provider: 'Não detectado' };
   });
 }
 
@@ -143,12 +120,16 @@ async function detectForm(page) {
   });
 
   const context = await browser.newContext({
-    userAgent: 'InvestSmart-Growth-Ops-HealthCheck/1.1'
+    userAgent: 'InvestSmart-Growth-Ops-HealthCheck/1.3'
   });
 
   const items = [];
 
   for (const record of lps) {
+    const destinationDocumented = Boolean(
+      documentedDestination(record)
+    );
+
     const item = {
       id: record.id,
       ativo: record.ativo,
@@ -162,25 +143,34 @@ async function detectForm(page) {
       formDetected: null,
       formProvider: 'A validar',
 
-      destinationDocumented: Boolean(
-        documentedDestination(record)
-      ),
+      /*
+       * Governança documental fica separada da saúde técnica.
+       */
+      destinationDocumented,
+      governanceStatus:
+        destinationDocumented ? 'Documentado' : 'Atenção',
 
       conversionTest: 'Não executado',
 
-      technicalStatus: 'Atenção',
+      technicalStatus: 'A validar',
 
-      note: ''
+      note: '',
+
+      governanceNote: destinationDocumented
+        ? 'Destino do lead documentado.'
+        : 'Destino do lead ainda não está documentado no Growth Ops.'
     };
 
     /*
-     * Verifica se existe URL pública válida
+     * Não possuir URL HTTP/HTTPS cadastrada NÃO significa que a LP está offline.
      */
     if (!hasHttpUrl(record)) {
-      item.online = false;
-      item.formDetected = false;
-      item.technicalStatus = 'Crítico';
-      item.note = 'URL pública ausente ou inválida.';
+      item.online = null;
+      item.httpStatus = null;
+      item.formDetected = null;
+      item.technicalStatus = 'Não testável';
+      item.note =
+        'URL pública válida não cadastrada; teste técnico não executado.';
 
       items.push(item);
       continue;
@@ -189,9 +179,6 @@ async function detectForm(page) {
     const page = await context.newPage();
 
     try {
-      /*
-       * Abre a Landing Page
-       */
       const response = await page.goto(record.url, {
         waitUntil: 'domcontentloaded',
         timeout: 30000
@@ -206,58 +193,42 @@ async function detectForm(page) {
       );
 
       /*
-       * URL fora do ar
+       * Crítico somente quando uma URL válida foi realmente testada e falhou.
        */
       if (!item.online) {
         item.formDetected = false;
         item.technicalStatus = 'Crítico';
 
         item.note =
-          `URL respondeu com status ${
+          `Falha técnica confirmada. URL respondeu com status ${
             item.httpStatus ?? 'desconhecido'
           }.`;
 
         items.push(item);
-
         continue;
       }
 
       /*
-       * Aguarda scripts dinâmicos:
-       * Bitrix, HubSpot, React etc.
+       * Aguarda componentes dinâmicos: React, Bitrix, HubSpot, RD etc.
        */
       await page.waitForTimeout(2500);
 
-      /*
-       * Detecta formulário
-       */
       const form = await detectForm(page);
 
       item.formDetected = form.detected;
       item.formProvider = form.provider;
 
       /*
-       * Classificação da saúde operacional
+       * A saúde técnica depende somente da disponibilidade e do formulário.
        */
       if (!form.detected) {
         item.technicalStatus = 'Atenção';
-
         item.note =
           'Página online, mas nenhum formulário foi detectado no DOM renderizado.';
-      }
-
-      else if (!item.destinationDocumented) {
-        item.technicalStatus = 'Atenção';
-
-        item.note =
-          'Página e formulário online, porém destino do lead não está documentado.';
-      }
-
-      else {
+      } else {
         item.technicalStatus = 'Operacional';
-
         item.note =
-          'URL online, formulário detectado e destino do lead documentado.';
+          'Página online e formulário detectado com sucesso.';
       }
     }
 
@@ -267,7 +238,7 @@ async function detectForm(page) {
       item.technicalStatus = 'Crítico';
 
       item.note =
-        `Falha no Health Check: ${error.message}`;
+        `Falha técnica confirmada durante o Health Check: ${error.message}`;
     }
 
     finally {
@@ -279,15 +250,26 @@ async function detectForm(page) {
 
   await browser.close();
 
-  /*
-   * Resultado final
-   */
   const payload = {
-    schema: 'growth-ops-health-check-v1',
+    schema: 'growth-ops-health-check-v1.3',
 
     generatedAt: new Date().toISOString(),
 
     mode: 'structural-safe',
+
+    classificationPolicy: {
+      operacional:
+        'URL válida testada online + formulário detectado',
+      atencao:
+        'URL válida testada online + formulário não detectado',
+      critico:
+        'URL válida testada com erro HTTP, timeout ou falha de carregamento',
+      naoTestavel:
+        'Não existe URL pública HTTP/HTTPS válida cadastrada'
+    },
+
+    governancePolicy:
+      'Destino do lead e documentação são indicadores de governança e não alteram a saúde técnica.',
 
     conversionTestPolicy:
       'Não submete formulários de produção automaticamente.',
@@ -295,9 +277,6 @@ async function detectForm(page) {
     items
   };
 
-  /*
-   * Atualiza health-check.json
-   */
   fs.writeFileSync(
     outputPath,
     JSON.stringify(payload, null, 2) + '\n',
