@@ -529,7 +529,7 @@
 
     .health-launch-metrics {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 8px;
     }
 
@@ -582,7 +582,7 @@
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 10px;
       background: rgba(0, 0, 0, 0.54);
       backdrop-filter: blur(5px);
     }
@@ -592,12 +592,20 @@
     }
 
     .health-modal-dialog {
-      width: min(1360px, 96vw);
-      max-height: 92vh;
-      overflow: auto;
+      width: calc(100vw - 20px);
+      max-width: none;
+      height: calc(100vh - 20px);
+      max-height: none;
+      overflow: hidden;
       background: var(--is-white);
       border-radius: 22px;
       box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    }
+
+    .health-modal .health-section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .health-modal .health-section {
@@ -670,7 +678,7 @@
     }
 
     .health-header {
-      padding: 22px 24px;
+      padding: 18px 22px;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -703,7 +711,7 @@
     }
 
     .health-metrics-grid {
-      padding: 18px 24px;
+      padding: 14px 22px;
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 12px;
@@ -1071,16 +1079,31 @@
     .health-scroll {
       width: 100%;
       max-width: 100%;
-      max-height: 460px;
-      overflow: auto;
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: none;
+      overflow-y: auto;
+      overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: var(--border-strong) transparent;
     }
 
     .health-table {
       width: 100%;
-      min-width: 1120px;
+      min-width: 0;
+      table-layout: fixed;
       border-collapse: collapse;
+    }
+
+    .health-table th,
+    .health-table td {
+      min-width: 0;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      vertical-align: top;
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
     .health-table thead th {
@@ -1088,6 +1111,42 @@
       top: 0;
       z-index: 2;
       background: #FAF9FD;
+    }
+
+    .health-table th:nth-child(1),
+    .health-table td:nth-child(1) { width: 17%; }
+
+    .health-table th:nth-child(2),
+    .health-table td:nth-child(2) { width: 16%; }
+
+    .health-table th:nth-child(3),
+    .health-table td:nth-child(3) { width: 10%; }
+
+    .health-table th:nth-child(4),
+    .health-table td:nth-child(4) { width: 18%; }
+
+    .health-table th:nth-child(5),
+    .health-table td:nth-child(5) { width: 12%; }
+
+    .health-table th:nth-child(6),
+    .health-table td:nth-child(6) { width: 10%; }
+
+    .health-table th:nth-child(7),
+    .health-table td:nth-child(7) { width: 8%; }
+
+    .health-table th:nth-child(8),
+    .health-table td:nth-child(8) { width: 9%; }
+
+    .health-table .health-badge {
+      max-width: 100%;
+      white-space: normal;
+      text-align: center;
+      line-height: 15px;
+    }
+
+    .health-table .health-asset span {
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .health-badge {
@@ -1797,7 +1856,16 @@
 
       .health-modal-dialog {
         width: 100%;
-        max-height: 96vh;
+        height: calc(100vh - 20px);
+        max-height: none;
+      }
+
+      .health-scroll {
+        overflow-x: auto;
+      }
+
+      .health-table {
+        min-width: 980px;
       }
 
       .health-scan-stages {
@@ -1943,7 +2011,7 @@
       <div class="health-launch-copy">
         <h2>Saúde Operacional das Landing Pages</h2>
         <p>
-          Visão resumida da disponibilidade das LPs e da cobertura do fluxo de leads.
+          Monitoramento automático da disponibilidade, formulários e integridade operacional das Landing Pages.
           Abra os detalhes somente quando precisar investigar a operação.
         </p>
       </div>
@@ -1960,6 +2028,10 @@
         <div class="health-launch-metric">
           <small>Atenção</small>
           <strong id="healthCompactAttention">0</strong>
+        </div>
+        <div class="health-launch-metric">
+          <small>Críticas</small>
+          <strong id="healthCompactCritical">0</strong>
         </div>
         <div class="health-launch-metric">
           <small>Governança</small>
@@ -2023,15 +2095,15 @@
         </div>
 
         <div class="health-metric health-metric-yellow">
-          <small>Fluxos documentados</small>
-          <strong id="healthMetricFlows">0</strong>
-          <p>Destino de lead identificado</p>
+          <small>Críticas</small>
+          <strong id="healthMetricCritical">0</strong>
+          <p>Falha técnica confirmada</p>
         </div>
 
         <div class="health-metric health-metric-pink">
           <small>Em atenção</small>
           <strong id="healthMetricAttention">0</strong>
-          <p>Falha ou lacuna operacional</p>
+          <p>Formulário ou validação requer atenção</p>
         </div>
 
         <div class="health-metric health-metric-dark">
@@ -2076,6 +2148,16 @@
 
       <div class="health-scroll">
         <table class="health-table">
+          <colgroup>
+            <col style="width:17%">
+            <col style="width:16%">
+            <col style="width:10%">
+            <col style="width:18%">
+            <col style="width:12%">
+            <col style="width:10%">
+            <col style="width:8%">
+            <col style="width:9%">
+          </colgroup>
           <thead>
             <tr>
               <th>Landing Page</th>
@@ -3132,21 +3214,20 @@
       if (['operacional', 'online', 'ok', 'presente', 'detectado', 'validado'].includes(normalized)) return 'ok';
       if (['critico', 'offline', 'erro', 'falha', 'nao detectado'].includes(normalized)) return 'critical';
       if (['atencao', 'a validar', 'parcial', 'nao executado'].includes(normalized)) return 'attention';
+      if (['nao testavel', 'nao testado', 'sem url valida'].includes(normalized)) return 'neutral';
 
       return 'neutral';
     }
 
     function derivedTechnicalHealth(record, check) {
       if (check) {
-        if (check.technicalStatus) return check.technicalStatus;
         if (check.online === false) return 'Crítico';
         if (check.online === true && check.formDetected === false) return 'Atenção';
-        if (check.online === true && check.formDetected === true && hasDocumentedFlow(record)) return 'Operacional';
+        if (check.online === true && check.formDetected === true) return 'Operacional';
+        if (check.online === null || normalizeText(check.technicalStatus) === 'nao testavel') return 'Não testável';
       }
 
-      if (!/^https?:\/\//i.test(String(record.url || ''))) return 'Atenção';
-      if (recordFormProvider(record) === 'A validar') return 'Atenção';
-      if (!hasDocumentedFlow(record)) return 'Atenção';
+      if (!/^https?:\/\//i.test(String(record.url || ''))) return 'Não testável';
 
       return 'A validar';
     }
@@ -3179,8 +3260,19 @@
         ? allLp.filter(record => findHealthCheck(record)?.formDetected === true).length
         : null;
 
-      const flowCount = allLp.filter(hasDocumentedFlow).length;
-      const attentionCount = enriched.filter(item => item.technicalHealth !== 'Operacional').length;
+      const attentionCount = enriched.filter(item => {
+        const status = normalizeText(item.technicalHealth);
+        return status === 'atencao' || status === 'a validar';
+      }).length;
+
+      const criticalCount = enriched.filter(item =>
+        normalizeText(item.technicalHealth) === 'critico'
+      ).length;
+
+      const notTestableCount = enriched.filter(item =>
+        normalizeText(item.technicalHealth) === 'nao testavel'
+      ).length;
+
       const governance = allLp.length
         ? Math.round(allLp.reduce((total, record) => total + governanceScoreForRecord(record), 0) / allLp.length)
         : 0;
@@ -3188,24 +3280,26 @@
       document.getElementById('healthMetricTotal').textContent = allLp.length;
       document.getElementById('healthMetricOnline').textContent = onlineCount === null ? '—' : onlineCount;
       document.getElementById('healthMetricForms').textContent = formDetectedCount === null ? '—' : formDetectedCount;
-      document.getElementById('healthMetricFlows').textContent = `${flowCount}/${allLp.length}`;
+      document.getElementById('healthMetricCritical').textContent = criticalCount;
       document.getElementById('healthMetricAttention').textContent = attentionCount;
       document.getElementById('healthMetricGovernance').textContent = governance + '%';
 
       const compactTotal = document.getElementById('healthCompactTotal');
       const compactOnline = document.getElementById('healthCompactOnline');
       const compactAttention = document.getElementById('healthCompactAttention');
+      const compactCritical = document.getElementById('healthCompactCritical');
       const compactGovernance = document.getElementById('healthCompactGovernance');
 
       if (compactTotal) compactTotal.textContent = allLp.length;
       if (compactOnline) compactOnline.textContent = onlineCount === null ? '—' : onlineCount;
       if (compactAttention) compactAttention.textContent = attentionCount;
+      if (compactCritical) compactCritical.textContent = criticalCount;
       if (compactGovernance) compactGovernance.textContent = governance + '%';
 
       document.getElementById('healthSummaryText').textContent =
         healthAttentionOnly
-          ? `${rows.length} Landing Page${rows.length === 1 ? '' : 's'} com atenção, pendência ou sem Health Check conclusivo.`
-          : `${allLp.length} Landing Page${allLp.length === 1 ? '' : 's'} mapeada${allLp.length === 1 ? '' : 's'} no inventário.`;
+          ? `${rows.length} Landing Page${rows.length === 1 ? '' : 's'} com atenção, criticidade ou sem condição de teste.`
+          : `${allLp.length} Landing Page${allLp.length === 1 ? '' : 's'} monitorada${allLp.length === 1 ? '' : 's'} • ${notTestableCount} não testável${notTestableCount === 1 ? '' : 'is'}.`;
 
       document.getElementById('healthAttentionButton').textContent =
         healthAttentionOnly ? 'Mostrar todas as LPs' : 'Mostrar apenas atenção';
@@ -3227,16 +3321,41 @@
         let urlType = 'neutral';
 
         if (check) {
-          urlStatus = check.online === true ? 'Online' : check.online === false ? 'Offline' : 'A validar';
+          if (check.online === true) {
+            urlStatus = 'Online';
+          } else if (check.online === false) {
+            urlStatus = 'Offline';
+          } else if (technicalHealth === 'Não testável') {
+            urlStatus = 'Não testável';
+          } else {
+            urlStatus = 'A validar';
+          }
+
           urlType = healthStatusType(urlStatus);
         }
 
         const structuralStatus = check
-          ? (check.formDetected === true ? 'Formulário detectado' : check.formDetected === false ? 'Não detectado' : 'A validar')
+          ? (
+              check.formDetected === true
+                ? 'Formulário detectado'
+                : check.formDetected === false
+                  ? 'Não detectado'
+                  : technicalHealth === 'Não testável'
+                    ? 'Não testado'
+                    : 'A validar'
+            )
           : 'Aguardando automação';
 
         const structuralType = check
-          ? healthStatusType(check.formDetected === true ? 'Detectado' : check.formDetected === false ? 'Não detectado' : 'A validar')
+          ? healthStatusType(
+              check.formDetected === true
+                ? 'Detectado'
+                : check.formDetected === false
+                  ? 'Não detectado'
+                  : technicalHealth === 'Não testável'
+                    ? 'Não testado'
+                    : 'A validar'
+            )
           : 'neutral';
 
         const conversionStatus = check?.conversionTest || 'Não executado';
@@ -3359,7 +3478,7 @@
       const log = document.getElementById('healthScanLog');
       if (!log) return;
 
-      const status = item?.technicalStatus || derivedTechnicalHealth(record, item);
+      const status = derivedTechnicalHealth(record, item);
       const normalized = normalizeText(status);
       const stateClass =
         normalized === 'critico'
@@ -3382,7 +3501,9 @@
           ? `HTTP ${item.httpStatus || 200}`
           : item?.online === false
             ? `Offline${item.httpStatus ? ` • HTTP ${item.httpStatus}` : ''}`
-            : 'URL documentada';
+            : derivedTechnicalHealth(record, item) === 'Não testável'
+              ? 'Não testável'
+              : 'URL documentada';
 
       const entry = document.createElement('div');
       entry.className = `health-scan-log-item ${stateClass}`.trim();
@@ -3449,6 +3570,8 @@
           step.textContent = `Falha de disponibilidade${item.httpStatus ? ` • HTTP ${item.httpStatus}` : ''}`;
         } else if (item?.online === true) {
           step.textContent = `Página disponível${item.httpStatus ? ` • HTTP ${item.httpStatus}` : ' • HTTP 200'}`;
+        } else if (derivedTechnicalHealth(record, item) === 'Não testável') {
+          step.textContent = 'URL pública válida não cadastrada • teste técnico não executado';
         } else {
           step.textContent = 'URL pública identificada no inventário';
         }
@@ -3465,6 +3588,8 @@
           step.textContent = 'Formulário não detectado na última verificação';
         } else if (item?.formDetected === true) {
           step.textContent = `Formulário detectado • ${provider}`;
+        } else if (derivedTechnicalHealth(record, item) === 'Não testável') {
+          step.textContent = 'Teste de formulário não executado por ausência de URL válida';
         } else {
           step.textContent = `Formulário documentado • ${provider}`;
         }
@@ -3487,7 +3612,7 @@
         step.textContent = 'Calculando saúde técnica e consolidando resultado...';
         await healthSleep(100);
 
-        const technicalStatus = item?.technicalStatus || derivedTechnicalHealth(record, item);
+        const technicalStatus = derivedTechnicalHealth(record, item);
         step.textContent = `Resultado: ${technicalStatus}`;
 
         addHealthScanLog(item, record);
@@ -3539,11 +3664,12 @@
         'healthCompactTotal',
         'healthCompactOnline',
         'healthCompactAttention',
+        'healthCompactCritical',
         'healthCompactGovernance',
         'healthMetricTotal',
         'healthMetricOnline',
         'healthMetricForms',
-        'healthMetricFlows',
+        'healthMetricCritical',
         'healthMetricAttention',
         'healthMetricGovernance'
       ].forEach(id => {
