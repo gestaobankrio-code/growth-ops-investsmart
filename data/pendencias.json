@@ -277,5 +277,14 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
+  },
+  {
+    "id": "lp-betratus-corretores-seguro-vida-risco-alto",
+    "recordId": "lp-betratus-corretores-seguro-vida",
+    "ativo": "LP - BeTratus - Corretores de Seguro de Vida",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar se a versão publicada em https://betratus.lovable.app corresponde à versão atual do projeto.\n\nRealizar teste real controlado de lead e confirmar se o cadastro é gravado corretamente na aba Leads da planilha Google Sheets informada.\n\nInstrumentar GTM, GA4 e Meta Pixel, com evento de conversão disparado somente após confirmação real do envio do formulário.\n\nCapturar e persistir UTMs e URL da página junto ao lead.\n\nAvaliar implementação de fallback e retry para reduzir a dependência exclusiva do Google Sheets.\n\nPersistir evidência do consentimento e revisar proteção anti-spam, captcha/rate limiting e tratamento de mensagens de erro.\n\nValidar Termos de Uso e Política de Privacidade referenciados no consentimento.\n\nApós validação em produção, atualizar o status da LP no Growth Ops."
   }
 ]
