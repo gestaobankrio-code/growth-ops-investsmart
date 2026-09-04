@@ -1072,15 +1072,27 @@
       width: 100%;
       max-width: 100%;
       max-height: 460px;
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
       scrollbar-width: thin;
       scrollbar-color: var(--border-strong) transparent;
     }
 
     .health-table {
       width: 100%;
-      min-width: 1120px;
+      min-width: 0;
+      table-layout: fixed;
       border-collapse: collapse;
+    }
+
+    .health-table th,
+    .health-table td {
+      min-width: 0;
+      padding: 12px 10px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: normal;
+      vertical-align: middle;
     }
 
     .health-table thead th {
@@ -1088,6 +1100,85 @@
       top: 0;
       z-index: 2;
       background: #FAF9FD;
+      font-size: 11px;
+      line-height: 14px;
+      letter-spacing: 0.055em;
+    }
+
+    .health-table tbody td {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    /* Distribuição das 8 colunas: 100% */
+    .health-table th:nth-child(1),
+    .health-table td:nth-child(1) { width: 17%; }
+
+    .health-table th:nth-child(2),
+    .health-table td:nth-child(2) { width: 18%; }
+
+    .health-table th:nth-child(3),
+    .health-table td:nth-child(3) { width: 10%; }
+
+    .health-table th:nth-child(4),
+    .health-table td:nth-child(4) { width: 14%; }
+
+    .health-table th:nth-child(5),
+    .health-table td:nth-child(5) { width: 12%; }
+
+    .health-table th:nth-child(6),
+    .health-table td:nth-child(6) { width: 10%; }
+
+    .health-table th:nth-child(7),
+    .health-table td:nth-child(7) { width: 9%; }
+
+    .health-table th:nth-child(8),
+    .health-table td:nth-child(8) { width: 10%; }
+
+    .health-table td:nth-child(2),
+    .health-table td:nth-child(8) {
+      font-size: 11px;
+      line-height: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    .health-table .health-badge {
+      max-width: 100%;
+      min-height: 26px;
+      padding: 5px 8px;
+      gap: 5px;
+      font-size: 11px;
+      line-height: 14px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .health-table .health-badge::before {
+      width: 6px;
+      height: 6px;
+      flex: 0 0 auto;
+    }
+
+    .health-table .health-asset strong {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .health-table .health-asset span {
+      font-size: 11px;
+      line-height: 15px;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 899px) {
+      .health-scroll {
+        overflow-x: auto;
+      }
+
+      .health-table {
+        min-width: 980px;
+        table-layout: auto;
+      }
     }
 
     .health-badge {
@@ -3032,10 +3123,23 @@
     }
 
     function isLandingPageRecord(record) {
-      return (
-        normalizeText(record.ativo).startsWith('lp -') ||
-        normalizeText(record.categoria).includes('landing page')
-      );
+      const ativo = normalizeText(record.ativo);
+      const categoria = normalizeText(record.categoria);
+      const url = normalizeText(record.url);
+
+      const isLp =
+        ativo.startsWith('lp -') ||
+        categoria.includes('landing page');
+
+      const isThankYouPage =
+        ativo.includes('pagina de obrigado') ||
+        ativo.includes('thank you') ||
+        categoria.includes('pagina de obrigado') ||
+        categoria.includes('thank you') ||
+        /\/obrigado(?:[-/?#]|$)/i.test(url) ||
+        /\/thank-you(?:[-/?#]|$)/i.test(url);
+
+      return isLp && !isThankYouPage;
     }
 
     function landingPageRecords() {
