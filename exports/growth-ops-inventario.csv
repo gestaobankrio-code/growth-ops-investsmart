@@ -42,43 +42,53 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
-"LP - Flamengo - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"A validar";"https://maracana-flamengo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.
+"LP - BeTratus - Corretores de Seguro de Vida";"Landing Page";"Landing Page / BeTratus / Captação";"Marketing";"Marketing / Growth";"A validar";"https://betratus.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar o carregamento da versão publicada em https://betratus.lovable.app e confirmar que ela corresponde ao projeto atual da Lovable.
 
-Confirmar se a imagem de fundo foi adicionada na primeira dobra.
+Realizar teste real controlado de lead e confirmar gravação na aba Leads da planilha Google Sheets.
 
-Confirmar se o contador regressivo para 16/09 às 17h foi implementado.
+Instrumentar GTM, GA4 e Meta Pixel, com evento de conversão disparado somente após confirmação real do envio do formulário.
 
-Confirmar se o regulamento preenchido foi publicado corretamente.
+Capturar e persistir UTMs e URL da página junto ao lead.
 
-Validar se o CTA principal direciona para o formulário.
+Avaliar fallback/retry para reduzir dependência exclusiva do Google Sheets.
 
-Realizar teste real de lead e confirmar entrada no Google Sheets.
+Persistir a evidência de consentimento e revisar proteção anti-spam, captcha/rate limiting e tratamento de mensagens de erro.
 
-Validar se os campos do formulário chegam completos na planilha.
+Validar Termos de Uso e Política de Privacidade referenciados no consentimento.
 
-Validar tracking e evento de conversão, caso aplicável.
+Após teste de produção e validação do fluxo, atualizar o status no Growth Ops."
+"LP - Calculadora CDB x Poupança";"Landing Page";"Landing Page / Calculadora / Renda Fixa";"Marketing";"Marketing / Growth";"A validar";"https://calculadoracdbxpoupana.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar fórmula financeira contra referência oficial InvestSmart.
 
-Após teste confirmado, atualizar status para Validado."
-"LP - Fluminense - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"A validar";"https://maracana-fluminense.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.
+Definir regra oficial da poupança com Selic/TR e alinhar texto e cálculo.
 
-Confirmar se a página ficou com apenas um CTA principal.
+Definir fonte oficial e atualização para CDI, Selic e demais taxas.
 
-Confirmar se a imagem de fundo foi adicionada na primeira dobra.
+Corrigir parse decimal.
 
-Confirmar se o contador regressivo para 09/09 às 17h foi implementado.
+Instalar/validar GTM e GA4 e rastrear o funil completo.
 
-Confirmar se o regulamento foi publicado corretamente.
+Corrigir tratamento de erro do CTA do assessor.
 
-Validar se o CTA principal direciona para o formulário.
+Implementar proteção anti-spam e mitigar formula injection.
 
-Realizar teste real de lead e confirmar entrada no Google Sheets.
+Definir consentimento e política LGPD.
 
-Validar se os campos do formulário chegam completos na planilha.
+Completar SEO técnico.
 
-Validar tracking e evento de conversão, caso aplicável.
+Medir Lighthouse/Core Web Vitals.
 
-Após teste confirmado, atualizar status para Validado."
-"LP - Indique e Ganhe até R$ 5 mil";"Landing Page";"Landing Page / Indique e Ganhe";"Marketing";"Marketing / Growth";"A validar";"https://indiqueeganhe5mil.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
+Confirmar nomenclatura oficial do ativo."
+"LP - Fla Nação - Maracanã 22-10";"Landing Page";"Landing Page / Captação de Leads / Sorteio Promocional";"Samyr Castro / InvestSmart XP";"Growth Ops / Marketing";"Ativa com pendência de tracking";"https://fla-nacao-maracana.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar disparo de fbq('track', 'Lead') na página externa de obrigado. Inserir ou validar GTM e GA4. Separar UTMs em colunas dedicadas. Atualizar links oficiais de Política de Privacidade e Site InvestSmart. Validar horário do jogo Flamengo x Estudiantes em 22/10/2026. Definir ativação ou descarte da automação n8n WEBHOOK_URL. Avaliar domínio próprio. Monitorar seletores DOM do Bitrix24."
+"LP - Flamengo - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"Validado";"https://maracana-flamengo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Flamengo no Google Sheets e da página de obrigado do RD Station.
+
+Registrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
+"LP - Flu Guerreiro - Maracanã 14-10";"Landing Page";"Landing Page / Captação de Leads / Sorteio Promocional";"Samyr Castro / InvestSmart";"Growth / Performance";"Ativa com pendência de tracking";"https://flu-guerreiro-maracana.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Confirmar submissão real na aba Bitrix - Fluminense. Validar mensagem/redirect no Bitrix24. Instalar ou confirmar GTM/GA4. Implementar fbq('track', 'Lead') após sucesso real. Capturar e persistir UTMs, gclid, fbclid e pageUrl. Avaliar webhook nativo do Bitrix24 no lugar de scraping DOM. Adicionar rate limiting/proteção por token na rota /api/public/bitrix-lead. Adicionar link de Política de Privacidade."
+"LP - Fluminense - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"Validado";"https://maracana-fluminense.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Fluminense no Google Sheets e da página de obrigado do RD Station.
+
+Registrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
+"LP - Indique e Ganhe até R$ 5 mil";"Landing Page";"Landing Page / Indique e Ganhe";"Marketing";"Marketing / Growth";"A validar";"https://indiqueeganhe5mil.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com a Contabilidade como serão operacionalizados e contabilizados os pagamentos do programa Indique e Ganhe.
+
+Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
 
@@ -90,7 +100,7 @@ Validar o SLA prometido de 48h úteis na página.
 
 Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
 
-Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+Após validação contábil e teste técnico confirmado, atualizar o status para Validado e revisar o risco operacional."
 "LP - Live ao Vivo / Melhor Profissão";"Landing Page";"Landing Page / Smart Carreiras";"Marketing";"Marketing / Growth";"Validado";"https://melhorprofissao.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
 
 Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
@@ -177,13 +187,19 @@ Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge
 Confirmar se existe evento de conversão no Meta Pixel após o envio real.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+"LP - Raio-X Diagnóstico Patrimonial";"Landing Page";"Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial";"A validar";"A validar";"A validar";"https://raioxdiagnsticopatrimonial.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.
+
+Prioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.
+
+Prioridade 3: completar persistência de UTMs, pageUrl e consentimento.
+
+Prioridade 4: mitigar formula injection, spam e reforçar validação server-side.
+
+Prioridade 5: completar LGPD e SEO técnico.
+
+Pendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada."
 "Lovable";"Lovable";"Licença / Plataforma de Desenvolvimento";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "LP - Convite Smart Carreiras - Samyr";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://convite.smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
-"LP - Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"A validar";"Aguardando validação jurídica do domínio";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
-
-Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.
-
-Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
 "LP - Smart Carreiras";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
@@ -194,6 +210,7 @@ Validar propriedades do formulário no HubSpot, especialmente pl__custodia.
 
 Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
 "Make";"Make";"Automação / Integração";"Marketing";"Marketing";"Validado";"https://www.make.com";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
+"Make";"Make";"Automação / Integração";"teste-apagar";"A validar";"A validar";"https://www.make.com";"A validar";"A validar";"A validar";"Crítico";"A validar"
 "Meta Pixel - Planeja Brasil";"Meta Pixel";"Tracking / Meta Pixel";"Marketing";"Marketing / Growth";"Validado";"https://business.facebook.com/events_manager2";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar no Gerenciador de Eventos se PageView e Lead estão chegando corretamente por domínio e confirmar se há deduplicação ou CAPI planejada."
 "Meta Pixel - Smart Carreiras";"Meta Pixel";"Tracking / Mensuração";"Marketing";"Marketing / Growth";"Validado";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
@@ -212,21 +229,9 @@ Após validação do evento de conversão, atualizar o status do registro para V
 Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.
 
 Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
-"Página de Obrigado RD Station - Pixel Meta Samyr";"RD Station";"Tracking / Página de Obrigado / RD Station";"Marketing";"Marketing / Growth";"Validado";"A validar";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Confirmar a URL final da página de obrigado na RD Station.
+"LP - Página de Obrigado RD Station";"RD Station";"Tracking / Página de Obrigado / RD Station";"Marketing";"Marketing / Growth";"Validado";"https://materiais.investsmartxp.com.br/obrigado-geral";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Manter documentada a relação das landing pages que utilizam esta página de obrigado.
 
-Validar se os dois Pixels foram instalados corretamente.
-
-Confirmar se o Pixel 1949159712442429 será documentado oficialmente como Pixel do Samyr.
-
-Testar a página com Meta Pixel Helper.
-
-Confirmar se PageView e Lead disparam nos dois Pixels.
-
-Verificar se não há duplicidade de script.
-
-Documentar quais landing pages redirecionam para esta página de obrigado.
-
-Após validação, atualizar status para Validado."
+Validar periodicamente tracking e eventos no ambiente de produção e registrar qualquer mudança de URL ou regra de conversão no Growth Ops."
 "Página de obrigado universal investSmart";"RD STATION";"Landing Page / Página de Obrigado";"Philipe Coutinho";"Marketing";"Validado";"https://materiais.investsmartxp.com.br/obrigado-is";"Não aplicável";"Não aplicável";"A validar";"Baixo";"A validar"
 "Source - Planeja Brasil - Orgânico";"Source / Identificador";"Source / Origem de Lead";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro.investsmart.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"Baixo";"Validar no n8n se os leads da landing page Planeja Brasil - Orgânico estão chegando corretamente com source UC_QZ91TG."
 "Source - Planeja Brasil - Samyr";"Source / Identificador";"Source / Origem de Lead";"Marketing";"Marketing / Growth";"Validado";"https://seu-planejamento-financeiro.investsmart.com.br";"Não aplicável";"Não aplicável";"Não aplicável";"Baixo";"Validar no n8n se os leads da landing page Planeja Brasil - Samyr estão chegando corretamente com source UC_UI1PIS."

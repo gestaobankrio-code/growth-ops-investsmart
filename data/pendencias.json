@@ -45,13 +45,31 @@
     "proximaAcao": "Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.\n\nConfirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.\n\nValidar se Jorge e/ou Samyr possuem visibilidade desses leads.\n\nConfirmar se a palavra-chave Queromais / Quero Mais está configurada fora do código, como em ManyChat, WhatsApp, n8n, CRM ou outra automação.\n\nCom Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.\n\nCom Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
   },
   {
+    "id": "lp-betratus-corretores-seguro-vida-risco-alto",
+    "recordId": "lp-betratus-corretores-seguro-vida",
+    "ativo": "LP - BeTratus - Corretores de Seguro de Vida",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar o carregamento da versão publicada em https://betratus.lovable.app e confirmar que ela corresponde ao projeto atual da Lovable.\n\nRealizar teste real controlado de lead e confirmar gravação na aba Leads da planilha Google Sheets.\n\nInstrumentar GTM, GA4 e Meta Pixel, com evento de conversão disparado somente após confirmação real do envio do formulário.\n\nCapturar e persistir UTMs e URL da página junto ao lead.\n\nAvaliar fallback/retry para reduzir dependência exclusiva do Google Sheets.\n\nPersistir a evidência de consentimento e revisar proteção anti-spam, captcha/rate limiting e tratamento de mensagens de erro.\n\nValidar Termos de Uso e Política de Privacidade referenciados no consentimento.\n\nApós teste de produção e validação do fluxo, atualizar o status no Growth Ops."
+  },
+  {
+    "id": "lp-calculadora-cdb-poupanca-risco-alto",
+    "recordId": "lp-calculadora-cdb-poupanca",
+    "ativo": "LP - Calculadora CDB x Poupança",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Validar fórmula financeira contra referência oficial InvestSmart.\n\nDefinir regra oficial da poupança com Selic/TR e alinhar texto e cálculo.\n\nDefinir fonte oficial e atualização para CDI, Selic e demais taxas.\n\nCorrigir parse decimal.\n\nInstalar/validar GTM e GA4 e rastrear o funil completo.\n\nCorrigir tratamento de erro do CTA do assessor.\n\nImplementar proteção anti-spam e mitigar formula injection.\n\nDefinir consentimento e política LGPD.\n\nCompletar SEO técnico.\n\nMedir Lighthouse/Core Web Vitals.\n\nConfirmar nomenclatura oficial do ativo."
+  },
+  {
     "id": "lp-maracana-flamengo-samyr-risco-alto",
     "recordId": "lp-maracana-flamengo-samyr",
     "ativo": "LP - Flamengo - Samyr",
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
-    "proximaAcao": "Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.\n\nConfirmar se a imagem de fundo foi adicionada na primeira dobra.\n\nConfirmar se o contador regressivo para 16/09 às 17h foi implementado.\n\nConfirmar se o regulamento preenchido foi publicado corretamente.\n\nValidar se o CTA principal direciona para o formulário.\n\nRealizar teste real de lead e confirmar entrada no Google Sheets.\n\nValidar se os campos do formulário chegam completos na planilha.\n\nValidar tracking e evento de conversão, caso aplicável.\n\nApós teste confirmado, atualizar status para Validado."
+    "proximaAcao": "Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Flamengo no Google Sheets e da página de obrigado do RD Station.\n\nRegistrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
   },
   {
     "id": "lp-maracana-fluminense-samyr-risco-alto",
@@ -60,7 +78,7 @@
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
-    "proximaAcao": "Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.\n\nConfirmar se a página ficou com apenas um CTA principal.\n\nConfirmar se a imagem de fundo foi adicionada na primeira dobra.\n\nConfirmar se o contador regressivo para 09/09 às 17h foi implementado.\n\nConfirmar se o regulamento foi publicado corretamente.\n\nValidar se o CTA principal direciona para o formulário.\n\nRealizar teste real de lead e confirmar entrada no Google Sheets.\n\nValidar se os campos do formulário chegam completos na planilha.\n\nValidar tracking e evento de conversão, caso aplicável.\n\nApós teste confirmado, atualizar status para Validado."
+    "proximaAcao": "Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Fluminense no Google Sheets e da página de obrigado do RD Station.\n\nRegistrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
   },
   {
     "id": "lp-indique-ganhe-5mil-risco-alto",
@@ -69,7 +87,7 @@
     "software": "Landing Page",
     "risco": "Alto",
     "pendencia": "Risco Alto",
-    "proximaAcao": "Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+    "proximaAcao": "Validar com a Contabilidade como serão operacionalizados e contabilizados os pagamentos do programa Indique e Ganhe.\n\nRealizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós validação contábil e teste técnico confirmado, atualizar o status para Validado e revisar o risco operacional."
   },
   {
     "id": "lp-live-ao-vivo-melhor-profissao-risco-alto",
@@ -135,6 +153,15 @@
     "proximaAcao": "Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha.\n\nValidar se source Carreiras, pageUrl, UTMs e data de envio estão sendo registrados.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nConfirmar se existe evento de conversão no Meta Pixel após o envio real.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
   },
   {
+    "id": "lp-raio-x-diagnostico-patrimonial-risco-alto",
+    "recordId": "lp-raio-x-diagnostico-patrimonial",
+    "ativo": "LP - Raio-X Diagnóstico Patrimonial",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.\n\nPrioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.\n\nPrioridade 3: completar persistência de UTMs, pageUrl e consentimento.\n\nPrioridade 4: mitigar formula injection, spam e reforçar validação server-side.\n\nPrioridade 5: completar LGPD e SEO técnico.\n\nPendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada."
+  },
+  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Lovable",
@@ -169,15 +196,6 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
-  },
-  {
-    "id": "d3df7aeb-c583-478e-882e-d79c855c2ce9-quem-recebe-o-codigo-a-validar",
-    "recordId": "d3df7aeb-c583-478e-882e-d79c855c2ce9",
-    "ativo": "LP - Indique um Bancário e Ganhe até 5 Mil",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.\n\nAuditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.\n\nApós validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
   },
   {
     "id": "63aae663-7671-4dc1-9460-f5549d9acd77-risco-critico",
@@ -222,6 +240,33 @@
     "software": "Make",
     "risco": "Alto",
     "pendencia": "Sem segundo administrador",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-risco-critico",
+    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-quem-recebe-o-codigo-a-validar",
+    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-recuperacao-de-acesso-nao-validada",
+    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
     "proximaAcao": "A validar"
   },
   {
@@ -277,14 +322,5 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
-  },
-  {
-    "id": "lp-betratus-corretores-seguro-vida-risco-alto",
-    "recordId": "lp-betratus-corretores-seguro-vida",
-    "ativo": "LP - BeTratus - Corretores de Seguro de Vida",
-    "software": "Landing Page",
-    "risco": "Alto",
-    "pendencia": "Risco Alto",
-    "proximaAcao": "Validar se a versão publicada em https://betratus.lovable.app corresponde à versão atual do projeto.\n\nRealizar teste real controlado de lead e confirmar se o cadastro é gravado corretamente na aba Leads da planilha Google Sheets informada.\n\nInstrumentar GTM, GA4 e Meta Pixel, com evento de conversão disparado somente após confirmação real do envio do formulário.\n\nCapturar e persistir UTMs e URL da página junto ao lead.\n\nAvaliar implementação de fallback e retry para reduzir a dependência exclusiva do Google Sheets.\n\nPersistir evidência do consentimento e revisar proteção anti-spam, captcha/rate limiting e tratamento de mensagens de erro.\n\nValidar Termos de Uso e Política de Privacidade referenciados no consentimento.\n\nApós validação em produção, atualizar o status da LP no Growth Ops."
   }
 ]

@@ -62,43 +62,51 @@ Confirmar se a palavra-chave Queromais / Quero Mais está configurada fora do c�
 Com Marketing, definir captura de UTMs, envio da URL da página, identificador textual da landing page no payload e tracking de conversão.
 
 Com Processos, definir responsável pelo atendimento e criar backup ou alerta de falha para reduzir risco de perda de lead."
-"LP - Flamengo - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou os ajustes visuais na LP do Flamengo.
+"LP - BeTratus - Corretores de Seguro de Vida";"Landing Page";"Alto";"Risco Alto";"Validar o carregamento da versão publicada em https://betratus.lovable.app e confirmar que ela corresponde ao projeto atual da Lovable.
 
-Confirmar se a imagem de fundo foi adicionada na primeira dobra.
+Realizar teste real controlado de lead e confirmar gravação na aba Leads da planilha Google Sheets.
 
-Confirmar se o contador regressivo para 16/09 às 17h foi implementado.
+Instrumentar GTM, GA4 e Meta Pixel, com evento de conversão disparado somente após confirmação real do envio do formulário.
 
-Confirmar se o regulamento preenchido foi publicado corretamente.
+Capturar e persistir UTMs e URL da página junto ao lead.
 
-Validar se o CTA principal direciona para o formulário.
+Avaliar fallback/retry para reduzir dependência exclusiva do Google Sheets.
 
-Realizar teste real de lead e confirmar entrada no Google Sheets.
+Persistir a evidência de consentimento e revisar proteção anti-spam, captcha/rate limiting e tratamento de mensagens de erro.
 
-Validar se os campos do formulário chegam completos na planilha.
+Validar Termos de Uso e Política de Privacidade referenciados no consentimento.
 
-Validar tracking e evento de conversão, caso aplicável.
+Após teste de produção e validação do fluxo, atualizar o status no Growth Ops."
+"LP - Calculadora CDB x Poupança";"Landing Page";"Alto";"Risco Alto";"Validar fórmula financeira contra referência oficial InvestSmart.
 
-Após teste confirmado, atualizar status para Validado."
-"LP - Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Confirmar se a Lovable aplicou a estrutura da LP do Fluminense seguindo o mesmo formato da LP do Flamengo.
+Definir regra oficial da poupança com Selic/TR e alinhar texto e cálculo.
 
-Confirmar se a página ficou com apenas um CTA principal.
+Definir fonte oficial e atualização para CDI, Selic e demais taxas.
 
-Confirmar se a imagem de fundo foi adicionada na primeira dobra.
+Corrigir parse decimal.
 
-Confirmar se o contador regressivo para 09/09 às 17h foi implementado.
+Instalar/validar GTM e GA4 e rastrear o funil completo.
 
-Confirmar se o regulamento foi publicado corretamente.
+Corrigir tratamento de erro do CTA do assessor.
 
-Validar se o CTA principal direciona para o formulário.
+Implementar proteção anti-spam e mitigar formula injection.
 
-Realizar teste real de lead e confirmar entrada no Google Sheets.
+Definir consentimento e política LGPD.
 
-Validar se os campos do formulário chegam completos na planilha.
+Completar SEO técnico.
 
-Validar tracking e evento de conversão, caso aplicável.
+Medir Lighthouse/Core Web Vitals.
 
-Após teste confirmado, atualizar status para Validado."
-"LP - Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
+Confirmar nomenclatura oficial do ativo."
+"LP - Flamengo - Samyr";"Landing Page";"Alto";"Risco Alto";"Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Flamengo no Google Sheets e da página de obrigado do RD Station.
+
+Registrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
+"LP - Fluminense - Samyr";"Landing Page";"Alto";"Risco Alto";"Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Fluminense no Google Sheets e da página de obrigado do RD Station.
+
+Registrar no Growth Ops qualquer futura alteração de formulário, destino de lead, tracking, integração ou página de obrigado antes da substituição em produção."
+"LP - Indique e Ganhe até R$ 5 mil";"Landing Page";"Alto";"Risco Alto";"Validar com a Contabilidade como serão operacionalizados e contabilizados os pagamentos do programa Indique e Ganhe.
+
+Realizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
 
@@ -110,7 +118,7 @@ Validar o SLA prometido de 48h úteis na página.
 
 Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
 
-Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+Após validação contábil e teste técnico confirmado, atualizar o status para Validado e revisar o risco operacional."
 "LP - Live ao Vivo / Melhor Profissão";"Landing Page";"Alto";"Risco Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
 
 Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
@@ -188,15 +196,21 @@ Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge
 Confirmar se existe evento de conversão no Meta Pixel após o envio real.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+"LP - Raio-X Diagnóstico Patrimonial";"Landing Page";"Alto";"Risco Alto";"Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.
+
+Prioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.
+
+Prioridade 3: completar persistência de UTMs, pageUrl e consentimento.
+
+Prioridade 4: mitigar formula injection, spam e reforçar validação server-side.
+
+Prioridade 5: completar LGPD e SEO técnico.
+
+Pendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada."
 "Lovable";"Lovable";"Crítico";"Risco Crítico";"A validar"
 "Lovable";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
 "LP - Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Risco Crítico";"A validar"
 "LP - Convite Smart Carreiras - Samyr";"Lovable";"Crítico";"Quem recebe o código a validar";"A validar"
-"LP - Indique um Bancário e Ganhe até 5 Mil";"Lovable";"Crítico";"Quem recebe o código a validar";"Aguardar validação da Amanda / Jurídico sobre o domínio público da landing page.
-
-Auditar o projeto na Lovable para identificar campos do formulário, endpoint, webhook, destino dos leads, tracking instalado, Pixel, GTM, GA4, HubSpot, RD Station, Bitrix, n8n ou outra integração.
-
-Após validação jurídica e técnica, atualizar domínio público, status, campos do formulário, tracking e destino dos leads no painel Growth Ops."
 "LP - Smart Carreiras";"Lovable";"Crítico";"Risco Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
@@ -218,6 +232,9 @@ Após validar tracking, formulário e recebimento dos leads no HubSpot, atualiza
 "Make";"Make";"Crítico";"Risco Crítico";"A validar"
 "Make";"Make";"Crítico";"Quem recebe o código a validar";"A validar"
 "Make";"Make";"Alto";"Sem segundo administrador";"A validar"
+"Make";"Make";"Crítico";"Risco Crítico";"A validar"
+"Make";"Make";"Crítico";"Quem recebe o código a validar";"A validar"
+"Make";"Make";"Médio";"Recuperação de acesso não validada";"A validar"
 "Meta Pixel - Smart Carreiras";"Meta Pixel";"Crítico";"Quem recebe o código a validar";"Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.
