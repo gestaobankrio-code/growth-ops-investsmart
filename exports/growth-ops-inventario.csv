@@ -5,19 +5,8 @@ Confirmar quem possui acesso ao e-mail designers@investsmart.com.br, validar se 
 
 Remover qualquer dependência de senha compartilhada e formalizar a custódia do acesso com responsável oficial."
 "GTM - Planeja Brasil";"Google Tag Manager";"Tracking / Google Tag Manager";"Marketing";"Marketing / Growth";"Validado";"https://tagmanager.google.com";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar dentro do container GTM se GA4, Google Ads e eventos de conversão estão configurados corretamente para as páginas do Planeja Brasil."
-"LP - Abertura de Filial";"Landing Page";"Landing Page / Aquisição / Expansão";"Marketing";"Marketing / Growth";"Incompleto";"https://aberturadefilial.investsmart.com.br";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Definir com o time o destino oficial dos leads da landing page Abertura de Filial.
-
-Implementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.
-
-Configurar confirmação real de recebimento antes de mostrar a tela de sucesso.
-
-Instalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.
-
-Configurar evento de conversão no submit real do formulário.
-
-Confirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.
-
-Após corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
+"LP - [Compartilhado] Meu Novo Lar - Quiz";"Landing Page";"LP Quiz";"A VALIDAR";"Growth Ops";"Ativo (Sheets + n8n)";"https://meu-novo-lar-compartilhado.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - [Cópia] - Campanha Bike Eletrica";"Landing Page";"LP Sorteio";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://campanhabikeletrica.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Abra sua Filial";"Landing Page";"Landing Page / Abertura de Filial";"Marketing";"Marketing / Growth";"A validar";"https://aberturadefilial02.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
@@ -31,6 +20,12 @@ Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando
 Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+"LP - bancarios";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://smart-banking-leap.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Be Smart Home Plan";"Landing Page";"LP Planejamento";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://lpbesmart.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Be.Smart Parceiros";"Landing Page";"LP Indicação";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://be-smart-partner-connect.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Be.Smart Partner Hub";"Landing Page";"LP Rascunho";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Be.Smart Recruit Day";"Landing Page";"LP Evento";"A VALIDAR";"Growth Ops";"Ativo (Resend + Sheets)";"https://recruit-shine-leap.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - BeSmart MAG Connect";"Landing Page";"LP Parceria";"A VALIDAR";"Growth Ops";"A validar";"https://carreiraelemdamedicina.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Best Franquias";"Landing Page";"Landing Page / Franquias";"Marketing";"Marketing / Growth";"Validado";"https://bestfranquia.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Tecnologia se o fluxo n8n lp-best-franquias está ativo e para onde encaminha os leads.
 
 Confirmar se o destino final é Bitrix, especialmente o item crm_dynamic_items_1166, ou outro canal operacional.
@@ -57,7 +52,8 @@ Persistir a evidência de consentimento e revisar proteção anti-spam, captcha/
 Validar Termos de Uso e Política de Privacidade referenciados no consentimento.
 
 Após teste de produção e validação do fluxo, atualizar o status no Growth Ops."
-"LP - Calculadora CDB x Poupança";"Landing Page";"Landing Page / Calculadora / Renda Fixa";"Marketing";"Marketing / Growth";"A validar";"https://calculadoracdbxpoupana.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar fórmula financeira contra referência oficial InvestSmart.
+"LP - Bikeletrica Is";"Landing Page";"LP Sorteio";"A VALIDAR";"Growth Ops";"Ativo (Sheets)";"https://bikeletrica-is.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Calculadora CDB x Poupança";"Landing Page";"Landing Page / Calculadora / Renda Fixa";"Marketing";"Marketing / Growth";"A validar";"https://calculadora-rendafixa-investsmart.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar fórmula financeira contra referência oficial InvestSmart.
 
 Definir regra oficial da poupança com Selic/TR e alinhar texto e cálculo.
 
@@ -78,6 +74,9 @@ Completar SEO técnico.
 Medir Lighthouse/Core Web Vitals.
 
 Confirmar nomenclatura oficial do ativo."
+"LP - consorcio-inteligente-simulador-85";"Landing Page";"Web App Simulador";"A VALIDAR";"Growth Ops";"Ativo (Supabase + RD)";"https://consorcio-inteligente-simulador-85.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Consorciobesmartgeral";"Landing Page";"LP Consórcio";"A VALIDAR";"Growth Ops";"Ativo (Bitrix + Sheets)";"https://consorciobesmartgeral.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Elite Path Finder";"Landing Page";"LP Rascunho";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Fla Nação - Maracanã 22-10";"Landing Page";"Landing Page / Captação de Leads / Sorteio Promocional";"Samyr Castro / InvestSmart XP";"Growth Ops / Marketing";"Ativa com pendência de tracking";"https://fla-nacao-maracana.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar disparo de fbq('track', 'Lead') na página externa de obrigado. Inserir ou validar GTM e GA4. Separar UTMs em colunas dedicadas. Atualizar links oficiais de Política de Privacidade e Site InvestSmart. Validar horário do jogo Flamengo x Estudiantes em 22/10/2026. Definir ativação ou descarte da automação n8n WEBHOOK_URL. Avaliar domínio próprio. Monitorar seletores DOM do Bitrix24."
 "LP - Flamengo - Samyr";"Landing Page";"Landing Page / Maracanã / Sorteio";"Marketing";"Marketing / Growth";"Validado";"https://maracana-flamengo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Manter acompanhamento operacional do formulário Bitrix24, da aba Bitrix - Flamengo no Google Sheets e da página de obrigado do RD Station.
 
@@ -101,6 +100,14 @@ Validar o SLA prometido de 48h úteis na página.
 Instalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.
 
 Após validação contábil e teste técnico confirmado, atualizar o status para Validado e revisar o risco operacional."
+"LP - InvestSmart Flow";"Landing Page";"LP Expansão";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://abertura-filial.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - InvestSmart Ride";"Landing Page";"LP Concurso";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://ride-your-ideas.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Investsmart Xp";"Landing Page";"LP Conversão";"A VALIDAR";"Growth Ops";"Ativo (DB + Sheets)";"https://investsmart-xp.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - IS DAY - 10 de fevereiro";"Landing Page";"LP Evento";"A VALIDAR";"Growth Ops";"Ativo (Resend + Sheets)";"https://smart-recruit-shine.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - IS Day Atibaia";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://is-day-atibaia.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - IS Day Atibaia - Orgânico";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://isdayatibaia.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - IS Day Atibaia + Vinhedo";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://is-day-atibaia-vinhedo.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - IS Day Matriz RJ - 14/11";"Landing Page";"LP Evento";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://isday-matriz.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Live ao Vivo / Melhor Profissão";"Landing Page";"Landing Page / Smart Carreiras";"Marketing";"Marketing / Growth";"Validado";"https://melhorprofissao.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.
 
 Confirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.
@@ -116,6 +123,8 @@ Com Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse
 Instrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.
 
 Avaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
+"LP - Lp Besmart";"Landing Page";"LP Conversão";"A VALIDAR";"Growth Ops";"Ativo (Sheets)";"https://lp-besmart.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - LP TATIANA GUEDES";"Landing Page";"LP Patrocínio";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://patrociniosmartsummit.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Maracanã Glow Experience";"Landing Page";"Landing Page / Maracanã";"Marketing";"Marketing / Growth";"Validado";"https://maracana-glow-experience.lovable.app/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.
 
 Validar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.
@@ -133,6 +142,8 @@ Implementar ou validar evento Lead do Meta Pixel após confirmação real de env
 Criar fallback visual caso o embed Bitrix24 não carregue.
 
 Após teste confirmado, atualizar o status da integração Google Sheets para Validado."
+"LP - Maracanã Magic Landing";"Landing Page";"LP Campanha";"A VALIDAR";"Growth Ops";"Ativo (Bitrix + Sheets)";"https://maracana-purple-glow.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Meu Novo Lar - Quiz";"Landing Page";"LP Quiz";"A VALIDAR";"Growth Ops";"Ativo (Sheets + n8n)";"https://meu-novo-lar-quiz-2.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Meu Novo Lar - Samyr";"Landing Page";"Landing Page / Meu Novo Lar";"Marketing";"Marketing / Growth";"Validado";"https://meu-novo-lar-samyr.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar com Tecnologia e Processos quem monitora a aba Samyr da planilha leads_meu_novo_lar.
 
 Confirmar se os registros com status_n8n = ERRO são acompanhados manualmente e qual é o SLA de correção.
@@ -142,7 +153,7 @@ Confirmar se o n8n encaminha os leads para Bitrix, e-mail, outro CRM ou apenas m
 Validar se Jorge possui visibilidade do fluxo e se Samyr acessa ou recebe os leads da aba Samyr.
 
 Avaliar criação de retry automático para o webhook n8n, backup/fila independente da planilha e implantação de tracking de conversão."
-"LP - Patrocínio Smart Summit - Samyr";"Landing Page";"Landing Page / Smart Summit";"Marketing";"Marketing / Growth";"A validar";"https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
+"LP - Patrocínio Smart Summit - Samyr";"Landing Page";"Landing Page / Smart Summit";"Marketing";"Marketing / Growth";"Mock confirmado / Perda de leads";"https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.
 
 Confirmar se o lead chega na planilha Google Sheets informada.
 
@@ -153,6 +164,8 @@ Confirmar quais campos estão sendo gravados na planilha e se incluem nome, What
 Definir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.
 
 Após confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional."
+"LP - Planeja Brasil";"Landing Page";"LP Planejamento";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://investsmart-form-hero.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Planeja Brasil - 12 Dobras";"Landing Page";"LP Planejamento";"A VALIDAR";"Growth Ops";"Ativo (n8n Webhook)";"https://planejamento-financeiro-personalizado.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Planeja Brasil - Orgânico";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro.investsmart.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP Planeja Brasil e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: n8n, Google Apps Script, webhook, worker, backend, conector externo ou outro fluxo.
@@ -174,6 +187,8 @@ Mapear nome da planilha, aba, campos salvos, responsável pelo tratamento dos le
 
 Avaliar captura estruturada de UTMs no front-end e implementação de fallback para reduzir risco de perda de leads."
 "LP - Planeja Brasil - Tráfego Pago";"Landing Page";"Landing Page / Planeja Brasil";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro01.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
+"LP - Planeja Brasil Samyr";"Landing Page";"LP Planejamento";"A VALIDAR";"Growth Ops";"Ativo (n8n Webhook)";"https://planeja-brasil-samyr.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Profissao de Elite - 2";"Landing Page";"LP Carreira";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://profissaodeelite2.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
 "LP - Profissão de Elite - Cidades do Brasil";"Landing Page";"Landing Page / Smart Carreiras";"Marketing";"Marketing / Growth";"A validar";"https://profissao-elite.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Realizar teste real de lead na LP Profissão de Elite e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script, backend ou outro conector.
@@ -187,7 +202,7 @@ Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge
 Confirmar se existe evento de conversão no Meta Pixel após o envio real.
 
 Após teste confirmado, atualizar o status para Validado e revisar o risco operacional."
-"LP - Raio-X Diagnóstico Patrimonial";"Landing Page";"Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial";"A validar";"A validar";"A validar";"https://raioxdiagnsticopatrimonial.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.
+"LP - Raio-X Diagnóstico Patrimonial";"Landing Page";"Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial";"A validar";"A validar";"A validar";"https://diagnosticopatrimonial-investsmart.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.
 
 Prioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.
 
@@ -198,9 +213,19 @@ Prioridade 4: mitigar formula injection, spam e reforçar validação server-sid
 Prioridade 5: completar LGPD e SEO técnico.
 
 Pendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada."
-"Lovable";"Lovable";"Licença / Plataforma de Desenvolvimento";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
-"LP - Convite Smart Carreiras - Samyr";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://convite.smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
-"LP - Smart Carreiras";"Lovable";"Landing Page / Aquisição";"Marketing";"Marketing / Growth";"Validado";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
+"LP - Recruta Day betratus";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Ativo (DB + Excel)";"https://recrutadaybestratus.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Remix of IS DAY - 10 de fevereiro";"Landing Page";"LP Recrutamento";"A VALIDAR";"Growth Ops";"Ativo (Edge + Sheets)";"https://finance-talent-spot.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Remix of Meu Novo Lar - Quiz";"Landing Page";"LP Quiz";"A VALIDAR";"Growth Ops";"Ativo (Sheets + n8n)";"https://meu-novo-lar-quiz.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Remix of Profissao de Elite - 3";"Landing Page";"LP Carreira";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://profission-elite-hub.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - render-facil-simulador";"Landing Page";"LP Simulador";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://render-facil-simulador.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Seguro de vida Patrimonial";"Landing Page";"LP Seguro";"A VALIDAR";"Growth Ops";"Ativo (Sheets)";"https://segurodevidapatrimonial.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Simulador Consórcio 2026.2 - Orgânico";"Landing Page";"LP Simulador";"A VALIDAR";"Growth Ops";"Ativo (n8n Webhook)";"https://simuladorconsorcio2026-organico.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Simulador Consórcio 2026.2 - Tráfego pago";"Landing Page";"LP Simulador";"A VALIDAR";"Growth Ops";"Ativo (n8n Webhook)";"https://simuladorconsorcio2026.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Smart Campus";"Landing Page";"LP Estudantes";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://uni-finance-bridge.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Smart Campus - InvestSmart XP";"Landing Page";"Landing Page / Captação de Leads B2C / B2B / Estudantes e Universidades";"A VALIDAR";"Growth / Performance";"Bloqueado para tráfego pago";"https://smartcampus-is.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Alto";"Condicionar mensagem de sucesso à resposta HTTP 200 real; tratar erros visualmente; capturar e persistir UTMs, gclid, fbclid e pageUrl; instalar GTM, GA4 e Meta Pixel com conversão pós-sucesso; criar fallback de persistência; adicionar honeypot e rate limiting; restringir CORS; inserir Política de Privacidade e Compliance oficiais; definir domínio customizado/publicação e realizar teste real de ponta a ponta antes de liberar tráfego pago."
+"LP - Smart Carreiras";"Landing Page";"LP Carreira";"A VALIDAR";"Growth Ops";"Ativo (HubSpot API)";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais.
+
+Pendência herdada do registro legado: Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
 Validar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.
 
@@ -209,8 +234,14 @@ Confirmar se será implementado GTM e GA4 para governança de tracking.
 Validar propriedades do formulário no HubSpot, especialmente pl__custodia.
 
 Após validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
+"LP - Smart Conecta: Renda Extra Fácil";"Landing Page";"LP Indicação";"A VALIDAR";"Growth Ops";"Mock confirmado / Perda de leads";"https://smart-network-rewards.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Crítico";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - smartcarreiras-samyr";"Landing Page";"LP Carreira";"A VALIDAR";"Growth Ops";"Ativo (HubSpot API)";"https://convite.smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais.
+
+Pendência herdada do registro legado: A validar"
+"LP - smartsummit-miami";"Landing Page";"LP Patrocínio";"A VALIDAR";"Growth Ops";"Ativo (DB + Sheets)";"https://smartsummit-miami.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"LP - Vasco Gigante - Maracanã 20-10";"Landing Page";"LP Campanha";"A VALIDAR";"Growth Ops";"Ativo (Bitrix + Sheets)";"https://maracana-vasco.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"A VALIDAR";"A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+"Lovable";"Lovable";"Licença / Plataforma de Desenvolvimento";"Marketing";"Marketing";"Validado";"https://lovable.dev/";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
 "Make";"Make";"Automação / Integração";"Marketing";"Marketing";"Validado";"https://www.make.com";"Não aplicável";"Não aplicável";"A validar";"Crítico";"A validar"
-"Make";"Make";"Automação / Integração";"teste-apagar";"A validar";"A validar";"https://www.make.com";"A validar";"A validar";"A validar";"Crítico";"A validar"
 "Meta Pixel - Planeja Brasil";"Meta Pixel";"Tracking / Meta Pixel";"Marketing";"Marketing / Growth";"Validado";"https://business.facebook.com/events_manager2";"Não aplicável";"Não aplicável";"Não aplicável";"Médio";"Validar no Gerenciador de Eventos se PageView e Lead estão chegando corretamente por domínio e confirmar se há deduplicação ou CAPI planejada."
 "Meta Pixel - Smart Carreiras";"Meta Pixel";"Tracking / Mensuração";"Marketing";"Marketing / Growth";"Validado";"https://smartcarreiras.com.br/";"Não aplicável";"Não aplicável";"A validar";"Baixo";"Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.
 
@@ -233,6 +264,7 @@ Validar segundo administrador, método de recuperação da conta e registrar nov
 
 Validar periodicamente tracking e eventos no ambiente de produção e registrar qualquer mudança de URL ou regra de conversão no Growth Ops."
 "Página de obrigado universal investSmart";"RD STATION";"Landing Page / Página de Obrigado";"Philipe Coutinho";"Marketing";"Validado";"https://materiais.investsmartxp.com.br/obrigado-is";"Não aplicável";"Não aplicável";"A validar";"Baixo";"A validar"
+"Senha";"Senha";"Segurança / Senhas / Marketing";"Marketing";"Marketing / Growth";"Validado";"A informar - link com as senhas";"A validar";"A validar";"A validar";"Crítico";"Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
 "Source - Planeja Brasil - Orgânico";"Source / Identificador";"Source / Origem de Lead";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro.investsmart.com.br/";"Não aplicável";"Não aplicável";"Não aplicável";"Baixo";"Validar no n8n se os leads da landing page Planeja Brasil - Orgânico estão chegando corretamente com source UC_QZ91TG."
 "Source - Planeja Brasil - Samyr";"Source / Identificador";"Source / Origem de Lead";"Marketing";"Marketing / Growth";"Validado";"https://seu-planejamento-financeiro.investsmart.com.br";"Não aplicável";"Não aplicável";"Não aplicável";"Baixo";"Validar no n8n se os leads da landing page Planeja Brasil - Samyr estão chegando corretamente com source UC_UI1PIS."
 "Source - Planeja Brasil - Tráfego Pago";"Source / Identificador";"Source / Origem de Lead";"Marketing";"Marketing / Growth";"Validado";"https://planejamento-financeiro01.lovable.app";"Não aplicável";"Não aplicável";"Não aplicável";"Baixo";"Validar no n8n se os leads da landing page Planeja Brasil - Tráfego Pago estão chegando corretamente com source 201."

@@ -1,32 +1,5 @@
 [
   {
-    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-quem-recebe-o-codigo-a-validar",
-    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "LP - Abertura de Filial",
-    "software": "Landing Page",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-  },
-  {
-    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-sem-segundo-administrador",
-    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "LP - Abertura de Filial",
-    "software": "Landing Page",
-    "risco": "Alto",
-    "pendencia": "Sem segundo administrador",
-    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-  },
-  {
-    "id": "68476614-4ea4-4978-a305-6d9df68fd1ea-recuperacao-de-acesso-nao-validada",
-    "recordId": "68476614-4ea4-4978-a305-6d9df68fd1ea",
-    "ativo": "LP - Abertura de Filial",
-    "software": "Landing Page",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
-    "proximaAcao": "Definir com o time o destino oficial dos leads da landing page Abertura de Filial.\n\nImplementar envio real do formulário para CRM, webhook, HubSpot, RD Station, Bitrix, n8n, Make, Google Sheets, e-mail ou outro destino oficial definido.\n\nConfigurar confirmação real de recebimento antes de mostrar a tela de sucesso.\n\nInstalar GTM com GA4, Meta Pixel e conversão do Google Ads, caso a página seja usada em mídia paga.\n\nConfigurar evento de conversão no submit real do formulário.\n\nConfirmar qual domínio será considerado canônico em produção: https://aberturadefilial.investsmart.com.br ou https://aberturadefilial02.lovable.app.\n\nApós corrigir envio, tracking e destino dos leads, atualizar o status para Validado."
-  },
-  {
     "id": "lp-abertura-de-filial-risco-alto",
     "recordId": "lp-abertura-de-filial",
     "ativo": "LP - Abra sua Filial",
@@ -34,6 +7,51 @@
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, profissão/função, tempo de profissão, empresa/instituição, PL/custódia, source Futuro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nInstalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando evento de conversão somente após envio real validado.\n\nConfirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.\n\nApós teste confirmado, atualizar o status para Validado e revisar o risco operacional."
+  },
+  {
+    "id": "lp-bancarios-risco-critico",
+    "recordId": "lp-bancarios",
+    "ativo": "LP - bancarios",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-be-smart-home-plan-risco-critico",
+    "recordId": "lp-be-smart-home-plan",
+    "ativo": "LP - Be Smart Home Plan",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-besmart-parceiros-risco-critico",
+    "recordId": "lp-besmart-parceiros",
+    "ativo": "LP - Be.Smart Parceiros",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-besmart-partner-hub-risco-critico",
+    "recordId": "lp-besmart-partner-hub",
+    "ativo": "LP - Be.Smart Partner Hub",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-besmart-mag-connect-risco-alto",
+    "recordId": "lp-besmart-mag-connect",
+    "ativo": "LP - BeSmart MAG Connect",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
   },
   {
     "id": "lp-best-franquias-risco-alto",
@@ -63,6 +81,15 @@
     "proximaAcao": "Validar fórmula financeira contra referência oficial InvestSmart.\n\nDefinir regra oficial da poupança com Selic/TR e alinhar texto e cálculo.\n\nDefinir fonte oficial e atualização para CDI, Selic e demais taxas.\n\nCorrigir parse decimal.\n\nInstalar/validar GTM e GA4 e rastrear o funil completo.\n\nCorrigir tratamento de erro do CTA do assessor.\n\nImplementar proteção anti-spam e mitigar formula injection.\n\nDefinir consentimento e política LGPD.\n\nCompletar SEO técnico.\n\nMedir Lighthouse/Core Web Vitals.\n\nConfirmar nomenclatura oficial do ativo."
   },
   {
+    "id": "lp-elite-path-finder-risco-critico",
+    "recordId": "lp-elite-path-finder",
+    "ativo": "LP - Elite Path Finder",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
     "id": "lp-maracana-flamengo-samyr-risco-alto",
     "recordId": "lp-maracana-flamengo-samyr",
     "ativo": "LP - Flamengo - Samyr",
@@ -90,6 +117,24 @@
     "proximaAcao": "Validar com a Contabilidade como serão operacionalizados e contabilizados os pagamentos do programa Indique e Ganhe.\n\nRealizar teste real de lead na LP Indique e Ganhe e confirmar se o cadastro aparece na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.\n\nConfirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, cidade/UF, source Dinheiro, campanha, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.\n\nValidar o SLA prometido de 48h úteis na página.\n\nInstalar ou validar GTM, GA4, Meta Pixel e evento de conversão somente após envio real confirmado.\n\nApós validação contábil e teste técnico confirmado, atualizar o status para Validado e revisar o risco operacional."
   },
   {
+    "id": "lp-investsmart-flow-risco-critico",
+    "recordId": "lp-investsmart-flow",
+    "ativo": "LP - InvestSmart Flow",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-investsmart-ride-risco-critico",
+    "recordId": "lp-investsmart-ride",
+    "ativo": "LP - InvestSmart Ride",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
     "id": "lp-live-ao-vivo-melhor-profissao-risco-alto",
     "recordId": "lp-live-ao-vivo-melhor-profissao",
     "ativo": "LP - Live ao Vivo / Melhor Profissão",
@@ -97,6 +142,15 @@
     "risco": "Alto",
     "pendencia": "Risco Alto",
     "proximaAcao": "Validar com Tecnologia o link e ID da planilha Google Sheets usada pela LP Live ao Vivo.\n\nConfirmar quem possui acesso à aba Leads e quem acompanha os novos cadastros.\n\nDefinir responsável operacional e SLA de atendimento dos leads.\n\nAvaliar criação de destino redundante, como banco, fila, webhook n8n ou CRM oficial, para reduzir dependência exclusiva do Google Sheets.\n\nImplementar retry ou alerta de falha caso a gravação na planilha não ocorra.\n\nCom Marketing, definir a UTM/parâmetro Quero Mudar ou Queromudar e incluir esse identificador no payload como source/campanha.\n\nInstrumentar tracking de conversão com GTM, GA4 e/ou Meta Pixel na página /obrigado, disparando evento apenas após envio real confirmado.\n\nAvaliar captura adicional de utm_term, utm_content, gclid, fbclid e referrer."
+  },
+  {
+    "id": "lp-tatiana-guedes-risco-critico",
+    "recordId": "lp-tatiana-guedes",
+    "ativo": "LP - LP TATIANA GUEDES",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
   },
   {
     "id": "lp-maracana-glow-experience-risco-alto",
@@ -108,13 +162,22 @@
     "proximaAcao": "Implementar integração adicional para que os leads captados pelo Bitrix24 também sejam gravados no Google Sheets informado.\n\nValidar se a integração será feita via automação Bitrix, webhook, n8n, Google Apps Script, worker ou outro conector.\n\nApós implementação, realizar teste real de lead e confirmar se o cadastro aparece tanto no Bitrix24 quanto na planilha Google Sheets.\n\nConfirmar quais campos serão gravados na planilha: data/hora, nome, WhatsApp, e-mail, campanha, palavra-chave Torcedor, origem/source, pageUrl, UTMs, status no Bitrix, responsável e observações.\n\nConfirmar se Jorge e/ou Samyr possuem acesso ou recebem notificação dos leads no Bitrix24 e na planilha.\n\nConfigurar ou validar captura de UTMs e origem dentro do Bitrix24.\n\nImplementar ou validar evento Lead do Meta Pixel após confirmação real de envio do formulário Bitrix.\n\nCriar fallback visual caso o embed Bitrix24 não carregue.\n\nApós teste confirmado, atualizar o status da integração Google Sheets para Validado."
   },
   {
-    "id": "lp-patrocinio-smart-summit-samyr-risco-alto",
+    "id": "lp-patrocinio-smart-summit-samyr-risco-critico",
     "recordId": "lp-patrocinio-smart-summit-samyr",
     "ativo": "LP - Patrocínio Smart Summit - Samyr",
     "software": "Landing Page",
-    "risco": "Alto",
-    "pendencia": "Risco Alto",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
     "proximaAcao": "Realizar novo teste de lead na LP Patrocínio Smart Summit usando dados de auditoria.\n\nConfirmar se o lead chega na planilha Google Sheets informada.\n\nValidar qual camada faz o envio para a planilha: formulário direto, worker, webhook, n8n, Google Apps Script ou outro conector.\n\nConfirmar quais campos estão sendo gravados na planilha e se incluem nome, WhatsApp, e-mail, source, palavra-chave, pageUrl, UTMs e data de envio.\n\nDefinir quem acompanha a planilha e garantir visibilidade para Jorge e/ou Samyr.\n\nApós confirmação do teste real, atualizar o status para Validado e reduzir o risco operacional."
+  },
+  {
+    "id": "lp-planeja-brasil-risco-critico",
+    "recordId": "lp-planeja-brasil",
+    "ativo": "LP - Planeja Brasil",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
   },
   {
     "id": "lp-planeja-brasil-organico-risco-alto",
@@ -144,6 +207,15 @@
     "proximaAcao": "Registrar separadamente o source 201, o webhook n8n, o Meta Pixel e o GTM. Validar no n8n se os leads estão chegando corretamente com source 201 e confirmar destino final do fluxo."
   },
   {
+    "id": "lp-profissao-de-elite-2-risco-critico",
+    "recordId": "lp-profissao-de-elite-2",
+    "ativo": "LP - Profissao de Elite - 2",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
     "id": "lp-profissao-elite-cidades-brasil-risco-alto",
     "recordId": "lp-profissao-elite-cidades-brasil",
     "ativo": "LP - Profissão de Elite - Cidades do Brasil",
@@ -162,6 +234,51 @@
     "proximaAcao": "Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.\n\nPrioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.\n\nPrioridade 3: completar persistência de UTMs, pageUrl e consentimento.\n\nPrioridade 4: mitigar formula injection, spam e reforçar validação server-side.\n\nPrioridade 5: completar LGPD e SEO técnico.\n\nPendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada."
   },
   {
+    "id": "lp-remix-of-profissao-de-elite-3-risco-critico",
+    "recordId": "lp-remix-of-profissao-de-elite-3",
+    "ativo": "LP - Remix of Profissao de Elite - 3",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-render-facil-simulador-risco-critico",
+    "recordId": "lp-render-facil-simulador",
+    "ativo": "LP - render-facil-simulador",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-smart-campus-risco-critico",
+    "recordId": "lp-smart-campus",
+    "ativo": "LP - Smart Campus",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
+    "id": "lp-smart-campus-investsmart-xp-risco-alto",
+    "recordId": "lp-smart-campus-investsmart-xp",
+    "ativo": "LP - Smart Campus - InvestSmart XP",
+    "software": "Landing Page",
+    "risco": "Alto",
+    "pendencia": "Risco Alto",
+    "proximaAcao": "Condicionar mensagem de sucesso à resposta HTTP 200 real; tratar erros visualmente; capturar e persistir UTMs, gclid, fbclid e pageUrl; instalar GTM, GA4 e Meta Pixel com conversão pós-sucesso; criar fallback de persistência; adicionar honeypot e rate limiting; restringir CORS; inserir Política de Privacidade e Compliance oficiais; definir domínio customizado/publicação e realizar teste real de ponta a ponta antes de liberar tráfego pago."
+  },
+  {
+    "id": "lp-smart-conecta-renda-extra-facil-risco-critico",
+    "recordId": "lp-smart-conecta-renda-extra-facil",
+    "ativo": "LP - Smart Conecta: Renda Extra Fácil",
+    "software": "Landing Page",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
+  },
+  {
     "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
     "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
     "ativo": "Lovable",
@@ -178,42 +295,6 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
-  },
-  {
-    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-risco-critico",
-    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
-    "ativo": "LP - Convite Smart Carreiras - Samyr",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7-quem-recebe-o-codigo-a-validar",
-    "recordId": "d534d5c6-dfb0-4c13-abf6-daa22da8dee7",
-    "ativo": "LP - Convite Smart Carreiras - Samyr",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "63aae663-7671-4dc1-9460-f5549d9acd77-risco-critico",
-    "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
-    "ativo": "LP - Smart Carreiras",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.\n\nConfirmar se será implementado GTM e GA4 para governança de tracking.\n\nValidar propriedades do formulário no HubSpot, especialmente pl__custodia.\n\nApós validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
-  },
-  {
-    "id": "63aae663-7671-4dc1-9460-f5549d9acd77-quem-recebe-o-codigo-a-validar",
-    "recordId": "63aae663-7671-4dc1-9460-f5549d9acd77",
-    "ativo": "LP - Smart Carreiras",
-    "software": "Lovable",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Configurar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar o carregamento do Pixel 328736425190714 no domínio público https://smartcarreiras.com.br/.\n\nConfirmar se será implementado GTM e GA4 para governança de tracking.\n\nValidar propriedades do formulário no HubSpot, especialmente pl__custodia.\n\nApós validar tracking, formulário e recebimento dos leads no HubSpot, atualizar o status para Validado."
   },
   {
     "id": "caefec84-dcc9-4263-ac44-378e0191836a-risco-critico",
@@ -240,33 +321,6 @@
     "software": "Make",
     "risco": "Alto",
     "pendencia": "Sem segundo administrador",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-risco-critico",
-    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-quem-recebe-o-codigo-a-validar",
-    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "A validar"
-  },
-  {
-    "id": "f120ccfe-dd78-4d18-a9d7-594f1f931a76-recuperacao-de-acesso-nao-validada",
-    "recordId": "f120ccfe-dd78-4d18-a9d7-594f1f931a76",
-    "ativo": "Make",
-    "software": "Make",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
     "proximaAcao": "A validar"
   },
   {
@@ -322,5 +376,32 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-risco-critico",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senha",
+    "software": "Senha",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-quem-recebe-o-codigo-a-validar",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senha",
+    "software": "Senha",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-recuperacao-de-acesso-nao-validada",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senha",
+    "software": "Senha",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
   }
 ]

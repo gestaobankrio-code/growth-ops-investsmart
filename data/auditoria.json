@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1793390625178-009411d1a5f68",
+    "date": "2026-10-30T20:03:45.178Z",
+    "issueNumber": 85,
+    "action": "Validar",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "software": "Senha",
+    "ativo": "Senha",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1793199522611-89bdf33584e03",
     "date": "2026-10-28T14:58:42.611Z",
     "issueNumber": 83,
