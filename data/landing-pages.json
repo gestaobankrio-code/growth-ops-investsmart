@@ -897,7 +897,8 @@
       "gtmId": "GTM-TSMQ7JH",
       "formProvider": "Bitrix24",
       "documentationPath": "docs/landing-pages/lp-planeja-brasil-samyr.md",
-      "documentationStatus": "Disponível no repositório"
+      "documentationStatus": "Disponível no repositório",
+      "lovableProjectId": "bb8b9299-f6c0-449f-b58e-fe3189e749e0"
     },
     "createdAt": "2026-08-21T15:19:07.218Z",
     "updatedAt": "2026-10-30T18:20:00.000Z"

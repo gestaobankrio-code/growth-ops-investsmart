@@ -1,0 +1,85 @@
+name: Sync Lovable Growth Ops
+
+on:
+  repository_dispatch:
+    types: [lovable_sync, sync_project, lp_updated]
+
+  workflow_dispatch:
+    inputs:
+      lovableProjectId:
+        description: 'Lovable Project ID (UUID)'
+        required: false
+        type: string
+      projectPayload:
+        description: 'Payload JSON com dados do projeto'
+        required: false
+        type: string
+      force:
+        description: 'Forçar sincronização'
+        required: false
+        type: boolean
+        default: false
+
+  schedule:
+    # Executa a cada 6 horas como fallback para integridade e reconciliação
+    - cron: '0 */6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-lovable:
+    # Proteção contra loop: ignora commits automáticos de sincronização
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Executar sincronização Lovable
+        id: run_sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/sync-lovable-growth-ops.mjs
+
+      - name: Validação obrigatória pré-commit
+        run: |
+          node scripts/sync-lovable-growth-ops.mjs --validate-only
+
+      - name: Commitar alterações com proteção contra loop
+        run: |
+          if git diff --quiet -- data/ docs/ exports/ *.md; then
+            echo "Nenhuma alteração detectada. Repositório já sincronizado."
+            exit 0
+          fi
+
+          git config user.name "growth-ops-bot"
+          git config user.email "growth-ops-bot@users.noreply.github.com"
+
+          git add data/*.json docs/landing-pages/*.md exports/*.csv *.md
+
+          # Extrair identificador do projeto caso disponível no evento
+          PROJECT_NAME=""
+          if [ -n "${{ github.event.client_payload.nome }}" ]; then
+            PROJECT_NAME="${{ github.event.client_payload.nome }}"
+          elif [ -n "${{ github.event.client_payload.lovableProjectId }}" ]; then
+            PROJECT_NAME="${{ github.event.client_payload.lovableProjectId }}"
+          elif [ -n "${{ github.event.inputs.lovableProjectId }}" ]; then
+            PROJECT_NAME="${{ github.event.inputs.lovableProjectId }}"
+          else
+            PROJECT_NAME="Marketing"
+          fi
+
+          COMMIT_MSG="Growth Ops: sincroniza alterações Lovable - ${PROJECT_NAME} [skip ci]"
+
+          git commit -m "$COMMIT_MSG"
+          git push

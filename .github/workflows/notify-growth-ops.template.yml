@@ -1,0 +1,59 @@
+# Template de Workflow para os Repositórios das Landing Pages
+# Copie este arquivo para .github/workflows/notify-growth-ops.yml em cada repositório de LP conectado ao Lovable.
+#
+# Pré-requisito:
+# Cadastrar a secret 'GROWTH_OPS_PAT' no repositório da LP (ou no nível da organização gestaobankrio-code).
+# O token precisa de permissão de escrita de workflows/repositórios para disparar repository_dispatch no growth-ops-investsmart.
+
+name: Notificar Growth Ops (Sync Lovable)
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - 'lovable-sync*'
+
+jobs:
+  dispatch-to-growth-ops:
+    # Não disparar para commits de robôs de sync para evitar loops
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Identificar metadados do projeto Lovable
+        id: meta
+        run: |
+          # 1. Tentar ler lovableProjectId do arquivo de configuração ou package.json
+          LOVABLE_ID=""
+          if [ -f ".lovable" ]; then
+            LOVABLE_ID=$(cat .lovable | grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' | head -n 1)
+          fi
+          if [ -z "$LOVABLE_ID" ] && [ -f "lovable.json" ]; then
+            LOVABLE_ID=$(grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' lovable.json | head -n 1)
+          fi
+          # Fallback para secrets ou repositório
+          if [ -z "$LOVABLE_ID" ]; then
+            LOVABLE_ID="${{ secrets.LOVABLE_PROJECT_ID }}"
+          fi
+
+          echo "lovable_id=$LOVABLE_ID" >> $GITHUB_OUTPUT
+          echo "commit_sha=${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Disparar evento no Growth Ops Central
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GROWTH_OPS_PAT }}
+          repository: gestaobankrio-code/growth-ops-investsmart
+          event-type: lovable_sync
+          client-payload: >-
+            {
+              "lovableProjectId": "${{ steps.meta.outputs.lovable_id }}",
+              "githubRepository": "${{ github.repository }}",
+              "commitSha": "${{ github.sha }}",
+              "ref": "${{ github.ref }}",
+              "commitMessage": "${{ github.event.head_commit.message }}"
+            }
