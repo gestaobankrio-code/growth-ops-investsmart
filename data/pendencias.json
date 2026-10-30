@@ -369,6 +369,33 @@
     "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
   },
   {
+    "id": "senha-marketing-redes-sociais-icloud-risco-critico",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senhas",
+    "software": "Outro",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-quem-recebe-o-codigo-a-validar",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senhas",
+    "software": "Outro",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-recuperacao-de-acesso-nao-validada",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senhas",
+    "software": "Outro",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
     "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
     "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
     "ativo": "Página de obrigado universal investSmart",
@@ -376,32 +403,5 @@
     "risco": "Crítico",
     "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
-  },
-  {
-    "id": "senha-marketing-redes-sociais-icloud-risco-critico",
-    "recordId": "senha-marketing-redes-sociais-icloud",
-    "ativo": "Senha",
-    "software": "Senha",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
-  },
-  {
-    "id": "senha-marketing-redes-sociais-icloud-quem-recebe-o-codigo-a-validar",
-    "recordId": "senha-marketing-redes-sociais-icloud",
-    "ativo": "Senha",
-    "software": "Senha",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
-  },
-  {
-    "id": "senha-marketing-redes-sociais-icloud-recuperacao-de-acesso-nao-validada",
-    "recordId": "senha-marketing-redes-sociais-icloud",
-    "ativo": "Senha",
-    "software": "Senha",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
-    "proximaAcao": "Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação."
   }
 ]

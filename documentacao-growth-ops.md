@@ -1,6 +1,6 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 30/10/2026, 20:03:45.
+Atualização gerada automaticamente em 30/10/2026, 20:05:54.
 
 ## Resumo executivo
 
@@ -87,9 +87,9 @@ Atualização gerada automaticamente em 30/10/2026, 20:03:45.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
+| Senhas | Outro | Segurança / Senhas / Marketing | Marketing | Validado | Crítico |
 | LP - Página de Obrigado RD Station | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Validado | Médio |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |
-| Senha | Senha | Segurança / Senhas / Marketing | Marketing | Validado | Crítico |
 | Source - Planeja Brasil - Orgânico | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
 | Source - Planeja Brasil - Samyr | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
 | Source - Planeja Brasil - Tráfego Pago | Source / Identificador | Source / Origem de Lead | Marketing | Validado | Baixo |
@@ -139,7 +139,7 @@ Atualização gerada automaticamente em 30/10/2026, 20:03:45.
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
+| Senhas | Outro | Risco Crítico | A validar |
+| Senhas | Outro | Quem recebe o código a validar | A validar |
+| Senhas | Outro | Recuperação de acesso não validada | A validar |
 | Página de obrigado universal investSmart | RD STATION | Quem recebe o código a validar | A validar |
-| Senha | Senha | Risco Crítico | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |
-| Senha | Senha | Quem recebe o código a validar | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |
-| Senha | Senha | Recuperação de acesso não validada | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |

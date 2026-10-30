@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 30/10/2026, 20:03:45.
+Atualizado automaticamente em 30/10/2026, 20:05:54.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@ Atualizado automaticamente em 30/10/2026, 20:03:45.
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Alto | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Alto | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Médio | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
+| Senhas | Outro | Crítico | Risco Crítico | A validar |
+| Senhas | Outro | Crítico | Quem recebe o código a validar | A validar |
+| Senhas | Outro | Médio | Recuperação de acesso não validada | A validar |
 | Página de obrigado universal investSmart | RD STATION | Crítico | Quem recebe o código a validar | A validar |
-| Senha | Senha | Crítico | Risco Crítico | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |
-| Senha | Senha | Crítico | Quem recebe o código a validar | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |
-| Senha | Senha | Médio | Recuperação de acesso não validada | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |

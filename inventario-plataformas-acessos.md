@@ -1,6 +1,6 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 30/10/2026, 20:03:45.
+Atualizado automaticamente em 30/10/2026, 20:05:54.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|
@@ -75,9 +75,9 @@ Atualizado automaticamente em 30/10/2026, 20:03:45.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Validar no n8n se os leads com source UC_UI1PIS estão chegando corretamente e confirmar o destino final do fluxo. |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | IA | Marketing | Marketing | Validado | Sim | Eduardo Alves | Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
+| Senhas | Outro | Segurança / Senhas / Marketing | Marketing | Marketing / Growth | Validado | A validar | A validar | Crítico | A validar |
 | LP - Página de Obrigado RD Station | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Manter documentada a relação das landing pages que utilizam esta página de obrigado.  Validar periodicamente tracking e eventos no ambiente de produção e registrar qualquer mudança de URL ou regra de conversão no Growth Ops. |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Marketing | Validado | Não aplicável | A validar | Baixo | A validar |
-| Senha | Senha | Segurança / Senhas / Marketing | Marketing | Marketing / Growth | Validado | A validar | A validar | Crítico | Informar o link com as senhas. Validar quem possui acesso ao arquivo/cofre, segundo administrador, método de 2FA e processo de recuperação. |
 | Source - Planeja Brasil - Orgânico | Source / Identificador | Source / Origem de Lead | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Baixo | Validar no n8n se os leads da landing page Planeja Brasil - Orgânico estão chegando corretamente com source UC_QZ91TG. |
 | Source - Planeja Brasil - Samyr | Source / Identificador | Source / Origem de Lead | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Baixo | Validar no n8n se os leads da landing page Planeja Brasil - Samyr estão chegando corretamente com source UC_UI1PIS. |
 | Source - Planeja Brasil - Tráfego Pago | Source / Identificador | Source / Origem de Lead | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Baixo | Validar no n8n se os leads da landing page Planeja Brasil - Tráfego Pago estão chegando corretamente com source 201. |
