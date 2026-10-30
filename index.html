@@ -3007,22 +3007,12 @@
 
         return;
       } catch (error) {
-        console.warn('Não foi possível carregar a base oficial. Usando cache local ou dados iniciais.', error);
-
-        try {
-          const stored = localStorage.getItem(storageKey);
-          records = stored ? JSON.parse(stored) : defaultRecords();
-        } catch (storageError) {
-          records = defaultRecords();
-        }
-
-        persistRecords();
+        console.error('Falha ao carregar a base oficial.', error);
+        records = [];
         renderTable();
         await loadHealthData(false);
-
-        if (showMessage) {
-          alert('Painel atualizado com os dados disponíveis localmente.');
-        }
+        const message = 'ERRO: data/registros.json não pôde ser carregado. Cache antigo foi bloqueado para evitar dados incorretos.';
+        if (showMessage) alert(message);
       }
     }
 
@@ -3997,7 +3987,10 @@
         lastValidation: document.getElementById('lastValidation').value.trim() || 'A validar',
         obs: document.getElementById('observations').value.trim(),
         next: document.getElementById('nextAction').value.trim() || 'A validar',
-        extra: collectExtraValues(),
+        extra: {
+          ...(existingRecord && existingRecord.extra ? existingRecord.extra : {}),
+          ...collectExtraValues()
+        },
         createdAt: existingRecord?.createdAt || now,
         updatedAt: now
       };
@@ -4111,6 +4104,26 @@
       document.getElementById('recordModal').classList.remove('open');
     }
 
+        async function loadTechnicalDocumentation(record) {
+      const target = document.getElementById('technicalDocumentationContent');
+      if (!target) return;
+      const extra = record.extra || {};
+      const path = extra.documentationPath || (isLandingPageRecord(record) ? `docs/landing-pages/${record.id}.md` : '');
+      if (!path) {
+        target.textContent = 'Documentação técnica não aplicável a este registro.';
+        return;
+      }
+      target.textContent = 'Carregando documentação técnica...';
+      try {
+        const response = await fetch(`${path}?v=${Date.now()}`, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        target.textContent = await response.text();
+      } catch (error) {
+        console.error('Erro ao carregar documentação técnica', error);
+        target.textContent = `Documentação técnica não disponível: ${path}`;
+      }
+    }
+
     function openDetails(id) {
       const record = records.find(item => item.id === id);
       if (!record) return;
@@ -4173,10 +4186,19 @@
             ${detailItem('Próxima ação', record.next || 'A validar', true)}
           </div>
         </div>
+
+        <div class="detail-section">
+          <h3>Documentação técnica completa</h3>
+          <div class="detail-item full">
+            <small>Arquivo técnico</small>
+            <pre id="technicalDocumentationContent" style="white-space:pre-wrap;word-break:break-word;margin:10px 0 0;font:inherit;font-weight:400;line-height:1.55;max-height:55vh;overflow:auto;">Carregando...</pre>
+          </div>
+        </div>
       `;
 
       document.getElementById('detailsDeleteButton').style.display = record.status === 'Reprovado' ? 'inline-flex' : 'none';
       document.getElementById('detailsModal').classList.add('open');
+      loadTechnicalDocumentation(record);
     }
 
     function detailItem(label, value, full = false) {
