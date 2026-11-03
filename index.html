@@ -3901,6 +3901,7 @@
 
     function clearForm() {
       document.getElementById('editingId').value = '';
+      configureActionMode(false);
       document.getElementById('assetAction').value = 'Criar';
       document.getElementById('assetSoftware').value = 'Make';
       document.getElementById('assetName').value = '';
@@ -3927,9 +3928,24 @@
       onSoftwareChange(null, false);
     }
 
+    function configureActionMode(isEditing) {
+      const select = document.getElementById('assetAction');
+
+      Array.from(select.options).forEach(option => {
+        if (option.value === 'Criar') {
+          option.disabled = isEditing;
+        }
+      });
+
+      if (isEditing) {
+        select.value = 'Atualizar';
+      }
+    }
+
     function setForm(record) {
       document.getElementById('editingId').value = record.id;
-      document.getElementById('assetAction').value = record.action || 'Atualizar';
+      configureActionMode(true);
+      document.getElementById('assetAction').value = 'Atualizar';
       document.getElementById('assetSoftware').value = record.software || 'Outro';
       document.getElementById('assetName').value = record.ativo || '';
       document.getElementById('assetCategory').value = record.categoria || '';
@@ -3959,13 +3975,19 @@
       const software = document.getElementById('assetSoftware').value;
       const profile = softwareProfiles[software] || softwareProfiles.Outro;
       const editingId = document.getElementById('editingId').value;
+      const selectedAction = document.getElementById('assetAction').value;
+
+      const safeAction =
+        editingId && selectedAction === 'Criar'
+          ? 'Atualizar'
+          : selectedAction;
       const existingRecord = editingId ? records.find(item => item.id === editingId) : null;
       const now = new Date().toISOString();
 
       return {
         schema: 'growth-ops-record-v2',
         id: editingId || cryptoRandomId(),
-        action: document.getElementById('assetAction').value,
+        action: safeAction,
         software,
         ativo: document.getElementById('assetName').value.trim() || software,
         categoria: document.getElementById('assetCategory').value.trim() || profile.category,
