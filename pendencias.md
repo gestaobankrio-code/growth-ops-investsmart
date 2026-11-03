@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 30/10/2026, 20:05:54.
+Atualizado automaticamente em 03/11/2026, 14:44:57.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
@@ -41,6 +41,9 @@ Atualizado automaticamente em 30/10/2026, 20:05:54.
 | Make | Make | Crítico | Quem recebe o código a validar | A validar |
 | Make | Make | Alto | Sem segundo administrador | A validar |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Crítico | Quem recebe o código a validar | Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.  Confirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.  Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.  Após validação do evento de conversão, atualizar o status do registro para Validado. |
+| n8n InvestSmart | n8n | Crítico | Risco Crítico | Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos. |
+| n8n InvestSmart | n8n | Crítico | Quem recebe o código a validar | Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos. |
+| n8n InvestSmart | n8n | Médio | Recuperação de acesso não validada | Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos. |
 | Webhook n8n - Planeja Brasil - Orgânico | n8n | Alto | Risco Alto | Validar no n8n se os leads com source UC_QZ91TG estão chegando corretamente e confirmar o destino final do fluxo. Avaliar fallback, retry e proteção anti-spam. |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Alto | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Alto | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |

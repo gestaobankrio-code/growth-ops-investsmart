@@ -333,6 +333,33 @@
     "proximaAcao": "Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.\n\nConfirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.\n\nAvaliar implementação futura via GTM e GA4 para melhorar governança de tracking.\n\nApós validação do evento de conversão, atualizar o status do registro para Validado."
   },
   {
+    "id": "n8n-investsmart-risco-critico",
+    "recordId": "n8n-investsmart",
+    "ativo": "n8n InvestSmart",
+    "software": "n8n",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
+  },
+  {
+    "id": "n8n-investsmart-quem-recebe-o-codigo-a-validar",
+    "recordId": "n8n-investsmart",
+    "ativo": "n8n InvestSmart",
+    "software": "n8n",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
+  },
+  {
+    "id": "n8n-investsmart-recuperacao-de-acesso-nao-validada",
+    "recordId": "n8n-investsmart",
+    "ativo": "n8n InvestSmart",
+    "software": "n8n",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
+  },
+  {
     "id": "webhook-n8n-planeja-brasil-organico-risco-alto",
     "recordId": "webhook-n8n-planeja-brasil-organico",
     "ativo": "Webhook n8n - Planeja Brasil - Orgânico",

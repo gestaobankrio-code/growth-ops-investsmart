@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1793717097537-fa746e58cc7fb",
+    "date": "2026-11-03T14:44:57.537Z",
+    "issueNumber": 90,
+    "action": "Atualizar",
+    "recordId": "n8n-investsmart",
+    "software": "n8n",
+    "ativo": "n8n InvestSmart",
+    "statusBefore": "A validar",
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1793390754560-35dc36685e149",
     "date": "2026-10-30T20:05:54.560Z",
     "issueNumber": 86,
