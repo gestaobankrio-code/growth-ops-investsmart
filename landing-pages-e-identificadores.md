@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 06/11/2026, 14:11:00.
+Atualizado automaticamente em 06/11/2026, 14:28:39.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -65,3 +65,4 @@ Atualizado automaticamente em 06/11/2026, 14:11:00.
 | LP - smartcarreiras-samyr |  | https://convite.smartcarreiras.com.br/ | https://smart-carreiras-samyr.lovable.app | Endpoint HubSpot Forms API v3: https://api.hsforms.com/submissions/v3/integration/submit/21347715/b713217b-****-****-****-************ |  | Ativo (HubSpot API) |
 | LP - smartsummit-miami |  | https://smartsummit-miami.lovable.app |  |  |  | Ativo (DB + Sheets) |
 | LP - Vasco Gigante - Maracanã 20-10 |  | https://maracana-vasco.lovable.app |  |  |  | Ativo (Bitrix + Sheets) |
+| Página de obrigado universal investSmart |  | https://materiais.investsmartxp.com.br/obrigado-is |  |  |  | Validado |

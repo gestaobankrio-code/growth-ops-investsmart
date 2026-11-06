@@ -279,12 +279,84 @@
     "proximaAcao": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais."
   },
   {
+    "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-risco-critico",
+    "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
+    "ativo": "Lovable",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4-quem-recebe-o-codigo-a-validar",
+    "recordId": "58d57ea1-6af6-48c2-b3e5-b69c2dfc7da4",
+    "ativo": "Lovable",
+    "software": "Lovable",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "caefec84-dcc9-4263-ac44-378e0191836a-risco-critico",
+    "recordId": "caefec84-dcc9-4263-ac44-378e0191836a",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "caefec84-dcc9-4263-ac44-378e0191836a-quem-recebe-o-codigo-a-validar",
+    "recordId": "caefec84-dcc9-4263-ac44-378e0191836a",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "caefec84-dcc9-4263-ac44-378e0191836a-sem-segundo-administrador",
+    "recordId": "caefec84-dcc9-4263-ac44-378e0191836a",
+    "ativo": "Make",
+    "software": "Make",
+    "risco": "Alto",
+    "pendencia": "Sem segundo administrador",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "6a25e3c3-7f13-4167-9002-9e4d8cca0564-quem-recebe-o-codigo-a-validar",
+    "recordId": "6a25e3c3-7f13-4167-9002-9e4d8cca0564",
+    "ativo": "Meta Pixel - Smart Carreiras",
+    "software": "Meta Pixel",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.\n\nValidar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.\n\nConfirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.\n\nAvaliar implementação futura via GTM e GA4 para melhorar governança de tracking.\n\nApós validação do evento de conversão, atualizar o status do registro para Validado."
+  },
+  {
     "id": "n8n-investsmart-risco-critico",
     "recordId": "n8n-investsmart",
     "ativo": "n8n InvestSmart",
     "software": "n8n",
     "risco": "Crítico",
     "pendencia": "Risco Crítico",
+    "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
+  },
+  {
+    "id": "n8n-investsmart-quem-recebe-o-codigo-a-validar",
+    "recordId": "n8n-investsmart",
+    "ativo": "n8n InvestSmart",
+    "software": "n8n",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
+  },
+  {
+    "id": "n8n-investsmart-recuperacao-de-acesso-nao-validada",
+    "recordId": "n8n-investsmart",
+    "ativo": "n8n InvestSmart",
+    "software": "n8n",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
     "proximaAcao": "Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos."
   },
   {
@@ -315,12 +387,48 @@
     "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
   },
   {
+    "id": "a1660299-a05e-4049-bdb8-9855897234d1-recuperacao-de-acesso-nao-validada",
+    "recordId": "a1660299-a05e-4049-bdb8-9855897234d1",
+    "ativo": "Claude",
+    "software": "Outro",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
+  },
+  {
     "id": "senha-marketing-redes-sociais-icloud-risco-critico",
     "recordId": "senha-marketing-redes-sociais-icloud",
     "ativo": "Senhas",
     "software": "Outro",
     "risco": "Crítico",
     "pendencia": "Risco Crítico",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-quem-recebe-o-codigo-a-validar",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senhas",
+    "software": "Outro",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "senha-marketing-redes-sociais-icloud-recuperacao-de-acesso-nao-validada",
+    "recordId": "senha-marketing-redes-sociais-icloud",
+    "ativo": "Senhas",
+    "software": "Outro",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "A validar"
+  },
+  {
+    "id": "971f78e2-57b4-46fe-927e-3916b95bcef7-quem-recebe-o-codigo-a-validar",
+    "recordId": "971f78e2-57b4-46fe-927e-3916b95bcef7",
+    "ativo": "Página de obrigado universal investSmart",
+    "software": "RD STATION",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
     "proximaAcao": "A validar"
   }
 ]

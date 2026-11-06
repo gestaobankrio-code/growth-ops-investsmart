@@ -2607,13 +2607,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "app-investsmart-intelligence",
-    "action": "Criar",
+    "action": "Validar",
     "software": "Lovable",
     "ativo": "InvestSmart Intelligence",
     "categoria": "Aplicação / Plataforma",
     "responsavel": "Marketing",
     "area": "Marketing / Growth",
-    "status": "A validar",
+    "status": "Validado",
     "url": "https://investsmart-intelligence.lovable.app",
     "twofa": "Não aplicável",
     "twofaMethod": "Não aplicável",
@@ -2633,7 +2633,7 @@
       "githubRepository": "gestaobankrio-code/investsmart-intelligence"
     },
     "createdAt": "2026-11-06T14:11:00.548Z",
-    "updatedAt": "2026-11-06T14:11:00.549Z"
+    "updatedAt": "2026-11-06T14:28:39.059Z"
   },
   {
     "schema": "growth-ops-record-v2",
