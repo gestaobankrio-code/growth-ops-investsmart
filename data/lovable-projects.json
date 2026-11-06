@@ -669,5 +669,16 @@
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
     "active": true
+  },
+  {
+    "lovableProjectId": "59f4d220-1c73-44be-85dc-800f8b5d8995",
+    "nome": "InvestSmart Intelligence",
+    "githubRepository": "gestaobankrio-code/investsmart-intelligence",
+    "growthOpsRecordId": "app-investsmart-intelligence",
+    "publicUrl": "https://investsmart-intelligence.lovable.app",
+    "status": "A validar",
+    "lastSeenCommit": "4370ddba3a21a8ab19b012652b61e719606ca3c4",
+    "lastSync": "2026-11-06T14:11:00.549Z",
+    "active": true
   }
 ]
