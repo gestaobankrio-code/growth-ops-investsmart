@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 06/11/2026, 14:28:39.
+Atualizado automaticamente em 06/11/2026, 16:35:37.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|

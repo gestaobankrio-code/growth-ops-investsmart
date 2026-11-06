@@ -1,6 +1,6 @@
 # Inventário de Plataformas e Acessos — Growth Ops InvestSmart
 
-Atualizado automaticamente em 06/11/2026, 14:28:39.
+Atualizado automaticamente em 06/11/2026, 16:35:37.
 
 | Ativo | Software | Categoria | Responsável | Área | Status | 2FA | Quem recebe o código | Risco | Próxima ação |
 |---|---|---|---|---|---|---|---|---|---|
@@ -70,6 +70,7 @@ Atualizado automaticamente em 06/11/2026, 14:28:39.
 | InvestSmart Intelligence | Lovable | Aplicação / Plataforma | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Validar acessos, integrações e responsáveis da aplicação. |
 | Lovable | Lovable | Licença / Plataforma de Desenvolvimento | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |
 | Make | Make | Automação / Integração | Marketing | Marketing | Validado | Não aplicável | A validar | Crítico | A validar |
+| Meta Pixel - ISDay | Meta Pixel | Tracking / Meta Pixel / ISDay | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Validar a instalação em produção em todas as páginas ISDay (uma única vez por página, sem duplicar o código), confirmar o Dataset ID e avaliar CAPI/deduplicação. |
 | Meta Pixel - Planeja Brasil | Meta Pixel | Tracking / Meta Pixel | Marketing | Marketing / Growth | Validado | Não aplicável | Não aplicável | Médio | Validar no Gerenciador de Eventos se PageView e Lead estão chegando corretamente por domínio e confirmar se há deduplicação ou CAPI planejada. |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Tracking / Mensuração | Marketing | Marketing / Growth | Validado | Não aplicável | A validar | Baixo | Adicionar o disparo do evento Meta Lead ou CompleteRegistration após o envio bem-sucedido do formulário, antes do redirecionamento para WhatsApp.  Validar no Meta Pixel Helper e no Gerenciador de Eventos da Meta se o Pixel 328736425190714 carrega corretamente no domínio https://smartcarreiras.com.br/.  Confirmar se o evento PageView está ativo e testar o disparo do evento Lead após submissão do formulário.  Avaliar implementação futura via GTM e GA4 para melhorar governança de tracking.  Após validação do evento de conversão, atualizar o status do registro para Validado. |
 | n8n InvestSmart | n8n | Automação / Integração | Eduardo Amaral | Tecnologia / Automação | A validar | A validar | A validar | Crítico | Validar 2FA, método de recuperação, segundo administrador, responsável técnico definitivo e inventário dos workflows ativos. |

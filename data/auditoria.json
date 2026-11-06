@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1793982937756-a384b78703801",
+    "date": "2026-11-06T16:35:37.756Z",
+    "issueNumber": 92,
+    "action": "Validar",
+    "recordId": "meta-pixel-isday",
+    "software": "Meta Pixel",
+    "ativo": "Meta Pixel - ISDay",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1793975319059-c70ae414ba0f6",
     "date": "2026-11-06T14:28:39.059Z",
     "issueNumber": 91,

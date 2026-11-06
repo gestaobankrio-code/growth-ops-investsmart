@@ -1,13 +1,13 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 06/11/2026, 14:28:39.
+Atualização gerada automaticamente em 06/11/2026, 16:35:37.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 79 |
-| Validados | 26 |
+| Registros ativos | 80 |
+| Validados | 27 |
 | A validar | 8 |
 | Risco alto/crítico | 38 |
 | Sem 2FA | 0 |
@@ -82,6 +82,7 @@ Atualização gerada automaticamente em 06/11/2026, 14:28:39.
 | InvestSmart Intelligence | Lovable | Aplicação / Plataforma | Marketing | Validado | Médio |
 | Lovable | Lovable | Licença / Plataforma de Desenvolvimento | Marketing | Validado | Crítico |
 | Make | Make | Automação / Integração | Marketing | Validado | Crítico |
+| Meta Pixel - ISDay | Meta Pixel | Tracking / Meta Pixel / ISDay | Marketing | Validado | Médio |
 | Meta Pixel - Planeja Brasil | Meta Pixel | Tracking / Meta Pixel | Marketing | Validado | Médio |
 | Meta Pixel - Smart Carreiras | Meta Pixel | Tracking / Mensuração | Marketing | Validado | Baixo |
 | n8n InvestSmart | n8n | Automação / Integração | Eduardo Amaral | A validar | Crítico |
