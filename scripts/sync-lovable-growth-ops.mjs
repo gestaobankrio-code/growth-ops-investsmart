@@ -114,7 +114,9 @@ export function conservativeMerge(existing, incoming) {
   // Atualizar campos top-level se informados e válidos
   if (incoming.nome || incoming.ativo) {
     const rawName = incoming.nome || incoming.ativo;
-    merged.ativo = rawName.startsWith('LP - ') ? rawName : `LP - ${rawName}`;
+    merged.ativo = (merged.software && merged.software !== 'Landing Page')
+      ? rawName.replace(/^LP - /, '')
+      : (rawName.startsWith('LP - ') ? rawName : `LP - ${rawName}`);
   }
   if (incoming.publicUrl || incoming.url) {
     merged.url = incoming.publicUrl || incoming.url;
@@ -608,7 +610,10 @@ export function syncProject(payload, rootDir = defaultRoot) {
   } else {
     // CRIAÇÃO DE NOVO PROJETO
     isNew = true;
-    let baseSlug = 'lp-' + slugify(payload.nome || payload.ativo || 'novo-projeto');
+    // Classificação: Landing Page por padrão; aplicação/plataforma quando o payload indicar
+    const isApp = /aplica|plataforma|app/i.test(String(payload.tipo || payload.categoria || '')) ||
+      (payload.software && payload.software !== 'Landing Page');
+    let baseSlug = (isApp ? 'app-' : 'lp-') + slugify(payload.nome || payload.ativo || 'novo-projeto');
     targetRecordId = baseSlug;
 
     // Garantir ID único sem sobrescrever existente
@@ -616,15 +621,15 @@ export function syncProject(payload, rootDir = defaultRoot) {
       targetRecordId = `${baseSlug}-${lovableId.slice(0, 8)}`;
     }
 
-    const docRelativePath = `docs/landing-pages/${targetRecordId}.md`;
+    const docRelativePath = isApp ? null : `docs/landing-pages/${targetRecordId}.md`;
 
     updatedRecord = {
       schema: 'growth-ops-record-v2',
       id: targetRecordId,
       action: 'Criar',
-      software: 'Landing Page',
-      ativo: payload.nome ? (payload.nome.startsWith('LP - ') ? payload.nome : `LP - ${payload.nome}`) : `LP - ${targetRecordId}`,
-      categoria: payload.categoria || 'Landing Page',
+      software: isApp ? (payload.software && payload.software !== 'Landing Page' ? payload.software : 'Lovable') : 'Landing Page',
+      ativo: isApp ? (payload.nome || targetRecordId) : (payload.nome ? (payload.nome.startsWith('LP - ') ? payload.nome : `LP - ${payload.nome}`) : `LP - ${targetRecordId}`),
+      categoria: payload.categoria || (isApp ? 'Aplicação / Plataforma' : 'Landing Page'),
       responsavel: payload.responsavel || 'Marketing',
       area: 'Marketing / Growth',
       status: payload.status || 'A validar',
@@ -640,8 +645,8 @@ export function syncProject(payload, rootDir = defaultRoot) {
       manualRisk: 'Automático',
       lastValidation: new Date().toLocaleDateString('pt-BR'),
       obs: `Projeto Lovable sincronizado automaticamente via pipeline Growth Ops. Project ID: ${lovableId}.`,
-      next: 'Validar formulário, tracking e destino dos leads capturados.',
-      extra: {
+      next: isApp ? 'Validar acessos, integrações e responsáveis da aplicação.' : 'Validar formulário, tracking e destino dos leads capturados.',
+      extra: isApp ? { lovableProjectId: lovableId, tipo: 'Aplicação / Plataforma' } : {
         lovableProjectId: lovableId,
         documentationPath: docRelativePath,
         documentationStatus: 'Disponível no repositório'
@@ -671,8 +676,11 @@ export function syncProject(payload, rootDir = defaultRoot) {
   records = sortRecords(records);
 
   // Atualizar documentação individual
-  const docPath = updatedRecord.extra?.documentationPath || `docs/landing-pages/${targetRecordId}.md`;
-  updateDocumentationMarkdown(docPath, updatedRecord, payload, rootDir);
+  // Documentação em docs/landing-pages/ somente para Landing Pages
+  if (updatedRecord.software === 'Landing Page') {
+    const docPath = updatedRecord.extra?.documentationPath || `docs/landing-pages/${targetRecordId}.md`;
+    updateDocumentationMarkdown(docPath, updatedRecord, payload, rootDir);
+  }
 
   // Atualizar todos os arquivos derivados e JSONs
   updateDerivedFiles(records, manifest, rootDir);
