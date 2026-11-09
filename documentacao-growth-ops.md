@@ -1,13 +1,13 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 06/11/2026, 16:35:37.
+Atualização gerada automaticamente em 09/11/2026, 18:37:33.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 80 |
-| Validados | 27 |
+| Registros ativos | 81 |
+| Validados | 28 |
 | A validar | 8 |
 | Risco alto/crítico | 38 |
 | Sem 2FA | 0 |
@@ -90,6 +90,7 @@ Atualização gerada automaticamente em 06/11/2026, 16:35:37.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
+| POP-001 - Governança de Ativos Meta (BMs, Contas e WhatsApp) | Outro | Governança / Documentação / Ativos Meta | Marketing / Growth Ops | Validado | A VALIDAR |
 | Senhas | Outro | Segurança / Senhas / Marketing | Marketing | Validado | Crítico |
 | LP - Página de Obrigado RD Station | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Validado | Médio |
 | Página de obrigado universal investSmart | RD STATION | Landing Page / Página de Obrigado | Philipe Coutinho | Validado | Baixo |

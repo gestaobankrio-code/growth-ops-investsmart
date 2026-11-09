@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1794249453127-22a5227020d93",
+    "date": "2026-11-09T18:37:33.127Z",
+    "issueNumber": 93,
+    "action": "Validar",
+    "recordId": "pop-001-governanca-ativos-meta",
+    "software": "Outro",
+    "ativo": "POP-001 - Governança de Ativos Meta (BMs, Contas e WhatsApp)",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1793982937756-a384b78703801",
     "date": "2026-11-06T16:35:37.756Z",
     "issueNumber": 92,
