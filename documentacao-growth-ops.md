@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 09/11/2026, 18:37:33.
+Atualização gerada automaticamente em 09/11/2026, 18:48:00.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 81 |
-| Validados | 28 |
-| A validar | 8 |
+| Validados | 29 |
+| A validar | 7 |
 | Risco alto/crítico | 38 |
 | Sem 2FA | 0 |
 
@@ -63,7 +63,7 @@ Atualização gerada automaticamente em 09/11/2026, 18:37:33.
 | LP - Planeja Brasil Samyr | Landing Page | LP Planejamento | A VALIDAR | Ativo (n8n Webhook) | A VALIDAR |
 | LP - Profissao de Elite - 2 | Landing Page | LP Carreira | A VALIDAR | Mock confirmado / Perda de leads | Crítico |
 | LP - Profissão de Elite - Cidades do Brasil | Landing Page | Landing Page / Smart Carreiras | Marketing | A validar | Alto |
-| LP - Raio-X Diagnóstico Patrimonial | Landing Page | Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial | A validar | A validar | Alto |
+| LP - Raio-X Diagnóstico Patrimonial | Landing Page | Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial | A validar | Validado | Alto |
 | LP - Recruta Day betratus | Landing Page | LP Recrutamento | A VALIDAR | Ativo (DB + Excel) | A VALIDAR |
 | LP - Remix of IS DAY - 10 de fevereiro | Landing Page | LP Recrutamento | A VALIDAR | Ativo (Edge + Sheets) | A VALIDAR |
 | LP - Remix of Meu Novo Lar - Quiz | Landing Page | LP Quiz | A VALIDAR | Ativo (Sheets + n8n) | A VALIDAR |

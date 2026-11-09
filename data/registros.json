@@ -1981,13 +1981,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "lp-raio-x-diagnostico-patrimonial",
-    "action": "Criar",
+    "action": "Validar",
     "software": "Landing Page",
     "ativo": "LP - Raio-X Diagnóstico Patrimonial",
     "categoria": "Landing Page / Geração de Leads / Quiz / Diagnóstico Patrimonial",
     "responsavel": "A validar",
     "area": "A validar",
-    "status": "A validar",
+    "status": "Validado",
     "url": "https://diagnosticopatrimonial-investsmart.lovable.app",
     "twofa": "Não aplicável",
     "twofaMethod": "Não aplicável",
@@ -1998,7 +1998,7 @@
     "secondAdmin": "Não aplicável",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "Alto",
-    "lastValidation": "06/10/2026",
+    "lastValidation": "09/11/2026",
     "obs": "Registro operacional consolidado de LP - Raio-X Diagnóstico Patrimonial. Lovable Project ID: d22c1aa7-9674-4e2c-8768-909e9c83208c. Domínio público: https://raioxdiagnsticopatrimonial.lovable.app. Destino do lead: Google Sheets. Google Sheets: 1t4vsl1ET7viJLkTg2ncG-BmGRz4PDPSCL9JXJQYgw_w. Integração/webhook: NÃO LOCALIZADO. Achado crítico: Sucesso exibido mesmo com falha na gravação; o lead pode ser perdido silenciosamente Documentação completa: docs/landing-pages/lp-raio-x-diagnostico-patrimonial.md.",
     "next": "Prioridade 1: corrigir a perda silenciosa de leads, exibindo sucesso somente após confirmação real da gravação.\n\nPrioridade 2: instalar tracking real e criar evento de conversão pós-sucesso.\n\nPrioridade 3: completar persistência de UTMs, pageUrl e consentimento.\n\nPrioridade 4: mitigar formula injection, spam e reforçar validação server-side.\n\nPrioridade 5: completar LGPD e SEO técnico.\n\nPendências operacionais: validar dono da planilha, destino final do lead, responsável comercial, SLA, Natalia, domínio próprio, repositório, campanha, identificador e versão publicada.",
     "extra": {
@@ -2051,7 +2051,7 @@
       "documentationStatus": "Disponível no repositório"
     },
     "createdAt": "2026-10-06T20:01:00.000Z",
-    "updatedAt": "2026-10-30T18:20:00.000Z"
+    "updatedAt": "2026-11-09T18:48:00.413Z"
   },
   {
     "schema": "growth-ops-record-v2",

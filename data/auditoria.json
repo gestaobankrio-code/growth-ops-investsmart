@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1794250080413-f7681201aaaf2",
+    "date": "2026-11-09T18:48:00.413Z",
+    "issueNumber": 94,
+    "action": "Validar",
+    "recordId": "lp-raio-x-diagnostico-patrimonial",
+    "software": "Landing Page",
+    "ativo": "LP - Raio-X Diagnóstico Patrimonial",
+    "statusBefore": "A validar",
+    "statusAfter": "Validado",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1794249453127-22a5227020d93",
     "date": "2026-11-09T18:37:33.127Z",
     "issueNumber": 93,

@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 09/11/2026, 18:37:33.
+Atualizado automaticamente em 09/11/2026, 18:48:00.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -49,7 +49,7 @@ Atualizado automaticamente em 09/11/2026, 18:37:33.
 | LP - Planeja Brasil Samyr |  | https://planeja-brasil-samyr.lovable.app |  |  |  | Ativo (n8n Webhook) |
 | LP - Profissao de Elite - 2 |  | https://profissaodeelite2.lovable.app |  |  |  | Mock confirmado / Perda de leads |
 | LP - Profissão de Elite - Cidades do Brasil |  | https://profissao-elite.lovable.app | https://profissao-elite.lovable.app |  | https://docs.google.com/spreadsheets/d/1lPvqASWgv_qRShYsHuUhGlVQOEibq0f-sySDki93n5I/edit?usp=sharing | A validar |
-| LP - Raio-X Diagnóstico Patrimonial | NÃO LOCALIZADO | https://raioxdiagnsticopatrimonial.lovable.app | https://id-preview--d22c1aa7-9674-4e2c-8768-909e9c83208c.lovable.app | NÃO LOCALIZADO | Google Sheets | A validar |
+| LP - Raio-X Diagnóstico Patrimonial | NÃO LOCALIZADO | https://raioxdiagnsticopatrimonial.lovable.app | https://id-preview--d22c1aa7-9674-4e2c-8768-909e9c83208c.lovable.app | NÃO LOCALIZADO | Google Sheets | Validado |
 | LP - Recruta Day betratus |  | https://recrutadaybestratus.lovable.app |  |  |  | Ativo (DB + Excel) |
 | LP - Remix of IS DAY - 10 de fevereiro |  | https://finance-talent-spot.lovable.app |  |  |  | Ativo (Edge + Sheets) |
 | LP - Remix of Meu Novo Lar - Quiz |  | https://meu-novo-lar-quiz.lovable.app |  |  |  | Ativo (Sheets + n8n) |
