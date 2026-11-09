@@ -1,9 +1,13 @@
 # Template de Workflow para os Repositórios das Landing Pages
 # Copie este arquivo para .github/workflows/notify-growth-ops.yml em cada repositório de LP conectado ao Lovable.
 #
+# Uso: este arquivo é apenas um MODELO. Ele fica em docs/templates/ no Growth Ops central
+# e NÃO deve ser instalado em gestaobankrio-code/growth-ops-investsmart (evita chamadas circulares).
+#
 # Pré-requisito:
 # Cadastrar a secret 'GROWTH_OPS_PAT' no repositório da LP (ou no nível da organização gestaobankrio-code).
-# O token precisa de permissão de escrita de workflows/repositórios para disparar repository_dispatch no growth-ops-investsmart.
+# Permissão mínima: fine-grained PAT com acesso apenas ao repositório growth-ops-investsmart e
+# permissão "Contents: Read and write" (exigida pela API repository_dispatch). Nunca grave o token no código.
 
 name: Notificar Growth Ops (Sync Lovable)
 
@@ -17,7 +21,7 @@ on:
 jobs:
   dispatch-to-growth-ops:
     # Não disparar para commits de robôs de sync para evitar loops
-    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    if: "github.repository != 'gestaobankrio-code/growth-ops-investsmart' && !contains(github.event.head_commit.message, '[skip ci]')"
     runs-on: ubuntu-latest
 
     steps:
@@ -55,5 +59,5 @@ jobs:
               "githubRepository": "${{ github.repository }}",
               "commitSha": "${{ github.sha }}",
               "ref": "${{ github.ref }}",
-              "commitMessage": "${{ github.event.head_commit.message }}"
+              "commitMessage": ${{ toJSON(github.event.head_commit.message) }}
             }
