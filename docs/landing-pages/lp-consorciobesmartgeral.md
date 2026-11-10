@@ -118,3 +118,25 @@ Esta seção atualiza o estado operacional da LP; as seções anteriores permane
 - Não houve submissão fictícia ao endpoint n8n nem criação de contato fictício em RD/Findor nesta execução. Aceite HTTP 200 anterior não comprova entregas finais.
 - Publicação da correção NÃO realizada. Homologação integral do domínio oficial permanece pendente de publicação, envio seguro e catálogo real.
 - Arquivos alterados: src/lib/utm-taxonomy.ts, src/lib/lead-routing.ts, src/lib/lead-submit.server.ts, src/lib/organic-classification.test.ts; governança em AGENTS.md e roadmap.md.
+
+
+## Recuperação de leads pagos — 10/11/2026 — revisão técnica v2.2
+
+Atualização cumulativa: histórico anterior integralmente preservado. Sete leads únicos em Tráfego Pago linhas 2–8 e sete backups FALHA_N8N correspondentes: HTTP 404 histórico, 21 operações Sheets originais com upstream 200. Zero entregas comerciais comprovadas; sete pendentes de verificação; zero liberados para reenvio seguro. Nenhum contato, registro ou workflow foi modificado nesta recuperação, nenhum reenvio/publicação executado.
+
+Hub [Marketing] Hub de leads das LPs, workflow oNu6vPpjJ3IAYyjrJCKui, API acessível, active=true. Destino configurado bs-consorcio-geral: RD besmart-consorcio-geral; Findor null/false. Responde OK precede entrega RD. Quatro execuções disponíveis, todas manuais anteriores às capturas e de outras LPs; nenhum dos sete event_ids encontrado, mas retenção incompleta não comprova ausência de entrega. Repetições históricas teste-001/teste-002 acionaram RD novamente. Não há ledger/deduplicação visível; RD não recebe event_id e parte das UTMs. neverError=true permite execução success mesmo com Findor 401 em teste de outra LP.
+
+Correções seguras no preview: somente catálogo real LP-scoped, exato e compatível valida pago; R2_UTM_ID/click ID desconhecido não valida campanha. Nomes/brutos preservados inclusive espaços; sete históricos não reclassificados. Medium orgânico mantém v2.1; catálogo continua vazio e consulta Meta Ads recusada. Novo pago sem evidência vai ao Backup. Aceite exige 2xx+ok=true+event_id igual; recibo deixa PENDENTE_ENTREGA_COMERCIAL; 2xx ambíguo PENDENTE_VERIFICACAO_HUB. Falha no update não bloqueia backup; erros combinados uma tentativa de ocorrência por submissão; log sem PII. Sem retry automático e sem idempotência persistente implementada.
+
+35 testes isolados passaram, build automático OK, hosted preview succeeded/in_sync; domínio oficial e preview visualmente íntegros, UTMs preservadas, sem envio. Não homologado E2E nem publicado. Teste A real e B controlado pago bloqueados por catálogo; C aprovado isolado sem rede; D API/workflow confirmado mas E2E bloqueado; E destino consulta bloqueada; F reprovado inspeção/sem teste comercial.
+
+Administrador deve consultar RD/histórico dos sete em ambiente restrito, confirmar retenção e recibos, implantar ledger único atômico por (lp_id,event_id,destino), preservar UTMs/event_id no contrato suportado pelo RD, validar resultados comerciais e isolar teste. Revisar redação/acesso a headers sensíveis salvos nas execuções, sem reproduzir segredos. Gestor deve fornecer exportação oficial de campanha 120251828693540156 e anúncio/conjunto 120251828693770156, nomes exatos, vínculo LP, canal e template UTMs; valores recebidos não são catálogo validado.
+
+Fila preparada em quarentena pelos sete event_ids abaixo, NÃO autorizada nem liberada. Autorização de publicação e recuperação deverá ocorrer após prova de segurança e catálogo.
+- 3ed150af-5bfd-402d-b6c0-94f2badac948
+- 98b22f57-0c2a-40de-8992-16e5d7b4761a
+- 2d069019-9113-4217-a016-49e6cb39523d
+- 858d0c9b-0b6c-4fdc-a1a3-250ee05641d7
+- 6a247824-f043-4afc-98ad-512be2be730f
+- 0dd83de3-06d7-4bdf-abc3-a3543ad9f141
+- 2f60da49-d3e2-46ba-9d6c-aa593181dcb7
