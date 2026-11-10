@@ -101,3 +101,20 @@ Consentimento, política e armazenamento do consentimento, CORS, endpoints públ
 - **Próxima ação:** validar destino e estado de publicação com evidência, sem submeter leads; para mock confirmado, impedir tráfego até corrigir persistência.
 
 > Não realizar operações de escrita no projeto ou no GitHub como parte desta auditoria.
+
+
+## Atualização operacional — 10/11/2026 — UTM-STD v2.1
+
+Esta seção atualiza o estado operacional da LP; as seções anteriores permanecem como histórico da auditoria de 30/10. Não cria nova ficha ou novo identificador.
+
+- Domínio oficial: https://encontreseuconsorcio.besmart.com.br. Formulário próprio; Bitrix removido. Destinos paralelos: Google Sheets Central de Leads + n8n lp-leads.
+- Planilha atual: 17cJI_hmUDEKN3k29cdiT3RJhpMpWe9_gS2Cs1AL6GNU, abas Tráfego Pago, Orgânico, Linktree, Backup n8n; 54 colunas principais e 3 extras de Backup. Planilha antiga preservada, sem novos leads deste fluxo.
+- Regra anterior v2.0: organic_social exigia source instagram/facebook/linkedin/youtube; outras origens iam ao Backup como não classificadas.
+- Nova regra institucional v2.1: organic, organic_social e organic_search classificam ORGANICO independentemente de source, sem reescrever UTMs. Prioridade: Linktree; campanha validada no catálogo; medium orgânico; demais evidências pagas existentes ou Backup quando não identificada. Click ID isolado não sobrepõe medium orgânico.
+- Justificativa: lead com chatgpt.com + organic_social era preservado no Backup, mas excluído da aba Orgânico pela lista restritiva.
+- Regularização autorizada: event_id 0f1a2b42-6836-4079-9ac4-26ff150bff40 agora em Orgânico linha 2, uma ocorrência principal; original no Backup linha 10 mantido com classificação histórica v2.0 e marcado REGULARIZADO. UTMs e event_id preservados; NÃO reenviado ao n8n (aceite anterior HTTP 200).
+- Homologação parcial em 10/11/2026: 25 testes automatizados aprovados; compilação automática OK. Gravação real autorizada, usando classificação, seleção de aba e append/update da aplicação, com dados fictícios identificados e SEM n8n: Orgânico linha 3, event_id 0acb211d-8425-48e5-9ac6-afe09003fdb5; Linktree linha 2, event_id 089846fd-5a43-4655-b7f5-49b30716d644. Releitura confirmou uma linha principal por event_id após atualização.
+- Testes 1, 2, 3 e 5: APROVADO. Teste 4: classificação com fixture de catálogo APROVADA, gravação por campanha real BLOQUEADA (catálogo de produção vazio; não inventar campanha). Teste 6 n8n: BLOQUEADO sem ambiente isolado ou bypass comercial comprovado. Teste 7: append + update único APROVADO; deduplicação entre reenvios independentes e conversão Pixel ponta a ponta NÃO EXECUTADAS.
+- Não houve submissão fictícia ao endpoint n8n nem criação de contato fictício em RD/Findor nesta execução. Aceite HTTP 200 anterior não comprova entregas finais.
+- Publicação da correção NÃO realizada. Homologação integral do domínio oficial permanece pendente de publicação, envio seguro e catálogo real.
+- Arquivos alterados: src/lib/utm-taxonomy.ts, src/lib/lead-routing.ts, src/lib/lead-submit.server.ts, src/lib/organic-classification.test.ts; governança em AGENTS.md e roadmap.md.
