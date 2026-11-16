@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 16/11/2026, 17:56:16.
+Atualizado automaticamente em 16/11/2026, 20:52:29.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
