@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1794851776664-912590d31001a",
+    "date": "2026-11-16T17:56:16.664Z",
+    "issueNumber": 96,
+    "action": "Validar",
+    "recordId": "lp-consorciobesmartgeral",
+    "software": "Landing Page",
+    "ativo": "LP - Consorciobesmartgeral",
+    "statusBefore": "Validado",
+    "statusAfter": "Validado",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1794851743109-1b193fcbc8297",
     "date": "2026-11-16T17:55:43.109Z",
     "issueNumber": 95,
