@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1794863636712-b74e1467b6b73",
+    "date": "2026-11-16T21:13:56.712Z",
+    "issueNumber": 99,
+    "action": "Atualizar",
+    "recordId": "gmail-gestaobankrio",
+    "software": "Outro",
+    "ativo": "Gmail - Gestão BankRio",
+    "statusBefore": "A validar",
+    "statusAfter": "A validar",
+    "actor": "philipecoutinho85",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1794863537358-47b686c725c6a",
     "date": "2026-11-16T21:12:17.358Z",
     "issueNumber": 98,

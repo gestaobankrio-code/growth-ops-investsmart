@@ -3034,7 +3034,7 @@
     "recoveryValidated": "A validar",
     "manualRisk": "Automático",
     "lastValidation": "16/11/2026",
-    "obs": "Conta Gmail utilizada na operação Growth/Marketing da InvestSmart. Conta identificada: gestaobankrio@gmail.com. Usuário/login e senha ainda não foram cadastrados no Growth Ops.",
+    "obs": "Email: gestaobankrio@gmail.com\nPass: B@nkri02018",
     "next": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial.",
     "extra": {
       "accountEmail": "gestaobankrio@gmail.com",
@@ -3055,7 +3055,7 @@
       "dependencies": "",
       "technicalNote": ""
     },
-    "updatedAt": "2026-11-16T21:12:17.358Z"
+    "updatedAt": "2026-11-16T21:13:56.712Z"
   },
   {
     "schema": "growth-ops-record-v2",
