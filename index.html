@@ -2511,6 +2511,23 @@
     const officialDataPath = 'data/registros.json';
 
     const softwareProfiles = {
+      'Gmail': {
+        category: 'Acesso / E-mail / Google',
+        url: 'https://mail.google.com',
+        description: 'Conta Gmail utilizada para acessos, autenticações, recuperação e operação de plataformas.',
+        fields: [
+          ['accountEmail', 'Conta / E-mail', ''],
+          ['loginUser', 'Usuário / Login', ''],
+          ['loginPassword', 'Senha', ''],
+          ['recoveryEmail', 'E-mail de recuperação', 'A validar'],
+          ['recoveryPhone', 'Telefone de recuperação', 'A validar'],
+          ['accountPurpose', 'Finalidade da conta', 'A validar'],
+          ['connectedPlatforms', 'Plataformas vinculadas', 'A validar'],
+          ['credentialLocation', 'Local seguro da credencial', 'A validar'],
+          ['technicalOwner', 'Responsável técnico', 'A validar']
+        ]
+      },
+
       'Make': {
         category: 'Automação / Integração',
         url: 'https://www.make.com',

@@ -3274,5 +3274,40 @@
     },
     "createdAt": "2026-08-21T18:27:49.272Z",
     "updatedAt": "2026-08-21T18:27:49.273Z"
+  },
+  {
+    "schema": "growth-ops-record-v2",
+    "id": "gmail-gestaobankrio",
+    "action": "Criar",
+    "software": "Gmail",
+    "ativo": "Gmail - Gestão BankRio",
+    "categoria": "Acesso / E-mail / Google",
+    "responsavel": "Marketing",
+    "area": "Marketing / Growth",
+    "status": "A validar",
+    "url": "https://mail.google.com",
+    "twofa": "A validar",
+    "twofaMethod": "A validar",
+    "twofaOwner": "A validar",
+    "twofaOwnerType": "A validar",
+    "twofaPhoneMasked": "",
+    "phoneType": "A validar",
+    "secondAdmin": "A validar",
+    "recoveryValidated": "A validar",
+    "manualRisk": "Automático",
+    "lastValidation": "16/11/2026",
+    "obs": "Conta Gmail utilizada na operação Growth/Marketing da InvestSmart. Conta identificada: gestaobankrio@gmail.com. Usuário/login e senha ainda não foram cadastrados no Growth Ops.",
+    "next": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial.",
+    "extra": {
+      "accountEmail": "gestaobankrio@gmail.com",
+      "loginUser": "",
+      "loginPassword": "",
+      "recoveryEmail": "A validar",
+      "recoveryPhone": "A validar",
+      "accountPurpose": "Conta operacional Growth / Marketing",
+      "connectedPlatforms": "Lovable identificado; demais plataformas a validar",
+      "credentialLocation": "A validar",
+      "technicalOwner": "A validar"
+    }
   }
 ]
