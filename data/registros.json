@@ -3016,13 +3016,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "gmail-gestaobankrio",
-    "action": "Atualizar",
+    "action": "Validar",
     "software": "Outro",
     "ativo": "Gmail - Gestão BankRio",
     "categoria": "Acesso / E-mail / Google",
     "responsavel": "Marketing",
     "area": "Marketing / Growth",
-    "status": "A validar",
+    "status": "Validado",
     "url": "https://mail.google.com",
     "twofa": "A validar",
     "twofaMethod": "A validar",
@@ -3055,7 +3055,7 @@
       "dependencies": "",
       "technicalNote": ""
     },
-    "updatedAt": "2026-11-16T21:13:56.712Z"
+    "updatedAt": "2026-11-16T21:15:23.341Z"
   },
   {
     "schema": "growth-ops-record-v2",

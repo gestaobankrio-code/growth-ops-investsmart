@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 16/11/2026, 21:13:56.
+Atualização gerada automaticamente em 16/11/2026, 21:15:23.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 82 |
-| Validados | 30 |
-| A validar | 8 |
+| Validados | 31 |
+| A validar | 7 |
 | Risco alto/crítico | 39 |
 | Sem 2FA | 0 |
 
@@ -90,7 +90,7 @@ Atualização gerada automaticamente em 16/11/2026, 21:13:56.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
-| Gmail - Gestão BankRio | Outro | Acesso / E-mail / Google | Marketing | A validar | Crítico |
+| Gmail - Gestão BankRio | Outro | Acesso / E-mail / Google | Marketing | Validado | Crítico |
 | POP-001 - Governança de Ativos Meta (BMs, Contas e WhatsApp) | Outro | Governança / Documentação / Ativos Meta | Marketing / Growth Ops | Validado | A VALIDAR |
 | Senhas | Outro | Segurança / Senhas / Marketing | Marketing | Validado | Crítico |
 | LP - Página de Obrigado RD Station | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Validado | Médio |
