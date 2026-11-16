@@ -1,6 +1,6 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 16/11/2026, 20:52:29.
+Atualizado automaticamente em 16/11/2026, 21:12:17.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
@@ -48,6 +48,9 @@ Atualizado automaticamente em 16/11/2026, 20:52:29.
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Alto | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Alto | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Médio | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
+| Gmail - Gestão BankRio | Outro | Crítico | Risco Crítico | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Outro | Crítico | Quem recebe o código a validar | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Outro | Médio | Recuperação de acesso não validada | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
 | Senhas | Outro | Crítico | Risco Crítico | A validar |
 | Senhas | Outro | Crítico | Quem recebe o código a validar | A validar |
 | Senhas | Outro | Médio | Recuperação de acesso não validada | A validar |

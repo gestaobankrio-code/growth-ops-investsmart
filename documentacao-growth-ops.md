@@ -1,15 +1,15 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 16/11/2026, 20:52:29.
+Atualização gerada automaticamente em 16/11/2026, 21:12:17.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 81 |
+| Registros ativos | 82 |
 | Validados | 30 |
-| A validar | 7 |
-| Risco alto/crítico | 38 |
+| A validar | 8 |
+| Risco alto/crítico | 39 |
 | Sem 2FA | 0 |
 
 ## Inventário
@@ -90,6 +90,7 @@ Atualização gerada automaticamente em 16/11/2026, 20:52:29.
 | Webhook n8n - Planeja Brasil - Samyr | n8n | Webhook / Integração de Leads | Marketing | Validado | Médio |
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Webhook / Integração de Leads | Marketing | Validado | Alto |
 | Claude | Outro | IA | Marketing | Validado | Alto |
+| Gmail - Gestão BankRio | Outro | Acesso / E-mail / Google | Marketing | A validar | Crítico |
 | POP-001 - Governança de Ativos Meta (BMs, Contas e WhatsApp) | Outro | Governança / Documentação / Ativos Meta | Marketing / Growth Ops | Validado | A VALIDAR |
 | Senhas | Outro | Segurança / Senhas / Marketing | Marketing | Validado | Crítico |
 | LP - Página de Obrigado RD Station | RD Station | Tracking / Página de Obrigado / RD Station | Marketing | Validado | Médio |
@@ -146,6 +147,9 @@ Atualização gerada automaticamente em 16/11/2026, 20:52:29.
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
+| Gmail - Gestão BankRio | Outro | Risco Crítico | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Outro | Quem recebe o código a validar | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Outro | Recuperação de acesso não validada | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
 | Senhas | Outro | Risco Crítico | A validar |
 | Senhas | Outro | Quem recebe o código a validar | A validar |
 | Senhas | Outro | Recuperação de acesso não validada | A validar |

@@ -213,6 +213,9 @@ Validar segundo administrador, método de recuperação da conta e registrar nov
 Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.
 
 Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
+"Gmail - Gestão BankRio";"Outro";"Crítico";"Risco Crítico";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+"Gmail - Gestão BankRio";"Outro";"Crítico";"Quem recebe o código a validar";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+"Gmail - Gestão BankRio";"Outro";"Médio";"Recuperação de acesso não validada";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
 "Senhas";"Outro";"Crítico";"Risco Crítico";"A validar"
 "Senhas";"Outro";"Crítico";"Quem recebe o código a validar";"A validar"
 "Senhas";"Outro";"Médio";"Recuperação de acesso não validada";"A validar"
