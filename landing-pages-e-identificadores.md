@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 09/11/2026, 18:48:00.
+Atualizado automaticamente em 16/11/2026, 17:55:43.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -18,7 +18,7 @@ Atualizado automaticamente em 09/11/2026, 18:48:00.
 | LP - Bikeletrica Is |  | https://bikeletrica-is.lovable.app |  |  |  | Ativo (Sheets) |
 | LP - Calculadora CDB x Poupança |  | Não localizado | https://calculadoracdbxpoupana.lovable.app | https://n8n.oticasaurelio.com.br/webhook/investsmart-lp-leads | Google Sheets | A validar |
 | LP - consorcio-inteligente-simulador-85 |  | https://consorcio-inteligente-simulador-85.lovable.app |  |  |  | Ativo (Supabase + RD) |
-| LP - Consorciobesmartgeral |  | https://consorciobesmartgeral.lovable.app |  |  |  | Ativo (Bitrix + Sheets) |
+| LP - Consorciobesmartgeral |  | https://consorciobesmartgeral.lovable.app |  |  |  | Validado |
 | LP - Elite Path Finder |  |  |  |  |  | Mock confirmado / Perda de leads |
 | LP - Fla Nação - Maracanã 22-10 | lp-fla-nacao-maracana-22-10 | https://fla-nacao-maracana.lovable.app | https://id-preview--f0a8ed60-bf21-4d18-babe-b72b5c97f864.lovable.app | NÃO LOCALIZADO | Bitrix24 CRM (inline/1321/tvz37x) | Ativa com pendência de tracking |
 | LP - Flamengo - Samyr |  | https://maracana-flamengo.lovable.app | https://maracana-flamengo.lovable.app |  | Bitrix24 + Google Sheets | Validado |

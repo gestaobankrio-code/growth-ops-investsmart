@@ -1,13 +1,13 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 09/11/2026, 18:48:00.
+Atualização gerada automaticamente em 16/11/2026, 17:55:43.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
 | Registros ativos | 81 |
-| Validados | 29 |
+| Validados | 30 |
 | A validar | 7 |
 | Risco alto/crítico | 38 |
 | Sem 2FA | 0 |
@@ -32,7 +32,7 @@ Atualização gerada automaticamente em 09/11/2026, 18:48:00.
 | LP - Bikeletrica Is | Landing Page | LP Sorteio | A VALIDAR | Ativo (Sheets) | A VALIDAR |
 | LP - Calculadora CDB x Poupança | Landing Page | Landing Page / Calculadora / Renda Fixa | Marketing | A validar | Alto |
 | LP - consorcio-inteligente-simulador-85 | Landing Page | Web App Simulador | A VALIDAR | Ativo (Supabase + RD) | A VALIDAR |
-| LP - Consorciobesmartgeral | Landing Page | LP Consórcio | A VALIDAR | Ativo (Bitrix + Sheets) | A VALIDAR |
+| LP - Consorciobesmartgeral | Landing Page | LP Consórcio | A VALIDAR | Validado | A VALIDAR |
 | LP - Elite Path Finder | Landing Page | LP Rascunho | A VALIDAR | Mock confirmado / Perda de leads | Crítico |
 | LP - Fla Nação - Maracanã 22-10 | Landing Page | Landing Page / Captação de Leads / Sorteio Promocional | Samyr Castro / InvestSmart XP | Ativa com pendência de tracking | Médio |
 | LP - Flamengo - Samyr | Landing Page | Landing Page / Maracanã / Sorteio | Marketing | Validado | Alto |

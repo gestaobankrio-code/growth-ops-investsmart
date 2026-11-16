@@ -658,13 +658,13 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "lp-consorciobesmartgeral",
-    "action": "Criar",
+    "action": "Validar",
     "software": "Landing Page",
     "ativo": "LP - Consorciobesmartgeral",
     "categoria": "LP Consórcio",
     "responsavel": "A VALIDAR",
     "area": "Growth Ops",
-    "status": "Ativo (Bitrix + Sheets)",
+    "status": "Validado",
     "url": "https://consorciobesmartgeral.lovable.app",
     "twofa": "Não aplicável",
     "twofaMethod": "Não aplicável",
@@ -675,7 +675,7 @@
     "secondAdmin": "Não aplicável",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "A VALIDAR",
-    "lastValidation": "30/10/2026",
+    "lastValidation": "16/11/2026",
     "obs": "Registro operacional consolidado de LP - Consorciobesmartgeral. Lovable Project ID: a1c0456b-f298-4e40-8f5b-b4503cbcac09. Documentação completa: docs/landing-pages/lp-consorciobesmartgeral.md.",
     "next": "A VALIDAR: validar código/preview e operação em produção sem submeter dados reais.",
     "extra": {
@@ -685,7 +685,7 @@
       "documentationStatus": "Disponível no repositório"
     },
     "createdAt": "2026-10-30T18:20:00.000Z",
-    "updatedAt": "2026-10-30T18:20:00.000Z"
+    "updatedAt": "2026-11-16T17:55:43.109Z"
   },
   {
     "schema": "growth-ops-record-v2",
