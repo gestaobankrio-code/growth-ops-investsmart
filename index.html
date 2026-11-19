@@ -3959,11 +3959,27 @@
       }
     }
 
+    function ensureSoftwareOption(software) {
+      const select = document.getElementById('assetSoftware');
+      const value = String(software || 'Outro').trim() || 'Outro';
+      const exists = Array.from(select.options).some(option => option.value === value);
+
+      if (!exists) {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      }
+
+      return value;
+    }
+
     function setForm(record) {
       document.getElementById('editingId').value = record.id;
       configureActionMode(true);
       document.getElementById('assetAction').value = 'Atualizar';
-      document.getElementById('assetSoftware').value = record.software || 'Outro';
+      const recordSoftware = ensureSoftwareOption(record.software || 'Outro');
+      document.getElementById('assetSoftware').value = recordSoftware;
       document.getElementById('assetName').value = record.ativo || '';
       document.getElementById('assetCategory').value = record.categoria || '';
       document.getElementById('assetOwner').value = record.responsavel || '';
