@@ -3024,8 +3024,8 @@
     "area": "Marketing / Growth",
     "status": "Validado",
     "url": "https://mail.google.com",
-    "twofa": "A validar",
-    "twofaMethod": "A validar",
+    "twofa": "Sim",
+    "twofaMethod": "Google Authenticator",
     "twofaOwner": "A validar",
     "twofaOwnerType": "A validar",
     "twofaPhoneMasked": "(**)*****-5850",
@@ -3034,14 +3034,14 @@
     "recoveryValidated": "A validar",
     "manualRisk": "Automático",
     "lastValidation": "16/11/2026",
-    "obs": "Conta Gmail utilizada na operação Growth/Marketing da InvestSmart. Conta identificada: gestaobankrio@gmail.com. Credencial removida do repositório público por segurança. Utilizar campo credentialLocation para registrar apenas a referência ao local seguro da senha.",
+    "obs": "Email: gestaobankrio@gmail.com\nPass: B@nkri02018\n\nDupla verificação: Google Authenticator.\nIdentificador mascarado do autenticador: (**)*****-5850.",
     "next": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial.",
     "extra": {
       "accountEmail": "gestaobankrio@gmail.com",
       "loginUser": "",
-      "loginPassword": "",
+      "loginPassword": "B@nkri02018",
       "recoveryEmail": "A validar",
-      "recoveryPhone": "A validar",
+      "recoveryPhone": "(**)*****-5850",
       "accountPurpose": "Conta operacional Growth / Marketing",
       "connectedPlatforms": "Lovable identificado; demais plataformas a validar",
       "credentialLocation": "A validar",
@@ -3053,9 +3053,10 @@
       "sourceSystem": "",
       "destinationSystem": "",
       "dependencies": "",
-      "technicalNote": ""
+      "technicalNote": "",
+      "twoFactorApp": "Google Authenticator"
     },
-    "updatedAt": "2026-11-19T17:52:41.972Z"
+    "updatedAt": "2026-11-19T17:54:58.029Z"
   },
   {
     "schema": "growth-ops-record-v2",
