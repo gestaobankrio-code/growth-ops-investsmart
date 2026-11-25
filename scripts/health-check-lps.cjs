@@ -1337,8 +1337,10 @@ function writeAlerts(items, payload) {
       const nc = i.conversion.noConversionCheck;
       lines.push(`| ${i.ativo} | ${nc.lastLeadAt ? fmtBR(nc.lastLeadAt) : `nenhum em ${nc.lookbackDays} dias`} | ${nc.daysWithoutConversion ?? `> ${nc.lookbackDays}`} | ${nc.source || ''} |`);
     });
+  } else if (items.some(i => i.conversion?.noConversionCheck)) {
+    lines.push('Todas as LPs com fonte de leads tiveram conversão no período.');
   } else {
-    lines.push('Nenhuma LP monitorada está sem conversão no período.');
+    lines.push('**Não demonstrável:** nenhuma LP tem fonte de leads conectada, então não há como comprovar conversões nem a falta delas.');
   }
   if (notDemonstrable.length) {
     lines.push('', `⚠️ ${notDemonstrable.length} LP(s) sem fonte de leads conectada: ausência de conversão **não demonstrável** para elas (configurar N8N_API_KEY).`);
