@@ -118,7 +118,9 @@
     "status": "Validado",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "88c03d24-c127-417e-9e8d-5fcbf429e60e",
@@ -294,7 +296,9 @@
     "status": "Ativo (Edge + Sheets)",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "9d3287a5-2d04-4e65-af6c-6a15372e3b86",
@@ -316,7 +320,9 @@
     "status": "Ativo (DB + Excel)",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "05a2b095-034c-4582-9ef5-686e9160d2ae",
@@ -346,10 +352,11 @@
     "githubRepository": null,
     "growthOpsRecordId": "lp-planeja-brasil-samyr-bb8b9299",
     "publicUrl": "https://planeja-brasil-samyr.lovable.app",
-    "status": "Ativo (n8n Webhook)",
+    "status": "Arquivado",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": false,
+    "archiveReason": "Duplicidade histórica do registro lp-planeja-brasil-samyr; ID Lovable incorreto"
   },
   {
     "lovableProjectId": "a0ab57c4-9c48-4437-9469-82f3493c7e86",
@@ -382,7 +389,9 @@
     "status": "A validar",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "c8da4430-0dc9-4e66-a3c9-ea08c491d9d1",
@@ -426,7 +435,9 @@
     "status": "Ativo (n8n Webhook)",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "d72226a5-b2d3-4812-b156-9c66ec233c78",
@@ -503,7 +514,9 @@
     "status": "Mock confirmado / Perda de leads",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "18d8c770-9060-4ae5-9054-22b0a3b1b28a",
@@ -536,7 +549,9 @@
     "status": "Mock confirmado / Perda de leads",
     "lastSeenCommit": null,
     "lastSync": "2026-10-30T19:57:00.000Z",
-    "active": true
+    "active": true,
+    "githubSyncReportedAt": "25/11/2026",
+    "githubVerificationStatus": "Pendente de validação independente dos commits"
   },
   {
     "lovableProjectId": "882c6bb1-666f-4e0b-a773-0d9636cd687e",
@@ -680,5 +695,29 @@
     "lastSeenCommit": "4370ddba3a21a8ab19b012652b61e719606ca3c4",
     "lastSync": "2026-11-06T14:11:00.549Z",
     "active": true
+  },
+  {
+    "lovableProjectId": "1f4a35c0-0826-4607-a3f6-41f3a6dc7451",
+    "nome": "Smart Summit - MIAMI",
+    "githubRepository": "gestaobankrio-code/ss-miami",
+    "growthOpsRecordId": "lp-smart-summit-miami-2026",
+    "publicUrl": "https://ss-miami.lovable.app",
+    "status": "A validar",
+    "lastSeenCommit": null,
+    "lastSync": null,
+    "active": true,
+    "githubVerificationStatus": "Informado pela auditoria Lovable; pendente de verificação por acesso GitHub"
+  },
+  {
+    "lovableProjectId": "f825726d-8d5d-4820-98f3-d6a6e22b0761",
+    "nome": "Isday Matrizrj",
+    "githubRepository": "gestaobankrio-code/isday-matrizrj",
+    "growthOpsRecordId": "lp-isday-matrizrj",
+    "publicUrl": "https://isday-matrizrj.lovable.app",
+    "status": "A validar",
+    "lastSeenCommit": null,
+    "lastSync": null,
+    "active": true,
+    "githubVerificationStatus": "Informado pela auditoria Lovable; pendente de verificação por acesso GitHub"
   }
 ]

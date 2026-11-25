@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 16/11/2026, 21:15:23.
+Atualizado automaticamente em 25/11/2026, 14:44.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -33,6 +33,7 @@ Atualizado automaticamente em 16/11/2026, 21:15:23.
 | LP - IS Day Atibaia - Orgânico |  | https://isdayatibaia.lovable.app |  |  |  | Ativo (Edge + Sheets) |
 | LP - IS Day Atibaia + Vinhedo |  | https://is-day-atibaia-vinhedo.lovable.app |  |  |  | Ativo (Edge + Sheets) |
 | LP - IS Day Matriz RJ - 14/11 |  | https://isday-matriz.lovable.app |  |  |  | Ativo (Edge + Sheets) |
+| LP - Isday Matrizrj |  | https://isday-matrizrj.lovable.app |  |  |  | A validar |
 | LP - Live ao Vivo / Melhor Profissão |  | https://melhorprofissao.lovable.app | https://melhorprofissao.lovable.app |  | https://docs.google.com/spreadsheets/d/1EEq_8jSVmuW9rke0-_Q6sepvPavraoAf-UOGfku9n_w/edit?usp=sharing | Validado |
 | LP - Lp Besmart |  | https://lp-besmart.lovable.app |  |  |  | Ativo (Sheets) |
 | LP - LP TATIANA GUEDES |  | https://patrociniosmartsummit.lovable.app |  |  |  | Mock confirmado / Perda de leads |
@@ -46,7 +47,6 @@ Atualizado automaticamente em 16/11/2026, 21:15:23.
 | LP - Planeja Brasil - Orgânico | UC_QZ91TG | https://planejamento-financeiro.investsmart.com.br/ | https://planejamento-financeiro-patrimonial.lovable.app |  | Google Sheets informado operacionalmente | Validado |
 | LP - Planeja Brasil - Samyr | UC_UI1PIS | https://seu-planejamento-financeiro.investsmart.com.br | https://id-preview--bb8b9299-f6c0-449f-b58e-fe3189e749e0.lovable.app |  | https://docs.google.com/spreadsheets/d/1-3qBh7C07Rd_UeUV21IgQMLE9IX4Oga5hoqo6LwGnqg/edit?usp=sharing | Validado |
 | LP - Planeja Brasil - Tráfego Pago | 201 | https://planejamento-financeiro01.lovable.app | https://id-preview--02443493-1a69-4550-82a9-4acb562d302d.lovable.app | Registrar em ativo próprio | Fluxo n8n InvestSmart | Validado |
-| LP - Planeja Brasil Samyr |  | https://planeja-brasil-samyr.lovable.app |  |  |  | Ativo (n8n Webhook) |
 | LP - Profissao de Elite - 2 |  | https://profissaodeelite2.lovable.app |  |  |  | Mock confirmado / Perda de leads |
 | LP - Profissão de Elite - Cidades do Brasil |  | https://profissao-elite.lovable.app | https://profissao-elite.lovable.app |  | https://docs.google.com/spreadsheets/d/1lPvqASWgv_qRShYsHuUhGlVQOEibq0f-sySDki93n5I/edit?usp=sharing | A validar |
 | LP - Raio-X Diagnóstico Patrimonial | NÃO LOCALIZADO | https://raioxdiagnsticopatrimonial.lovable.app | https://id-preview--d22c1aa7-9674-4e2c-8768-909e9c83208c.lovable.app | NÃO LOCALIZADO | Google Sheets | Validado |
@@ -62,7 +62,7 @@ Atualizado automaticamente em 16/11/2026, 21:15:23.
 | LP - Smart Campus - InvestSmart XP | LP Smart Campus | NÃO LOCALIZADO | https://id-preview--403d9e66-adc7-481e-a797-d8ecf1eb11f1.lovable.app | NÃO LOCALIZADO | /api/public/lead | Bloqueado para tráfego pago |
 | LP - Smart Carreiras |  | https://smartcarreiras.com.br/ | https://smart-carreiras.lovable.app | Não |  | Ativo (HubSpot API) |
 | LP - Smart Conecta: Renda Extra Fácil |  | https://smart-network-rewards.lovable.app |  |  |  | Mock confirmado / Perda de leads |
+| LP - Smart Summit - MIAMI |  | https://ss-miami.lovable.app |  |  |  | A validar |
 | LP - smartcarreiras-samyr |  | https://convite.smartcarreiras.com.br/ | https://smart-carreiras-samyr.lovable.app | Endpoint HubSpot Forms API v3: https://api.hsforms.com/submissions/v3/integration/submit/21347715/b713217b-****-****-****-************ |  | Ativo (HubSpot API) |
 | LP - smartsummit-miami |  | https://smartsummit-miami.lovable.app |  |  |  | Ativo (DB + Sheets) |
 | LP - Vasco Gigante - Maracanã 20-10 |  | https://maracana-vasco.lovable.app |  |  |  | Ativo (Bitrix + Sheets) |
-| Página de obrigado universal investSmart |  | https://materiais.investsmartxp.com.br/obrigado-is |  |  |  | Validado |
