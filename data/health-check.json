@@ -1,11 +1,11 @@
 {
   "schema": "growth-ops-health-check-v2.0",
-  "generatedAt": "2026-11-25T19:30:14.499Z",
+  "generatedAt": "2026-11-25T19:46:24.886Z",
   "mode": "dry-run-funnel",
   "run": {
     "type": "completa"
   },
-  "runUrl": "https://github.com/gestaobankrio-code/growth-ops-investsmart/actions/runs/45684505518",
+  "runUrl": "https://github.com/gestaobankrio-code/growth-ops-investsmart/actions/runs/45687143486",
   "googleServiceAccount": null,
   "totals": {
     "total": 62,
@@ -14,11 +14,13 @@
     "critical": 6,
     "notTestable": 2,
     "online": 60,
-    "sendingLeads": 32,
+    "sendingLeads": 33,
     "notSendingLeads": 6,
     "conversionMonitored": 0,
     "converting": 0,
     "conversionStopped": 0,
+    "noConversion": 0,
+    "conversionNotDemonstrable": 60,
     "leads24h": 0,
     "leads7d": 0
   },
@@ -41,21 +43,22 @@
     "silenceMinExpected": 4,
     "dropRatio": 0.5,
     "dropMinPrevious": 10,
-    "maxFunnelSteps": 8
+    "maxFunnelSteps": 8,
+    "noConversionDays": 3
   },
   "items": [
     {
       "id": "lp-remix-of-profissao-de-elite-3",
       "ativo": "LP - Remix of Profissao de Elite - 3",
       "url": "https://profission-elite-hub.lovable.app",
-      "checkedAt": "2026-11-25T19:29:39.660Z",
+      "checkedAt": "2026-11-25T19:45:49.286Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://profission-elite-hub.lovable.app/",
         "rendered": true,
         "title": "Profissão de Elite — be.smart",
-        "loadMs": 1625,
+        "loadMs": 1796,
         "lcpMs": null,
         "jsErrors": [
           "F"
@@ -138,14 +141,14 @@
       "id": "lp-bancarios",
       "ativo": "LP - bancarios",
       "url": "https://smart-banking-leap.lovable.app",
-      "checkedAt": "2026-11-25T19:27:44.970Z",
+      "checkedAt": "2026-11-25T19:43:32.282Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smart-banking-leap.lovable.app/",
         "rendered": true,
         "title": "InvestSmart XP — Sua Carreira Sem Teto Começa Aqui",
-        "loadMs": 1015,
+        "loadMs": 938,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -222,14 +225,14 @@
       "id": "lp-be-smart-home-plan",
       "ativo": "LP - Be Smart Home Plan",
       "url": "https://lpbesmart.lovable.app",
-      "checkedAt": "2026-11-25T19:28:10.985Z",
+      "checkedAt": "2026-11-25T19:43:58.199Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://lpbesmart.lovable.app/",
         "rendered": true,
         "title": "be.smart — Conquiste seu primeiro imóvel com planejamento",
-        "loadMs": 1530,
+        "loadMs": 1560,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -305,14 +308,14 @@
       "id": "lp-investsmart-flow",
       "ativo": "LP - InvestSmart Flow",
       "url": "https://abertura-filial.lovable.app",
-      "checkedAt": "2026-11-25T19:28:39.602Z",
+      "checkedAt": "2026-11-25T19:44:26.675Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://abertura-filial.lovable.app/",
         "rendered": true,
         "title": "InvestSmart — Estrutura institucional para assessores de investimento",
-        "loadMs": 1790,
+        "loadMs": 1778,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -389,14 +392,14 @@
       "id": "lp-profissao-de-elite-2",
       "ativo": "LP - Profissao de Elite - 2",
       "url": "https://profissaodeelite2.lovable.app",
-      "checkedAt": "2026-11-25T19:29:18.712Z",
+      "checkedAt": "2026-11-25T19:45:28.513Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://profissaodeelite2.lovable.app/",
         "rendered": true,
         "title": "Profissão de Elite — be.smart",
-        "loadMs": 2312,
+        "loadMs": 2167,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -470,14 +473,14 @@
       "id": "lp-smart-campus",
       "ativo": "LP - Smart Campus",
       "url": "https://uni-finance-bridge.lovable.app",
-      "checkedAt": "2026-11-25T19:29:53.660Z",
+      "checkedAt": "2026-11-25T19:46:03.478Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://uni-finance-bridge.lovable.app/",
         "rendered": true,
         "title": "Smart Campus — Mercado financeiro dentro da sua universidade",
-        "loadMs": 1408,
+        "loadMs": 1727,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -554,14 +557,14 @@
       "id": "lp-bikeletrica-is",
       "ativo": "LP - Bikeletrica Is",
       "url": "https://bikeletrica-is.lovable.app",
-      "checkedAt": "2026-11-25T19:24:19.033Z",
+      "checkedAt": "2026-11-25T19:40:07.967Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://bikeletrica-is.lovable.app/",
         "rendered": true,
         "title": "Concurso Cultural Corrida pelo Futuro | InvestSmart",
-        "loadMs": 1743,
+        "loadMs": 2043,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -630,14 +633,14 @@
       "id": "lp-consorcio-inteligente-simulador-85",
       "ativo": "LP - consorcio-inteligente-simulador-85",
       "url": "https://consorcio-inteligente-simulador-85.lovable.app",
-      "checkedAt": "2026-11-25T19:24:22.085Z",
+      "checkedAt": "2026-11-25T19:40:14.404Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://consorcio-inteligente-simulador-85.lovable.app/",
         "rendered": true,
         "title": "Simulador de Consórcio - Economia Sem Juros | Parcelas Reduzidas",
-        "loadMs": 1190,
+        "loadMs": 1150,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -705,18 +708,18 @@
       "id": "lp-besmart-parceiros",
       "ativo": "LP - Be.Smart Parceiros",
       "url": "https://be-smart-partner-connect.lovable.app",
-      "checkedAt": "2026-11-25T19:23:53.019Z",
+      "checkedAt": "2026-11-25T19:39:38.855Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://be-smart-partner-connect.lovable.app/",
         "rendered": true,
         "title": "Parceiros Comerciais | be.smart",
-        "loadMs": 1183,
+        "loadMs": 1022,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
-        "textLength": 4745,
+        "textLength": 4740,
         "looksLike404": false
       },
       "form": {
@@ -780,21 +783,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-besmart-mag-connect",
       "ativo": "LP - BeSmart MAG Connect",
       "url": "https://carreiraelemdamedicina.lovable.app",
-      "checkedAt": "2026-11-25T19:24:00.058Z",
+      "checkedAt": "2026-11-25T19:39:45.710Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://carreiraelemdamedicina.lovable.app/",
         "rendered": true,
         "title": "Medicina além do que você imagina",
-        "loadMs": 2379,
+        "loadMs": 1710,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -861,21 +864,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-investsmart-ride",
       "ativo": "LP - InvestSmart Ride",
       "url": "https://ride-your-ideas.lovable.app",
-      "checkedAt": "2026-11-25T19:24:55.621Z",
+      "checkedAt": "2026-11-25T19:40:43.656Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://ride-your-ideas.lovable.app/",
         "rendered": true,
         "title": "Concurso Cultural InvestSmart | Concorra a uma Bicicleta Elétrica",
-        "loadMs": 1103,
+        "loadMs": 1072,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -942,21 +945,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-tatiana-guedes",
       "ativo": "LP - LP TATIANA GUEDES",
       "url": "https://patrociniosmartsummit.lovable.app",
-      "checkedAt": "2026-11-25T19:25:24.561Z",
+      "checkedAt": "2026-11-25T19:41:13.237Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://patrociniosmartsummit.lovable.app/",
         "rendered": true,
         "title": "Smart Summit — Patrocínio para marcas do mercado financeiro",
-        "loadMs": 1590,
+        "loadMs": 1667,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1020,21 +1023,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-planeja-brasil",
       "ativo": "LP - Planeja Brasil",
       "url": "https://investsmart-form-hero.lovable.app",
-      "checkedAt": "2026-11-25T19:25:54.165Z",
+      "checkedAt": "2026-11-25T19:41:37.050Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://investsmart-form-hero.lovable.app/",
         "rendered": true,
         "title": "Planeja Brasil — Planejamento financeiro gratuito | InvestSmart XP",
-        "loadMs": 1637,
+        "loadMs": 1614,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1102,21 +1105,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-render-facil-simulador",
       "ativo": "LP - render-facil-simulador",
       "url": "https://render-facil-simulador.lovable.app",
-      "checkedAt": "2026-11-25T19:26:30.529Z",
+      "checkedAt": "2026-11-25T19:42:18.238Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://render-facil-simulador.lovable.app/",
         "rendered": true,
         "title": "Simulador de Renda Fixa Gratuito - Compare CDB, LCI, LCA e Letra de Câmbio",
-        "loadMs": 1025,
+        "loadMs": 1085,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1178,21 +1181,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-smart-conecta-renda-extra-facil",
       "ativo": "LP - Smart Conecta: Renda Extra Fácil",
       "url": "https://smart-network-rewards.lovable.app",
-      "checkedAt": "2026-11-25T19:26:58.084Z",
+      "checkedAt": "2026-11-25T19:42:44.618Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smart-network-rewards.lovable.app/",
         "rendered": true,
         "title": "Rede Smart — Transforme sua rede de contatos em renda extra",
-        "loadMs": 1672,
+        "loadMs": 1799,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1255,21 +1258,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-recruta-day-betratus",
       "ativo": "LP - Recruta Day betratus",
       "url": "https://recrutadaybestratus.lovable.app",
-      "checkedAt": "2026-11-25T19:26:14.472Z",
+      "checkedAt": "2026-11-25T19:41:59.569Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://recrutadaybestratus.lovable.app/",
         "rendered": true,
         "title": "Recruta Day BeTratus 2026 · Encontro presencial em São Paulo",
-        "loadMs": 1780,
+        "loadMs": 2656,
         "lcpMs": null,
         "jsErrors": [
           "Unexpected token ':'"
@@ -1340,21 +1343,21 @@
           "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-calculadora-cdb-poupanca",
       "ativo": "LP - Calculadora CDB x Poupança",
       "url": "https://calculadora-rendafixa-investsmart.lovable.app",
-      "checkedAt": "2026-11-25T19:24:21.217Z",
+      "checkedAt": "2026-11-25T19:40:13.202Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://calculadora-rendafixa-investsmart.lovable.app/",
         "rendered": true,
         "title": "Quais investimentos rendem mais que a poupança?",
-        "loadMs": 2364,
+        "loadMs": 2042,
         "lcpMs": null,
         "jsErrors": [
           "Cannot read properties of null (reading 'addEventListener')",
@@ -1407,9 +1410,7 @@
         "backgroundRequests": [
           "calculadora-rendafixa-investsmart.lovable.app/__l5e/trackevents",
           "www.google.com/rmkt/collect/930118473/",
-          "www.google.com/rmkt/collect/436517334/",
-          "www.google.com/ccm/form-data/930118473",
-          "www.google.com/pagead/form-data/930118473"
+          "www.google.com/rmkt/collect/436517334/"
         ],
         "successShown": false
       },
@@ -1476,14 +1477,14 @@
       "id": "lp-compartilhado-meu-novo-lar-quiz",
       "ativo": "LP - [Compartilhado] Meu Novo Lar - Quiz",
       "url": "https://meu-novo-lar-compartilhado.lovable.app",
-      "checkedAt": "2026-11-25T19:23:26.293Z",
+      "checkedAt": "2026-11-25T19:39:14.713Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://meu-novo-lar-compartilhado.lovable.app/",
         "rendered": true,
         "title": "Diagnóstico Meu Novo Lar — be.smart",
-        "loadMs": 2233,
+        "loadMs": 2318,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1556,105 +1557,21 @@
           "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
-      "verdictSince": "2026-11-25T19:30:14.499Z"
-    },
-    {
-      "id": "lp-abertura-de-filial",
-      "ativo": "LP - Abra sua Filial",
-      "url": "https://aberturadefilial02.lovable.app/",
-      "checkedAt": "2026-11-25T19:23:26.293Z",
-      "page": {
-        "online": true,
-        "httpStatus": 200,
-        "finalUrl": "https://aberturadefilial02.lovable.app/",
-        "rendered": true,
-        "title": "Abra uma filial InvestSmart | Estrutura para assessores consolidados",
-        "loadMs": 2396,
-        "lcpMs": null,
-        "jsErrors": [],
-        "failedResources": 0,
-        "textLength": 6468,
-        "looksLike404": false
-      },
-      "form": {
-        "detected": true,
-        "provider": "Formulário HTML/React"
-      },
-      "funnel": {
-        "status": "Inconclusivo (envio não concluído)",
-        "destinations": [],
-        "requests": [],
-        "whatsapp": false,
-        "successMessage": false,
-        "clicks": [
-          "CONHECER O MODELO DE FILIAL →",
-          "QUERO ABRIR MINHA FILIAL",
-          "CONHECER O MODELO →",
-          "QUERO CONHECER OS NÚMEROS →",
-          "QUERO ENTENDER SE MEU PERFIL FAZ SENTIDO →",
-          "QUERO CRESCER COM A INVESTSMART →"
-        ],
-        "fieldsFilled": 7,
-        "endpointProbes": [],
-        "backgroundRequests": [
-          "aberturadefilial02.lovable.app/__l5e/trackevents"
-        ],
-        "successShown": false
-      },
-      "tracking": {
-        "tags": [
-          "Meta Pixel"
-        ],
-        "pixels": [
-          "Meta Pixel"
-        ],
-        "pageEvents": [
-          "Meta Pixel: PageView"
-        ],
-        "submitEvents": [],
-        "fbq": true,
-        "gtag": false
-      },
-      "conversion": {
-        "source": "google-sheet",
-        "auto": true,
-        "status": "Não monitorada",
-        "severity": "neutral",
-        "reason": "GOOGLE_SERVICE_ACCOUNT_JSON não configurado"
-      },
-      "destinationDocumented": true,
-      "online": true,
-      "httpStatus": 200,
-      "formDetected": true,
-      "formProvider": "Formulário HTML/React",
-      "conversionTest": "Inconclusivo (envio não concluído)",
-      "technicalStatus": "Atenção",
-      "note": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente.",
-      "verdict": "Atenção",
-      "severity": "attention",
-      "score": 90,
-      "reasons": [
-        {
-          "severity": "attention",
-          "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
-        }
-      ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-best-franquias",
       "ativo": "LP - Best Franquias",
       "url": "https://bestfranquia.lovable.app",
-      "checkedAt": "2026-11-25T19:24:05.846Z",
+      "checkedAt": "2026-11-25T19:39:55.587Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://bestfranquia.lovable.app/",
         "rendered": true,
         "title": "Best Franquias — Empreenda com um dos maiores ecossistemas financeiros",
-        "loadMs": 2025,
+        "loadMs": 1941,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1733,14 +1650,14 @@
       "id": "lp-fla-nacao-maracana-22-10",
       "ativo": "LP - Fla Nação - Maracanã 22-10",
       "url": "https://fla-nacao-maracana.lovable.app",
-      "checkedAt": "2026-11-25T19:24:31.922Z",
+      "checkedAt": "2026-11-25T19:40:21.399Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://fla-nacao-maracana.lovable.app/",
         "rendered": true,
         "title": "Flamengo na Libertadores | Concorra a 2 pares de ingressos",
-        "loadMs": 1177,
+        "loadMs": 2833,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1758,7 +1675,6 @@
         "whatsapp": false,
         "successMessage": false,
         "clicks": [
-          "Concorra",
           "Quero concorrer",
           "Concorra",
           "Quero concorrer"
@@ -1782,8 +1698,8 @@
           "Meta Pixel: PageView"
         ],
         "submitEvents": [
-          "Meta Pixel: Lead",
-          "Meta Pixel: PageView"
+          "Meta Pixel: PageView",
+          "Meta Pixel: Lead"
         ],
         "fbq": true,
         "gtag": false
@@ -1810,21 +1726,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-maracana-flamengo-samyr",
       "ativo": "LP - Flamengo - Samyr",
       "url": "https://maracana-flamengo.lovable.app",
-      "checkedAt": "2026-11-25T19:24:34.177Z",
+      "checkedAt": "2026-11-25T19:40:23.383Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://maracana-flamengo.lovable.app/",
         "rendered": true,
         "title": "Flamengo na Libertadores | Concorra a 1 par de ingressos",
-        "loadMs": 2630,
+        "loadMs": 992,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1896,21 +1812,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-flu-guerreiro-maracana-14-10",
       "ativo": "LP - Flu Guerreiro - Maracanã 14-10",
       "url": "https://flu-guerreiro-maracana.lovable.app",
-      "checkedAt": "2026-11-25T19:24:35.914Z",
+      "checkedAt": "2026-11-25T19:40:24.182Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://flu-guerreiro-maracana.lovable.app/",
         "rendered": true,
         "title": "Fluminense no Maracanã | Concorra a ingressos de camarote",
-        "loadMs": 3404,
+        "loadMs": 3384,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -1977,21 +1893,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-maracana-fluminense-samyr",
       "ativo": "LP - Fluminense - Samyr",
       "url": "https://maracana-fluminense.lovable.app",
-      "checkedAt": "2026-11-25T19:24:43.599Z",
+      "checkedAt": "2026-11-25T19:40:35.083Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://maracana-fluminense.lovable.app/",
         "rendered": true,
         "title": "Fluminense no Maracanã | Concorra a 1 par de ingressos",
-        "loadMs": 3713,
+        "loadMs": 3557,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2064,21 +1980,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-indique-ganhe-5mil",
       "ativo": "LP - Indique e Ganhe até R$ 5 mil",
       "url": "https://indiqueeganhe5mil.lovable.app/",
-      "checkedAt": "2026-11-25T19:24:49.052Z",
+      "checkedAt": "2026-11-25T19:40:37.250Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://indiqueeganhe5mil.lovable.app/",
         "rendered": true,
         "title": "InvestSmart — Ganhe até R$ 5 mil indicando um profissional bancário",
-        "loadMs": 1628,
+        "loadMs": 1540,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2147,21 +2063,21 @@
           "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-isday-matrizrj",
       "ativo": "LP - Isday Matrizrj",
       "url": "https://isday-matrizrj.lovable.app",
-      "checkedAt": "2026-11-25T19:25:19.950Z",
+      "checkedAt": "2026-11-25T19:41:06.741Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://isday-matrizrj.lovable.app/",
         "rendered": true,
         "title": "IS Day 2026 | Matriz RJ — InvestSmart | Sua próxima carreira começa aqui",
-        "loadMs": 1964,
+        "loadMs": 2957,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2191,7 +2107,9 @@
         ],
         "fieldsFilled": 6,
         "endpointProbes": [],
-        "backgroundRequests": [],
+        "backgroundRequests": [
+          "isday-matrizrj.lovable.app/__l5e/trackevents"
+        ],
         "successShown": false
       },
       "tracking": {
@@ -2235,14 +2153,14 @@
       "id": "lp-live-ao-vivo-melhor-profissao",
       "ativo": "LP - Live ao Vivo / Melhor Profissão",
       "url": "https://melhorprofissao.lovable.app",
-      "checkedAt": "2026-11-25T19:25:20.578Z",
+      "checkedAt": "2026-11-25T19:41:10.813Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://melhorprofissao.lovable.app/",
         "rendered": true,
         "title": "A Melhor Profissão · Live com Samyr Castro · Seg a qui, 18h",
-        "loadMs": 1613,
+        "loadMs": 1652,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2323,14 +2241,14 @@
       "id": "lp-besmart",
       "ativo": "LP - Lp Besmart",
       "url": "https://lp-besmart.lovable.app",
-      "checkedAt": "2026-11-25T19:25:22.836Z",
+      "checkedAt": "2026-11-25T19:41:11.712Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://lp-besmart.lovable.app/",
         "rendered": true,
         "title": "be.smart | Todas as soluções financeiras em um só lugar",
-        "loadMs": 1909,
+        "loadMs": 2115,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2397,25 +2315,25 @@
           "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-maracana-glow-experience",
       "ativo": "LP - Maracanã Glow Experience",
       "url": "https://maracana-glow-experience.lovable.app/",
-      "checkedAt": "2026-11-25T19:25:30.948Z",
+      "checkedAt": "2026-11-25T19:41:20.820Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://maracana-glow-experience.lovable.app/",
         "rendered": true,
         "title": "Torcida InvestSmart - Ganhe Ingressos VIP para o Maracanã",
-        "loadMs": 1186,
+        "loadMs": 1004,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
-        "textLength": 3377,
+        "textLength": 3371,
         "looksLike404": false
       },
       "form": {
@@ -2484,21 +2402,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-maracana-magic-landing",
       "ativo": "LP - Maracanã Magic Landing",
       "url": "https://maracana-purple-glow.lovable.app",
-      "checkedAt": "2026-11-25T19:25:36.261Z",
+      "checkedAt": "2026-11-25T19:41:22.072Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://maracana-purple-glow.lovable.app/",
         "rendered": true,
         "title": "Torcida InvestSmart - Ganhe Ingressos VIP para o Maracanã",
-        "loadMs": 2762,
+        "loadMs": 3076,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2569,21 +2487,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-meu-novo-lar-quiz",
       "ativo": "LP - Meu Novo Lar - Quiz",
       "url": "https://meu-novo-lar-quiz-2.lovable.app",
-      "checkedAt": "2026-11-25T19:25:39.362Z",
+      "checkedAt": "2026-11-25T19:45:05.740Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://meu-novo-lar-quiz-2.lovable.app/",
         "rendered": true,
         "title": "Diagnóstico Meu Novo Lar — be.smart",
-        "loadMs": 2067,
+        "loadMs": 1934,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2656,21 +2574,22 @@
           "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "confirmation": "Instabilidade momentânea na 1ª checagem (Página respondeu HTTP 500.); normal na 2ª",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-meu-novo-lar-samyr",
       "ativo": "LP - Meu Novo Lar - Samyr",
       "url": "https://meu-novo-lar-samyr.lovable.app",
-      "checkedAt": "2026-11-25T19:25:46.227Z",
+      "checkedAt": "2026-11-25T19:41:32.753Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://meu-novo-lar-samyr.lovable.app/",
         "rendered": true,
         "title": "be.smart — Conquiste seu primeiro imóvel com planejamento",
-        "loadMs": 1696,
+        "loadMs": 1828,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2694,92 +2613,9 @@
           }
         ],
         "whatsapp": false,
-        "successMessage": true,
-        "clicks": [
-          "Quero meu planejamento"
-        ],
-        "fieldsFilled": 3,
-        "endpointProbes": [],
-        "backgroundRequests": [],
-        "successShown": true
-      },
-      "tracking": {
-        "tags": [],
-        "pixels": [],
-        "pageEvents": [],
-        "submitEvents": [],
-        "fbq": false,
-        "gtag": false
-      },
-      "conversion": {
-        "source": "google-sheet",
-        "auto": true,
-        "status": "Não monitorada",
-        "severity": "neutral",
-        "reason": "GOOGLE_SERVICE_ACCOUNT_JSON não configurado"
-      },
-      "destinationDocumented": true,
-      "online": true,
-      "httpStatus": 200,
-      "formDetected": true,
-      "formProvider": "Formulário HTML/React",
-      "conversionTest": "Envia lead",
-      "technicalStatus": "Atenção",
-      "note": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar.",
-      "verdict": "Atenção",
-      "severity": "attention",
-      "score": 90,
-      "reasons": [
-        {
-          "severity": "ok",
-          "text": "Envio simulado chegou até: Função server da LP."
-        },
-        {
-          "severity": "attention",
-          "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
-        }
-      ],
-      "previousVerdict": "Atenção",
-      "verdictSince": "2026-11-25T18:54:32.358Z"
-    },
-    {
-      "id": "lp-patrocinio-smart-summit-samyr",
-      "ativo": "LP - Patrocínio Smart Summit - Samyr",
-      "url": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev",
-      "checkedAt": "2026-11-25T19:25:50.652Z",
-      "page": {
-        "online": true,
-        "httpStatus": 200,
-        "finalUrl": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev/",
-        "rendered": true,
-        "title": "Smart Summit — Patrocínio para marcas do mercado financeiro",
-        "loadMs": 474,
-        "lcpMs": null,
-        "jsErrors": [],
-        "failedResources": 0,
-        "textLength": 4540,
-        "looksLike404": false
-      },
-      "form": {
-        "detected": true,
-        "provider": "Formulário HTML/React"
-      },
-      "funnel": {
-        "status": "Envia lead",
-        "destinations": [
-          "Função server da LP"
-        ],
-        "requests": [
-          {
-            "url": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev/_serverFn/e211e8c27eee0a1053129b7769a37cb2e31b3dc869a84a1c647eee19cfb57993",
-            "method": "POST",
-            "destination": "Função server da LP"
-          }
-        ],
-        "whatsapp": false,
         "successMessage": false,
         "clicks": [
-          "Agendar conversa"
+          "Quero meu planejamento"
         ],
         "fieldsFilled": 3,
         "endpointProbes": [],
@@ -2826,17 +2662,100 @@
       "verdictSince": "2026-11-25T18:54:32.358Z"
     },
     {
+      "id": "lp-patrocinio-smart-summit-samyr",
+      "ativo": "LP - Patrocínio Smart Summit - Samyr",
+      "url": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev",
+      "checkedAt": "2026-11-25T19:41:34.900Z",
+      "page": {
+        "online": true,
+        "httpStatus": 200,
+        "finalUrl": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev/",
+        "rendered": true,
+        "title": "Smart Summit — Patrocínio para marcas do mercado financeiro",
+        "loadMs": 374,
+        "lcpMs": null,
+        "jsErrors": [],
+        "failedResources": 0,
+        "textLength": 4540,
+        "looksLike404": false
+      },
+      "form": {
+        "detected": true,
+        "provider": "Formulário HTML/React"
+      },
+      "funnel": {
+        "status": "Envia lead",
+        "destinations": [
+          "Função server da LP"
+        ],
+        "requests": [
+          {
+            "url": "https://patrocinio-smart-summit-samyr.gestaobankrio.workers.dev/_serverFn/e211e8c27eee0a1053129b7769a37cb2e31b3dc869a84a1c647eee19cfb57993",
+            "method": "POST",
+            "destination": "Função server da LP"
+          }
+        ],
+        "whatsapp": false,
+        "successMessage": true,
+        "clicks": [
+          "Agendar conversa"
+        ],
+        "fieldsFilled": 3,
+        "endpointProbes": [],
+        "backgroundRequests": [],
+        "successShown": true
+      },
+      "tracking": {
+        "tags": [],
+        "pixels": [],
+        "pageEvents": [],
+        "submitEvents": [],
+        "fbq": false,
+        "gtag": false
+      },
+      "conversion": {
+        "source": "google-sheet",
+        "auto": true,
+        "status": "Não monitorada",
+        "severity": "neutral",
+        "reason": "GOOGLE_SERVICE_ACCOUNT_JSON não configurado"
+      },
+      "destinationDocumented": true,
+      "online": true,
+      "httpStatus": 200,
+      "formDetected": true,
+      "formProvider": "Formulário HTML/React",
+      "conversionTest": "Envia lead",
+      "technicalStatus": "Atenção",
+      "note": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar.",
+      "verdict": "Atenção",
+      "severity": "attention",
+      "score": 90,
+      "reasons": [
+        {
+          "severity": "ok",
+          "text": "Envio simulado chegou até: Função server da LP."
+        },
+        {
+          "severity": "attention",
+          "text": "Nenhum pixel/tag de mensuração detectado (Meta, GTM ou GA4). Campanhas não conseguem otimizar."
+        }
+      ],
+      "previousVerdict": "Atenção",
+      "verdictSince": "2026-11-25T18:54:32.358Z"
+    },
+    {
       "id": "lp-remix-of-meu-novo-lar-quiz",
       "ativo": "LP - Remix of Meu Novo Lar - Quiz",
       "url": "https://meu-novo-lar-quiz.lovable.app",
-      "checkedAt": "2026-11-25T19:26:28.420Z",
+      "checkedAt": "2026-11-25T19:42:13.500Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://meu-novo-lar-quiz.lovable.app/",
         "rendered": true,
         "title": "Diagnóstico Meu Novo Lar",
-        "loadMs": 1969,
+        "loadMs": 1950,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2909,21 +2828,21 @@
           "text": "O robô não conseguiu concluir o envio (envio não concluído); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-seguro-de-vida-patrimonial",
       "ativo": "LP - Seguro de vida Patrimonial",
       "url": "https://segurodevidapatrimonial.lovable.app",
-      "checkedAt": "2026-11-25T19:26:43.475Z",
+      "checkedAt": "2026-11-25T19:42:31.236Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://segurodevidapatrimonial.lovable.app/",
         "rendered": true,
         "title": "Seguro de Vida Patrimonial be.smart",
-        "loadMs": 1908,
+        "loadMs": 1915,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -2997,14 +2916,14 @@
       "id": "lp-simulador-consorcio-20262-organico",
       "ativo": "LP - Simulador Consórcio 2026.2 - Orgânico",
       "url": "https://simuladorconsorcio2026-organico.lovable.app",
-      "checkedAt": "2026-11-25T19:26:46.607Z",
+      "checkedAt": "2026-11-25T19:42:33.936Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://simuladorconsorcio2026-organico.lovable.app/",
         "rendered": true,
         "title": "Simulador de Consórcio be.smart — parcelas reduzidas",
-        "loadMs": 1594,
+        "loadMs": 1925,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3086,14 +3005,14 @@
       "id": "lp-smart-campus-investsmart-xp",
       "ativo": "LP - Smart Campus - InvestSmart XP",
       "url": "https://smartcampus-is.lovable.app",
-      "checkedAt": "2026-11-25T19:26:51.105Z",
+      "checkedAt": "2026-11-25T19:42:36.187Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smartcampus-is.lovable.app/",
         "rendered": true,
         "title": "Smart Campus — InvestSmart XP",
-        "loadMs": 1908,
+        "loadMs": 1738,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3167,14 +3086,14 @@
       "id": "lp-smart-summit-miami-2026",
       "ativo": "LP - Smart Summit - MIAMI",
       "url": "https://ss-miami.lovable.app",
-      "checkedAt": "2026-11-25T19:26:59.162Z",
+      "checkedAt": "2026-11-25T19:42:45.980Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://ss-miami.lovable.app/",
         "rendered": true,
         "title": "Smart Summit Miami 2026 — Guia do Participante",
-        "loadMs": 3827,
+        "loadMs": 2808,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3252,14 +3171,14 @@
       "id": "lp-smartcarreiras-samyr",
       "ativo": "LP - smartcarreiras-samyr",
       "url": "https://convite.smartcarreiras.com.br/",
-      "checkedAt": "2026-11-25T19:26:59.418Z",
+      "checkedAt": "2026-11-25T19:42:47.543Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://convite.smartcarreiras.com.br/",
         "rendered": true,
         "title": "Smart carreiras — smart carreiras",
-        "loadMs": 1105,
+        "loadMs": 973,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3335,14 +3254,14 @@
       "id": "lp-vasco-gigante-maracana-20-10",
       "ativo": "LP - Vasco Gigante - Maracanã 20-10",
       "url": "https://maracana-vasco.lovable.app",
-      "checkedAt": "2026-11-25T19:27:10.302Z",
+      "checkedAt": "2026-11-25T19:42:57.266Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://maracana-vasco.lovable.app/",
         "rendered": true,
         "title": "Vasco na Sul-Americana | Concorra a 1 par de ingressos",
-        "loadMs": 1018,
+        "loadMs": 3067,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3411,21 +3330,21 @@
           "text": "O robô não conseguiu concluir o envio (validação bloqueou); nenhum dado saiu da página nem houve confirmação. Validar manualmente."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-copia-campanha-bike-eletrica",
       "ativo": "LP - [Cópia] - Campanha Bike Eletrica",
       "url": "https://campanhabikeletrica.lovable.app",
-      "checkedAt": "2026-11-25T19:23:26.293Z",
+      "checkedAt": "2026-11-25T19:39:14.713Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://campanhabikeletrica.lovable.app/",
         "rendered": true,
         "title": "Concurso InvestSmart | Concorra a uma Bicicleta Elétrica",
-        "loadMs": 1599,
+        "loadMs": 1618,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3511,21 +3430,115 @@
           "text": "Meta Pixel instalado, mas nenhum evento de conversão (Lead) dispara no envio."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
+      "verdictSince": "2026-11-25T19:30:14.499Z"
+    },
+    {
+      "id": "lp-abertura-de-filial",
+      "ativo": "LP - Abra sua Filial",
+      "url": "https://aberturadefilial02.lovable.app/",
+      "checkedAt": "2026-11-25T19:39:14.713Z",
+      "page": {
+        "online": true,
+        "httpStatus": 200,
+        "finalUrl": "https://aberturadefilial02.lovable.app/",
+        "rendered": true,
+        "title": "Abra uma filial InvestSmart | Estrutura para assessores consolidados",
+        "loadMs": 5245,
+        "lcpMs": null,
+        "jsErrors": [],
+        "failedResources": 0,
+        "textLength": 6468,
+        "looksLike404": false
+      },
+      "form": {
+        "detected": true,
+        "provider": "Formulário HTML/React"
+      },
+      "funnel": {
+        "status": "Envia lead",
+        "destinations": [
+          "Função server da LP"
+        ],
+        "requests": [
+          {
+            "url": "https://aberturadefilial02.lovable.app/_serverFn/e211e8c27eee0a1053129b7769a37cb2e31b3dc869a84a1c647eee19cfb57993",
+            "method": "POST",
+            "destination": "Função server da LP"
+          }
+        ],
+        "whatsapp": false,
+        "successMessage": false,
+        "clicks": [
+          "Enviar meu perfil →",
+          "CONHECER O MODELO DE FILIAL →",
+          "QUERO ABRIR MINHA FILIAL",
+          "CONHECER O MODELO →",
+          "QUERO CONHECER OS NÚMEROS →",
+          "QUERO ENTENDER SE MEU PERFIL FAZ SENTIDO →",
+          "QUERO CRESCER COM A INVESTSMART →",
+          "Confirmar e enviar →"
+        ],
+        "fieldsFilled": 7,
+        "endpointProbes": [],
+        "backgroundRequests": [
+          "aberturadefilial02.lovable.app/__l5e/trackevents"
+        ],
+        "successShown": false
+      },
+      "tracking": {
+        "tags": [
+          "Meta Pixel"
+        ],
+        "pixels": [],
+        "pageEvents": [],
+        "submitEvents": [],
+        "fbq": true,
+        "gtag": false
+      },
+      "conversion": {
+        "source": "google-sheet",
+        "auto": true,
+        "status": "Não monitorada",
+        "severity": "neutral",
+        "reason": "GOOGLE_SERVICE_ACCOUNT_JSON não configurado"
+      },
+      "destinationDocumented": true,
+      "online": true,
+      "httpStatus": 200,
+      "formDetected": true,
+      "formProvider": "Formulário HTML/React",
+      "conversionTest": "Envia lead",
+      "technicalStatus": "Atenção",
+      "note": "Meta Pixel instalado, mas nenhum evento de conversão (Lead) dispara no envio.",
+      "verdict": "Atenção",
+      "severity": "attention",
+      "score": 94,
+      "reasons": [
+        {
+          "severity": "ok",
+          "text": "Envio simulado chegou até: Função server da LP."
+        },
+        {
+          "severity": "attention",
+          "text": "Meta Pixel instalado, mas nenhum evento de conversão (Lead) dispara no envio."
+        }
+      ],
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-investsmart-xp",
       "ativo": "LP - Investsmart Xp",
       "url": "https://investsmart-xp.lovable.app",
-      "checkedAt": "2026-11-25T19:24:56.378Z",
+      "checkedAt": "2026-11-25T19:40:45.951Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://investsmart-xp.lovable.app/",
         "rendered": true,
         "title": "Assessor de investimentos profissional | InvestSmart XP",
-        "loadMs": 2463,
+        "loadMs": 2277,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3605,14 +3618,14 @@
       "id": "lp-planeja-brasil-12-dobras",
       "ativo": "LP - Planeja Brasil - 12 Dobras",
       "url": "https://planejamento-financeiro-personalizado.lovable.app",
-      "checkedAt": "2026-11-25T19:25:55.726Z",
+      "checkedAt": "2026-11-25T19:41:37.602Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://planejamento-financeiro-personalizado.lovable.app/",
         "rendered": true,
         "title": "Planeja Brasil — Planejamento financeiro gratuito | InvestSmart XP",
-        "loadMs": 2605,
+        "loadMs": 2339,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3706,14 +3719,14 @@
       "id": "lp-raio-x-diagnostico-patrimonial",
       "ativo": "LP - Raio-X Diagnóstico Patrimonial",
       "url": "https://diagnosticopatrimonial-investsmart.lovable.app",
-      "checkedAt": "2026-11-25T19:26:09.963Z",
+      "checkedAt": "2026-11-25T19:41:56.674Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://diagnosticopatrimonial-investsmart.lovable.app/",
         "rendered": true,
         "title": "Raio-X Diagnóstico Patrimonial | InvestSmart",
-        "loadMs": 1799,
+        "loadMs": 1659,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3815,14 +3828,14 @@
       "id": "lp-smartsummit-miami",
       "ativo": "LP - smartsummit-miami",
       "url": "https://smartsummit-miami.lovable.app",
-      "checkedAt": "2026-11-25T19:27:04.756Z",
+      "checkedAt": "2026-11-25T19:42:52.498Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smartsummit-miami.lovable.app/",
         "rendered": true,
         "title": "Smart Summit Miami 2026 | Sponsorship Packages",
-        "loadMs": 2270,
+        "loadMs": 1803,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -3852,7 +3865,9 @@
         ],
         "fieldsFilled": 7,
         "endpointProbes": [],
-        "backgroundRequests": [],
+        "backgroundRequests": [
+          "smartsummit-miami.lovable.app/__l5e/trackevents"
+        ],
         "successShown": false
       },
       "tracking": {
@@ -3899,14 +3914,14 @@
           "text": "Meta Pixel instalado, mas nenhum evento de conversão (Lead) dispara no envio."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "Atenção",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-besmart-partner-hub",
       "ativo": "LP - Be.Smart Partner Hub",
       "url": "",
-      "checkedAt": "2026-11-25T19:23:54.872Z",
+      "checkedAt": "2026-11-25T19:39:41.209Z",
       "page": {
         "online": null,
         "httpStatus": null,
@@ -3967,7 +3982,7 @@
       "id": "lp-elite-path-finder",
       "ativo": "LP - Elite Path Finder",
       "url": "",
-      "checkedAt": "2026-11-25T19:24:31.922Z",
+      "checkedAt": "2026-11-25T19:40:21.399Z",
       "page": {
         "online": null,
         "httpStatus": null,
@@ -4028,14 +4043,14 @@
       "id": "lp-besmart-recruit-day",
       "ativo": "LP - Be.Smart Recruit Day",
       "url": "https://recruit-shine-leap.lovable.app",
-      "checkedAt": "2026-11-25T19:23:54.872Z",
+      "checkedAt": "2026-11-25T19:39:41.209Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://recruit-shine-leap.lovable.app/",
         "rendered": true,
         "title": "Be.smart Recruta Day - Seu Talento em alta no mercado financeiro",
-        "loadMs": 1323,
+        "loadMs": 1448,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4117,21 +4132,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-betratus-corretores-seguro-vida",
       "ativo": "LP - BeTratus - Corretores de Seguro de Vida",
       "url": "https://betratus.lovable.app",
-      "checkedAt": "2026-11-25T19:24:14.052Z",
+      "checkedAt": "2026-11-25T19:40:04.214Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://betratus.lovable.app/",
         "rendered": true,
         "title": "BeTratus | Venda mais Seguro de Vida",
-        "loadMs": 2406,
+        "loadMs": 2539,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4212,14 +4227,14 @@
       "id": "lp-consorciobesmartgeral",
       "ativo": "LP - Consorciobesmartgeral",
       "url": "https://consorciobesmartgeral.lovable.app",
-      "checkedAt": "2026-11-25T19:24:29.657Z",
+      "checkedAt": "2026-11-25T19:40:14.495Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://consorciobesmartgeral.lovable.app/",
         "rendered": true,
         "title": "Consórcio be.smart | Imóvel, carro ou moto sem juros",
-        "loadMs": 1220,
+        "loadMs": 1852,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4300,14 +4315,14 @@
       "id": "lp-is-day-10-de-fevereiro",
       "ativo": "LP - IS DAY - 10 de fevereiro",
       "url": "https://smart-recruit-shine.lovable.app",
-      "checkedAt": "2026-11-25T19:25:01.297Z",
+      "checkedAt": "2026-11-25T19:40:50.564Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smart-recruit-shine.lovable.app/",
         "rendered": true,
         "title": "IS DAY - Seu Talento em alta no mercado financeiro",
-        "loadMs": 2636,
+        "loadMs": 1390,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4343,9 +4358,7 @@
             "detail": "Edge Function respondeu 200 ao preflight"
           }
         ],
-        "backgroundRequests": [
-          "smart-recruit-shine.lovable.app/__l5e/trackevents"
-        ],
+        "backgroundRequests": [],
         "successShown": false
       },
       "tracking": {
@@ -4386,21 +4399,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-is-day-atibaia",
       "ativo": "LP - IS Day Atibaia",
       "url": "https://is-day-atibaia.lovable.app",
-      "checkedAt": "2026-11-25T19:25:07.075Z",
+      "checkedAt": "2026-11-25T19:40:54.980Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://is-day-atibaia.lovable.app/",
         "rendered": true,
         "title": "IS Day Atibaia | Carreira no Mercado Financeiro | InvestSmart",
-        "loadMs": 1563,
+        "loadMs": 779,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4479,21 +4492,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-is-day-atibaia-organico",
       "ativo": "LP - IS Day Atibaia - Orgânico",
       "url": "https://isdayatibaia.lovable.app",
-      "checkedAt": "2026-11-25T19:25:08.134Z",
+      "checkedAt": "2026-11-25T19:40:59.525Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://isdayatibaia.lovable.app/",
         "rendered": true,
         "title": "IS Day Atibaia | Carreira no Mercado Financeiro | InvestSmart",
-        "loadMs": 1354,
+        "loadMs": 1420,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4572,21 +4585,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-is-day-atibaia-vinhedo",
       "ativo": "LP - IS Day Atibaia + Vinhedo",
       "url": "https://is-day-atibaia-vinhedo.lovable.app",
-      "checkedAt": "2026-11-25T19:25:13.601Z",
+      "checkedAt": "2026-11-25T19:41:00.437Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://is-day-atibaia-vinhedo.lovable.app/",
         "rendered": true,
         "title": "IS Day Atibaia + Vinhedo | Carreira no Mercado Financeiro",
-        "loadMs": 1146,
+        "loadMs": 1718,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4610,7 +4623,7 @@
           }
         ],
         "whatsapp": false,
-        "successMessage": true,
+        "successMessage": false,
         "clicks": [
           "Quero participar do IS DAY"
         ],
@@ -4625,7 +4638,7 @@
         "backgroundRequests": [
           "is-day-atibaia-vinhedo.lovable.app/__l5e/trackevents"
         ],
-        "successShown": true
+        "successShown": false
       },
       "tracking": {
         "tags": [
@@ -4665,21 +4678,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-is-day-matriz-rj-1411",
       "ativo": "LP - IS Day Matriz RJ - 14/11",
       "url": "https://isday-matriz.lovable.app",
-      "checkedAt": "2026-11-25T19:25:14.340Z",
+      "checkedAt": "2026-11-25T19:41:04.989Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://isday-matriz.lovable.app/",
         "rendered": true,
         "title": "IS Day Matriz RJ | Carreira no Mercado Financeiro | InvestSmart",
-        "loadMs": 1482,
+        "loadMs": 1230,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4759,21 +4772,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-planeja-brasil-organico",
       "ativo": "LP - Planeja Brasil - Orgânico",
       "url": "https://planejamento-financeiro.investsmart.com.br/",
-      "checkedAt": "2026-11-25T19:25:59.352Z",
+      "checkedAt": "2026-11-25T19:41:42.941Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://planejamento-financeiro.investsmart.com.br/",
         "rendered": true,
         "title": "Planeja Brasil — Planejamento financeiro gratuito | InvestSmart XP",
-        "loadMs": 889,
+        "loadMs": 959,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4787,19 +4800,13 @@
       "funnel": {
         "status": "Envia lead",
         "destinations": [
-          "n8n",
-          "Função server da LP"
+          "n8n"
         ],
         "requests": [
           {
             "url": "https://n8n.investsmart.com.br/webhook/fce8c951-5761-4718-a4c3-433a9d4e224e",
             "method": "POST",
             "destination": "n8n"
-          },
-          {
-            "url": "https://planejamento-financeiro.investsmart.com.br/_serverFn/7814168f7a318d2cec2203a12dd74f0cfc25a41663c741de460a54f5fc0c42d2",
-            "method": "POST",
-            "destination": "Função server da LP"
           }
         ],
         "whatsapp": false,
@@ -4816,9 +4823,7 @@
           }
         ],
         "backgroundRequests": [
-          "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events",
-          "snofje0za8n8.cloud.run/events",
-          "planejamento-financeiro.investsmart.com.br/cdn-cgi/rum"
+          "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events"
         ],
         "successShown": false
       },
@@ -4858,14 +4863,14 @@
       "formProvider": "Formulário HTML/React",
       "conversionTest": "Envia lead",
       "technicalStatus": "Operacional",
-      "note": "Envio simulado chegou até: n8n, Função server da LP.",
+      "note": "Envio simulado chegou até: n8n.",
       "verdict": "OK",
       "severity": "ok",
       "score": 100,
       "reasons": [
         {
           "severity": "ok",
-          "text": "Envio simulado chegou até: n8n, Função server da LP."
+          "text": "Envio simulado chegou até: n8n."
         }
       ],
       "previousVerdict": "OK",
@@ -4875,14 +4880,14 @@
       "id": "lp-planeja-brasil-samyr",
       "ativo": "LP - Planeja Brasil - Samyr",
       "url": "https://seu-planejamento-financeiro.investsmart.com.br",
-      "checkedAt": "2026-11-25T19:26:01.194Z",
+      "checkedAt": "2026-11-25T19:41:43.706Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://seu-planejamento-financeiro.investsmart.com.br/",
         "rendered": true,
         "title": "Planeja Brasil — Planejamento financeiro gratuito | InvestSmart XP",
-        "loadMs": 4408,
+        "loadMs": 2755,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -4919,7 +4924,6 @@
           }
         ],
         "backgroundRequests": [
-          "seu-planejamento-financeiro.investsmart.com.br/__l5e/trackevents",
           "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events"
         ],
         "successShown": false
@@ -4977,14 +4981,14 @@
       "id": "lp-planeja-brasil-trafego-pago",
       "ativo": "LP - Planeja Brasil - Tráfego Pago",
       "url": "https://planejamento-financeiro01.lovable.app",
-      "checkedAt": "2026-11-25T19:26:02.482Z",
+      "checkedAt": "2026-11-25T19:41:45.611Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://planejamento-financeiro01.lovable.app/",
         "rendered": true,
         "title": "Planeja Brasil — Planejamento financeiro gratuito | InvestSmart XP",
-        "loadMs": 3380,
+        "loadMs": 2534,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -5010,7 +5014,6 @@
         "whatsapp": false,
         "successMessage": false,
         "clicks": [
-          "Receber planejamento gratuito",
           "Quero receber um planejamento gratuito"
         ],
         "fieldsFilled": 8,
@@ -5023,8 +5026,7 @@
         ],
         "backgroundRequests": [
           "planejamento-financeiro01.lovable.app/__l5e/trackevents",
-          "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events",
-          "snofje0za8n8.cloud.run/events"
+          "fh-118116076e9a4c2a96a99fbb70bea2a0.ecs.us-west-2.on.aws/events"
         ],
         "successShown": false
       },
@@ -5043,7 +5045,6 @@
           "Meta Pixel: PageView"
         ],
         "submitEvents": [
-          "GA4: form_start",
           "Meta Pixel: Lead",
           "Meta Pixel: PageView"
         ],
@@ -5081,14 +5082,14 @@
       "id": "lp-profissao-elite-cidades-brasil",
       "ativo": "LP - Profissão de Elite - Cidades do Brasil",
       "url": "https://profissao-elite.lovable.app",
-      "checkedAt": "2026-11-25T19:26:09.557Z",
+      "checkedAt": "2026-11-25T19:41:51.813Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://profissao-elite.lovable.app/",
         "rendered": true,
         "title": "Smart carreiras — smart carreiras",
-        "loadMs": 2363,
+        "loadMs": 2242,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -5168,14 +5169,14 @@
       "id": "lp-remix-of-is-day-10-de-fevereiro",
       "ativo": "LP - Remix of IS DAY - 10 de fevereiro",
       "url": "https://finance-talent-spot.lovable.app",
-      "checkedAt": "2026-11-25T19:26:24.222Z",
+      "checkedAt": "2026-11-25T19:42:08.327Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://finance-talent-spot.lovable.app/",
         "rendered": true,
         "title": "IS DAY - Seu Talento em alta no mercado financeiro",
-        "loadMs": 1138,
+        "loadMs": 1221,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -5252,21 +5253,21 @@
           "text": "Envio simulado chegou até: Supabase Edge Function."
         }
       ],
-      "previousVerdict": "Crítico",
+      "previousVerdict": "OK",
       "verdictSince": "2026-11-25T19:30:14.499Z"
     },
     {
       "id": "lp-simulador-consorcio-20262-trafego-pago",
       "ativo": "LP - Simulador Consórcio 2026.2 - Tráfego pago",
       "url": "https://simuladorconsorcio2026.lovable.app",
-      "checkedAt": "2026-11-25T19:26:47.618Z",
+      "checkedAt": "2026-11-25T19:42:35.308Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://simuladorconsorcio2026.lovable.app/",
         "rendered": true,
         "title": "Simulador de Consórcio be.smart — parcelas reduzidas",
-        "loadMs": 1785,
+        "loadMs": 2291,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -5354,14 +5355,14 @@
       "id": "lp-smart-carreiras",
       "ativo": "LP - Smart Carreiras",
       "url": "https://smartcarreiras.com.br/",
-      "checkedAt": "2026-11-25T19:26:55.224Z",
+      "checkedAt": "2026-11-25T19:42:40.130Z",
       "page": {
         "online": true,
         "httpStatus": 200,
         "finalUrl": "https://smartcarreiras.com.br/",
         "rendered": true,
         "title": "Smart carreiras — smart carreiras",
-        "loadMs": 1034,
+        "loadMs": 1352,
         "lcpMs": null,
         "jsErrors": [],
         "failedResources": 0,
@@ -5375,16 +5376,22 @@
       "funnel": {
         "status": "Envia lead",
         "destinations": [
-          "HubSpot"
+          "HubSpot",
+          "WhatsApp"
         ],
         "requests": [
           {
             "url": "https://api.hsforms.com/submissions/v3/integration/submit/21347715/b713217b-7087-4958-b42c-177d3d7f2505",
             "method": "POST",
             "destination": "HubSpot"
+          },
+          {
+            "url": "https://api.whatsapp.com/send/?phone=5521920063523&text=Ol%C3%A1%21+Tenho+interesse+no+programa+Smart+Carreiras&type=phone_number&app_absent=0",
+            "method": "GET",
+            "destination": "WhatsApp"
           }
         ],
-        "whatsapp": false,
+        "whatsapp": true,
         "successMessage": false,
         "clicks": [
           "ENVIAR"
@@ -5392,7 +5399,8 @@
         "fieldsFilled": 7,
         "endpointProbes": [],
         "backgroundRequests": [
-          "forms.hsforms.com/embed/v3/counters.gif"
+          "forms.hsforms.com/embed/v3/counters.gif",
+          "www.youtube-nocookie.com/youtubei/v1/log_event"
         ],
         "successShown": false
       },
@@ -5424,14 +5432,14 @@
       "formProvider": "Formulário HTML/React",
       "conversionTest": "Envia lead",
       "technicalStatus": "Operacional",
-      "note": "Envio simulado chegou até: HubSpot.",
+      "note": "Envio simulado chegou até: HubSpot, WhatsApp.",
       "verdict": "OK",
       "severity": "ok",
       "score": 100,
       "reasons": [
         {
           "severity": "ok",
-          "text": "Envio simulado chegou até: HubSpot."
+          "text": "Envio simulado chegou até: HubSpot, WhatsApp."
         }
       ],
       "previousVerdict": "OK",
