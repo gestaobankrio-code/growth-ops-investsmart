@@ -5,7 +5,7 @@
 - Corrigido: o Health Check falhava todo dia desde 12/11 (`ubuntu-latest` → 26.04, sem suporte no Playwright 1.55). Runner fixado em `ubuntu-24.04`.
 - Envio simulado do formulário com interceptação: detecta formulário mock, destino do lead e webhook n8n inativo, sem gerar lead.
 - Detecção de página em branco, erros de JS, LCP, pixels e evento de Lead no envio.
-- Conversão real (Sheets/Supabase/Bitrix/JSON) com alarme estatístico de "conversão parada" sensível ao horário.
+- Conversão real lida automaticamente do n8n (workflow descoberto pelo webhook da LP, execuções com erro = leads perdidos), além de Sheets/Supabase/Bitrix/JSON, com alarme estatístico de "conversão parada" sensível ao horário.
 - Execução a cada 4 h, histórico (`data/health-history.json`), issues automáticas de alerta e de monitor quebrado, resumo opcional por IA.
 - Painel refeito: veredito por LP, frescor dos dados, filtros, conversão com tendência; removida a animação que simulava uma validação.
 

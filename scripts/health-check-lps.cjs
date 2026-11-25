@@ -777,6 +777,93 @@ async function readBitrix(config) {
   return { timestamps };
 }
 
+/*
+ * n8n: descobre automaticamente o workflow de cada LP pelo webhook capturado no envio simulado
+ * e lê as execuções (sucesso = lead processado, erro = lead perdido). Precisa só de
+ * N8N_API_URL + N8N_API_KEY (ou dentro de LEAD_SOURCE_SECRETS), uma vez para todas as LPs.
+ */
+const n8nState = { workflows: null, error: null };
+
+function n8nCredentials() {
+  const url = secret('N8N_API_URL') || 'https://n8n.investsmart.com.br';
+  const key = secret('N8N_API_KEY');
+  return key ? { url: url.replace(/\/$/, ''), key } : null;
+}
+
+async function n8nGet(pathname) {
+  const creds = n8nCredentials();
+  const response = await fetch(`${creds.url}/api/v1${pathname}`, {
+    headers: { 'X-N8N-API-KEY': creds.key, accept: 'application/json' },
+    signal: AbortSignal.timeout(20000)
+  });
+  if (!response.ok) throw new Error(`n8n API ${response.status}`);
+  return response.json();
+}
+
+async function n8nWebhookIndex() {
+  if (n8nState.workflows || n8nState.error) return n8nState.workflows;
+  try {
+    const index = {};
+    let cursor = '';
+    for (let page = 0; page < 20; page += 1) {
+      const body = await n8nGet(`/workflows?limit=100${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`);
+      (body.data || []).forEach(workflow => {
+        (workflow.nodes || [])
+          .filter(node => /webhook|formtrigger/i.test(node.type || ''))
+          .forEach(node => {
+            const paths = [node.parameters && node.parameters.path, node.webhookId].filter(Boolean);
+            paths.forEach(p => { index[String(p).replace(/^\//, '')] = { id: workflow.id, name: workflow.name, active: workflow.active }; });
+          });
+      });
+      if (!body.nextCursor) break;
+      cursor = body.nextCursor;
+    }
+    n8nState.workflows = index;
+  } catch (error) {
+    n8nState.error = error.message;
+  }
+  return n8nState.workflows;
+}
+
+function n8nPathFromUrl(url) {
+  const match = String(url || '').match(/\/webhook(?:-test)?\/([^?#]+)/);
+  return match ? decodeURIComponent(match[1]).replace(/\/$/, '') : null;
+}
+
+async function readN8n(webhookUrl) {
+  if (!n8nCredentials()) return { error: 'credencial', message: 'Chave da API do n8n (N8N_API_KEY) não configurada' };
+  const index = await n8nWebhookIndex();
+  if (!index) return { error: 'acesso', message: `API do n8n indisponível: ${n8nState.error}` };
+
+  const path = n8nPathFromUrl(webhookUrl);
+  const workflow = path && (index[path] || index[path.split('/')[0]]);
+  if (!workflow) return { error: 'acesso', message: `Webhook /${path} não encontrado em nenhum workflow do n8n` };
+
+  const since = Date.now() - 28 * 86400000;
+  const timestamps = [];
+  let errors7d = 0;
+  let lastError = null;
+  let cursor = '';
+  for (let page = 0; page < 40; page += 1) {
+    const body = await n8nGet(`/executions?workflowId=${workflow.id}&limit=250${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`);
+    let reachedOld = false;
+    (body.data || []).forEach(execution => {
+      const at = parseDate(execution.startedAt);
+      if (!at) return;
+      if (at.getTime() < since) { reachedOld = true; return; }
+      if (execution.status === 'success' || (execution.finished && !execution.status)) timestamps.push(at);
+      else if (['error', 'crashed', 'failed'].includes(execution.status)) {
+        if (at.getTime() > Date.now() - 7 * 86400000) errors7d += 1;
+        if (!lastError || at > lastError) lastError = at;
+      }
+    });
+    if (reachedOld || !body.nextCursor) break;
+    cursor = body.nextCursor;
+  }
+
+  return { timestamps, n8n: { workflow: workflow.name, active: workflow.active, errors7d, lastErrorAt: lastError ? lastError.toISOString() : null } };
+}
+
 async function readHttpJson(config) {
   const token = secret(config.tokenSecret);
   const response = await fetch(config.url, { headers: token ? { authorization: `Bearer ${token}` } : {}, signal: AbortSignal.timeout(15000) });
@@ -871,14 +958,19 @@ function analyseConversion(result, now = Date.now()) {
   return conversion;
 }
 
-async function conversionFor(record, sources, sheetUsage) {
+async function conversionFor(record, sources, sheetUsage, item) {
   let config = sources[record.id];
   if (!config) {
+    // 1º n8n: o webhook capturado no envio simulado (ou documentado) identifica o workflow sozinho
+    const captured = ((item && item.funnel && item.funnel.requests) || []).find(r => r.destination === 'n8n');
+    const documented = [record.extra && record.extra.webhookUrl, documentedDestination(record)].find(v => /\/webhook\//.test(v || ''));
+    const webhookUrl = (captured && captured.url) || documented;
     const spreadsheetId = spreadsheetIdFrom(record);
-    if (spreadsheetId) config = { type: 'google-sheet', spreadsheetId, auto: true };
+    if (webhookUrl && (n8nCredentials() || !spreadsheetId)) config = { type: 'n8n', webhookUrl, auto: true };
+    else if (spreadsheetId) config = { type: 'google-sheet', spreadsheetId, auto: true };
   }
   if (!config) {
-    return { status: 'Não monitorada', severity: 'neutral', reason: 'Nenhuma fonte de leads configurada (data/conversion-sources.json).' };
+    return { status: 'Não monitorada', severity: 'neutral', reason: 'Destino do lead não usa n8n nem planilha documentada; configurar em data/conversion-sources.json.' };
   }
 
   const base = { source: config.type, auto: Boolean(config.auto) };
@@ -888,7 +980,8 @@ async function conversionFor(record, sources, sheetUsage) {
 
   try {
     let result;
-    if (config.type === 'google-sheet') result = await readGoogleSheet(config);
+    if (config.type === 'n8n') result = await readN8n(config.webhookUrl);
+    else if (config.type === 'google-sheet') result = await readGoogleSheet(config);
     else if (config.type === 'supabase') result = await readSupabase(config);
     else if (config.type === 'bitrix') result = await readBitrix(config);
     else if (config.type === 'http-json') result = await readHttpJson(config);
@@ -898,6 +991,23 @@ async function conversionFor(record, sources, sheetUsage) {
       return { ...base, status: result.error === 'credencial' ? 'Não monitorada' : 'Sem acesso à fonte', severity: 'neutral', reason: result.message };
     }
     const analysis = analyseConversion(result);
+    if (result.n8n) {
+      analysis.n8n = result.n8n;
+      if (result.n8n.active === false) {
+        analysis.status = 'Workflow n8n desativado';
+        analysis.severity = 'critical';
+        analysis.reason = `O workflow “${result.n8n.workflow}” que recebe os leads está desativado no n8n.`;
+      } else if (result.n8n.errors7d > 0) {
+        const recent = result.n8n.lastErrorAt && Date.now() - new Date(result.n8n.lastErrorAt).getTime() < 86400000;
+        analysis.reason += ` ${result.n8n.errors7d} execução(ões) com erro no n8n em 7 dias (leads possivelmente perdidos; última ${new Date(result.n8n.lastErrorAt).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })}).`;
+        if (recent && analysis.severity !== 'critical') {
+          analysis.severity = 'critical';
+          analysis.status = 'Leads com erro no n8n';
+        } else if (analysis.severity === 'ok') {
+          analysis.severity = 'attention';
+        }
+      }
+    }
     if (base.sharedSource) analysis.reason += ' Planilha compartilhada com outra LP: números somados.';
     return { ...base, ...analysis };
   } catch (error) {
@@ -1125,7 +1235,7 @@ async function main() {
     } catch (error) {
       item = { id: record.id, ativo: record.ativo, url: record.url, checkedAt: new Date().toISOString(), page: { online: false, error: error.message, jsErrors: [] }, form: {}, funnel: { status: 'Erro', destinations: [], endpointProbes: [] }, tracking: { tags: [], pixels: [], pageEvents: [], submitEvents: [] } };
     }
-    item.conversion = await conversionFor(record, sources, sheetUsage);
+    item.conversion = await conversionFor(record, sources, sheetUsage, item);
     Object.assign(item, verdictFor(item, record));
     applyLegacyFields(item);
     console.log(`[${index + 1}/${lps.length}] ${item.verdict.padEnd(12)} ${String(item.score ?? '—').padStart(3)}  ${item.funnel.status.padEnd(26)} ${item.conversion.status.padEnd(20)} ${record.ativo} (${((Date.now() - started) / 1000).toFixed(0)}s)`);

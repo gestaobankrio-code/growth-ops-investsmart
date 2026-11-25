@@ -23,16 +23,16 @@ Pixels (Meta, GA4, Google Ads, TikTok) também são interceptados: o painel most
 - LP crítica → abre (ou atualiza) a issue **🚨 Health Check: landing pages críticas** e comenta quando surge uma nova; fecha sozinha quando tudo normaliza.
 - O próprio monitor falhou → issue **⚠️ Health Check das LPs não está rodando**. O painel também mostra "Monitor parado" quando os dados têm mais de 10 h.
 
-## Conectar a conversão real
+## Conversão real (automática)
 
-Sem configuração, a coluna "Conversão real" aparece como *Não monitorada*. Para ligar:
+O health check descobre sozinho de onde ler os leads de cada LP, nesta ordem:
 
-1. **Planilhas Google** (14 LPs já têm planilha documentada no cadastro e são lidas automaticamente):
-   - Crie uma conta de serviço no Google Cloud com a Sheets API ativada e gere uma chave JSON.
-   - Salve o JSON inteiro no segredo `GOOGLE_SERVICE_ACCOUNT_JSON` do repositório.
-   - Compartilhe cada planilha de leads com o e-mail da conta de serviço como **Leitor**. O painel avisa qual planilha ainda não foi compartilhada.
-2. **Outras fontes** (Supabase, Bitrix24, n8n): adicione a LP em `data/conversion-sources.json` (há exemplos no arquivo). Tokens vão no segredo `LEAD_SOURCE_SECRETS` como JSON, ex.: `{"BITRIX_WEBHOOK_URL": "https://…/rest/1/xxxx/"}`. Nunca coloque tokens no arquivo, porque o repositório é público.
-3. Planilha usada por mais de uma LP: use `filter` (coluna + valor, ex. `utm_source`) para separar; sem isso os números aparecem somados e marcados como "planilha compartilhada".
+1. **n8n (principal):** o envio simulado captura o webhook que a LP usa (`/webhook/...`). O script acha o workflow do n8n dono desse webhook e conta as execuções dos últimos 28 dias. Sucesso conta como lead processado; erro conta como lead possivelmente perdido. Um workflow desativado vira crítico na hora. LPs novas entram sozinhas, sem cadastro.
+   - **Configuração única:** no n8n, crie uma chave em *Settings → n8n API → Create an API key*. Salve no repositório em *Settings → Secrets and variables → Actions* com o nome `N8N_API_KEY`. Se o n8n não estiver em `https://n8n.investsmart.com.br`, crie a variável `N8N_API_URL`.
+2. **Planilha Google documentada no cadastro:** usada quando a LP não passa pelo n8n. Precisa do segredo `GOOGLE_SERVICE_ACCOUNT_JSON` e da planilha compartilhada com a conta de serviço.
+3. **Outras fontes** (Supabase, Bitrix24, endpoint JSON): entrada em `data/conversion-sources.json`. Tokens vão no segredo `LEAD_SOURCE_SECRETS`, nunca no arquivo, porque o repositório é público.
+
+Sem nenhuma credencial, a coluna "Conversão real" mostra *Não monitorada*. Os testes de página, envio do formulário, webhook ativo e pixels continuam funcionando sem nenhuma configuração.
 
 ## Resumo por IA (opcional)
 

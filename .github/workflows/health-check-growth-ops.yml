@@ -53,6 +53,8 @@ jobs:
           HEALTHCHECK_ONLY: ${{ github.event.inputs.only }}
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           LEAD_SOURCE_SECRETS: ${{ secrets.LEAD_SOURCE_SECRETS }}
+          N8N_API_KEY: ${{ secrets.N8N_API_KEY }}
+          N8N_API_URL: ${{ vars.N8N_API_URL || 'https://n8n.investsmart.com.br' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node scripts/health-check-lps.cjs
 
