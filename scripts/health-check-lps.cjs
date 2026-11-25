@@ -53,7 +53,8 @@ const THRESHOLDS = {
   silenceMinExpected: 4,       // só alarma se o normal fosse ao menos 4 leads no período
   dropRatio: 0.5,              // semana atual < 50% da anterior = queda
   dropMinPrevious: 10,
-  maxFunnelSteps: 8
+  maxFunnelSteps: 8,
+  noConversionDays: 3          // sem nenhuma conversão nesse período (até a data atual) = crítico
 };
 
 /* ------------------------------------------------------------------ utilidades */
@@ -64,6 +65,10 @@ function normalize(value) {
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
     .trim();
+}
+
+function fmtBR(date) {
+  return new Date(date).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
 
 function readJson(file, fallback) {
@@ -812,7 +817,7 @@ async function readGoogleSheet(config) {
   }
   if (!response.ok) throw new Error(`Sheets ${response.status}`);
   const rows = (await response.json()).values || [];
-  return { timestamps: timestampsFromRows(rows, config) };
+  return { timestamps: timestampsFromRows(rows, config), lookbackDays: 3650 };
 }
 
 function secret(name) {
@@ -923,28 +928,39 @@ async function readN8n(webhookUrl) {
   if (!workflow) return { error: 'acesso', message: `Webhook /${path} não encontrado em nenhum workflow do n8n` };
 
   const since = Date.now() - 28 * 86400000;
+  const maxLookback = Date.now() - 180 * 86400000;
   const timestamps = [];
+  let lastSuccess = null;
+  let oldestSeen = null;
   let errors7d = 0;
   let lastError = null;
   let cursor = '';
-  for (let page = 0; page < 40; page += 1) {
+  // Lê 28 dias para as métricas e continua (até 180 dias) só até achar o último lead com sucesso,
+  // para provar há quantos dias não há conversão.
+  for (let page = 0; page < 80; page += 1) {
     const body = await n8nGet(`/executions?workflowId=${workflow.id}&limit=250${cursor ? `&cursor=${encodeURIComponent(cursor)}` : ''}`);
-    let reachedOld = false;
+    let pastLookback = false;
     (body.data || []).forEach(execution => {
       const at = parseDate(execution.startedAt);
       if (!at) return;
-      if (at.getTime() < since) { reachedOld = true; return; }
-      if (execution.status === 'success' || (execution.finished && !execution.status)) timestamps.push(at);
+      if (!oldestSeen || at < oldestSeen) oldestSeen = at;
+      if (at.getTime() < maxLookback) { pastLookback = true; return; }
+      const ok = execution.status === 'success' || (execution.finished && !execution.status);
+      if (ok && (!lastSuccess || at > lastSuccess)) lastSuccess = at;
+      if (at.getTime() < since) return;
+      if (ok) timestamps.push(at);
       else if (['error', 'crashed', 'failed'].includes(execution.status)) {
         if (at.getTime() > Date.now() - 7 * 86400000) errors7d += 1;
         if (!lastError || at > lastError) lastError = at;
       }
     });
-    if (reachedOld || !body.nextCursor) break;
+    const doneWithWindow = oldestSeen && oldestSeen.getTime() < since;
+    if (pastLookback || !body.nextCursor || (doneWithWindow && lastSuccess)) break;
     cursor = body.nextCursor;
   }
+  const lookbackDays = oldestSeen ? Math.max(1, Math.round((Date.now() - oldestSeen.getTime()) / 86400000)) : 0;
 
-  return { timestamps, n8n: { workflow: workflow.name, active: workflow.active, errors7d, lastErrorAt: lastError ? lastError.toISOString() : null } };
+  return { timestamps, lastLeadAt: lastSuccess, lookbackDays: lookbackDays || 1, n8n: { workflow: workflow.name, active: workflow.active, errors7d, lastErrorAt: lastError ? lastError.toISOString() : null } };
 }
 
 async function readHttpJson(config) {
@@ -971,6 +987,7 @@ function analyseConversion(result, now = Date.now()) {
     leads7d = within(0, 7 * DAY);
     leadsPrev7d = within(7 * DAY, 14 * DAY);
     leads28d = within(0, 28 * DAY);
+    result.leadsInNoConvWindow = within(0, THRESHOLDS.noConversionDays * DAY);
     for (let d = 13; d >= 0; d -= 1) daily.push(within(d * DAY, (d + 1) * DAY));
   } else {
     ({ leads24h, leads7d, leadsPrev7d, leads28d } = result.aggregates || {});
@@ -985,6 +1002,40 @@ function analyseConversion(result, now = Date.now()) {
     daily,
     trendPct: leadsPrev7d ? Math.round(((leads7d - leadsPrev7d) / leadsPrev7d) * 100) : null
   };
+
+  // ---- Regra objetiva: nenhuma conversão nos últimos N dias, confrontando com a data atual ----
+  const windowDays = THRESHOLDS.noConversionDays;
+  const windowStart = now - windowDays * DAY;
+  let leadsInWindow = result.leadsInNoConvWindow;
+  if (leadsInWindow === undefined) {
+    const agg = result.aggregates || {};
+    if (Number.isInteger(agg.leads72h)) leadsInWindow = agg.leads72h;
+    else if (lastLeadAt) leadsInWindow = lastLeadAt.getTime() < windowStart ? 0 : null;
+    else if (agg.leads7d === 0) leadsInWindow = 0;
+    else leadsInWindow = null;
+  }
+  const daysWithout = lastLeadAt ? Math.floor((now - lastLeadAt.getTime()) / DAY) : null;
+  const lookbackDays = result.lookbackDays || 28;
+  conversion.noConversionCheck = {
+    rule: `Nenhuma conversão nos últimos ${windowDays} dias`,
+    referenceAt: new Date(now).toISOString(),
+    windowStart: new Date(windowStart).toISOString(),
+    leadsInWindow,
+    lastLeadAt: conversion.lastLeadAt,
+    daysWithoutConversion: daysWithout,
+    lookbackDays,
+    result: leadsInWindow === 0 ? 'Sem conversão' : leadsInWindow > 0 ? 'Com conversão' : 'Indeterminado'
+  };
+  if (leadsInWindow === 0) {
+    const sinceText = lastLeadAt
+      ? `Último lead: ${fmtBR(lastLeadAt)}, há ${daysWithout} dia(s).`
+      : `Nenhum lead com sucesso em todo o histórico disponível na fonte (${lookbackDays} dia(s) de registros).`;
+    conversion.status = lastLeadAt ? `Sem conversão há ${daysWithout} dias` : 'Sem conversão (nenhum lead no histórico)';
+    conversion.severity = 'critical';
+    conversion.reason = `Zero conversões entre ${fmtBR(windowStart)} e ${fmtBR(now)} (data atual). ${sinceText}`;
+    conversion.noConversionCheck.evidence = conversion.reason;
+    return conversion;
+  }
 
   const hoursSince = lastLeadAt ? (now - lastLeadAt.getTime()) / HOUR : null;
   // ritmo de referência: os 28 dias, exceto o período de silêncio atual
@@ -1074,9 +1125,15 @@ async function conversionFor(record, sources, sheetUsage, item) {
       return { ...base, status: result.error === 'credencial' ? 'Não monitorada' : 'Sem acesso à fonte', severity: 'neutral', reason: result.message };
     }
     const analysis = analyseConversion(result);
+    analysis.sourceLabel = result.n8n ? `n8n · workflow “${result.n8n.workflow}”`
+      : config.type === 'google-sheet' ? 'Planilha Google de leads'
+      : config.type === 'supabase' ? `Supabase · tabela ${config.table}`
+      : config.type === 'bitrix' ? 'Bitrix24 (CRM)' : 'Endpoint de leads';
+    if (analysis.noConversionCheck) analysis.noConversionCheck.source = analysis.sourceLabel;
+    if (analysis.noConversionCheck && analysis.noConversionCheck.evidence) analysis.reason += ` Fonte: ${analysis.sourceLabel}.`;
     if (result.n8n) {
       analysis.n8n = result.n8n;
-      if (result.n8n.active === false) {
+      if (result.n8n.active === false && analysis.severity !== 'critical') {
         analysis.status = 'Workflow n8n desativado';
         analysis.severity = 'critical';
         analysis.reason = `O workflow “${result.n8n.workflow}” que recebe os leads está desativado no n8n.`;
@@ -1271,6 +1328,21 @@ function writeAlerts(items, payload) {
     const reason = item.reasons.filter(r => r.severity === 'critical').map(r => r.text).join(' ');
     lines.push(`- ${newly.includes(item) ? '🆕 ' : ''}**${item.ativo}** — ${item.url}\n  ${reason}`);
   });
+  const noConv = items.filter(i => i.conversion?.noConversionCheck?.result === 'Sem conversão');
+  const notDemonstrable = items.filter(i => i.url && !i.conversion?.noConversionCheck);
+  lines.push('', `### Sem conversão nos últimos ${THRESHOLDS.noConversionDays} dias (referência: ${fmtBR(payload.generatedAt)})`, '');
+  if (noConv.length) {
+    lines.push('| LP | Último lead | Dias sem conversão | Fonte |', '|---|---|---|---|');
+    noConv.forEach(i => {
+      const nc = i.conversion.noConversionCheck;
+      lines.push(`| ${i.ativo} | ${nc.lastLeadAt ? fmtBR(nc.lastLeadAt) : `nenhum em ${nc.lookbackDays} dias`} | ${nc.daysWithoutConversion ?? `> ${nc.lookbackDays}`} | ${nc.source || ''} |`);
+    });
+  } else {
+    lines.push('Nenhuma LP monitorada está sem conversão no período.');
+  }
+  if (notDemonstrable.length) {
+    lines.push('', `⚠️ ${notDemonstrable.length} LP(s) sem fonte de leads conectada: ausência de conversão **não demonstrável** para elas (configurar N8N_API_KEY).`);
+  }
   if (payload.summary?.ai) lines.push('', '### Resumo (IA)', '', payload.summary.ai.text);
   lines.push('', 'Painel: https://gestaobankrio-code.github.io/growth-ops-investsmart/');
   writeFileAtomic(alertsPath, lines.join('\n') + '\n', false);
@@ -1319,6 +1391,13 @@ function validatePayload(payload, lpIds, fullRun) {
       if (c[key] !== undefined && c[key] !== null && !(Number.isInteger(c[key]) && c[key] >= 0)) problems.push(`${item.id}: ${key} inválido`);
     });
     if (typeof c.leads24h === 'number' && typeof c.leads7d === 'number' && c.leads24h > c.leads7d) problems.push(`${item.id}: leads24h > leads7d`);
+    const nc = c.noConversionCheck;
+    if (nc) {
+      if (!isIso(nc.referenceAt) || !isIso(nc.windowStart)) problems.push(`${item.id}: janela de verificação inválida`);
+      if (nc.result === 'Sem conversão' && (nc.leadsInWindow !== 0 || item.severity !== 'critical')) problems.push(`${item.id}: "sem conversão" sem evidência ou sem criticidade`);
+      if (nc.lastLeadAt && new Date(nc.lastLeadAt) > new Date(nc.referenceAt)) problems.push(`${item.id}: último lead no futuro`);
+      if (nc.result === 'Sem conversão' && nc.lastLeadAt && new Date(nc.lastLeadAt) >= new Date(nc.windowStart)) problems.push(`${item.id}: último lead dentro da janela mas marcado sem conversão`);
+    }
   });
 
   const t = payload.totals || {};
@@ -1446,6 +1525,8 @@ async function main() {
     conversionMonitored: items.filter(i => i.conversion && i.conversion.leads7d !== undefined && i.conversion.leads7d !== null).length,
     converting: items.filter(i => i.conversion && i.conversion.status === 'Convertendo').length,
     conversionStopped: items.filter(i => i.conversion && i.conversion.status === 'Conversão parada').length,
+    noConversion: items.filter(i => i.conversion?.noConversionCheck?.result === 'Sem conversão').length,
+    conversionNotDemonstrable: items.filter(i => i.url && !i.conversion?.noConversionCheck).length,
     leads24h: items.reduce((total, i) => total + (i.conversion?.leads24h || 0), 0),
     leads7d: items.reduce((total, i) => total + (i.conversion?.leads7d || 0), 0)
   };
