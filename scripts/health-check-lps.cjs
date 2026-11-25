@@ -139,6 +139,27 @@ const LEAD_HOST_PATTERN =
 
 const WHATSAPP_PATTERN = /(wa\.me\/|api\.whatsapp\.com|web\.whatsapp\.com)/i;
 
+// Os dados fictícios que o robô digita. Só é "envio de lead" a requisição que os carrega:
+// telemetria (Lovable __l5e, RUM, coletores /events, YouTube, contadores) nunca contém esses valores.
+const TEST_EMAIL_MARK = `healthcheck.${RUN_ID}`;
+
+function carriesTestData(request) {
+  let text = request.url();
+  try {
+    const buffer = request.postDataBuffer();
+    if (buffer) text += ' ' + buffer.toString('utf8');
+  } catch (error) {
+    // sem corpo
+  }
+  let decoded = text;
+  try { decoded = decodeURIComponent(text.replace(/\+/g, ' ')); } catch (error) { /* mantém bruto */ }
+  const haystack = `${text} ${decoded}`.toLowerCase();
+  return haystack.includes(TEST_EMAIL_MARK) ||
+    haystack.includes('teste health check') ||
+    /9\D{0,3}8765\D{0,3}4321/.test(haystack) ||
+    /529\D?982\D?247\D?25/.test(haystack);
+}
+
 function param(url, key) {
   try {
     const parsed = new URL(url);
@@ -306,7 +327,7 @@ function valueForField(field) {
   const key = normalize(field.key);
   const type = field.type;
 
-  if (type === 'email' || /e-?mail/.test(key)) return `healthcheck.${RUN_ID}@investsmart.com.br`;
+  if (type === 'email' || /e-?mail/.test(key)) return `${TEST_EMAIL_MARK}@investsmart.com.br`;
   if (type === 'tel' || /(tel|fone|phone|celular|whats|zap)/.test(key)) return '21987654321';
   if (/cpf/.test(key)) return '52998224725';
   if (/cnpj/.test(key)) return '11222333000181';
@@ -491,7 +512,7 @@ async function checkLandingPage(browser, record) {
 
   const context = await browser.newContext({ userAgent: USER_AGENT, locale: 'pt-BR', viewport: { width: 1366, height: 900 } });
   const page = await context.newPage();
-  const state = { phase: 'load', leadRequests: [], clicked: new Set(), clicks: [], fieldsFilled: 0, navigations: [] };
+  const state = { phase: 'load', leadRequests: [], background: [], clicked: new Set(), clicks: [], fieldsFilled: 0, navigations: [] };
   const origin = new URL(url).origin;
 
   context.on('page', popup => {
@@ -543,7 +564,12 @@ async function checkLandingPage(browser, record) {
       const isWrite = !['GET', 'HEAD', 'OPTIONS'].includes(method);
       const isLeadGet = method === 'GET' && LEAD_HOST_PATTERN.test(reqUrl) && !/\.(js|css|png|jpe?g|svg|webp|woff2?)(\?|$)/i.test(reqUrl) && !/\/rest\/v1\/.*select=/i.test(reqUrl);
       if (isWrite || isLeadGet) {
-        state.leadRequests.push({ url: reqUrl.slice(0, 300), method, destination: classifyLeadDestination(reqUrl, method) });
+        // Segurança: toda escrita é interceptada. Mas só conta como lead se levar os dados de teste.
+        if (carriesTestData(request)) {
+          state.leadRequests.push({ url: reqUrl.slice(0, 300), method, destination: classifyLeadDestination(reqUrl, method) });
+        } else if (state.background.length < 10) {
+          try { state.background.push(new URL(reqUrl).host + new URL(reqUrl).pathname.slice(0, 40)); } catch (error) { /* ignora */ }
+        }
         return route.fulfill({
           status: 200,
           contentType: 'application/json',
@@ -593,6 +619,7 @@ async function checkLandingPage(browser, record) {
         item.funnel.requests = state.leadRequests.slice(0, 6);
         item.funnel.destinations = [...new Set(state.leadRequests.map(r => r.destination))];
         item.funnel.whatsapp = item.funnel.destinations.includes('WhatsApp');
+        item.funnel.backgroundRequests = [...new Set(state.background)].slice(0, 5);
         if (state.fieldsFilled > 0 && !item.form.detected) {
           item.form.detected = true;
           item.form.provider = 'Formulário em etapa (modal/quiz)';
@@ -610,6 +637,8 @@ async function checkLandingPage(browser, record) {
           item.funnel.status = 'Não envia lead';
           if (state.navigations.some(nav => /obrigad|thank|sucesso/i.test(nav))) {
             item.funnel.note = 'redireciona para a página de obrigado sem enviar os dados';
+          } else if (state.background.length) {
+            item.funnel.note = `só saiu telemetria sem os dados do formulário (${[...new Set(state.background)].slice(0, 2).join(', ')})`;
           }
         }
 
