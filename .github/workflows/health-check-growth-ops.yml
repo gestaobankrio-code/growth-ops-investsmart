@@ -2,29 +2,45 @@ name: Growth Ops - Health Check LPs
 
 on:
   workflow_dispatch:
+    inputs:
+      only:
+        description: 'IDs das LPs separados por vírgula (vazio = todas)'
+        required: false
+        default: ''
 
+  # a cada 4 horas, das 07h às 23h de Brasília (UTC-3)
   schedule:
-    - cron: '15 11 * * *'
+    - cron: '7 10,14,18,22,2 * * *'
 
 permissions:
   contents: write
+  issues: write
+
+concurrency:
+  group: health-check-lps
+  cancel-in-progress: false
 
 jobs:
-
   health-check:
-
-    runs-on: ubuntu-latest
+    # Fixado: o ubuntu-latest passou para 26.04, que o Playwright 1.55 não suporta
+    # (falhas diárias silenciosas desde 12/11/2026).
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Node
         uses: actions/setup-node@v4
-
         with:
           node-version: '20'
+
+      - name: Cache do Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-1.55.0-ubuntu-24.04
 
       - name: Instalar Playwright
         run: |
@@ -32,25 +48,95 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Executar Health Check
+        id: check
+        env:
+          HEALTHCHECK_ONLY: ${{ github.event.inputs.only }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          LEAD_SOURCE_SECRETS: ${{ secrets.LEAD_SOURCE_SECRETS }}
+          N8N_API_KEY: ${{ secrets.N8N_API_KEY }}
+          N8N_API_URL: ${{ vars.N8N_API_URL || 'https://n8n.investsmart.com.br' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HEALTHCHECK_ALERTS_PATH: ${{ runner.temp }}/health-alerts.md
+        # O script valida o resultado antes de gravar; se a validação falhar ou a maioria das LPs
+        # estiver inacessível (rede do runner), ele sai com erro e os dados anteriores ficam intactos.
+        run: node scripts/health-check-lps.cjs
+
+      - name: Garantir integridade dos dados
         run: |
-          node scripts/health-check-lps.cjs
+          # O Health Check só pode alterar os próprios arquivos; cadastro e demais dados são intocáveis.
+          CHANGED=$(git diff --name-only)
+          FORBIDDEN=$(echo "$CHANGED" | grep -vE '^data/health-(check|history)\.json$' | grep -v '^$' || true)
+          if [ -n "$FORBIDDEN" ]; then
+            echo "::error::Arquivos fora do escopo do Health Check foram alterados: $FORBIDDEN"
+            exit 1
+          fi
+          for f in data/health-check.json data/health-history.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "::error::$f não é JSON válido"; exit 1; }
+          done
 
       - name: Registrar resultado
         run: |
-
-          if git diff --quiet -- data/health-check.json; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/health-check.json data/health-history.json
+          if git diff --cached --quiet; then
             echo "Nenhuma alteração no Health Check."
             exit 0
           fi
+          git commit -m "Atualiza Health Check das Landing Pages [skip ci]"
+          # Outros workflows (cadastro, sync Lovable) também commitam: rebase e nova tentativa,
+          # sem nunca resolver conflito automaticamente.
+          for attempt in 1 2 3; do
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 10))
+          done
+          echo "::error::Não foi possível publicar o resultado sem conflito; nada foi sobrescrito."
+          exit 1
 
-          git config user.name "github-actions[bot]"
+      - name: Encerrar aviso de monitor quebrado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --label health-check-quebrado --state open --json number --jq '.[].number' 2>/dev/null); do
+            gh issue close "$n" --comment "✅ Health Check voltou a rodar."
+          done
 
-          git config user.email \
-          "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Alertar LPs críticas
+        if: steps.check.outputs.critical != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create health-check-alerta --color B60205 --description "Alertas automáticos do Health Check" 2>/dev/null || true
+          NUMBER=$(gh issue list --label health-check-alerta --state open --json number --jq '.[0].number')
+          if [ -z "$NUMBER" ]; then
+            gh issue create --title "🚨 Health Check: landing pages críticas" --label health-check-alerta --body-file "$RUNNER_TEMP/health-alerts.md"
+          elif [ "${{ steps.check.outputs.new_critical }}" != "0" ]; then
+            gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/health-alerts.md"
+          else
+            gh issue edit "$NUMBER" --body-file "$RUNNER_TEMP/health-alerts.md"
+          fi
 
-          git add data/health-check.json
+      - name: Encerrar alerta quando tudo normalizar
+        if: steps.check.outputs.critical == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for n in $(gh issue list --label health-check-alerta --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "✅ Nenhuma LP crítica na execução de $(date -u +%FT%TZ)."
+          done
 
-          git commit \
-          -m "Atualiza Health Check das Landing Pages"
-
-          git push
+      - name: Avisar falha do próprio monitor
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          gh label create health-check-quebrado --color 000000 --description "O Health Check não conseguiu rodar" 2>/dev/null || true
+          NUMBER=$(gh issue list --label health-check-quebrado --state open --json number --jq '.[0].number')
+          BODY="O Health Check das LPs falhou e o painel ficará com dados antigos até ser corrigido. Execução: $RUN_URL"
+          if [ -z "$NUMBER" ]; then
+            gh issue create --title "⚠️ Health Check das LPs não está rodando" --label health-check-quebrado --body "$BODY"
+          else
+            gh issue comment "$NUMBER" --body "$BODY"
+          fi

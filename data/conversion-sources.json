@@ -1,0 +1,36 @@
+{
+  "$comment": "Fonte de leads reais por LP (chave = id do registro). Sem entrada aqui, o Health Check tenta ler automaticamente a planilha Google documentada no cadastro (extra.spreadsheetUrl), desde que ela esteja compartilhada como Leitor com a conta de serviço. Tokens NUNCA ficam neste arquivo: use o nome de um segredo do GitHub (LEAD_SOURCE_SECRETS).",
+  "$exemplos": {
+    "lp-exemplo-planilha": {
+      "type": "google-sheet",
+      "spreadsheetId": "1AbC...",
+      "range": "'Leads'!A:Z",
+      "timestampColumn": "Carimbo de data/hora",
+      "filter": {
+        "column": "utm_source",
+        "contains": "organico"
+      }
+    },
+    "lp-exemplo-supabase": {
+      "type": "supabase",
+      "url": "https://xxxx.supabase.co",
+      "table": "leads",
+      "createdAtColumn": "created_at",
+      "filter": "source=eq.lp-exemplo",
+      "keySecret": "SUPABASE_LP_EXEMPLO_KEY"
+    },
+    "lp-exemplo-bitrix": {
+      "type": "bitrix",
+      "webhookSecret": "BITRIX_WEBHOOK_URL",
+      "filter": {
+        "SOURCE_ID": "UC_QZ91TG"
+      }
+    },
+    "lp-exemplo-n8n": {
+      "type": "http-json",
+      "url": "https://n8n.investsmart.com.br/webhook/healthcheck-leads?lp=lp-exemplo",
+      "tokenSecret": "N8N_HEALTHCHECK_TOKEN",
+      "$resposta": "{ \"lastLeadAt\": \"ISO\", \"leads24h\": 3, \"leads7d\": 30, \"leadsPrev7d\": 28, \"leads28d\": 110 } ou { \"leads\": [{ \"createdAt\": \"ISO\" }] }"
+    }
+  }
+}
