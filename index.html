@@ -1249,6 +1249,18 @@
     }
 
     /* ---- Saúde Operacional v2 ---- */
+    .hc-noconv { margin: 0 0 16px; padding: 14px 16px; border-radius: 14px; font-size: 13px; line-height: 19px; border: 1px solid rgba(0,0,0,.1); }
+    .hc-noconv h3 { margin: 0 0 8px; font-size: 14px; font-weight: 700; }
+    .hc-noconv h3 span { font-weight: 500; color: var(--text-muted); }
+    .hc-noconv p { margin: 0; }
+    .hc-noconv small { display: block; margin-top: 8px; color: var(--text-muted); }
+    .hc-noconv table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .hc-noconv th, .hc-noconv td { text-align: left; padding: 6px 8px; border-bottom: 1px solid rgba(0,0,0,.08); vertical-align: top; }
+    .hc-noconv-alert { background: rgba(235, 94, 87, 0.08); border-color: rgba(235, 94, 87, 0.45); }
+    .hc-noconv-alert h3 { color: #8f2520; }
+    .hc-noconv-ok { background: rgba(77, 103, 255, 0.06); }
+    .hc-noconv-empty { background: rgba(255, 208, 57, 0.12); border-color: rgba(255, 208, 57, 0.6); }
+
     .hc-fresh-inline { display: block; margin-top: 6px; font-size: 12px; font-weight: 600; }
     .hc-fresh-inline.hc-stale { color: var(--is-red); }
     .hc-fresh-inline.hc-fresh { color: var(--text-muted); }
@@ -2150,6 +2162,7 @@
             <button type="button" data-hc-filter="critical" onclick="setHealthFilter('critical')">Críticas</button>
             <button type="button" data-hc-filter="attention" onclick="setHealthFilter('attention')">Atenção</button>
             <button type="button" data-hc-filter="ok" onclick="setHealthFilter('ok')">OK</button>
+            <button type="button" data-hc-filter="noconv" onclick="setHealthFilter('noconv')">Sem conversão 3d</button>
           </div>
           <button class="btn btn-soft btn-mini health-update-button" type="button" id="healthUpdateButton" onclick="loadHealthData(true)">
             <span class="health-update-spinner" aria-hidden="true"></span>
@@ -2196,6 +2209,8 @@
           <p id="healthMetricLeadsNote">Somente das LPs monitoradas</p>
         </div>
       </div>
+
+      <div class="hc-noconv" id="healthNoConversion" aria-live="polite"></div>
 
       <div class="hc-summary" id="healthSummary">
         <small id="healthSummaryLabel">Resumo</small>
@@ -3383,7 +3398,7 @@
       const trend = typeof c.trendPct === 'number' ? ` <span class="${c.trendPct < 0 ? 'hc-down' : 'hc-up'}">${c.trendPct >= 0 ? '+' : ''}${c.trendPct}%</span>` : '';
       return `${healthBadge(c.status, type)}
         <div class="hc-sub hc-strong">${c.leads24h ?? '—'} em 24 h · ${c.leads7d} em 7 dias${trend}</div>
-        <div class="hc-sub">Último lead: ${escapeHtml(healthRelative(c.lastLeadAt))}${c.sharedSource ? ' · planilha compartilhada' : ''}</div>
+        <div class="hc-sub">Último lead: ${c.lastLeadAt ? `${escapeHtml(healthDate(c.lastLeadAt))} (${escapeHtml(healthRelative(c.lastLeadAt))})` : '—'}${c.sharedSource ? ' · planilha compartilhada' : ''}</div>
         ${healthSparkline(c.daily)}`;
     }
 
@@ -3393,6 +3408,53 @@
       const confirmation = view.item && view.item.confirmation ? `<div class="hc-sub">${escapeHtml(view.item.confirmation)}</div>` : '';
       return `<ul class="hc-reasons">${list.map(reason =>
         `<li class="hc-${reason.severity}">${escapeHtml(reason.text)}</li>`).join('')}</ul>${confirmation}`;
+    }
+
+
+    const HEALTH_NO_CONVERSION_DAYS = 3;
+
+    /* Confronta o último lead com a data ATUAL do navegador (não só a da execução). */
+    function healthNoConversion(item) {
+      const c = item && item.conversion;
+      const nc = c && c.noConversionCheck;
+      if (!nc) return null;
+      const now = Date.now();
+      const last = nc.lastLeadAt ? new Date(nc.lastLeadAt).getTime() : null;
+      const days = last ? Math.floor((now - last) / 86400000) : null;
+      const flagged = nc.result === 'Sem conversão' || (last !== null && now - last >= HEALTH_NO_CONVERSION_DAYS * 86400000);
+      return { ...nc, daysNow: days, flagged };
+    }
+
+    function renderHealthNoConversion(views) {
+      const box = document.getElementById('healthNoConversion');
+      if (!box) return;
+      const today = new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+      const testable = views.filter(view => view.item && view.item.url);
+      const monitored = testable.filter(view => healthNoConversion(view.item));
+      const flagged = monitored.filter(view => healthNoConversion(view.item).flagged);
+      const notDemonstrable = testable.length - monitored.length;
+
+      let body;
+      if (!monitored.length) {
+        body = `<p><strong>Não demonstrável ainda:</strong> nenhuma das ${testable.length} LPs tem fonte de leads conectada. ` +
+          'Sem ela não há como provar ausência de conversão — configure o segredo <code>N8N_API_KEY</code> no repositório.</p>';
+      } else if (!flagged.length) {
+        body = `<p>✓ Todas as ${monitored.length} LPs monitoradas tiveram conversão nos últimos ${HEALTH_NO_CONVERSION_DAYS} dias.</p>`;
+      } else {
+        body = `<table><thead><tr><th>LP</th><th>Último lead</th><th>Dias sem conversão (até hoje)</th><th>Janela verificada</th><th>Fonte</th></tr></thead><tbody>` +
+          flagged.map(view => {
+            const nc = healthNoConversion(view.item);
+            return `<tr><td>${escapeHtml(String(view.record.ativo || '').replace(/^LP - /, ''))}</td>
+              <td>${nc.lastLeadAt ? escapeHtml(healthDate(nc.lastLeadAt)) : `nenhum em ${nc.lookbackDays} dias`}</td>
+              <td><strong>${nc.daysNow !== null ? nc.daysNow : `&gt; ${nc.lookbackDays}`}</strong></td>
+              <td>${escapeHtml(healthDate(nc.windowStart))} → ${escapeHtml(healthDate(nc.referenceAt))}: ${nc.leadsInWindow ?? 0} conversões</td>
+              <td>${escapeHtml(nc.source || '')}</td></tr>`;
+          }).join('') + '</tbody></table>';
+      }
+      const coverage = monitored.length
+        ? `<small>${monitored.length} de ${testable.length} LPs com fonte de leads${notDemonstrable ? ` · ${notDemonstrable} sem fonte (não demonstrável)` : ''}</small>` : '';
+      box.className = `hc-noconv ${flagged.length ? 'hc-noconv-alert' : !monitored.length ? 'hc-noconv-empty' : 'hc-noconv-ok'}`;
+      box.innerHTML = `<h3>Sem conversão nos últimos ${HEALTH_NO_CONVERSION_DAYS} dias <span>· data atual ${escapeHtml(today)}</span></h3>${body}${coverage}`;
     }
 
     function renderHealthFreshness() {
@@ -3472,8 +3534,10 @@
       });
 
       renderHealthFreshness();
+      renderHealthNoConversion(views);
 
-      const rows = views.filter(view => healthFilter === 'todas' || view.severity === healthFilter);
+      const rows = views.filter(view => healthFilter === 'todas' ||
+        (healthFilter === 'noconv' ? Boolean(healthNoConversion(view.item)?.flagged) : view.severity === healthFilter));
       if (!rows.length) {
         tbody.innerHTML = '<tr><td colspan="7" class="health-empty">Nenhuma Landing Page nesta visão.</td></tr>';
         return;
