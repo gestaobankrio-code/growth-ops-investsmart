@@ -387,6 +387,45 @@ async function fillVisibleFields(frame, state) {
   return filled;
 }
 
+// Select, checkbox e radio do shadcn/Radix (padrão do Lovable) não são <select>/<input> nativos.
+async function fillCustomControls(frame, state) {
+  let ids = [];
+  try {
+    ids = await frame.evaluate(() => {
+      const visible = el => { const r = el.getBoundingClientRect(); const st = getComputedStyle(el); return r.width > 0 && r.height > 0 && st.visibility !== 'hidden' && st.display !== 'none'; };
+      const out = [];
+      const tag = (el, kind) => { const id = `hcx-${Math.random().toString(36).slice(2, 9)}`; el.setAttribute('data-hc-x', id); out.push({ id, kind }); };
+      document.querySelectorAll('[role="checkbox"][aria-checked="false"], button[role="switch"][aria-checked="false"]').forEach(el => { if (visible(el)) tag(el, 'check'); });
+      document.querySelectorAll('[role="radiogroup"]').forEach(group => {
+        if (group.querySelector('[role="radio"][aria-checked="true"], [data-state="checked"]')) return;
+        const first = [...group.querySelectorAll('[role="radio"]')].find(visible);
+        if (first) tag(first, 'check');
+      });
+      document.querySelectorAll('button[role="combobox"], [aria-haspopup="listbox"]').forEach(el => {
+        if (!visible(el)) return;
+        const text = (el.innerText || '').trim();
+        if (!text || /selecione|escolha|select|choose|--/i.test(text) || el.querySelector('[data-placeholder]') || el.hasAttribute('data-placeholder')) tag(el, 'combo');
+      });
+      return out;
+    });
+  } catch (error) {
+    return;
+  }
+  for (const control of ids) {
+    const locator = frame.locator(`[data-hc-x="${control.id}"]`).first();
+    try {
+      await locator.click({ timeout: 1500 });
+      if (control.kind === 'combo') {
+        const option = frame.locator('[role="option"]:not([aria-disabled="true"])').first();
+        await option.click({ timeout: 1500 });
+      }
+      state.fieldsFilled += 1;
+    } catch (error) {
+      await frame.page().keyboard.press('Escape').catch(() => {});
+    }
+  }
+}
+
 async function pickAndClick(page, state) {
   const frames = page.frames();
   for (const preferSubmit of [true, false]) {
@@ -423,12 +462,23 @@ async function pickAndClick(page, state) {
 async function runDryRunFunnel(page, state) {
   state.phase = 'submit';
   const startedAt = Date.now();
+  const SUCCESS = /(obrigad[oa]|sucesso|recebemos|enviad[oa]s? com|parab[eé]ns|entraremos em contato|inscri[cç][aã]o (confirmada|realizada)|cadastro (realizado|conclu[ií]do)|vaga garantida|thank you)/gi;
+  const ERROR = /(obrigat[oó]ri|inv[aá]lid|preencha|informe (seu|um|uma)|required|campo .{0,20}necess|digite um)/gi;
+  const countIn = (text, regex) => (text.match(regex) || []).length;
+  const readText = () => page.evaluate(() => {
+    const dialogs = [...document.querySelectorAll('[role="dialog"], [role="alert"], [role="status"], ol[class*="toast" i] li, [data-sonner-toast]')].map(n => n.innerText).join(' ');
+    return `${document.body?.innerText || ''} ${dialogs}`;
+  }).catch(() => '');
+  const initialText = await readText();
 
   for (let step = 0; step < THRESHOLDS.maxFunnelSteps; step += 1) {
     if (state.leadRequests.length) break;
 
     const before = await page.evaluate(STATE_SIGNATURE).catch(() => '');
-    for (const frame of page.frames()) await fillVisibleFields(frame, state);
+    for (const frame of page.frames()) {
+      await fillVisibleFields(frame, state);
+      await fillCustomControls(frame, state);
+    }
 
     const clicked = await pickAndClick(page, state);
     if (!clicked) break;
@@ -444,15 +494,16 @@ async function runDryRunFunnel(page, state) {
   // tolerância final para envios assíncronos (debounce, validação remota)
   for (let i = 0; i < 10 && !state.leadRequests.length; i += 1) await sleep(500);
 
-  const after = await page.evaluate(() => ({
-    invalid: document.querySelectorAll(':invalid').length,
-    text: (document.body?.innerText || '').slice(0, 4000)
-  })).catch(() => ({ invalid: 0, text: '' }));
+  const invalid = await page.evaluate(() =>
+    document.querySelectorAll(':invalid, [aria-invalid="true"]').length).catch(() => 0);
+  const finalText = await readText();
 
   return {
     durationMs: Date.now() - startedAt,
-    invalidFields: after.invalid,
-    successMessage: /(obrigad|sucesso|recebemos|enviad|parab[eé]ns|em breve|entraremos em contato|inscri[cç][aã]o confirmada)/i.test(after.text)
+    invalidFields: invalid,
+    // só vale se a mensagem APARECEU depois do envio (não conta texto que já estava na página)
+    successMessage: countIn(finalText, SUCCESS) > countIn(initialText, SUCCESS),
+    validationErrors: countIn(finalText, ERROR) > countIn(initialText, ERROR)
   };
 }
 
@@ -625,22 +676,25 @@ async function checkLandingPage(browser, record) {
           item.form.provider = 'Formulário em etapa (modal/quiz)';
         }
 
+        const claimsSuccess = funnel.successMessage || state.navigations.some(nav => /obrigad|thank|sucesso|confirmac/i.test(nav));
         if (state.leadRequests.length) {
           item.funnel.status = 'Envia lead';
+        } else if (claimsSuccess) {
+          // A página diz que deu certo, mas nenhum dado saiu dela: formulário falso, lead perdido.
+          item.funnel.status = 'Não envia lead';
+          item.funnel.note = state.navigations.some(nav => /obrigad|thank|sucesso|confirmac/i.test(nav))
+            ? 'redireciona para a página de obrigado sem enviar os dados'
+            : `mostra confirmação ao visitante, mas os dados não saem da página${state.background.length ? ` (só telemetria: ${[...new Set(state.background)].slice(0, 2).join(', ')})` : ''}`;
         } else if (facts.captcha) {
           item.funnel.status = 'Inconclusivo (captcha)';
         } else if (state.fieldsFilled === 0) {
           item.funnel.status = 'Formulário não alcançado';
-        } else if (funnel.invalidFields > 0) {
+        } else if (funnel.invalidFields > 0 || funnel.validationErrors) {
           item.funnel.status = 'Inconclusivo (validação bloqueou)';
         } else {
-          item.funnel.status = 'Não envia lead';
-          if (state.navigations.some(nav => /obrigad|thank|sucesso/i.test(nav))) {
-            item.funnel.note = 'redireciona para a página de obrigado sem enviar os dados';
-          } else if (state.background.length) {
-            item.funnel.note = `só saiu telemetria sem os dados do formulário (${[...new Set(state.background)].slice(0, 2).join(', ')})`;
-          }
+          item.funnel.status = 'Inconclusivo (envio não concluído)';
         }
+        item.funnel.successShown = funnel.successMessage;
 
         for (const lead of state.leadRequests.slice(0, 3)) {
           const probe = await probeEndpoint(lead);
@@ -1082,13 +1136,13 @@ function verdictFor(item, record) {
       add('ok', `Envio simulado chegou até: ${f.destinations.join(', ')}.`);
     }
   } else if (f.status === 'Não envia lead') {
-    add('critical', `O formulário foi preenchido e enviado, mas nenhuma requisição saiu da página${f.note ? ' — ' + f.note : ''}. Leads estão sendo perdidos (formulário mock).`);
+    add('critical', `Formulário falso: ${f.note || 'confirma o envio sem enviar os dados'}. Leads estão sendo perdidos.`);
     score -= 45;
   } else if (f.status === 'Formulário não alcançado') {
     add('attention', 'O robô não encontrou um formulário preenchível (pode estar atrás de quiz/modal customizado). Validar manualmente.');
     score -= 15;
   } else if (f.status.startsWith('Inconclusivo')) {
-    add('attention', `Teste de envio inconclusivo: ${f.status.replace(/^Inconclusivo \(|\)$/g, '')}.`);
+    add('attention', `O robô não conseguiu concluir o envio (${f.status.replace(/^Inconclusivo \(|\)$/g, '')}); nenhum dado saiu da página nem houve confirmação. Validar manualmente.`);
     score -= 10;
   }
 
