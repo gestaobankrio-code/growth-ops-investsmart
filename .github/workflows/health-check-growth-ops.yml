@@ -56,7 +56,23 @@ jobs:
           N8N_API_KEY: ${{ secrets.N8N_API_KEY }}
           N8N_API_URL: ${{ vars.N8N_API_URL || 'https://n8n.investsmart.com.br' }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HEALTHCHECK_ALERTS_PATH: ${{ runner.temp }}/health-alerts.md
+        # O script valida o resultado antes de gravar; se a validação falhar ou a maioria das LPs
+        # estiver inacessível (rede do runner), ele sai com erro e os dados anteriores ficam intactos.
         run: node scripts/health-check-lps.cjs
+
+      - name: Garantir integridade dos dados
+        run: |
+          # O Health Check só pode alterar os próprios arquivos; cadastro e demais dados são intocáveis.
+          CHANGED=$(git diff --name-only)
+          FORBIDDEN=$(echo "$CHANGED" | grep -vE '^data/health-(check|history)\.json$' | grep -v '^$' || true)
+          if [ -n "$FORBIDDEN" ]; then
+            echo "::error::Arquivos fora do escopo do Health Check foram alterados: $FORBIDDEN"
+            exit 1
+          fi
+          for f in data/health-check.json data/health-history.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "::error::$f não é JSON válido"; exit 1; }
+          done
 
       - name: Registrar resultado
         run: |
@@ -68,10 +84,14 @@ jobs:
             exit 0
           fi
           git commit -m "Atualiza Health Check das Landing Pages [skip ci]"
+          # Outros workflows (cadastro, sync Lovable) também commitam: rebase e nova tentativa,
+          # sem nunca resolver conflito automaticamente.
           for attempt in 1 2 3; do
-            git pull --rebase --autostash && git push && exit 0
-            sleep 5
+            if git pull --rebase && git push; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 10))
           done
+          echo "::error::Não foi possível publicar o resultado sem conflito; nada foi sobrescrito."
           exit 1
 
       - name: Encerrar aviso de monitor quebrado
@@ -90,11 +110,11 @@ jobs:
           gh label create health-check-alerta --color B60205 --description "Alertas automáticos do Health Check" 2>/dev/null || true
           NUMBER=$(gh issue list --label health-check-alerta --state open --json number --jq '.[0].number')
           if [ -z "$NUMBER" ]; then
-            gh issue create --title "🚨 Health Check: landing pages críticas" --label health-check-alerta --body-file data/health-alerts.md
+            gh issue create --title "🚨 Health Check: landing pages críticas" --label health-check-alerta --body-file "$RUNNER_TEMP/health-alerts.md"
           elif [ "${{ steps.check.outputs.new_critical }}" != "0" ]; then
-            gh issue comment "$NUMBER" --body-file data/health-alerts.md
+            gh issue comment "$NUMBER" --body-file "$RUNNER_TEMP/health-alerts.md"
           else
-            gh issue edit "$NUMBER" --body-file data/health-alerts.md
+            gh issue edit "$NUMBER" --body-file "$RUNNER_TEMP/health-alerts.md"
           fi
 
       - name: Encerrar alerta quando tudo normalizar

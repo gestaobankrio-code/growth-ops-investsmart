@@ -34,6 +34,20 @@ O health check descobre sozinho de onde ler os leads de cada LP, nesta ordem:
 
 Sem nenhuma credencial, a coluna "Conversão real" mostra *Não monitorada*. Os testes de página, envio do formulário, webhook ativo e pixels continuam funcionando sem nenhuma configuração.
 
+## Integridade dos dados
+
+Toda atualização segue estas regras:
+
+- **Escopo fechado:** o Health Check só escreve `data/health-check.json` e `data/health-history.json`. O workflow falha se qualquer outro arquivo, como o cadastro, tiver sido alterado.
+- **Validação antes de gravar:** ids únicos, todas as LPs do inventário presentes, veredito coerente com a severidade, score entre 0 e 100, contagens de leads inteiras e não negativas, totais que somam. Se algo falhar, nada é gravado e o dado anterior fica intacto.
+- **Escrita atômica:** o arquivo é gravado num temporário, relido, validado e só então substitui o original. Nunca fica um JSON pela metade.
+- **Falha confirmada:** página fora do ar, em branco ou formulário que não envia só vira "Crítico" se a falha se repetir numa segunda checagem 15 s depois. Instabilidade momentânea fica registrada, mas não gera alarme.
+- **Trava de rede:** se mais da metade das LPs ficar inacessível ao mesmo tempo, o problema é do runner. A execução é abortada sem gravar e abre a issue de monitor quebrado.
+- **Rodada parcial** (`only` no disparo manual): atualiza só as LPs pedidas e preserva o resultado das demais.
+- **Inventário como fonte de verdade:** LPs removidas do cadastro saem do resultado e do histórico. O cadastro nunca é alterado pelo Health Check.
+- **Sem sobrescrever trabalho alheio:** se outro workflow commitou ao mesmo tempo, o resultado é rebaseado. Um conflito nunca é resolvido automaticamente: a publicação falha e o dado anterior é mantido.
+- **Sem dados sensíveis:** o envio simulado usa dados fictícios e é interceptado. O resultado guarda só a URL do endpoint, nunca dados de lead. Tokens ficam apenas nos segredos do GitHub.
+
 ## Resumo por IA (opcional)
 
 Com o segredo `ANTHROPIC_API_KEY`, cada execução gera um resumo executivo priorizando perda de leads. Sem a chave, o painel usa um resumo por regras.

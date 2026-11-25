@@ -36,7 +36,7 @@ const recordsPath = process.env.HEALTHCHECK_RECORDS || path.join(ROOT, 'data', '
 const sourcesPath = path.join(ROOT, 'data', 'conversion-sources.json');
 const outputPath = path.join(OUTPUT_DIR, 'health-check.json');
 const historyPath = path.join(OUTPUT_DIR, 'health-history.json');
-const alertsPath = path.join(OUTPUT_DIR, 'health-alerts.md');
+const alertsPath = process.env.HEALTHCHECK_ALERTS_PATH || path.join(OUTPUT_DIR, 'health-alerts.md');
 
 const SCHEMA = 'growth-ops-health-check-v2.0';
 const USER_AGENT =
@@ -1145,7 +1145,7 @@ async function aiSummary(items) {
 
 /* --------------------------------------------- histórico e alertas */
 
-function updateHistory(items, generatedAt) {
+function updateHistory(items, generatedAt, touchedIds, lpIds) {
   const history = readJson(historyPath, { schema: 'growth-ops-health-history-v1', runs: [], lp: {} });
   const previous = {};
   Object.entries(history.lp || {}).forEach(([id, entries]) => { previous[id] = entries[entries.length - 1]; });
@@ -1159,7 +1159,9 @@ function updateHistory(items, generatedAt) {
   });
   history.runs = history.runs.slice(-180);
 
-  items.forEach(item => {
+  Object.keys(history.lp || {}).forEach(id => { if (!lpIds.has(id)) delete history.lp[id]; });
+
+  items.filter(item => touchedIds.has(item.id)).forEach(item => {
     const entries = history.lp[item.id] || [];
     entries.push({ at: generatedAt, v: item.verdict, s: item.score, l24: item.conversion?.leads24h ?? null });
     history.lp[item.id] = entries.slice(-60);
@@ -1170,7 +1172,7 @@ function updateHistory(items, generatedAt) {
     item.verdictSince = firstSame ? firstSame.at : generatedAt;
   });
 
-  fs.writeFileSync(historyPath, JSON.stringify(history) + '\n', 'utf8');
+  return history;
 }
 
 function writeAlerts(items, payload) {
@@ -1188,8 +1190,69 @@ function writeAlerts(items, payload) {
   });
   if (payload.summary?.ai) lines.push('', '### Resumo (IA)', '', payload.summary.ai.text);
   lines.push('', 'Painel: https://gestaobankrio-code.github.io/growth-ops-investsmart/');
-  fs.writeFileSync(alertsPath, lines.join('\n') + '\n', 'utf8');
+  writeFileAtomic(alertsPath, lines.join('\n') + '\n', false);
   return { critical: critical.length, newCritical: newly.length };
+}
+
+
+/* ------------------------------------------------------- integridade dos dados */
+
+const VERDICTS = { OK: 'ok', 'Atenção': 'attention', 'Crítico': 'critical', 'Não testável': 'neutral' };
+
+// Grava em arquivo temporário, relê e valida o JSON, e só então substitui o original.
+function writeFileAtomic(file, content, isJson = true) {
+  const tmp = `${file}.tmp-${process.pid}`;
+  fs.writeFileSync(tmp, content, 'utf8');
+  if (isJson) JSON.parse(fs.readFileSync(tmp, 'utf8'));
+  fs.renameSync(tmp, file);
+}
+
+function validatePayload(payload, lpIds, fullRun) {
+  const problems = [];
+  const isIso = value => typeof value === 'string' && !Number.isNaN(new Date(value).getTime());
+  if (payload.schema !== SCHEMA) problems.push(`schema inesperado: ${payload.schema}`);
+  if (!isIso(payload.generatedAt)) problems.push('generatedAt inválido');
+  if (!Array.isArray(payload.items)) problems.push('items não é lista');
+
+  const items = payload.items || [];
+  const ids = items.map(item => item && item.id);
+  const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+  if (duplicates.length) problems.push(`ids duplicados: ${[...new Set(duplicates)].join(', ')}`);
+  const unknown = ids.filter(id => !lpIds.has(id));
+  if (unknown.length) problems.push(`itens fora do inventário: ${unknown.join(', ')}`);
+  if (fullRun) {
+    const missing = [...lpIds].filter(id => !ids.includes(id));
+    if (missing.length) problems.push(`LPs sem resultado: ${missing.join(', ')}`);
+  }
+
+  items.forEach(item => {
+    if (!item || !item.id) return problems.push('item sem id');
+    if (VERDICTS[item.verdict] !== item.severity) problems.push(`${item.id}: veredito/severidade inconsistentes (${item.verdict}/${item.severity})`);
+    if (!isIso(item.checkedAt)) problems.push(`${item.id}: checkedAt inválido`);
+    if (!Array.isArray(item.reasons) || !item.reasons.length) problems.push(`${item.id}: sem diagnóstico`);
+    if (item.score !== null && (typeof item.score !== 'number' || item.score < 0 || item.score > 100)) problems.push(`${item.id}: score fora de 0–100`);
+    const c = item.conversion || {};
+    ['leads24h', 'leads7d', 'leadsPrev7d', 'leads28d'].forEach(key => {
+      if (c[key] !== undefined && c[key] !== null && !(Number.isInteger(c[key]) && c[key] >= 0)) problems.push(`${item.id}: ${key} inválido`);
+    });
+    if (typeof c.leads24h === 'number' && typeof c.leads7d === 'number' && c.leads24h > c.leads7d) problems.push(`${item.id}: leads24h > leads7d`);
+  });
+
+  const t = payload.totals || {};
+  if (t.total !== items.length) problems.push('totals.total diferente do número de itens');
+  if ((t.ok + t.attention + t.critical + t.notTestable) !== t.total) problems.push('totais por veredito não somam o total');
+
+  if (problems.length) {
+    throw new Error(`Validação de integridade falhou; dados anteriores preservados.\n- ${problems.slice(0, 20).join('\n- ')}`);
+  }
+}
+
+function needsConfirmation(item) {
+  return item.severity === 'critical' && (
+    item.page.online === false ||
+    item.page.rendered === false ||
+    ['Não envia lead', 'Erro'].includes(item.funnel.status)
+  );
 }
 
 /* --------------------------------------------- execução */
@@ -1227,28 +1290,66 @@ async function main() {
     executablePath: process.env.HEALTHCHECK_CHROME_PATH || undefined
   });
 
-  const items = await mapLimit(lps, CONCURRENCY, async (record, index) => {
-    const started = Date.now();
+  const checkOne = async record => {
     let item;
     try {
       item = await checkLandingPage(browser, record);
     } catch (error) {
-      item = { id: record.id, ativo: record.ativo, url: record.url, checkedAt: new Date().toISOString(), page: { online: false, error: error.message, jsErrors: [] }, form: {}, funnel: { status: 'Erro', destinations: [], endpointProbes: [] }, tracking: { tags: [], pixels: [], pageEvents: [], submitEvents: [] } };
+      item = { id: record.id, ativo: record.ativo, url: record.url, checkedAt: new Date().toISOString(), page: { online: false, error: error.message, jsErrors: [] }, form: {}, funnel: { status: 'Erro', destinations: [], endpointProbes: [], requests: [] }, tracking: { tags: [], pixels: [], pageEvents: [], submitEvents: [] } };
     }
     item.conversion = await conversionFor(record, sources, sheetUsage, item);
     Object.assign(item, verdictFor(item, record));
     applyLegacyFields(item);
+    return item;
+  };
+
+  const checked = await mapLimit(lps, CONCURRENCY, async (record, index) => {
+    const started = Date.now();
+    const item = await checkOne(record);
     console.log(`[${index + 1}/${lps.length}] ${item.verdict.padEnd(12)} ${String(item.score ?? '—').padStart(3)}  ${item.funnel.status.padEnd(26)} ${item.conversion.status.padEnd(20)} ${record.ativo} (${((Date.now() - started) / 1000).toFixed(0)}s)`);
     return item;
   });
 
+  // Falha grave só é publicada se se repetir numa segunda checagem (evita alarme por instabilidade momentânea).
+  const toConfirm = checked.map((item, index) => ({ item, index })).filter(({ item }) => needsConfirmation(item));
+  if (toConfirm.length) {
+    console.log(`Confirmando ${toConfirm.length} falha(s) grave(s) em nova checagem...`);
+    await sleep(15000);
+    for (const { item, index } of toConfirm) {
+      const second = await checkOne(lps[index]);
+      second.confirmation = needsConfirmation(second)
+        ? 'Falha confirmada em 2 checagens consecutivas'
+        : `Instabilidade momentânea na 1ª checagem (${item.reasons.find(r => r.severity === 'critical')?.text || item.verdict}); normal na 2ª`;
+      checked[index] = second;
+    }
+  }
+
   await browser.close();
+
+  // Guarda de infraestrutura: se a maioria das LPs "caiu" ao mesmo tempo, o problema é a rede do runner.
+  const testable = checked.filter(item => item.url);
+  const unreachable = testable.filter(item => item.page.online === false).length;
+  if (testable.length >= 5 && unreachable / testable.length > 0.5) {
+    throw new Error(`${unreachable}/${testable.length} LPs inacessíveis ao mesmo tempo: provável falha de rede do runner. Dados anteriores preservados, nada foi gravado.`);
+  }
+
+  const lpIds = new Set(records.filter(isLandingPage).map(record => record.id));
+  const touchedIds = new Set(checked.map(item => item.id));
+  let items = checked;
+  if (only.length) {
+    // Rodada parcial: substitui só as LPs checadas e preserva o resultado das demais.
+    const previous = readJson(outputPath, null);
+    const kept = previous && String(previous.schema || '').includes('v2') && Array.isArray(previous.items)
+      ? previous.items.filter(item => item && lpIds.has(item.id) && !touchedIds.has(item.id))
+      : [];
+    items = [...kept, ...checked];
+  }
 
   const severityOrder = { critical: 0, attention: 1, neutral: 2, ok: 3 };
   items.sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity] || (a.score ?? 101) - (b.score ?? 101));
 
   const generatedAt = new Date().toISOString();
-  updateHistory(items, generatedAt);
+  const history = updateHistory(items, generatedAt, touchedIds, lpIds);
 
   const totals = {
     total: items.length,
@@ -1270,6 +1371,7 @@ async function main() {
     schema: SCHEMA,
     generatedAt,
     mode: 'dry-run-funnel',
+    run: only.length ? { type: 'parcial', checked: [...touchedIds] } : { type: 'completa' },
     runUrl: process.env.GITHUB_SERVER_URL && process.env.GITHUB_RUN_ID
       ? `${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`
       : null,
@@ -1290,14 +1392,16 @@ async function main() {
   const alerts = writeAlerts(items, payload);
   payload.alerts = alerts;
 
-  fs.writeFileSync(outputPath, JSON.stringify(payload, null, 2) + '\n', 'utf8');
+  validatePayload(payload, lpIds, !only.length);
+  writeFileAtomic(historyPath, JSON.stringify(history) + '\n');
+  writeFileAtomic(outputPath, JSON.stringify(payload, null, 2) + '\n');
   if (process.env.GITHUB_OUTPUT) {
     fs.appendFileSync(process.env.GITHUB_OUTPUT, `critical=${alerts.critical}\nnew_critical=${alerts.newCritical}\n`);
   }
   console.log(`Health Check concluído: ${items.length} LPs — ${totals.ok} OK, ${totals.attention} atenção, ${totals.critical} críticas.`);
 }
 
-module.exports = { analyseConversion, parseDate, timestampsFromRows, classifyLeadDestination, verdictFor, isLandingPage };
+module.exports = { validatePayload, analyseConversion, parseDate, timestampsFromRows, classifyLeadDestination, verdictFor, isLandingPage };
 
 if (require.main === module) {
   main().catch(error => {

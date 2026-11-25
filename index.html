@@ -3390,8 +3390,9 @@
     function healthDiagnosisCell(view) {
       const problems = view.reasons.filter(reason => reason.severity !== 'ok');
       const list = (problems.length ? problems : view.reasons).slice(0, 3);
+      const confirmation = view.item && view.item.confirmation ? `<div class="hc-sub">${escapeHtml(view.item.confirmation)}</div>` : '';
       return `<ul class="hc-reasons">${list.map(reason =>
-        `<li class="hc-${reason.severity}">${escapeHtml(reason.text)}</li>`).join('')}</ul>`;
+        `<li class="hc-${reason.severity}">${escapeHtml(reason.text)}</li>`).join('')}</ul>${confirmation}`;
     }
 
     function renderHealthFreshness() {
