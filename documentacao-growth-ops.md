@@ -1,14 +1,14 @@
 # Documentação Growth Ops InvestSmart
 
-Atualização gerada automaticamente em 26/11/2026, 20:01:46.
+Atualização gerada automaticamente em 26/11/2026, 20:08:51.
 
 ## Resumo executivo
 
 | Indicador | Total |
 |---|---:|
-| Registros ativos | 84 |
+| Registros ativos | 85 |
 | Validados | 31 |
-| A validar | 10 |
+| A validar | 11 |
 | Risco alto/crítico | 39 |
 | Sem 2FA | 0 |
 
@@ -40,6 +40,7 @@ Atualização gerada automaticamente em 26/11/2026, 20:01:46.
 | LP - Flu Guerreiro - Maracanã 14-10 | Landing Page | Landing Page / Captação de Leads / Sorteio Promocional | Samyr Castro / InvestSmart | Ativa com pendência de tracking | Médio |
 | LP - Fluminense - Samyr | Landing Page | Landing Page / Maracanã / Sorteio | Marketing | Validado | Alto |
 | LP - Indique e Ganhe até R$ 5 mil | Landing Page | Landing Page / Indique e Ganhe | Marketing | A validar | Alto |
+| LP - InvestSmart - Dolarização Patrimonial | Landing Page | Landing Page / InvestSmart / Geração de Leads | Marketing | A validar | A VALIDAR |
 | LP - InvestSmart Flow | Landing Page | LP Expansão | A VALIDAR | Mock confirmado / Perda de leads | Crítico |
 | LP - InvestSmart Ride | Landing Page | LP Concurso | A VALIDAR | Mock confirmado / Perda de leads | Crítico |
 | LP - Investsmart Xp | Landing Page | LP Conversão | A VALIDAR | Ativo (DB + Sheets) | A VALIDAR |

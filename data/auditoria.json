@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1795723731049-9c8f32e7d8b19",
+    "date": "2026-11-26T20:08:51.049Z",
+    "issueNumber": 108,
+    "action": "Criar",
+    "recordId": "lp-dolarizacao-patrimonial",
+    "software": "Landing Page",
+    "ativo": "LP - InvestSmart - Dolarização Patrimonial",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1795723306917-968eaf5a33249",
     "date": "2026-11-26T20:01:46.917Z",
     "issueNumber": 107,

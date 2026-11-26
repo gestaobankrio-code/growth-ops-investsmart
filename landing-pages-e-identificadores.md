@@ -1,6 +1,6 @@
 # Landing Pages e Identificadores — Growth Ops InvestSmart
 
-Atualizado automaticamente em 26/11/2026, 20:01:46.
+Atualizado automaticamente em 26/11/2026, 20:08:51.
 
 | Ativo | Identificador | Domínio público | URL Lovable/Deploy | Webhook | Destino do lead | Status |
 |---|---|---|---|---|---|---|
@@ -25,6 +25,7 @@ Atualizado automaticamente em 26/11/2026, 20:01:46.
 | LP - Flu Guerreiro - Maracanã 14-10 | 1323/3yyn9o | https://flu-guerreiro-maracana.lovable.app | https://id-preview--bb21878b-cfd3-4d42-a6ce-550e274e4038.lovable.app | /api/public/bitrix-lead | Bitrix24 CRM | Ativa com pendência de tracking |
 | LP - Fluminense - Samyr |  | https://maracana-fluminense.lovable.app | https://maracana-fluminense.lovable.app |  | Bitrix24 + Google Sheets | Validado |
 | LP - Indique e Ganhe até R$ 5 mil |  | https://indiqueeganhe5mil.lovable.app/ | https://indiqueeganhe5mil.lovable.app/ |  | https://docs.google.com/spreadsheets/d/1UKsv-C_UiSbQXjb-RzDmLAqyVohzU-PPd8MEohjmeco/edit | A validar |
+| LP - InvestSmart - Dolarização Patrimonial | is-dolarizacao-patrimonial (proposto; a validar) | A VALIDAR | A VALIDAR | A VALIDAR | Google Sheets via hub n8n (previsto) | A validar |
 | LP - InvestSmart Flow |  | https://abertura-filial.lovable.app |  |  |  | Mock confirmado / Perda de leads |
 | LP - InvestSmart Ride |  | https://ride-your-ideas.lovable.app |  |  |  | Mock confirmado / Perda de leads |
 | LP - Investsmart Xp |  | https://investsmart-xp.lovable.app |  |  |  | Ativo (DB + Sheets) |
