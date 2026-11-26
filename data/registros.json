@@ -1126,7 +1126,7 @@
     "secondAdmin": "Não aplicável",
     "recoveryValidated": "Não aplicável",
     "manualRisk": "A VALIDAR",
-    "lastValidation": "A validar",
+    "lastValidation": "26/11/2026",
     "obs": "Landing page aprovada pelo responsável em 26/11/2026; essa aprovação não homologa integrações nem autoriza CAPI. Auditoria técnica concluída no Project ID b74fba2b-04ff-459b-a548-2f8d32e8ee2d, conciliado exclusivamente com lp-dolarizacao-patrimonial. O lp_id atual do código é is-dolarizacao-patrimonial e permanece como divergência pendente, sem alteração funcional nesta auditoria. Captação efetiva: Google Sheets; n8n opcional ainda não configurado. Meta Pixel PageView implementado/testado localmente; Lead e CAPI desativados. Nenhuma credencial, informação financeira ou dado pessoal de lead foi incluído neste registro.",
     "next": "Manter status A validar. Pendências: alinhar lp_id técnico ao canônico; configurar repositório GitHub próprio, Git Sync e notify-growth-ops; configurar e homologar webhook n8n/contrato v1; validar guia, GTM/GA4, Compliance e evidência backend de consentimento; oficializar catálogo pago/Linktree, conta e compartilhamento Sheets; verificar recebimento Meta; tornar deduplicação atômica. CAPI e contrato v1.1 permanecem desativados até homologação e autorização expressas.",
     "extra": {
@@ -1187,7 +1187,7 @@
       "documentationStatus": "Auditoria técnica registrada na issue #108; documentação individual gerada pelo sync Lovable/Growth Ops"
     },
     "createdAt": "2026-11-26T20:08:51.049Z",
-    "updatedAt": "2026-11-26T20:16:21.951Z"
+    "updatedAt": "2026-11-26T20:17:04.987Z"
   },
   {
     "schema": "growth-ops-record-v2",

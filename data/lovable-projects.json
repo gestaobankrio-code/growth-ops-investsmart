@@ -719,5 +719,16 @@
     "lastSync": null,
     "active": true,
     "githubVerificationStatus": "Informado pela auditoria Lovable; pendente de verificação por acesso GitHub"
+  },
+  {
+    "lovableProjectId": "b74fba2b-04ff-459b-a548-2f8d32e8ee2d",
+    "nome": "InvestSmart - Dolarização Patrimonial",
+    "githubRepository": null,
+    "growthOpsRecordId": "lp-dolarizacao-patrimonial",
+    "publicUrl": "https://campanha-dolarizacao.lovable.app",
+    "status": "A validar",
+    "lastSeenCommit": "a0ded5231e0a42b34b070354973a5aba43898933",
+    "lastSync": "2026-11-26T20:17:04.999Z",
+    "active": true
   }
 ]
