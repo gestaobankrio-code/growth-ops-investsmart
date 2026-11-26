@@ -1,9 +1,12 @@
 # Pendências — Growth Ops InvestSmart
 
-Atualizado automaticamente em 16/11/2026, 21:15:23.
+Atualizado automaticamente em 26/11/2026, 20:01:46.
 
 | Ativo | Software | Risco | Pendência | Próxima ação |
 |---|---|---|---|---|
+| Gmail - Gestão BankRio | Gmail | Crítico | Risco Crítico | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Gmail | Crítico | Quem recebe o código a validar | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
+| Gmail - Gestão BankRio | Gmail | Médio | Recuperação de acesso não validada | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
 | LP - Abra sua Filial | Landing Page | Alto | Risco Alto | Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.  Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.  Confirmar quais campos estão sendo gravados na planilha: nome, e-mail, telefone, profissão/função, tempo de profissão, empresa/instituição, PL/custódia, source Futuro, campanha, pageUrl, UTMs e data de envio.  Definir quem acompanha a planilha e garantir visibilidade operacional para Jorge e/ou Samyr.  Instalar ou validar GTM, GA4, Meta Pixel e Google Ads Conversion Tag, disparando evento de conversão somente após envio real validado.  Confirmar qual domínio é o canônico em produção: aberturadefilial.investsmart.com.br ou URL Lovable.  Após teste confirmado, atualizar o status para Validado e revisar o risco operacional. |
 | LP - bancarios | Landing Page | Crítico | Risco Crítico | A VALIDAR: validar código/preview e operação em produção sem submeter dados reais. |
 | LP - Be Smart Home Plan | Landing Page | Crítico | Risco Crítico | A VALIDAR: validar código/preview e operação em produção sem submeter dados reais. |
@@ -48,9 +51,6 @@ Atualizado automaticamente em 16/11/2026, 21:15:23.
 | Webhook n8n - Planeja Brasil - Tráfego Pago | n8n | Alto | Risco Alto | Validar no n8n o destino final dos leads com source 201 e avaliar proteção contra spam, retry, fallback e persistência em caso de falha. |
 | Claude | Outro | Alto | Risco Alto | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
 | Claude | Outro | Médio | Recuperação de acesso não validada | Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.  Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.  Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração. |
-| Gmail - Gestão BankRio | Outro | Crítico | Risco Crítico | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
-| Gmail - Gestão BankRio | Outro | Crítico | Quem recebe o código a validar | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
-| Gmail - Gestão BankRio | Outro | Médio | Recuperação de acesso não validada | Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial. |
 | Senhas | Outro | Crítico | Risco Crítico | A validar |
 | Senhas | Outro | Crítico | Quem recebe o código a validar | A validar |
 | Senhas | Outro | Médio | Recuperação de acesso não validada | A validar |

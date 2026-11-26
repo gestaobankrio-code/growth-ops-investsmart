@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1795723306917-968eaf5a33249",
+    "date": "2026-11-26T20:01:46.917Z",
+    "issueNumber": 107,
+    "action": "Criar",
+    "recordId": "meta-pixel-padrao-landing-pages",
+    "software": "Meta Pixel",
+    "ativo": "Pixel Padrão para Landing Pages",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1794863723342-83de736b2791a",
     "date": "2026-11-16T21:15:23.342Z",
     "issueNumber": 100,

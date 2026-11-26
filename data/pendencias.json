@@ -1,5 +1,32 @@
 [
   {
+    "id": "gmail-gestaobankrio-risco-critico",
+    "recordId": "gmail-gestaobankrio",
+    "ativo": "Gmail - Gestão BankRio",
+    "software": "Gmail",
+    "risco": "Crítico",
+    "pendencia": "Risco Crítico",
+    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+  },
+  {
+    "id": "gmail-gestaobankrio-quem-recebe-o-codigo-a-validar",
+    "recordId": "gmail-gestaobankrio",
+    "ativo": "Gmail - Gestão BankRio",
+    "software": "Gmail",
+    "risco": "Crítico",
+    "pendencia": "Quem recebe o código a validar",
+    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+  },
+  {
+    "id": "gmail-gestaobankrio-recuperacao-de-acesso-nao-validada",
+    "recordId": "gmail-gestaobankrio",
+    "ativo": "Gmail - Gestão BankRio",
+    "software": "Gmail",
+    "risco": "Médio",
+    "pendencia": "Recuperação de acesso não validada",
+    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+  },
+  {
     "id": "lp-abertura-de-filial-risco-alto",
     "recordId": "lp-abertura-de-filial",
     "ativo": "LP - Abra sua Filial",
@@ -394,33 +421,6 @@
     "risco": "Médio",
     "pendencia": "Recuperação de acesso não validada",
     "proximaAcao": "Remover a autenticação por SMS vinculada ao telefone de Eduardo Alves.\n\nTransferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.\n\nValidar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
-  },
-  {
-    "id": "gmail-gestaobankrio-risco-critico",
-    "recordId": "gmail-gestaobankrio",
-    "ativo": "Gmail - Gestão BankRio",
-    "software": "Outro",
-    "risco": "Crítico",
-    "pendencia": "Risco Crítico",
-    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
-  },
-  {
-    "id": "gmail-gestaobankrio-quem-recebe-o-codigo-a-validar",
-    "recordId": "gmail-gestaobankrio",
-    "ativo": "Gmail - Gestão BankRio",
-    "software": "Outro",
-    "risco": "Crítico",
-    "pendencia": "Quem recebe o código a validar",
-    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
-  },
-  {
-    "id": "gmail-gestaobankrio-recuperacao-de-acesso-nao-validada",
-    "recordId": "gmail-gestaobankrio",
-    "ativo": "Gmail - Gestão BankRio",
-    "software": "Outro",
-    "risco": "Médio",
-    "pendencia": "Recuperação de acesso não validada",
-    "proximaAcao": "Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
   },
   {
     "id": "senha-marketing-redes-sociais-icloud-risco-critico",

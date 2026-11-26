@@ -1,4 +1,7 @@
 ﻿"ativo";"software";"risco";"pendencia";"proxima_acao"
+"Gmail - Gestão BankRio";"Gmail";"Crítico";"Risco Crítico";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+"Gmail - Gestão BankRio";"Gmail";"Crítico";"Quem recebe o código a validar";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
+"Gmail - Gestão BankRio";"Gmail";"Médio";"Recuperação de acesso não validada";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
 "LP - Abra sua Filial";"Landing Page";"Alto";"Risco Alto";"Realizar teste real de lead na LP Abra sua Filial e confirmar se o cadastro aparece na planilha Google Sheets informada.
 
 Validar qual camada faz o envio para a planilha: formulário direto, Google Apps Script, webhook, n8n, worker, backend, conector externo ou outro fluxo.
@@ -213,9 +216,6 @@ Validar segundo administrador, método de recuperação da conta e registrar nov
 Transferir a custódia do 2FA para um responsável oficial da área gestora ou para um método corporativo controlado pela InvestSmart.
 
 Validar segundo administrador, método de recuperação da conta e registrar nova custódia após a alteração."
-"Gmail - Gestão BankRio";"Outro";"Crítico";"Risco Crítico";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
-"Gmail - Gestão BankRio";"Outro";"Crítico";"Quem recebe o código a validar";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
-"Gmail - Gestão BankRio";"Outro";"Médio";"Recuperação de acesso não validada";"Validar responsável da conta, 2FA, métodos de recuperação, segundo administrador, plataformas vinculadas e local seguro de armazenamento da credencial."
 "Senhas";"Outro";"Crítico";"Risco Crítico";"A validar"
 "Senhas";"Outro";"Crítico";"Quem recebe o código a validar";"A validar"
 "Senhas";"Outro";"Médio";"Recuperação de acesso não validada";"A validar"
