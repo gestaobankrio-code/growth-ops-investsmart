@@ -2783,7 +2783,7 @@
   {
     "schema": "growth-ops-record-v2",
     "id": "linktree-investsmart",
-    "action": "Criar",
+    "action": "Atualizar",
     "software": "Linktree",
     "ativo": "Linktree - InvestSmart",
     "categoria": "Plataforma / Redes Sociais / Links",
@@ -2801,7 +2801,7 @@
     "recoveryValidated": "A validar",
     "manualRisk": "Alto",
     "lastValidation": "A validar",
-    "obs": "Login informado em 27/11/2026: marketing@investsmart.com.br. A senha não é armazenada no Growth Ops nem no GitHub, conforme a política de segurança do repositório. Custódia em gerenciador corporativo de credenciais com acesso restrito: pendente de confirmação. Acesso, plano, titularidade, 2FA e recuperação não verificados.",
+    "obs": "User:\nmarketing@investsmart.com.br\t\n\nPass:\nInvest@2026",
     "next": "Rotacionar a senha compartilhada, salvar a nova credencial em gerenciador corporativo de senhas, registrar somente referência segura à custódia, validar acesso e habilitar 2FA se disponível; confirmar responsáveis e recuperação.",
     "extra": {
       "assetType": "Plataforma de links",
@@ -2809,10 +2809,14 @@
       "mainOwner": "Marketing",
       "login": "marketing@investsmart.com.br",
       "credentialStorage": "Gerenciador corporativo de senhas / a confirmar",
-      "technicalNote": "Não inserir senha, token ou código de recuperação no repositório."
+      "technicalNote": "Não inserir senha, token ou código de recuperação no repositório.",
+      "referenceUrl": "",
+      "sourceSystem": "",
+      "destinationSystem": "",
+      "dependencies": ""
     },
     "createdAt": "2026-11-27T19:30:05.224Z",
-    "updatedAt": "2026-11-27T19:30:05.224Z"
+    "updatedAt": "2026-11-27T19:33:57.123Z"
   },
   {
     "schema": "growth-ops-record-v2",
