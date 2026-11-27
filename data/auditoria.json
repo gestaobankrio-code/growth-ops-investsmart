@@ -1,5 +1,18 @@
 [
   {
+    "id": "audit-1795807805224-b586e9e850658",
+    "date": "2026-11-27T19:30:05.224Z",
+    "issueNumber": 109,
+    "action": "Criar",
+    "recordId": "linktree-investsmart",
+    "software": "Linktree",
+    "ativo": "Linktree - InvestSmart",
+    "statusBefore": null,
+    "statusAfter": "A validar",
+    "actor": "gestaobankrio-code",
+    "source": "github-issue"
+  },
+  {
     "id": "audit-1795724181951-3636a66a6d0d3",
     "date": "2026-11-26T20:16:21.951Z",
     "issueNumber": 108,
